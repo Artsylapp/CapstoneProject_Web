@@ -4,10 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+    /* Main Page */
 $route['home'] = 'Main';
-$route['accounts'] = 'Main/accounts';
-$route['services'] = 'Main/services';
-$route['orders'] = 'Main/orders';
-$route['records'] = 'Main/records';
-$route['user'] = 'Main/user';
-$route['acc_create'] = 'Main/acc_create';
+
+    /* Accounts Page */
+$route['accounts'] = 'Accounts/index';
+$route['user'] = 'Accounts/user';
+$route['create_acc'] = 'Accounts/createAccount';
+
+    /* Services Page */
+$route['services'] = 'Services/index';
+
+    /* Orders Page */
+$route['orders'] = 'Orders/index';
+
+    /* Records Page */
+$route['records'] = 'Records/index';
