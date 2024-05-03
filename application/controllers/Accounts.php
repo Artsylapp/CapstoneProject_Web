@@ -3,23 +3,14 @@
 class Accounts extends CI_Controller {
 
     	/* CONSTRUCTOR */
-	public function __construct(){
-        parent::__construct();
+	public function __construct()
+  {
+      parent::__construct();
+  }
 
-    }
+  public function index(){
 
-	/* ACCOUNTS SEGMENT */
-    public function index() //account home page
-    {
-
-    }
-
-	public function accounts()
-	{	
-		$this->load->view('page/include/header');
-		$this->load->view('page/include/sidebar');
-		$this->load->view('page/accounts/hub');
-	}
+  }
 
 	public function user()
 	{	
@@ -28,10 +19,25 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/accounts/user');
 	}
 
-	public function createAccount()
+	public function acc_create()
 	{	
 		$this->load->view('page/include/header');
 		$this->load->view('page/include/acc_side');
-		$this->load->view('page/accounts/create_acc');
+		$this->load->view('page/accounts/acc_create');
 	}
+
+    public function acc_edit()
+	{	
+		$this->load->view('page/include/header');
+		$this->load->view('page/include/acc_side');
+		$this->load->view('page/accounts/acc_edit');
+	}
+
+    public function acc_delete()
+	{	
+		$this->load->view('page/include/header');
+		$this->load->view('page/include/acc_delete');
+		$this->load->view('page/accounts/acc_delete');
+	}
+
 }

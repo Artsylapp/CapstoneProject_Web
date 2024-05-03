@@ -5,9 +5,6 @@ $route['default_controller'] = 'Main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-    /* Main Page */
-$route['home'] = 'Main';
-
     /* Accounts Page */
 $route['accounts'] = 'Accounts/index';
 $route['user'] = 'Accounts/user';
