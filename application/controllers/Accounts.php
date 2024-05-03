@@ -1,15 +1,16 @@
 <?php
+    	/* ACCOUNTS SEGMENT */
 class Accounts extends CI_Controller {
 
-	/* CONSTRUCTOR */
-	public function __construct(){
-        parent::__construct();
+    	/* CONSTRUCTOR */
+	public function __construct()
+  {
+      parent::__construct();
+  }
 
-    }
+  public function index(){
 
-    public function index(){
-
-    }
+  }
 
 	public function user()
 	{	
