@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
     	/* ACCOUNTS SEGMENT */
 class Accounts extends CI_Controller {
 
@@ -9,8 +10,11 @@ class Accounts extends CI_Controller {
 		parent::__construct();
 	}
 
-	public function index(){
-
+	public function index()
+  {
+		$this->load->view('page/include/header');
+		$this->load->view('page/include/sidebar');
+		$this->load->view('page/accounts/hub');
 	}
 
 	public function user()
@@ -39,6 +43,15 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/header');
 		$this->load->view('page/include/acc_delete');
 		$this->load->view('page/accounts/acc_delete');
+	}
+
+	public function acc_select()
+	{	
+		$mode = $this->uri->segment(3);
+		
+		$this->load->view('page/include/header');
+		$this->load->view('page/include/sidebar');
+		$this->load->view('page/accounts/acc_select');
 	}
 
 }
