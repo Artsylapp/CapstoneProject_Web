@@ -1,19 +1,20 @@
-	<?php
-			/* ACCOUNTS SEGMENT */
-	class Accounts extends CI_Controller {
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-    	/* CONSTRUCTOR */
+    	/* ACCOUNTS SEGMENT */
+class Accounts extends CI_Controller {
+
+			/* CONSTRUCTOR */
 		public function __construct()
 	{
 		parent::__construct();
 	}
 
-	public function index(){
-
+	public function index()
+  {
 		$this->load->view('page/include/header');
 		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/hub');
-
 	}
 
 	public function user()
