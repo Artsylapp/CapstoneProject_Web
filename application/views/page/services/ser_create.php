@@ -19,7 +19,11 @@
                             <input name="create_Price" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="number" class="form-control" placeholder="PRICE" required/>
 
 							<div>
-								<button style="margin-left: 1%; width:40%; font-size:50px; background-color:#C1FF72; border-radius:15px; border-width:5px; border-color:#404040;" type="submit" class="btn btn-default">CONFIRM</button>
+								<button type="submit" class="btnpushable btnStyle green" style="margin-left: 1%; width:40%; font-size:50px; background-color:#C1FF72; border-radius:15px; border-width:5px; border-color:#404040;">
+									<span class="btnshadow"></span>
+									<span class="btnedge"></span>
+									<span class="btnfront">ADD SERVICE</span>
+							</button>
 							</div>
 
                         </div>
@@ -27,7 +31,11 @@
                     </form>
 
 						<a href="<?php echo $this->config->base_url("/index.php/services")?>">
-							<button style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px; background-color:#EA2D40; border-radius:15px; border-width:5px; border-color:#404040;" class="btn btn-default">CANCEL</button>
+							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px; background-color:#EA2D40; border-radius:15px; border-width:5px; border-color:#404040;">
+							<span class="btnshadow"></span>
+							<span class="btnedge"></span>
+							<span class="btnfront">CANCEL</span>
+							</button>
 						</a>
 
                     </div>
