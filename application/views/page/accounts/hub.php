@@ -14,7 +14,7 @@
 
                 <div class="row">
 					<div class="col-lg-12">
-					<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/edit")?>">
+					<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/acc_edit")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #A5FFEF; font-size: 24px; color: #000000; margin-bottom:4%;">
 								EDIT ACCOUNT
 							</button>
@@ -24,7 +24,7 @@
 
                 <div class="row">
 				<div class="col-lg-12">
-					<a href="<?php echo $this->config->base_url("/index.php/acc_delete")?>">
+					<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/acc_delete")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #EA2D40; font-size: 24px; color: #000000; margin-bottom:4%;">
 								DELETE ACCOUNT
 							</button>
