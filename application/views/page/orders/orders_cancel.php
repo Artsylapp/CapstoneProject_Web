@@ -56,14 +56,24 @@
                     </div>
 
                 </div>
-                <div class="" style="">
-                    <a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_going")?>">
-						<button class="btnpushable btnStyle red" style="width:50%; margin-left:25%">
+
+                <div>
+                    <a href="<?php echo $this->config->base_url("/index.php/orders")?>">
+						<button class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 5%; width:40%;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
-							<span class="btnfront">RETURN</span>
+							<span class="btnfront">CONFIRM</span>
 						</button>
 					</a>
+
+                    <a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_cancel")?>">
+						<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 8%; width:40%;">
+							<span class="btnshadow"></span>
+							<span class="btnedge"></span>
+							<span class="btnfront">CANCEL</span>
+						</button>
+					</a>
+
                 </div>
 
 			</div>
