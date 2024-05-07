@@ -5,8 +5,10 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/acc_create")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:4%;">
-								CREATE ACCOUNT
+							<button class="btnpushable btnStyle green">
+							<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">CREATE ACCOUNT</span>
 							</button>
 						</a>
 					</div>
@@ -15,8 +17,10 @@
                 <div class="row">
 					<div class="col-lg-12">
 					<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/edit")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #A5FFEF; font-size: 24px; color: #000000; margin-bottom:4%;">
-								EDIT ACCOUNT
+							<button class="btnpushable btnStyle cyan">
+							<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">EDIT ACCOUNT</span>
 							</button>
 						</a>
 					</div>
@@ -25,8 +29,10 @@
                 <div class="row">
 				<div class="col-lg-12">
 					<a href="<?php echo $this->config->base_url("/index.php/acc_delete")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #EA2D40; font-size: 24px; color: #000000; margin-bottom:4%;">
-								DELETE ACCOUNT
+							<button class="btnpushable btnStyle red">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">DELETE ACCOUNT</span>
 							</button>
 						</a>
 				</div>
@@ -37,6 +43,3 @@
 
 	</div>
 </div>
-
-</body>
-</html>

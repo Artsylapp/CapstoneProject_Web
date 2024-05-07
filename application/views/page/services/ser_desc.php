@@ -17,7 +17,11 @@
                     </div>
 
 					<a href="<?php echo $this->config->base_url("/index.php/ser_select_desc")?>">
-						<button style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px; background-color:#EA2D40; border-radius:15px; border-width:5px; border-color:#404040;" class="btn btn-default">RETURN</button>
+						<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
+							<span class="btnshadow"></span>
+							<span class="btnedge"></span>
+							<span class="btnfront">BACK</span>
+						</button>
 					</a>
 
                 </div>
@@ -30,6 +34,3 @@
 
 	</div>
 </div>
-
-</body>
-</html>

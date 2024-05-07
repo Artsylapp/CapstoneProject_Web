@@ -8,11 +8,15 @@ class Records extends CI_Controller {
 
     }
 
-    	/* RECORDS SEGMENT */
-	public function records()
+	public function index()
 	{
-		$this->load->view('page/include/header');
+		$info = array(
+			'title' => 'Records',
+		);
+
+		$this->load->view('page/include/header', $info);
 		$this->load->view('page/include/sidebar');
 		$this->load->view('page/records/hub');
+		$this->load->view('page/include/footer');
 	}
 }

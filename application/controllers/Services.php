@@ -5,62 +5,114 @@ class Services extends CI_Controller {
         /* CONSTRUCTOR */
     public function __construct(){
         parent::__construct();
-
+        $this->load->model('Service_model');
     }
 
     public function index() //services hub
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'Services',
+        );
+
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/hub');
+        $this->load->view('page/include/footer');
     }
 
     public function ser_create() //services - create service
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'Creating Services',
+        );
+
+
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_create');
+        $this->load->view('page/include/footer');
+    }
+
+    public function ser_add() //services - add service
+    {
+        $data = array(
+            'name' => $this->input->post('create_Customer'),
+            'description' => $this->input->post('create_Description'),
+            'price' => $this->input->post('create_Price')
+        );
+
+        $this->Service_model->createService($data);
+        // print_r($data);
+        // redirect('Services/ser_create'); // or redirect('Services');
     }
 
     public function ser_edit() //services - edit service
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'Edit Services',
+        );
+
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_edit');
+        $this->load->view('page/include/footer');
     }
 
     public function ser_delete() //services - delete service
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'Deleting Services',
+        );
+
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_delete');
+        $this->load->view('page/include/footer');
     }
 
     public function ser_desc() //services - display service
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'View Description',
+        );
+
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_desc');
+        $this->load->view('page/include/footer');
     }
 
     public function ser_select_edit() //services - select edit
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'Edit Services',
+        );
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_select_edit');
+        $this->load->view('page/include/footer');
     }
 
     public function ser_select_delete() //services - select delete
-    {
-        $this->load->view('page/include/header');
+    {   
+        $info = array(
+            'title' => 'Delete Services',
+        );
+
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_select_delete');
+        $this->load->view('page/include/footer');
     }
 
     public function ser_select_desc() //services - select desc
     {
-        $this->load->view('page/include/header');
+        $info = array(
+            'title' => 'Services Description',
+        ); 
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_select_desc');
+        $this->load->view('page/include/footer');
     }
 }

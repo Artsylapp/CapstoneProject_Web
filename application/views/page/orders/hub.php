@@ -4,19 +4,36 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<button type="button" class="btn" style="width: 100%; text-align: center; padding: 7%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 30px; color: #000000; margin-bottom:5%;">NEW ORDER</button>
+						<a href="<?php echo $this->config->base_url()?>">
+							<button class="btnpushable btnStyle cyan">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">NEW ORDER</span>
+							</button>
+						</a>
 					</div>
 				</div>
 
                 <div class="row">
 					<div class="col-lg-12">
-						<button type="button" class="btn" style="width: 100%; text-align: center; padding: 7%; border-style: solid; border-color:#404040; border-width: medium; background-color: #A5FFEF; font-size: 30px; color: #000000; margin-bottom:5%;">VIEW ON-GOING ORDERS</button>
+						<a href="<?php echo $this->config->base_url()?>">
+							<button class="btnpushable btnStyle blue">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">VIEW ORDER</span>						
+							</button>
 					</div>
 				</div>
 
                 <div class="row">
 					<div class="col-lg-12">
-						<button type="button" class="btn" style="width: 100%; text-align: center; padding: 7%; border-style: solid; border-color:#404040; border-width: medium; background-color: #EA2D40; font-size: 30px; color: #000000; margin-bottom:5%;">CANCEL ORDER</button>
+						<a href="<?php echo $this->config->base_url()?>">
+							<button class="btnpushable btnStyle red">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">CANCEL ORDER</span>
+							</button>
+						</a>
 					</div>
 				</div>
 
@@ -26,6 +43,3 @@
 
 	</div>
 </div>
-
-</body>
-</html>
