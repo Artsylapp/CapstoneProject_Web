@@ -37,8 +37,7 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/transaction_side');
-        $this->load->view('page/orders/orders_create');
+        $this->load->view('page/orders/orders_going');
     }
 
     public function orders_cancel()
