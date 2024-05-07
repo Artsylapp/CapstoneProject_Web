@@ -52,6 +52,7 @@ class Accounts extends CI_Controller {
 			'title' => 'Edit Account',
 		);
 
+
 		$this->load->view('page/include/header', $info);
 		$this->load->view('page/include/acc_side');
 		$this->load->view('page/accounts/acc_edit');
@@ -71,11 +72,12 @@ class Accounts extends CI_Controller {
 	}
 
 	public function acc_select()
-	{	
+	{
 		$mode = $this->uri->segment(3);
-		
+
 		$info = array(
 			'title' => 'Select Account',
+			'selection_mode' => $mode,
 		);
 		
 		$this->load->view('page/include/header', $info);

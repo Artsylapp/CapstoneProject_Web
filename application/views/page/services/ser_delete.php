@@ -30,7 +30,7 @@
 
                     </form>
 
-						<a href="<?php echo $this->config->base_url("/index.php/ser_select_delete")?>">
+						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_delete")?>">
 							<button class="btnpushable btnStyle red" style="width: 40%; margin-left: 1%; font-size: 50px;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
