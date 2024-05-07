@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {
 
 	/* CONSTRUCTOR */
@@ -9,15 +10,13 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('page/include/header');
+		$info = array(
+			'title' => 'Home',
+		);
+
+		$this->load->view('page/include/header', $info);
 		$this->load->view('page/include/sidebar');
 		$this->load->view('page/homepage');
 	}
 
-	public function home() //main home page
-	{
-		$this->load->view('page/include/header');
-		$this->load->view('page/include/sidebar');
-		$this->load->view('page/homepage');
-	}
 }

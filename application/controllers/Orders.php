@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 class Orders extends CI_Controller {
         
         /* CONSTRUCTOR */
@@ -7,18 +8,16 @@ class Orders extends CI_Controller {
 
     }
 
-    public function index() //orders home page
+    public function index()
     {
-        $this->load->view('page/include/header');
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/orderpage');
-    }
+        $info = array(
+            'title' => 'Orders',
+        );
 
-        /* ORDERS SEGMENT */
-    public function orders()
-    {
-        $this->load->view('page/include/header');
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/hub');
     }
+
+
 }
