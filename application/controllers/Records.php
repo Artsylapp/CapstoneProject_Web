@@ -17,5 +17,6 @@ class Records extends CI_Controller {
 		$this->load->view('page/include/header', $info);
 		$this->load->view('page/include/sidebar');
 		$this->load->view('page/records/hub');
+		$this->load->view('page/include/footer');
 	}
 }
