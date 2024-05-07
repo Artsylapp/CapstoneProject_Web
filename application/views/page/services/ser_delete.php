@@ -26,7 +26,7 @@
 
                     </form>
 
-						<a href="<?php echo $this->config->base_url("/index.php/ser_select_delete")?>">
+					<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_delete")?>">
 							<button style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px; background-color:#EA2D40; border-radius:15px; border-width:5px; border-color:#404040;" class="btn btn-default">CANCEL</button>
 						</a>
 

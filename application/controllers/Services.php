@@ -50,7 +50,8 @@ class Services extends CI_Controller {
             'title' => 'Editing Services',
         );
 
-        $this->load->view('page/include/header', $info);
+
+        $this->load->view('page/include/header',$info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_edit');
     }
@@ -61,7 +62,8 @@ class Services extends CI_Controller {
             'title' => 'Deleting Services',
         );
 
-        $this->load->view('page/include/header', $info);
+
+        $this->load->view('page/include/header',$data ,$info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_delete');
     }
@@ -72,39 +74,24 @@ class Services extends CI_Controller {
             'title' => 'Service Description',
         );
 
-        $this->load->view('page/include/header', $info);
+
+        $this->load->view('page/include/header',$data ,$info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_desc');
     }
 
-    public function ser_select_edit() //services - select edit
+    public function ser_select() //services - selection page
     {
         $info = array(
             'title' => 'Select Service',
         );
-        $this->load->view('page/include/header', $info);
+
+        $mode = $this->uri->segment(3);
+        $data['selection_mode'] = $mode;
+
+        $this->load->view('page/include/header',$data ,$info);
         $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_select_edit');
+        $this->load->view('page/services/ser_select');
     }
 
-    public function ser_select_delete() //services - select delete
-    {   
-        $info = array(
-            'title' => 'Select Service',
-        );
-
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_select_delete');
-    }
-
-    public function ser_select_desc() //services - select desc
-    {
-        $info = array(
-            'title' => 'Select Service',
-        ); 
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_select_desc');
-    }
 }

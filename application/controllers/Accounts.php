@@ -49,6 +49,7 @@ class Accounts extends CI_Controller {
 			'title' => 'Edit Account',
 		);
 
+
 		$this->load->view('page/include/header', $info);
 		$this->load->view('page/include/acc_side');
 		$this->load->view('page/accounts/acc_edit');
