@@ -53,33 +53,37 @@ class Services extends CI_Controller {
         );
 
 
-        $this->load->view('page/include/header',$info);
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_edit');
         $this->load->view('page/include/footer');
     }
 
     public function ser_delete() //services - delete service
-    {
+    {   
+        $mode = $this->uri->segment(3);
         $info = array(
             'title' => 'Deleting Services',
+            'selection_mode' => $mode,
         );
 
 
-        $this->load->view('page/include/header',$data ,$info);
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_delete');
         $this->load->view('page/include/footer');
     }
 
     public function ser_desc() //services - display service
-    {
+    {   
+        $mode = $this->uri->segment(3);
         $info = array(
             'title' => 'View Description',
+            'selection_mode' => $mode,
         );
 
 
-        $this->load->view('page/include/header',$data ,$info);
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_desc');
         $this->load->view('page/include/footer');
@@ -90,12 +94,12 @@ class Services extends CI_Controller {
         $mode = $this->uri->segment(3);
         $info = array(
             'title' => 'Edit Services',
-            'selection_mode' => 'edit',
+            'selection_mode' => $mode,
         );
 
         
 
-        $this->load->view('page/include/header',$data ,$info);
+        $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_select');
         $this->load->view('page/include/footer');
