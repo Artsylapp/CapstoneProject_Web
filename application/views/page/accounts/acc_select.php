@@ -12,10 +12,14 @@
 						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
 						
 						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 2%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:2%; text-align: left;">
-                                <p>NAME: EMPLOYEE NAME</p>
-								<p>CONTACT: CONTACT</p>
-								<p>EMP. TYPE: TYPE</p>
+							<button class="btnpushable btnStyle cyan" style="margin-bottom:2%; text-align: left;">
+                                <span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">
+									<p>NAME: EMPLOYEE NAME</p>
+									<p>CONTACT: CONTACT</p>
+									<p>EMP. TYPE: TYPE</p>
+								</span>
 							</button>
 						</a>
 

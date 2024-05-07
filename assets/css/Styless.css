@@ -80,7 +80,7 @@ input[type=number] {
 
 /* Effects */
 .btnpushable:hover {
-    filter: brightness(140%);
+    filter: brightness(110%);
 }
 
 .btnpushable:hover .btnfront {
@@ -177,9 +177,9 @@ input[type=number] {
 .cyan .btnedge{
     background: linear-gradient(
     to left,
-    hsl(180deg 100% 16%) 0%,
+    hsl(180deg, 91%, 31%) 0%,
     hsl(180deg 100% 32%) 8%,
     hsl(180deg 100% 32%) 92%,
-    hsl(180deg 100% 16%) 100%
+    hsl(180deg, 93%, 33%) 100%
     );
 }
