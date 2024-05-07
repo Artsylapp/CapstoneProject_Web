@@ -19,7 +19,11 @@
                             <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="number" class="form-control" placeholder="PRICE" value="" required/>
 
 							<div>
-								<button style="margin-left: 1%; width:40%; font-size:50px; background-color:#C1FF72; border-radius:15px; border-width:5px; border-color:#404040;" type="submit" class="btn btn-default">CONFIRM</button>
+								<button type="submit" class="btnpushable btnStyle green" style="margin-left: 1%; width:40%;">
+									<span class="btnshadow"></span>
+									<span class="btnedge"></span>
+									<span class="btnfront">CONFIRM</span>
+								</button>
 							</div>
 
                         </div>
@@ -40,6 +44,3 @@
 
 	</div>
 </div>
-
-</body>
-</html>

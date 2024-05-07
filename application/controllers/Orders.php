@@ -17,6 +17,7 @@ class Orders extends CI_Controller {
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/hub');
+        $this->load->view('page/include/footer');
     }
 
     public function orders_create()

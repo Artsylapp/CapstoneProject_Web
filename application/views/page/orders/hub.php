@@ -5,8 +5,10 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/orders_create")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 30px; color: #000000; margin-bottom:4%;">
-								NEW ORDER
+							<button class="btnpushable btnStyle cyan">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">NEW ORDER</span>
 							</button>
 						</a>
 					</div>
@@ -15,18 +17,21 @@
                 <div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_going")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #A5FFEF; font-size: 30px; color: #000000; margin-bottom:4%;">
-								ON-GOING ORDERS
+							<button class="btnpushable btnStyle blue">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">VIEW ORDER</span>						
 							</button>
-						</a>
 					</div>
 				</div>
 
                 <div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_cancel")?>">
-							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 5%; border-style: solid; border-color:#404040; border-width: medium; background-color: #A5FFEF; font-size: 30px; color: #000000; margin-bottom:4%;">
-								CANCEL ORDER
+							<button class="btnpushable btnStyle red">
+								<span class="btnshadow"></span>
+								<span class="btnedge"></span>
+								<span class="btnfront">CANCEL ORDER</span>
 							</button>
 						</a>
 					</div>
@@ -38,6 +43,3 @@
 
 	</div>
 </div>
-
-</body>
-</html>

@@ -76,6 +76,8 @@ input[type=number] {
     cubic-bezier(.3, .7, .4, 1);
 }
 
+/* ---------------------- */
+
 /* Effects */
 .btnpushable:hover {
     filter: brightness(140%);
@@ -111,17 +113,29 @@ input[type=number] {
     outline: none;
 }
 
+/* ------------------------- */
 
 /* Button Size Customization */
-
+    /* Button */
 .btnStyle .btnfront {
     padding: 5%;
 }
+
 .btnStyle {
     width: 100%;
     margin-bottom: 4%;
-    /* padding: 5%; */
 }
+
+.btnMenu {
+    width: 100%;
+    margin-bottom: 15%;
+}
+
+.btnMenu .btnfront {
+    padding: 25%;
+}
+
+/* ------------------------------ */
 
 /* Color cutomization */
 .green .btnfront{
@@ -130,7 +144,7 @@ input[type=number] {
 
 .green .btnedge{
     background: linear-gradient(
-    to left,
+    to left, 
     hsl(160deg 100% 16%) 0%,
     hsl(160deg 100% 32%) 8%,
     hsl(160deg 100% 32%) 92%,
@@ -157,7 +171,7 @@ input[type=number] {
 }
 
 .cyan .btnfront{
-    background: hsl(190, 100%, 50%) !important;
+    background: hsl(190, 77%, 38%) !important;
 }
 
 .cyan .btnedge{
