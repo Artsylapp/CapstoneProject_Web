@@ -48,8 +48,9 @@ class Accounts extends CI_Controller {
 	public function acc_select()
 	{	
 		$mode = $this->uri->segment(3);
+		$data['selection_mode'] = $mode;
 		
-		$this->load->view('page/include/header');
+		$this->load->view('page/include/header',$data);
 		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_select');
 	}

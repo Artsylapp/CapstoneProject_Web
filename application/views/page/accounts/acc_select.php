@@ -7,7 +7,7 @@
                     
 				<div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #F2F2F2; color: #000000; margin-bottom:5%; border-radius:24px; text-align: left;">
 
-						<a href="">
+						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 2%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:2%; text-align: left;">
 								<p>NAME: EMPLOYEE NAME</p>
 								<p>CONTACT: CONTACT</p>
@@ -15,7 +15,7 @@
 							</button>
 						</a>
 
-						<a href="">
+						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 2%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:2%; text-align: left;">
                                 <p>NAME: EMPLOYEE NAME</p>
 								<p>CONTACT: CONTACT</p>
@@ -23,7 +23,7 @@
 							</button>
 						</a>
 						
-						<a href="">
+						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 2%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:2%; text-align: left;">
                                 <p>NAME: EMPLOYEE NAME</p>
 								<p>CONTACT: CONTACT</p>
