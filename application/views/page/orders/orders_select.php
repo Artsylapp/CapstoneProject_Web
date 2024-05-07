@@ -13,13 +13,12 @@
 						
 						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 2%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:2%; text-align: left;">
-                                <p>NAME: EMPLOYEE NAME</p>
-								<p>CONTACT: CONTACT</p>
-								<p>EMP. TYPE: TYPE</p>
+                                <p>ORDER NUMBER: XX</p>
+								<p>TOTAL: XX.XX</p>
 							</button>
 						</a>
 
-						<a href="<?php echo $this->config->base_url("/index.php/accounts")?>">
+						<a href="<?php echo $this->config->base_url("/index.php/orders")?>">
 							<button style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px; background-color:#EA2D40; border-radius:15px; border-width:5px; border-color:#404040;" class="btn btn-default">RETURN</button>
 						</a>
 

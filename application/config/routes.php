@@ -25,14 +25,15 @@ $route['ser_add'] = 'Services/ser_add';
 $route['ser_edit'] = 'Services/ser_edit';
 $route['ser_delete'] = 'Services/ser_delete';
 $route['ser_desc'] = 'Services/ser_desc';
-$route['ser_select_edit'] = 'Services/ser_select_edit';
-$route['ser_select_delete'] = 'Services/ser_select_delete';
-$route['ser_select_desc'] = 'Services/ser_select_desc';
 
 
     /* Orders Page */
 $route['orders'] = 'Orders/index';
+$route['orders_create'] = 'Orders/orders_create';
+$route['orders_going'] = 'Orders/orders_going';
+$route['orders_cancel'] = 'Orders/orders_cancel';
 
 
     /* Records Page */
 $route['records'] = 'Records/index';
+
