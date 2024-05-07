@@ -67,7 +67,7 @@ class Accounts extends CI_Controller {
 	}
 
 	public function acc_select()
-	{	
+	{
 		$mode = $this->uri->segment(3);
 
 		$info = array(
