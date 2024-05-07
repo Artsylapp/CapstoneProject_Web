@@ -19,7 +19,7 @@
                             <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" value="PRE-FILLED CONTACT" required/>
 
 							<div>
-								<button type="submit" class="btn btn-default" style="margin-left: 1%; width:40%; ">
+								<button type="submit" class="btnpushable btnStyle green" style="margin-left: 1%; width:40%; ">
 									<span class="btnshadow"></span>
 									<span class="btnedge"></span>
 									<span class="btnfront">CONFIRM</span>
@@ -29,8 +29,7 @@
                         </div>
 
                     </form>
-
-						<a href="<?php echo $this->config->base_url("/index.php/accounts")?>">
+						<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/acc_edit")?>">
 							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

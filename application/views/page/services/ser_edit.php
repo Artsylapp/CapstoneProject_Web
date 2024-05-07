@@ -31,6 +31,7 @@
                     </form>
 
 						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_edit")?>">
+
 							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

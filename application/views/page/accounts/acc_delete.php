@@ -32,8 +32,7 @@
                         </div>
 
                     </form>
-
-						<a href="<?php echo $this->config->base_url("/index.php/accounts")?>">
+						<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/acc_delete")?>">
 							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
