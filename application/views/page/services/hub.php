@@ -28,7 +28,7 @@
 
                 <div class="row">
 					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_edit")?>">
+						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_delete")?>">
 							<button class="btnpushable btnStyle red">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -40,7 +40,7 @@
 
                 <div class="row">
 					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_edit")?>">
+						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_desc")?>">
 							<button class="btnpushable btnStyle cyan">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
