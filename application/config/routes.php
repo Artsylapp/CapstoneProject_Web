@@ -24,7 +24,7 @@ $route['ser_create'] = 'Services/ser_create';
 $route['ser_add']['GET'] = 'Services/ser_add';
 $route['ser_edit'] = 'Services/ser_edit';
 $route['ser_delete'] = 'Services/ser_delete';
-$route['ser_desc']['POST'] = 'Services/ser_desc';
+$route['ser_desc'] = 'Services/ser_desc';
 
 
     /* Orders Page */
