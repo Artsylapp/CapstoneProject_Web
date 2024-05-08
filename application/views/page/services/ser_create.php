@@ -12,11 +12,11 @@
                     <form action="<?php echo $this->config->base_url('ser_add') ?>" method="POST">
 
                         <div class="form-group" style="align-content:left;">
-                            <input name="create_Customer" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="NAME" required/>
+                            <input name="create_Customer" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="Serivce Type" required/>
 
-                            <input name="create_Description" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="DESCRIPTION" required/>
+                            <input name="create_Description" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="Service Description" required/>
 
-                            <input name="create_Price" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="number" class="form-control" placeholder="PRICE" required/>
+                            <input name="create_Price" style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="number" class="form-control" placeholder="Service Price" required/>
 
 							<div>
 								<button type="submit" class="btnpushable btnStyle green" style="margin-left: 1%; width:40%; font-size:50px; background-color:#C1FF72; border-radius:15px; border-width:5px; border-color:#404040;">
