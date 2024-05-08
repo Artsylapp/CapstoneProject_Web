@@ -31,7 +31,7 @@ class Orders extends CI_Controller {
         $this->load->view('page/orders/orders_create');
     }
 
-    public function orders_going()
+    public function orders_assign()
     {
         $info = array(
             'title' => 'Orders',
@@ -39,7 +39,28 @@ class Orders extends CI_Controller {
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/transaction_side');
-        $this->load->view('page/orders/orders_create');
+        $this->load->view('page/orders/orders_assign');
+    }
+
+    public function orders_placement()
+    {
+        $info = array(
+            'title' => 'Orders',
+        );
+
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/include/transaction_side');
+        $this->load->view('page/orders/orders_placement');
+    }
+
+    public function orders_going()
+    {
+        $info = array(
+            'title' => 'Orders',
+        );
+
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/orders/orders_going');
     }
 
     public function orders_cancel()
@@ -49,8 +70,7 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/transaction_side');
-        $this->load->view('page/orders/orders_create');
+        $this->load->view('page/orders/orders_cancel');
     }
 
     public function orders_select()

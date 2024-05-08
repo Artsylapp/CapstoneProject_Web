@@ -30,6 +30,8 @@ $route['ser_desc'] = 'Services/ser_desc';
     /* Orders Page */
 $route['orders'] = 'Orders/index';
 $route['orders_create'] = 'Orders/orders_create';
+$route['orders_assign'] = 'Orders/orders_assign';
+$route['orders_placement'] = 'Orders/orders_placement';
 $route['orders_going'] = 'Orders/orders_going';
 $route['orders_cancel'] = 'Orders/orders_cancel';
 
