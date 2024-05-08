@@ -1,11 +1,4 @@
-<!--
-    THIS IS FOR THE TEXT-TO-SPEECH
 
-    This script was placed here in order to make sure that all elements of the page are loaded in
-    before the script checks for the elements needed.
--->
-
-<script>
     document.addEventListener('DOMContentLoaded', function() {
     var ttsh = document.querySelectorAll('.ttsh');
     var voiceList = document.querySelector('#voiceList');
@@ -17,7 +10,7 @@
         speechSynthesis.onvoiceschanged = populateVoices;
     }
 
-    ttsh.forEach((ttsh) => {
+    ttshs.forEach((ttsh) => {
         ttsh.addEventListener('mouseenter', () => {
             // Stop any existing hover timeout
             clearTimeout(hoverTimeout);
@@ -56,7 +49,3 @@
         voiceList.selectedIndex = selectedIndex;
     }
 });
-</script>
-
-</body>
-</html>

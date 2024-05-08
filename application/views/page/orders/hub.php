@@ -5,7 +5,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/orders_create")?>">
-							<button class="btnpushable btnStyle cyan">
+							<button class="btnpushable btnStyle cyan ttsh" name="NEW ORDER">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">NEW ORDER</span>
@@ -17,7 +17,7 @@
                 <div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_going")?>">
-							<button class="btnpushable btnStyle blue">
+							<button class="btnpushable btnStyle blue ttsh" name="VIEW ORDER">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">VIEW ORDER</span>						
@@ -28,7 +28,7 @@
                 <div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_cancel")?>">
-							<button class="btnpushable btnStyle red">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL ORDER">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL ORDER</span>

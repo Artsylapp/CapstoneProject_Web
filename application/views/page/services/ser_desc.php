@@ -17,7 +17,7 @@
                     </div>
 
 					<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_desc")?>">
-						<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
+						<button class="btnpushable btnStyle red ttsh" name="BACK" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
 							<span class="btnfront">BACK</span>

@@ -19,7 +19,7 @@
                         <h1 style="padding-left:1%;">PRICE:</h1>
 
 							<div>
-								<button type="submit" class="btnpushable btnStyle green" style="margin-left: 1%; width:40%;">
+								<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
 									<span class="btnshadow"></span>
 									<span class="btnedge"></span>
 									<span class="btnfront">CONFIRM</span>
@@ -31,7 +31,7 @@
                     </form>
 
 					<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_delete")?>">
-							<button class="btnpushable btnStyle red" style="width: 40%; margin-left: 1%; font-size: 50px;">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="width: 40%; margin-left: 1%; font-size: 50px;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>

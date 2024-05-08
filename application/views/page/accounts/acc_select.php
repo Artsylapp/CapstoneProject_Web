@@ -12,7 +12,7 @@
 						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
 						
 						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
-							<button class="btnpushable btnStyle cyan" style="margin-bottom:2%; text-align: left;">
+							<button class="btnpushable btnStyle cyan ttsh" style="margin-bottom:2%; text-align: left;" name="EMPLOYEE NAME HERE">
                                 <span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">
@@ -24,7 +24,7 @@
 						</a>
 
 						<a href="<?php echo $this->config->base_url("/index.php/accounts")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;" >
+							<button class="btnpushable btnStyle red ttsh" style="margin-top: 5%; margin-left: 1%; width:40%;" name="CANCEL">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>

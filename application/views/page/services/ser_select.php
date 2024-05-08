@@ -10,7 +10,7 @@
 						<!-- use for each loop to get everydata and display it as a list (URI = SERVICE ID IN FUNCTIONS) -->
 
 						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
-							<button class="btnpushable btnStyle cyan" style="color: black;">
+							<button class="btnpushable btnStyle cyan ttsh" name="SERVICE NAME HERE" style="color: black;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">
@@ -24,7 +24,7 @@
 						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
 
                         <a href="<?php echo $this->config->base_url("/index.php/services")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
+							<button class="btnpushable btnStyle red ttsh" name="BACK" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">BACK</span>

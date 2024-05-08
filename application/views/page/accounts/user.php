@@ -16,7 +16,11 @@
                 <div style="margin:25px; margin-top:75px">
                     <h1>SWITCH USERS</h1>
                     <a href="<?php echo $this->config->base_url("/index.php/home")?>">
-						<button type="button" class="btn btn-primary" style="width: 25%; text-align: center; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000;">SWITCH</button>
+						<button class="btnpushable btnStyle green ttsh" name="CONFIRM">
+						    <span class="btnshadow"></span>
+							<span class="btnedge"></span>
+							<span class="btnfront">CONFIRM</span>
+						</button>
 					</a>
                 </div>
             </div>

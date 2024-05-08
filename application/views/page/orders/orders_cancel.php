@@ -59,7 +59,7 @@
 
                 <div>
                     <a href="<?php echo $this->config->base_url("/index.php/orders")?>">
-						<button class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 5%; width:40%;">
+						<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 5%; width:40%;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
 							<span class="btnfront">CONFIRM</span>
@@ -67,7 +67,7 @@
 					</a>
 
                     <a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_cancel")?>">
-						<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 8%; width:40%;">
+						<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 8%; width:40%;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
 							<span class="btnfront">CANCEL</span>
