@@ -19,7 +19,7 @@
                             <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="number" class="form-control" placeholder="Service Price" name="edit_Price" value="<?php echo $services->services_tbl_price ?>" required/>
 
 							<div>
-								<button type="submit" class="btnpushable btnStyle green" style="margin-left: 1%; width:40%;">
+								<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
 									<span class="btnshadow"></span>
 									<span class="btnedge"></span>
 									<span class="btnfront">CONFIRM</span>
@@ -32,7 +32,7 @@
 
 						<a href="<?php echo $this->config->base_url("services/ser_select/ser_edit")?>">
 
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>

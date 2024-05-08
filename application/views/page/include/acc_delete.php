@@ -12,7 +12,7 @@
                 <h3 style="margin: 10px;">VIAMM</h3>
                 <h4 style="margin: 5px;">EMPLOYEE NAME</h4>
             </div>
-			
+            
         </div>
     </div>
     <div class="profile-sidebar" style="display: flex; justify-content: center; align-items: center; border-style: solid; background-color: #F2F2F2; border-radius: 5px; margin-bottom:10%; width: 100%; padding-bottom:8%; padding-top:7%;">

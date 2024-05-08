@@ -9,11 +9,12 @@
 
 						<!-- use for each loop to get everydata and display it as a list (URI = SERVICE ID IN FUNCTIONS) -->
 
+
 						<?php foreach($services as $service): ?>
 
 							<a href="<?php echo $this->config->base_url("services/$selection_mode/" . $service->services_tbl_id)?>">
 
-									<button class="btnpushable btnStyle cyan" style="color: black;">
+									<button class="btnpushable btnStyle cyan ttsh" style="color: black;">
 										<span class="btnshadow"></span>
 										<span class="btnedge"></span>
 										<span class="btnfront">
@@ -29,7 +30,7 @@
 						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
 
                         <a href="<?php echo $this->config->base_url("services")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
+							<button class="btnpushable btnStyle red ttsh" name="BACK" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">BACK</span>

@@ -22,7 +22,7 @@
                         <h1 style="padding-left:1%;">TYPE: CASHIER</h1>
 
 							<div>
-								<button type="submit" class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 1%; width:40%;">
+								<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
 									<span class="btnshadow"></span>
 									<span class="btnedge"></span>
 									<span class="btnfront">CONFIRM</span>
@@ -33,7 +33,7 @@
 
                     </form>
 						<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_delete")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>

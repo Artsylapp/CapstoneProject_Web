@@ -5,7 +5,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("acc_create")?>">
-							<button class="btnpushable btnStyle green">
+							<button class="btnpushable btnStyle green ttsh" name="CREATE ACCOUNTS">
 							<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CREATE ACCOUNT</span>
@@ -17,7 +17,7 @@
                 <div class="row">
 					<div class="col-lg-12">
 					<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_edit")?>">
-							<button class="btnpushable btnStyle cyan">
+							<button class="btnpushable btnStyle cyan ttsh" name="EDIT ACCOUNTS">
 							<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">EDIT ACCOUNT</span>
@@ -29,7 +29,7 @@
                 <div class="row">
 				<div class="col-lg-12">
 					<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_delete")?>">
-							<button class="btnpushable btnStyle red">
+							<button class="btnpushable btnStyle red ttsh" name="DELETE ACCOUNTS">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">DELETE ACCOUNT</span>

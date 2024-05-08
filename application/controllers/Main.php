@@ -20,4 +20,17 @@ class Main extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
+	public function test_page(){
+
+		$info = array(
+			'title' => 'Home',
+		);
+
+		$this->load->view('page/include/header', $info);
+		$this->load->view('page/include/sidebar');
+		$this->load->view('page/test_page');
+		$this->load->view('page/include/footer');
+
+	}
+
 }
