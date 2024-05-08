@@ -9,22 +9,28 @@
 
 						<!-- use for each loop to get everydata and display it as a list (URI = SERVICE ID IN FUNCTIONS) -->
 
-						<a href="<?php echo $this->config->base_url("$selection_mode")?>">
-							<button class="btnpushable btnStyle cyan" style="color: black;">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">
-									<p>NAME: SERVICE NAME</p>
-									<p>DESC: SERVICE DESCRIPTION</p>
-									<p>PRICE: SERVICE PRICE</p>
-								</span>
-							</button>
-						</a>
+
+						<?php foreach($services as $service): ?>
+
+							<a href="<?php echo $this->config->base_url("services/$selection_mode/" . $service->services_tbl_id)?>">
+
+									<button class="btnpushable btnStyle cyan ttsh" style="color: black;">
+										<span class="btnshadow"></span>
+										<span class="btnedge"></span>
+										<span class="btnfront">
+											<p>Service Type: <?php echo $service->services_tbl_name ?></p>
+											<p>Service Description: <?php echo $service->services_tbl_description ?></p>
+											<p>Service Price: <?php echo $service->services_tbl_price ?></p>
+										</span>
+									</button>
+							</a>
+
+						<?php endforeach; ?>
 
 						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
 
                         <a href="<?php echo $this->config->base_url("services")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
+							<button class="btnpushable btnStyle red ttsh" name="BACK" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">BACK</span>

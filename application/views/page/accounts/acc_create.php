@@ -22,7 +22,7 @@
 							<label style="transform: scale(2); margin-right: 10%; height: auto; margin-top: 3%; margin-bottom: 3%;" class="radio-inline"><input type="radio" name="optradio">Option 2</label>
 
 							<div>
-								<button class="btnpushable btnStyle green" style="margin-left: 1%; width:40%;">
+								<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
 									<span class="btnshadow"></span>
 									<span class="btnedge"></span>
 									<span class="btnfront">CONFIRM</span>
@@ -34,7 +34,7 @@
                     </form>
 
 						<a href="<?php echo $this->config->base_url("accounts")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>

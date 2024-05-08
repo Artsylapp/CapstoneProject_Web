@@ -14,7 +14,7 @@
 						<!-- PROBABLY GOING TO USE JAVASCRIPT TO ADD TO A LIST -->
 						
 						<a href="">
-							<button class="btnpushable btnStyle cyan" style="text-align: left;">
+							<button class="btnpushable btnStyle cyan ttsh" name="EMPLOYEE NAME HERE" style="text-align: left;">
                                 <span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">
@@ -25,7 +25,7 @@
 						</a>
 
 						<a href="<?php echo $this->config->base_url("orders_create")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>
@@ -33,7 +33,7 @@
 						</a>
 
                         <a href="<?php echo $this->config->base_url("orders_placement")?>">
-							<button class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CONFIRM</span>

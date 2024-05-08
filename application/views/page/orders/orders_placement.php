@@ -19,9 +19,30 @@
                                 <div class="col-lg-6">
                                     
                                 <!-- Use for each loop to display ongoing orders -->
+                                    <a href="">
+                                        <button class="btnpushable btnStyle cyan ttsh" name="ROOM NUMBER" style="text-align: left; width:80%;">
+                                            <span class="btnshadow"></span>
+                                            <span class="btnedge"></span>
+                                            <span class="btnfront">
+                                                <p>ROOM</p>
+                                                <p>STATUS</p>
+                                            </span>
+                                        </button>
+                                    </a>
 
                                     <a href="">
-                                        <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
+                                        <button class="btnpushable btnStyle cyan ttsh" name="ROOM NUMBER" style="text-align: left; width:80%;">
+                                            <span class="btnshadow"></span>
+                                            <span class="btnedge"></span>
+                                            <span class="btnfront">
+                                                <p>ROOM</p>
+                                                <p>STATUS</p>
+                                            </span>
+                                        </button>
+                                    </a>
+
+                                    <a href="">
+                                        <button class="btnpushable btnStyle cyan ttsh" name="ROOM NUMBER" style="text-align: left; width:80%;">
                                             <span class="btnshadow"></span>
                                             <span class="btnedge"></span>
                                             <span class="btnfront">
@@ -35,9 +56,30 @@
                                 <div class="col-lg-6">
                                     
                                 <!-- Use for each loop to display ongoing orders -->
+                                    <a href="">
+                                        <button class="btnpushable btnStyle cyan ttsh" name="CHAIR" style="text-align: left; width:80%;">
+                                            <span class="btnshadow"></span>
+                                            <span class="btnedge"></span>
+                                            <span class="btnfront">
+                                                <p>CHAIR</p>
+                                                <p>STATUS</p>
+                                            </span>
+                                        </button>
+                                    </a>
 
                                     <a href="">
-                                        <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
+                                        <button class="btnpushable btnStyle cyan ttsh" name="CHAIR" style="text-align: left; width:80%;">
+                                            <span class="btnshadow"></span>
+                                            <span class="btnedge"></span>
+                                            <span class="btnfront">
+                                                <p>CHAIR</p>
+                                                <p>STATUS</p>
+                                            </span>
+                                        </button>
+                                    </a>
+
+                                    <a href="">
+                                        <button class="btnpushable btnStyle cyan ttsh" name="CHAIR" style="text-align: left; width:80%;">
                                             <span class="btnshadow"></span>
                                             <span class="btnedge"></span>
                                             <span class="btnfront">
@@ -54,7 +96,7 @@
                         </div>
 
 						<a href="<?php echo $this->config->base_url("orders_assign")?>">
-							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CANCEL</span>
@@ -62,7 +104,7 @@
 						</a>
 
                         <a href="<?php echo $this->config->base_url("orders")?>">
-							<button class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CONFIRM</span>

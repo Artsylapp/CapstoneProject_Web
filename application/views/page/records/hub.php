@@ -5,7 +5,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 					<a href="<?php echo $this->config->base_url()?>">
-							<button class="btnpushable btnStyle cyan">
+							<button class="btnpushable btnStyle cyan ttsh" name="ORDER HISTORY">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">ORDER HISTORY</span>
@@ -17,7 +17,7 @@
                 <div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url()?>">
-							<button class="btnpushable btnStyle green">
+							<button class="btnpushable btnStyle green ttsh" name="STATISTICS">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">STATISTICS</span>
