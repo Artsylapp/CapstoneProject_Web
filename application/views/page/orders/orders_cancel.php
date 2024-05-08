@@ -58,7 +58,7 @@
                 </div>
 
                 <div>
-                    <a href="<?php echo $this->config->base_url("/index.php/orders")?>">
+                    <a href="<?php echo $this->config->base_url("orders")?>">
 						<button class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 5%; width:40%;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
@@ -66,7 +66,7 @@
 						</button>
 					</a>
 
-                    <a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_cancel")?>">
+                    <a href="<?php echo $this->config->base_url("orders/orders_select/orders_cancel")?>">
 						<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 8%; width:40%;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>

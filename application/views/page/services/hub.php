@@ -4,7 +4,7 @@
         <div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("/index.php/ser_create")?>">
+						<a href="<?php echo $this->config->base_url("ser_create")?>">
 							<button class="btnpushable btnStyle green">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -16,7 +16,7 @@
 				
                 <div class="row">
 					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_edit")?>">
+						<a href="<?php echo $this->config->base_url("services/ser_select/ser_edit")?>">
 							<button class="btnpushable btnStyle blue">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -28,7 +28,7 @@
 
                 <div class="row">
 					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_delete")?>">
+						<a href="<?php echo $this->config->base_url("services/ser_select/ser_delete")?>">
 							<button class="btnpushable btnStyle red">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -40,7 +40,7 @@
 
                 <div class="row">
 					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_desc")?>">
+						<a href="<?php echo $this->config->base_url("services/ser_select/ser_desc")?>">
 							<button class="btnpushable btnStyle cyan">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

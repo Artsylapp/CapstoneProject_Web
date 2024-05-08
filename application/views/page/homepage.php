@@ -4,7 +4,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<a href="<?php echo $this->config->base_url("/index.php/accounts")?>">
+						<a href="<?php echo $this->config->base_url("accounts")?>">
 							<button class="btnpushable btnMenu blue">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -14,7 +14,7 @@
 					</div>
 
 					<div class="col-md-6">
-					<a href="<?php echo $this->config->base_url("/index.php/services")?>">
+					<a href="<?php echo $this->config->base_url("services")?>">
 						<button class="btnpushable btnMenu cyan">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
@@ -26,7 +26,7 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<a href="<?php echo $this->config->base_url("/index.php/orders")?>">
+						<a href="<?php echo $this->config->base_url("orders")?>">
 						<button class="btnpushable btnMenu green">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
@@ -36,7 +36,7 @@
 					</div>
 						
 					<div class="col-md-6">
-						<a href="<?php echo $this->config->base_url("/index.php/records")?>">
+						<a href="<?php echo $this->config->base_url("records")?>">
 							<button class="btnpushable btnMenu red">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

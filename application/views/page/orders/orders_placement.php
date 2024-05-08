@@ -17,27 +17,8 @@
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <a href="">
-                                        <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
-                                            <span class="btnshadow"></span>
-                                            <span class="btnedge"></span>
-                                            <span class="btnfront">
-                                                <p>ROOM</p>
-                                                <p>STATUS</p>
-                                            </span>
-                                        </button>
-                                    </a>
-
-                                    <a href="">
-                                        <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
-                                            <span class="btnshadow"></span>
-                                            <span class="btnedge"></span>
-                                            <span class="btnfront">
-                                                <p>ROOM</p>
-                                                <p>STATUS</p>
-                                            </span>
-                                        </button>
-                                    </a>
+                                    
+                                <!-- Use for each loop to display ongoing orders -->
 
                                     <a href="">
                                         <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
@@ -52,27 +33,8 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <a href="">
-                                        <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
-                                            <span class="btnshadow"></span>
-                                            <span class="btnedge"></span>
-                                            <span class="btnfront">
-                                                <p>CHAIR</p>
-                                                <p>STATUS</p>
-                                            </span>
-                                        </button>
-                                    </a>
-
-                                    <a href="">
-                                        <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
-                                            <span class="btnshadow"></span>
-                                            <span class="btnedge"></span>
-                                            <span class="btnfront">
-                                                <p>CHAIR</p>
-                                                <p>STATUS</p>
-                                            </span>
-                                        </button>
-                                    </a>
+                                    
+                                <!-- Use for each loop to display ongoing orders -->
 
                                     <a href="">
                                         <button class="btnpushable btnStyle cyan" style="text-align: left; width:80%;">
@@ -91,7 +53,7 @@
 						
                         </div>
 
-						<a href="<?php echo $this->config->base_url("/index.php/orders_assign")?>">
+						<a href="<?php echo $this->config->base_url("orders_assign")?>">
 							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -99,7 +61,7 @@
 							</button>
 						</a>
 
-                        <a href="<?php echo $this->config->base_url("/index.php/orders")?>">
+                        <a href="<?php echo $this->config->base_url("orders")?>">
 							<button class="btnpushable btnStyle green" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

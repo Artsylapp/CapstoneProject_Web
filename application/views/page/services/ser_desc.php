@@ -16,7 +16,7 @@
 
                     </div>
 
-					<a href="<?php echo $this->config->base_url("/index.php/services/ser_select/ser_desc")?>">
+					<a href="<?php echo $this->config->base_url("services/ser_select/ser_desc")?>">
 						<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>

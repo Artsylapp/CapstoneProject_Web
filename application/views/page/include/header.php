@@ -20,7 +20,7 @@
                 <li>
                     <div style="margin-right: 10px; width: 75px; height: 75px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
                         <!-- Placeholder Circle -->
-                        <a href="<?php echo $this->config->base_url("/index.php/home")?>" style="margin: 0; line-height: 75px; font-size:10px">VIAMM ICON</a>
+                        <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">VIAMM ICON</a>
                     </div>
                 </li>
             </ul>
@@ -35,7 +35,7 @@
             <li>
                 <div style="margin-right: 10px; width: 75px; height: 75px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
                     <!-- Placeholder Circle -->
-                    <a href="<?php echo $this->config->base_url("/index.php/user")?>" style="margin: 0; line-height: 75px; font-size:10px">USER</a>
+                    <a href="<?php echo $this->config->base_url("user")?>" style="margin: 0; line-height: 75px; font-size:10px">USER</a>
                 </div>
             </li>
         </ul>

@@ -9,16 +9,16 @@
 
 						<!-- use for each loop to get everydata and display it as a list -->
 
-						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
+						<!-- To submit data just use segment like base_url("ser_edit/segment(3)") maybe using get function-->
 						
-						<a href="<?php echo $this->config->base_url("/index.php/$selection_mode")?>">
+						<a href="<?php echo $this->config->base_url("$selection_mode")?>">
 							<button type="button" class="btn btn-primary" style="width: 100%; text-align: center; padding: 2%; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; font-size: 24px; color: #000000; margin-bottom:2%; text-align: left;">
                                 <p>ORDER NUMBER: XX</p>
 								<p>TOTAL: XX.XX</p>
 							</button>
 						</a>
 
-						<a href="<?php echo $this->config->base_url("/index.php/orders")?>">
+						<a href="<?php echo $this->config->base_url("orders")?>">
 							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;" >
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

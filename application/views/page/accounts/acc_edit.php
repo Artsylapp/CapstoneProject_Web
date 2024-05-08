@@ -9,7 +9,7 @@
 
 					<h1 style="padding-left:1%; font-size:50px; font-weight:900">EDIT ACCOUNT</h1>
 				
-                    <form action="">
+                    <form action="<?php echo $this->config->base_url("") ?>">
 
                         <div class="form-group" style="align-content:left;">
                             <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="NAME" value="PRE-FILLED NAME" required/>
@@ -29,7 +29,7 @@
                         </div>
 
                     </form>
-						<a href="<?php echo $this->config->base_url("/index.php/accounts/acc_select/acc_edit")?>">
+						<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_edit")?>">
 							<button class="btnpushable btnStyle red" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
