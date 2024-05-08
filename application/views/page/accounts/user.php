@@ -15,7 +15,7 @@
                 </div>
                 <div style="margin:25px; margin-top:75px">
                     <h1>SWITCH USERS</h1>
-                    <a href="<?php echo $this->config->base_url("/index.php/home")?>">
+                    <a href="<?php echo $this->config->base_url("home")?>">
 						<button class="btnpushable btnStyle green ttsh" name="CONFIRM">
 						    <span class="btnshadow"></span>
 							<span class="btnedge"></span>

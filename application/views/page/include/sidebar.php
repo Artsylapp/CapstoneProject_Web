@@ -17,7 +17,7 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-left: auto; width: 350px;">
             <div style="align-items: center; width: 125px; height: 125px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
                 <!-- Placeholder Circle -->
-                <a href="<?php echo $this->config->base_url("/index.php/home")?>" style="margin: 0; line-height: 75px; font-size:10px">HOME BUTTON</a>
+                <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">HOME BUTTON</a>
             </div>
             <div style="width: 120px; height: 120px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa; margin-left:25%;">
                 <!-- Placeholder Circle -->

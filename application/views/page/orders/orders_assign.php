@@ -9,7 +9,7 @@
 
 						<!-- use for each loop to get everydata and display it as a list -->
 
-						<!-- To submit data just use segment like base_url("/index.php/ser_edit/segment(3)") maybe using get function-->
+						<!-- To submit data just use segment like base_url("ser_edit/segment(3)") maybe using get function-->
 
 						<!-- PROBABLY GOING TO USE JAVASCRIPT TO ADD TO A LIST -->
 						
@@ -24,7 +24,7 @@
 							</button>
 						</a>
 
-						<a href="<?php echo $this->config->base_url("/index.php/orders_create")?>">
+						<a href="<?php echo $this->config->base_url("orders_create")?>">
 							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>
@@ -32,7 +32,7 @@
 							</button>
 						</a>
 
-                        <a href="<?php echo $this->config->base_url("/index.php/orders_placement")?>">
+                        <a href="<?php echo $this->config->base_url("orders_placement")?>">
 							<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

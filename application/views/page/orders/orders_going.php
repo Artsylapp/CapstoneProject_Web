@@ -57,7 +57,7 @@
 
                 </div>
                 <div class="" style="">
-                    <a href="<?php echo $this->config->base_url("/index.php/orders/orders_select/orders_going")?>">
+                    <a href="<?php echo $this->config->base_url("orders/orders_select/orders_going")?>">
 						<button class="btnpushable btnStyle red ttsh" name="RETURN" style="width:50%; margin-left:25%">
 							<span class="btnshadow"></span>
 							<span class="btnedge"></span>
