@@ -24,6 +24,7 @@ class Services extends CI_Controller {
     {
         $info = array(
             'title' => 'Creating Services',
+            'selection_mode' => $this->uri->segment(3),
         );
 
 
@@ -94,37 +95,12 @@ class Services extends CI_Controller {
         $mode = $this->uri->segment(3);
         $info = array(
             'title' => 'Edit Services',
-            'selection_mode' => $mode,
+            'selection_mode' => $this->uri->segment(3),
         );
-
-        
-
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_select');
         $this->load->view('page/include/footer');
     }
 
-    public function ser_select_delete() //services - select delete
-    {   
-        $info = array(
-            'title' => 'Delete Services',
-        );
-
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_select_delete');
-        $this->load->view('page/include/footer');
-    }
-
-    public function ser_select_desc() //services - select desc
-    {
-        $info = array(
-            'title' => 'Services Description',
-        ); 
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_select_desc');
-        $this->load->view('page/include/footer');
-    }
 }
