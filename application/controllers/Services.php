@@ -50,8 +50,7 @@ class Services extends CI_Controller {
 
     public function ser_edit() //services - edit service
     {   
-        $item = $this->uri->segment(3);
-        $data = $this->Service_model->getService($item);
+        $data = $this->Service_model->getService($this->uri->segment(3));
 
         $info = array(
             'title' => 'Edit Services',
@@ -63,6 +62,7 @@ class Services extends CI_Controller {
         $this->load->view('page/services/ser_edit');
         $this->load->view('page/include/footer');
 
+        // echo"<pre>";
         // print_r($data);
     }
 

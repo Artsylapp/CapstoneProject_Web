@@ -9,14 +9,14 @@
 
 					<h1 style="padding-left:1%; font-size:50px; font-weight:900">EDIT ACCOUNT</h1>
 				
-                    <form action="<?php echo $this->config->base_url("") ?>">
+                    <form action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3))?>" method="POST">
 
                         <div class="form-group" style="align-content:left;">
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="NAME" value="PRE-FILLED NAME" required/>
+                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="NAME" value="<?php echo $accounts->accounts_tbl_name ?>" name="update_Account" required/>
 
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="ADDRESS" value="PRE-FILLED ADDRESS" required/>
+                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="ADDRESS" value="<?php echo $accounts->accounts_tbl_address ?>" name="update_Address" required/>
 
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" value="PRE-FILLED CONTACT" required/>
+                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" value="<?php echo $accounts->accounts_tbl_contact ?>" name="update_Contact" required/>
 
 							<div>
 								<button type="submit" class="btnpushable btnStyle green ttsh" style="margin-left: 1%; width:40%;" name="CONFIRM">

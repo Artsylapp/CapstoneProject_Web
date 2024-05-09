@@ -5,7 +5,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<a href="<?php echo $this->config->base_url("acc_create")?>">
-							<button class="btnpushable btnStyle green ttsh" name="CREATE ACCOUNTS">
+							<button class="btnpushable btnStyle green ttsh" name="CREATE ACCOUNT">
 							<span class="btnshadow"></span>
 								<span class="btnedge"></span>
 								<span class="btnfront">CREATE ACCOUNT</span>
