@@ -9,29 +9,41 @@
 
 					<h1 style="padding-left:1%; font-size:50px; font-weight:900">DELETE ACCOUNT</h1>
 				
-                    <form action="">
+                    <form action="<?php echo $this->config->base_url("accounts/acc_remove/" . $this->uri->segment(3)) ?>" method="POST">
 
-                        <div class="form-group" style="align-content:left;">
-                            
-                        <h1 style="padding-left:1%;">NAME: EMPLOYEE</h1>
+						<?php
+							$name = "NAME: " . $accounts->accounts_tbl_name;
+							$address = "ADDRESS: " . $accounts->accounts_tbl_address;
+							$contact = "CONTACT: " . $accounts->accounts_tbl_contact;
+							if($accounts->accounts_tbl_empType == 1){
+								$type = "TYPE: ADMIN";
+							}else if($accounts->accounts_tbl_empType == 2){
+								$type = "TYPE: MASSEUR";
+							}else{
+								$type = "TYPE: Unapplicable";
+							}
+						?>
 
-                        <h1 style="padding-left:1%;">ADDRESS: ADDRESS HERE</h1>
+                        <div class="form-group ttsh" style="align-content:left;" data1="<?php echo $name ?>" data2="<?php echo $address ?>" data3="<?php echo $contact ?>" data4="<?php $type ?>">
 
-                        <h1 style="padding-left:1%;">CONTACT: XXXX-XXX-XXXX</h1>
+							<h1 style="padding-left:1%;"><?php echo $name ?></h1>
 
-                        <h1 style="padding-left:1%;">TYPE: CASHIER</h1>
+							<h1 style="padding-left:1%;"><?php echo $address ?></h1>
 
-							<div>
-								<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
-									<span class="btnshadow"></span>
-									<span class="btnedge"></span>
-									<span class="btnfront">CONFIRM</span>
-								</button>
-							</div>
+							<h1 style="padding-left:1%;"><?php echo $contact ?></h1>
 
-                        </div>
+							<h1 style="padding-left:1%;"><?php echo $type ?></h1>
+
+						</div>
+
+						<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
+							<span class="btnshadow"></span>
+							<span class="btnedge"></span>
+							<span class="btnfront">CONFIRM</span>
+						</button>
 
                     </form>
+
 						<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_delete")?>">
 							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>

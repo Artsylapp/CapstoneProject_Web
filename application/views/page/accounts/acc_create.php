@@ -9,17 +9,21 @@
 
 					<h1 style="padding-left:1%; font-size:50px; font-weight:900">NEW ACCOUNT</h1>
 				
-                    <form action="">
+                    <form action="<?php echo $this->config->base_url("acc_add") ?>" method="POST">
 
                         <div class="form-group" style="align-content:left;">
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="NAME" required/>
+                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="Account Name" name="create_Account" required/>
 
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="ADDRESS" required/>
+                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="ADDRESS" name="create_Address" required/>
 
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" required/>
+                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" name="create_Contact" required/>
 
-                            <label style="transform: scale(2); margin-right: 10%; margin-left: 5%; margin-top: 3%; margin-bottom: 3%;" class="radio-inline"><input type="radio" name="optradio" checked>Option 1</label>
-							<label style="transform: scale(2); margin-right: 10%; height: auto; margin-top: 3%; margin-bottom: 3%;" class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+							<label style="transform: scale(2); margin-right: 10%; margin-left: 5%; margin-top: 3%; margin-bottom: 3%;" class="radio-inline">
+								<input type="radio" name="optradio" value="1" checked>Admin
+							</label>
+							<label style="transform: scale(2); margin-right: 10%; height: auto; margin-top: 3%; margin-bottom: 3%;" class="radio-inline">
+								<input type="radio" name="optradio" value="2">Masseur
+							</label>
 
 							<div>
 								<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">

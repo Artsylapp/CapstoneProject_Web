@@ -20,7 +20,7 @@
 						<h1 class="ttsh" style="padding-left:1%;" name="<?php echo $price ?>"><?php echo $price ?></h1>
                     </div> -->
 
-					<div class="form-group ttsh" style="align-content:left;" data-type="<?php echo $type ?>" data-desc="<?php echo $desc ?>" data-price="<?php echo $price ?>">
+					<div class="form-group ttsh" style="align-content:left;" data1="<?php echo $type ?>" data2="<?php echo $desc ?>" data3="<?php echo $price ?>">
 						<h1 style="padding-left:1%;" name="<?php echo $type ?>"><?php echo $type ?></h1>
 						<h1 style="padding-left:1%;" name="<?php echo $desc ?>"><?php echo $desc ?></h1>
 						<h1 style="padding-left:1%;" name="<?php echo $price ?>"><?php echo $price ?></h1>

@@ -20,7 +20,7 @@
 									$price = "ervice Price: " . $service->services_tbl_price;
 								?>
 
-								<button class="btnpushable btnStyle cyan ttsh" style="color: black;" data-type="<?php echo $type ?>" data-desc="<?php echo $desc ?>" data-price="<?php echo $price ?>">
+								<button class="btnpushable btnStyle cyan ttsh" style="color: black;" data1="<?php echo $type ?>" data2="<?php echo $desc ?>" data3="<?php echo $price ?>">
 									<span class="btnshadow"></span>
 									<span class="btnedge"></span>
 									<span class="btnfront">

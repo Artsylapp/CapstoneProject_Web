@@ -19,16 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set a new hover timeout for 1 second (adjust as needed)
             hoverTimeout = setTimeout(() => {
                 var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
-                var type = ttsh.getAttribute('data-type');
-                var desc = ttsh.getAttribute('data-desc');
-                var price = ttsh.getAttribute('data-price');
+                var data1 = ttsh.getAttribute('data1');
+                var data2 = ttsh.getAttribute('data2');
+                var data3 = ttsh.getAttribute('data3');
+                var data4 = ttsh.getAttribute('data4');
                 var name = ttsh.getAttribute('name');
                 var textToSpeak;
 
                 voices.forEach((voice) => {
                     if (voice.name === selectedVoiceName) {
-                        if (type && desc && price) {
-                            textToSpeak = type + ", " + desc + ", " + price;
+                        if (data1 && data2 && data3) {
+                            textToSpeak = data1 + ", " + data2 + ", " + data3;
+                        } else if (data1 && data2 && data3 && data4) {
+                            textToSpeak = data1 + ", " + data2 + ", " + data3 + ", " + data4;
                         } else {
                             textToSpeak = name;
                         }
@@ -61,16 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
         voiceList.selectedIndex = selectedIndex;
     }
 
-    // List hover description tts
+    // List hover data2ription tts
     function speakText() {
-        var type = this.getAttribute('data-type');
-        var desc = this.getAttribute('data-desc');
-        var price = this.getAttribute('data-price');
+        var data1 = this.getAttribute('data1');
+        var data2 = this.getAttribute('data2');
+        var data3 = this.getAttribute('data3');
+        var data4 = this.getAttribute('data4');
         var name = this.getAttribute('name');
         var textToSpeak;
     
-        if (type && desc && price) {
-            textToSpeak = type + ", " + desc + ", " + price;
+        if (data1 && data2 && data3) {
+            textToSpeak = data1 + ", " + data2 + ", " + data3;
+        } else if (data1 && data2 && data3 && data4) {
+            textToSpeak = data1 + ", " + data2 + ", " + data3 + ", " + data4;
         } else {
             textToSpeak = name;
         }

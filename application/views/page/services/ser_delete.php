@@ -11,22 +11,25 @@
 				
                     <form action="<?php echo $this->config->base_url("services/ser_remove/" . $this->uri->segment(3))?>">
 
-                        <div class="form-group" style="align-content:left;">
-                        <h1 style="padding-left:1%;">Service Type: <?php echo $services->services_tbl_name ?></h1>
+						<?php
+							$type = "Service Type: " . $services->services_tbl_name;
+							$description = "Service Description: " . $services->services_tbl_description;
+							$price = "Service Price: " . $services->services_tbl_price;
+						?>
 
-                        <h1 style="padding-left:1%;">Service Description: <?php echo $services->services_tbl_description ?></h1>
+                        <div class="form-group ttsh" style="align-content:left;" data1="<?php echo $type ?>" data2="<?php echo $description ?>" data3="<?php echo $price?>">
+							<h1 style="padding-left:1%;"><?php echo $type ?></h1>
 
-                        <h1 style="padding-left:1%;">Service Price: <?php echo $services->services_tbl_price ?></h1>
+							<h1 style="padding-left:1%;"><?php echo $description ?></h1>
 
-							<div>
-								<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
-									<span class="btnshadow"></span>
-									<span class="btnedge"></span>
-									<span class="btnfront">CONFIRM</span>
-								</button>
-							</div>
+							<h1 style="padding-left:1%;"><?php echo $price ?></h1>
+						</div>	
 
-                        </div>
+						<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
+							<span class="btnshadow"></span>
+							<span class="btnedge"></span>
+							<span class="btnfront">CONFIRM</span>
+						</button>
 
                     </form>
 
