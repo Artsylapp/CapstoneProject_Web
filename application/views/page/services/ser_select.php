@@ -14,15 +14,21 @@
 
 							<a href="<?php echo $this->config->base_url("services/$selection_mode/" . $service->services_tbl_id)?>">
 
-									<button class="btnpushable btnStyle cyan ttsh" style="color: black;">
-										<span class="btnshadow"></span>
-										<span class="btnedge"></span>
-										<span class="btnfront">
-											<p>Service Type: <?php echo $service->services_tbl_name ?></p>
-											<p>Service Description: <?php echo $service->services_tbl_description ?></p>
-											<p>Service Price: <?php echo $service->services_tbl_price ?></p>
-										</span>
-									</button>
+								<?php 
+									$type = "Service Type: " . $service->services_tbl_name;
+									$desc = "Service Description: " . $service->services_tbl_description;
+									$price = "ervice Price: " . $service->services_tbl_price;
+								?>
+
+								<button class="btnpushable btnStyle cyan ttsh" style="color: black;" data-type="<?php echo $type ?>" data-desc="<?php echo $desc ?>" data-price="<?php echo $price ?>">
+									<span class="btnshadow"></span>
+									<span class="btnedge"></span>
+									<span class="btnfront">
+										<p><?php echo $type ?></p>
+										<p><?php echo $desc ?></p>
+										<p>S<?php echo $price ?></p>
+									</span>
+								</button>
 							</a>
 
 						<?php endforeach; ?>

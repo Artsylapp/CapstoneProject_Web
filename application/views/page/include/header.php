@@ -9,6 +9,7 @@
     <title>VIAMM | <?php echo $title; ?></title>
 
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Styless.css'); ?>">
+    <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>
 
 </head>
 <body>
