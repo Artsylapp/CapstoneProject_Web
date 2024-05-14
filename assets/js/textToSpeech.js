@@ -28,11 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 voices.forEach((voice) => {
                     if (voice.name === selectedVoiceName) {
-                        if (data1 && data2 && data3) {
+
+
+                        if (data1) {
                             textToSpeak = data1 + ", " + data2 + ", " + data3;
+                        } else if (data1 && data2 && data3) {
+                            textToSpeak = data1 + ", " + data2 + ", " + data3 + ", " + data4;
                         } else if (data1 && data2 && data3 && data4) {
                             textToSpeak = data1 + ", " + data2 + ", " + data3 + ", " + data4;
-                        } else {
+                        }
+                         else {
                             textToSpeak = name;
                         }
                     }
@@ -40,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var toSpeak = new SpeechSynthesisUtterance(textToSpeak);
                 synth.speak(toSpeak);
-            }, 250); // Adjust the duration as needed
+            }, 500); // Adjust the duration as needed
         });
 
         // Clear the hover timeout if mouse leaves the button before the timeout
@@ -49,20 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         synth.cancel();
         });
     });
-
-    function populateVoices() {
-        voices = synth.getVoices();
-        var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
-        voiceList.innerHTML = '';
-        voices.forEach((voice) => {
-            var listItem = document.createElement('option');
-            listItem.textContent = voice.name;
-            listItem.setAttribute('data-lang', voice.lang);
-            listItem.setAttribute('data-name', voice.name);
-            voiceList.appendChild(listItem);
-        });
-        voiceList.selectedIndex = selectedIndex;
-    }
 
     // List hover data2ription tts
     function speakText() {
@@ -85,14 +76,31 @@ document.addEventListener('DOMContentLoaded', function() {
         window.speechSynthesis.speak(msg);
     }
     
-    var buttons = document.querySelectorAll('.btnpushable.ttsh');
+    /*
+    var buttons = document.querySelectorAll('.ttsh');
     buttons.forEach(function(button) {
         button.addEventListener('mouseover', speakText);
     });
 
-    var divs = document.querySelectorAll('.form-group.ttsh');
+    var divs = document.querySelectorAll('.ttsh');
     divs.forEach(function(div) {
         div.addEventListener('mouseover', speakText);
     });
+    */
+    
+
+    function populateVoices() {
+        voices = synth.getVoices();
+        var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+        voiceList.innerHTML = '';
+        voices.forEach((voice) => {
+            var listItem = document.createElement('option');
+            listItem.textContent = voice.name;
+            listItem.setAttribute('data-lang', voice.lang);
+            listItem.setAttribute('data-name', voice.name);
+            voiceList.appendChild(listItem);
+        });
+        voiceList.selectedIndex = selectedIndex;
+    }
 
 });

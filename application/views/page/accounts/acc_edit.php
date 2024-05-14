@@ -29,7 +29,7 @@
                         </div>
 
                     </form>
-						<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_edit")?>">
+						<a href="<?php echo $this->config->base_url("accounts")?>">
 							<button class="btnpushable btnStyle red ttsh" style="margin-top: 5%; margin-left: 1%; width:40%;" name="CANCEL">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

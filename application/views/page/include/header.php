@@ -6,44 +6,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo $this->config->base_url("assets/css/bootstrap.css")?>"/>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>VIAMM | <?php echo $title; ?></title>
-
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Styless.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Stylesacc.css'); ?>">
     <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>
-
 </head>
-<body>
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid" style="background-color: #41CDB4;">
-        <div class="navbar-header">
-            <ul class="nav navbar-nav">
-                <li>
-                    <div style="margin-right: 10px; width: 75px; height: 75px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
-                        <!-- Placeholder Circle -->
-                        <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">VIAMM ICON</a>
+<body class="text-center">
+    <nav class="navbar navbar-inverse" 
+        style="
+        background-color: #41CDB4;
+        margin-bottom:0px;
+        border-color: #41CDB4;
+        ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">
+                        <button type="button" class="btn btn-image">
+                            <img src="" alt="">
+                        </button>
+                    </a>
+                    <div class="container-fluid header-container">
+                        <select id='voiceList' class="form-control header-select"></select>
                     </div>
-                </li>
-            </ul>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <div style="margin-top:5%;">
-                    <select id='voiceList' style="font-size:18px;"></select> <br><br>
                 </div>
-            </li>
-            <li>
-                <div style="margin-right: 10px; width: 75px; height: 75px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
-                    <!-- Placeholder Circle -->
-                    <p style="margin: 0; line-height: 75px; font-size:10px">SETTINGS</p>
-                </div>
-            </li>
-            <li>
-                <div style="margin-right: 10px; width: 75px; height: 75px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
-                    <!-- Placeholder Circle -->
-                    <a href="<?php echo $this->config->base_url("user")?>" style="margin: 0; line-height: 75px; font-size:10px">USER</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+            </div>
+    </nav>
+
+    <div class="container-fluid" style="margin:0px; padding:0px;">

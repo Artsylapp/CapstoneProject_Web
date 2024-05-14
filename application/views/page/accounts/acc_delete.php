@@ -44,7 +44,7 @@
 
                     </form>
 
-						<a href="<?php echo $this->config->base_url("accounts/acc_select/acc_delete")?>">
+						<a href="<?php echo $this->config->base_url("accounts")?>">
 							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
 								<span class="btnshadow"></span>
 								<span class="btnedge"></span>

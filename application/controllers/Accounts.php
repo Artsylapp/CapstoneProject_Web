@@ -13,8 +13,11 @@ class Accounts extends CI_Controller {
 
 	public function index()
   	{
+		$data = $this->Account_model->getAccounts();
 		$info = array(
-			'title' => 'Accounts',
+			'title' => 'Select Account',
+			'selection_mode' => $this->uri->segment(3),
+			'accounts' => $data,
 		);
 
 		$this->load->view('page/include/header', $info);
@@ -42,19 +45,18 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/acc_side');
+		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_create');
 		$this->load->view('page/include/footer');
 	}
 
 	public function acc_add(){
-
 		
 		$data = array(
 			'accounts_tbl_name' => $this->input->post('create_Account'),
 			'accounts_tbl_address' => $this->input->post('create_Address'),
 			'accounts_tbl_contact' => $this->input->post('create_Contact'),
-			// 'accounts_tbl_type' => $this->input->post('optradio') // 1 = Admin, 2 = Masseur radio button
+			'accounts_tbl_empType' => $this->input->post('optradio') // 1 = Admin, 2 = Masseur radio button
         );
 
 		$this->Account_model->createAccount($data);
@@ -118,21 +120,6 @@ class Accounts extends CI_Controller {
 	{
 		$this->Account_model->deleteAccount($this->uri->segment(3));
 		redirect('Accounts'); // redirect to accounts hub
-	}
-
-	public function acc_select()
-	{
-		$data = $this->Account_model->getAccounts();
-		$info = array(
-			'title' => 'Select Account',
-			'selection_mode' => $this->uri->segment(3),
-			'accounts' => $data,
-		);
-		
-		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
-		$this->load->view('page/accounts/acc_select');
-		$this->load->view('page/include/footer');
 	}
 
 }

@@ -1,57 +1,61 @@
-<div>
-	<div class="col-lg-9">
+<div class="col-xs-10 col-sm-10">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-                    
-				<div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; color: #000000; margin-bottom:5%; border-radius:24px; text-align: left;">
+	<div class="container-fluid">
+		<div class="row">
 
-					<h1 style="padding-left:1%; font-size:50px; font-weight:900">NEW ACCOUNT</h1>
-				
-                    <form action="<?php echo $this->config->base_url("acc_add") ?>" method="POST">
-
-                        <div class="form-group" style="align-content:left;">
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="Account Name" name="create_Account" required/>
-
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="ADDRESS" name="create_Address" required/>
-
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" name="create_Contact" required/>
-
-							<label style="transform: scale(2); margin-right: 10%; margin-left: 5%; margin-top: 3%; margin-bottom: 3%;" class="radio-inline">
-								<input type="radio" name="optradio" value="1" checked>Admin
-							</label>
-							<label style="transform: scale(2); margin-right: 10%; height: auto; margin-top: 3%; margin-bottom: 3%;" class="radio-inline">
-								<input type="radio" name="optradio" value="2">Masseur
-							</label>
-
-							<div>
-								<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
-									<span class="btnshadow"></span>
-									<span class="btnedge"></span>
-									<span class="btnfront">CONFIRM</span>
-								</button>
-							</div>
-
-                        </div>
-
-                    </form>
-
-						<a href="<?php echo $this->config->base_url("accounts")?>">
-							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%; font-size:50px;">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CANCEL</span>
-							</button>
-						</a>
-
-                    </div>
-
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">ACCOUNT CREATION</h1>
+				<h3 style="margin-top: 0px;">Create Account - COMPANY</h3>
 			</div>
+
+
+		</div>
+
+		<div class="row mt-s">
+			
+			<div class="col-sm-11 col-xs-11 box-white">
+
+			<form class="form-horizontal" action="<?php echo $this->config->base_url("acc_add") ?>" method="POST">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="fullname">Fullname:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="fullname" placeholder="Fullname" name="create_Account" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="address">Address:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="address" placeholder="Address" name="create_Address" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="contact">Contact Number:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="contact" placeholder="Contact Number" name="create_Contact" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="sel1">Employee Type:</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="sel1" name="optradio">
+							<option>Admin</option>
+							<option>Masseur</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-2">
+						<button class="btn green-bg menu-btn-m ttsh" name="CONFIRM">
+							<h4>CONFIRM</h4>
+						</button>
+					</div>
+				</div>
+			</form>
+
+			</div>
+
 		</div>
 
 	</div>
 
-	</div>
 </div>
