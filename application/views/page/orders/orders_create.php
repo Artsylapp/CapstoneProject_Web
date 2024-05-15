@@ -1,54 +1,83 @@
-<div>
-	<div class="col-lg-9">
+<div class="col-xs-9 col-sm-9">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-                    
-				<div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #F2F2F2; color: #000000; margin-bottom:5%; border-radius:24px; text-align: left;">
+	<div class="container-fluid">
+		<div class="row">
 
-						<!-- use for each loop to get everydata and display it as a list -->
-
-						<!-- To submit data just use segment like base_url("ser_edit/segment(3)") maybe using get function-->
-						
-						<!-- PROBABLY GOING TO USE JAVASCRIPT TO ADD TO A LIST -->
-
-						<a href="">
-							<button class="btnpushable btnStyle cyan ttsh" name="SERVICE NAME HERE" style="text-align: left;">
-                                <span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">
-									<p>SERVICE NAME</p>
-									<p>DESC</p>
-									<p>PRICE</p>
-								</span>
-							</button>
-						</a>
-
-						<a href="<?php echo $this->config->base_url("orders")?>">
-							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CANCEL</span>
-							</button>
-						</a>
-
-                        <a href="<?php echo $this->config->base_url("orders_assign")?>">
-							<button class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-top: 5%; margin-left: 1%; width:40%;">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CONFIRM</span>
-							</button>
-						</a>
-
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">SELECT SERVICES</h1>
+				<h3 style="margin-top: 0px;">Select Services For Order - COMPANY</h3>
 			</div>
+
+			<div class="col-xs-4 col-sm-4"></div>
+
+			<div class="col-xs-4 col-sm-4 center-item">
+				<a href="<?php echo $this->config->base_url("orders_assign")?>">
+					<button class="btn green-bg menu-btn-m center-item ttsh" name="Proceed to masseur assignment">
+						<h3 class="">CONTINUE</h3>
+					</button>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="row mt-s center-item">
+			
+			<div class="col-sm-12 col-xs-12 box-white">
+
+				<table class="table table-hover" id="acc_table">
+					<thead>
+					<tr>
+						<th>Service Name</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Add</th>
+						<th>Remove</th>
+					</tr>
+					</thead>
+					<tbody>
+
+					<?php foreach($services as $service): ?>
+
+							<?php 
+								$type = $service->services_tbl_name;
+								$desc = $service->services_tbl_description;
+								$price = $service->services_tbl_price;
+							?>
+
+							<tr>
+								<td><?php echo $type?></td>
+								<td><?php echo $desc?></td>
+								<td><?php echo $price?></td>
+								<td class="text-center">
+
+								<a href="">
+									<button class="btn green-bg menu-btn-sm ttsh" name="<?php echo "ADD 1: $type"?>">
+										<h4>ADD</h4>
+									</button>
+								</a>
+
+								</td>
+								<td class="text-center">
+
+								<a href="">
+									<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "REMOVE 1: $type"?>">
+										<h4>REMOVE</h4>
+									</button>
+								</a>
+
+								</td>
+							</tr>
+
+					<?php endforeach; ?>
+
+					
+					</tbody>
+				</table>
+
+			</div>
+
 		</div>
 
 	</div>
 
-	</div>
 </div>
-
-</body>
-</html>

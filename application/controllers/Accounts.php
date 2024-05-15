@@ -9,6 +9,7 @@ class Accounts extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Account_model');
+		$this->load->library('session');
 	}
 
 	public function index()
@@ -16,7 +17,6 @@ class Accounts extends CI_Controller {
 		$data = $this->Account_model->getAccounts();
 		$info = array(
 			'title' => 'Select Account',
-			'selection_mode' => $this->uri->segment(3),
 			'accounts' => $data,
 		);
 
@@ -74,7 +74,7 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/acc_side');
+		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_edit');
 		$this->load->view('page/include/footer');
 
@@ -90,12 +90,11 @@ class Accounts extends CI_Controller {
 			'accounts_tbl_name' => $this->input->post('update_Account'),
 			'accounts_tbl_address' => $this->input->post('update_Address'),
 			'accounts_tbl_contact' => $this->input->post('update_Contact'),
-			// 'accounts_tbl_type' => $this->input->post('optradio') // 1 = Admin, 2 = Masseur radio button
+			'accounts_tbl_empType' => $this->input->post('optradio_update')
 		);
 
 		$this->Account_model->updateAccount($data);
-		redirect('Accounts'); // redirect to accounts hub
-		// print_r($data);
+		redirect('Accounts');
 
 	}
 
@@ -108,7 +107,7 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/acc_delete');
+		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_delete');
 		$this->load->view('page/include/footer');
 

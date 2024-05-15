@@ -97,6 +97,11 @@ body {
     transform: scale(2);
 }
 
+.cancel-btn{
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
 /*FORMS*/
 
 .form-horizontal .form-control {
@@ -122,12 +127,15 @@ body {
 }
 
 .form-horizontal .control-label {
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .form-horizontal .col-sm-offset-2 {
     margin-left: 16.66666667%;
 }
+
+
+
 
 /*BOXES*/
 

@@ -14,10 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         ttsh.addEventListener('mouseenter', () => {
 
             // Stop any existing hover timeout
+
             clearTimeout(hoverTimeout);
 
             // Set a new hover timeout for 1 second (adjust as needed)
             hoverTimeout = setTimeout(() => {
+
+
                 var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
                 var data1 = ttsh.getAttribute('data1');
                 var data2 = ttsh.getAttribute('data2');
@@ -28,16 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 voices.forEach((voice) => {
                     if (voice.name === selectedVoiceName) {
-
-
-                        if (data1) {
+                        if (data1 && data2 && data3) {
                             textToSpeak = data1 + ", " + data2 + ", " + data3;
-                        } else if (data1 && data2 && data3) {
-                            textToSpeak = data1 + ", " + data2 + ", " + data3 + ", " + data4;
                         } else if (data1 && data2 && data3 && data4) {
                             textToSpeak = data1 + ", " + data2 + ", " + data3 + ", " + data4;
-                        }
-                         else {
+                        } else {
                             textToSpeak = name;
                         }
                     }
@@ -54,6 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
         synth.cancel();
         });
     });
+
+    function populateVoices() {
+        voices = synth.getVoices();
+        var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+        voiceList.innerHTML = '';
+        voices.forEach((voice) => {
+            var listItem = document.createElement('option');
+            listItem.textContent = voice.name;
+            listItem.setAttribute('data-lang', voice.lang);
+            listItem.setAttribute('data-name', voice.name);
+            voiceList.appendChild(listItem);
+        });
+        voiceList.selectedIndex = selectedIndex;
+    }
 
     // List hover data2ription tts
     function speakText() {
@@ -76,31 +88,16 @@ document.addEventListener('DOMContentLoaded', function() {
         window.speechSynthesis.speak(msg);
     }
     
-    /*
-    var buttons = document.querySelectorAll('.ttsh');
+    var buttons = document.querySelectorAll('.btnpushable.ttsh');
     buttons.forEach(function(button) {
+        console.log("TALK 2");
         button.addEventListener('mouseover', speakText);
     });
 
-    var divs = document.querySelectorAll('.ttsh');
+    var divs = document.querySelectorAll('.form-group.ttsh');
     divs.forEach(function(div) {
+        console.log("TALK 3");
         div.addEventListener('mouseover', speakText);
     });
-    */
-    
-
-    function populateVoices() {
-        voices = synth.getVoices();
-        var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
-        voiceList.innerHTML = '';
-        voices.forEach((voice) => {
-            var listItem = document.createElement('option');
-            listItem.textContent = voice.name;
-            listItem.setAttribute('data-lang', voice.lang);
-            listItem.setAttribute('data-name', voice.name);
-            voiceList.appendChild(listItem);
-        });
-        voiceList.selectedIndex = selectedIndex;
-    }
 
 });

@@ -5,7 +5,10 @@ class Orders extends CI_Controller {
         /* CONSTRUCTOR */
     public function __construct(){
         parent::__construct();
-
+        $this->load->model('Company_model');
+        $this->load->model('Service_model');
+        $this->load->model('Account_model');
+        $this->load->library('session');
     }
 
     public function index()
@@ -22,8 +25,11 @@ class Orders extends CI_Controller {
 
     public function orders_create()
     {
+        $data['services'] = $this->Service_model->getServices();
+
         $info = array(
-            'title' => 'Orders',
+            'title' => 'Edit Services',
+            'services' => $data['services'],
         );
 
         $this->load->view('page/include/header', $info);
@@ -33,13 +39,16 @@ class Orders extends CI_Controller {
 
     public function orders_assign()
     {
-        $info = array(
-            'title' => 'Orders',
-        );
+        $data = $this->Account_model->getAccounts();
+		$info = array(
+			'title' => 'Select Account',
+			'accounts' => $data,
+		);
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/transaction_side');
         $this->load->view('page/orders/orders_assign');
+        $this->load->library('session');
     }
 
     public function orders_placement()
@@ -71,20 +80,6 @@ class Orders extends CI_Controller {
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/orders/orders_cancel');
-    }
-
-    public function orders_select()
-    {
-        $info = array(
-            'title' => 'Orders',
-        );
-
-        $mode = $this->uri->segment(3);
-		$data['selection_mode'] = $mode;
-
-        $this->load->view('page/include/header', $data, $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/orders/orders_select');
     }
 
 }

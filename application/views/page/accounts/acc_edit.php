@@ -1,49 +1,69 @@
-<div>
-	<div class="col-lg-9">
+<div class="col-xs-10 col-sm-10">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-                    
-				<div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; color: #000000; margin-bottom:5%; border-radius:24px; text-align: left;">
+	<div class="container-fluid">
+		<div class="row">
 
-					<h1 style="padding-left:1%; font-size:50px; font-weight:900">EDIT ACCOUNT</h1>
-				
-                    <form action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3))?>" method="POST">
-
-                        <div class="form-group" style="align-content:left;">
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="NAME" value="<?php echo $accounts->accounts_tbl_name ?>" name="update_Account" required/>
-
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="ADDRESS" value="<?php echo $accounts->accounts_tbl_address ?>" name="update_Address" required/>
-
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="CONTACT" value="<?php echo $accounts->accounts_tbl_contact ?>" name="update_Contact" required/>
-
-							<div>
-								<button type="submit" class="btnpushable btnStyle green ttsh" style="margin-left: 1%; width:40%;" name="CONFIRM">
-									<span class="btnshadow"></span>
-									<span class="btnedge"></span>
-									<span class="btnfront">CONFIRM</span>
-								</button>
-							</div>
-
-                        </div>
-
-                    </form>
-						<a href="<?php echo $this->config->base_url("accounts")?>">
-							<button class="btnpushable btnStyle red ttsh" style="margin-top: 5%; margin-left: 1%; width:40%;" name="CANCEL">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CANCEL</span>
-							</button>
-						</a>
-
-                    </div>
-
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">ACCOUNT EDIT</h1>
+				<h3 style="margin-top: 0px;">Edit Account - COMPANY</h3>
 			</div>
+
+
+		</div>
+
+		<div class="row mt-s">
+			
+			<div class="col-sm-11 col-xs-11 box-white">
+
+			<form class="form-horizontal" action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3))?>" method="POST">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="fullname">Fullname:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $accounts->accounts_tbl_name ?>" name="update_Account" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="address">Address:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="address" placeholder="Address" value="<?php echo $accounts->accounts_tbl_address ?>" name="update_Address" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="contact">Contact Number:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="contact" placeholder="Contact Number" value="<?php echo $accounts->accounts_tbl_contact ?>" name="update_Contact" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="sel1">Employee Type:</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="sel1" name="optradio_update">
+							<option <?php if ($accounts->accounts_tbl_empType == "Admin") { echo "selected"; } ?>>Admin</option>
+							<option <?php if ($accounts->accounts_tbl_empType == "Masseur") { echo "selected"; } ?>>Masseur</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+					<div class="col-sm-12">
+						<button class="btn green-bg menu-btn-m ttsh" name="CONFIRM">
+							<h4>EDIT ACCOUNT</h4>
+						</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
+				<a href="<?php echo $this->config->base_url("accounts")?>">
+					<button class="btn yellow-bg menu-btn-m ttsh" name="CONFIRM">
+						<h4>CANCEL</h4>
+					</button>
+				</a>
+			</div>
+
+			</div>
+
 		</div>
 
 	</div>
 
-	</div>
 </div>

@@ -1,58 +1,83 @@
-<div>
-		<div class="col-lg-9">
+<div class="col-xs-10 col-sm-10">
 
-        <div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("ser_create")?>">
-							<button class="btnpushable btnStyle green ttsh" name="Create Service">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CREATE SERVICE</span>
-							</button>
-						</a>
-					</div>
-				</div>
-				
-                <div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("services/ser_select/ser_edit")?>">
-							<button class="btnpushable btnStyle blue ttsh" name="Edit Service">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">EDIT SERVICE</span>
-							</button>
-						</a>
-					</div>
-				</div>
+	<div class="container-fluid">
+		<div class="row">
 
-                <div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("services/ser_select/ser_delete")?>">
-							<button class="btnpushable btnStyle red ttsh" name="Delete Service">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">DELETE SERVICE</span>
-							</button>
-						</a>
-					</div>
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">SERVICE HUB</h1>
+				<h3 style="margin-top: 0px;">Manage Services - COMPANY</h3>
+			</div>
 
-                <div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("services/ser_select/ser_desc")?>">
-							<button class="btnpushable btnStyle cyan ttsh" name="View Service Description">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">VIEW SERVICE DESCRIPTION</span>
-							</button>
-						</a>
-					</div>
-				</div>
-                
+			<div class="col-xs-4 col-sm-4"></div>
+
+			<div class="col-xs-4 col-sm-4 center-item">
+				<a href="<?php echo $this->config->base_url("ser_create")?>">
+					<button class="btn green-bg menu-btn-m center-item ttsh" name="NEW Service">
+						<h3 class="">NEW SERVICE</h3>
+					</button>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="row mt-s center-item">
+			
+			<div class="col-sm-12 col-xs-12 box-white">
+
+				<table class="table table-hover" id="acc_table">
+					<thead>
+					<tr>
+						<th>Service Name</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+					</thead>
+					<tbody>
+
+					<?php foreach($services as $service): ?>
+
+							<?php 
+								$type = $service->services_tbl_name;
+								$desc = $service->services_tbl_description;
+								$price = $service->services_tbl_price;
+							?>
+
+							<tr>
+								<td><?php echo $type?></td>
+								<td><?php echo $desc?></td>
+								<td><?php echo $price?></td>
+								<td class="text-center">
+
+								<a href="<?php echo $this->config->base_url("services/ser_edit/$service->services_tbl_id")?>">
+									<button class="btn yellow-bg menu-btn-sm ttsh" name="<?php echo "EDIT: $type"?>" style="background-color: #f6c23e;">
+										<h4>EDIT</h4>
+									</button>
+								</a>
+
+								</td>
+								<td class="text-center">
+
+								<a href="<?php echo $this->config->base_url("services/ser_delete/$service->services_tbl_id")?>">
+									<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $type"?>">
+										<h4>DELETE</h4>
+									</button>
+								</a>
+
+								</td>
+							</tr>
+
+					<?php endforeach; ?>
+
+					
+					</tbody>
+				</table>
+
 			</div>
 
 		</div>
 
 	</div>
+
 </div>

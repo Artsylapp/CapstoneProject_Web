@@ -1,51 +1,60 @@
-<div>
-	<div class="col-lg-9">
+<div class="col-xs-10 col-sm-10">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-                    
-				<div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #0097B2; color: #000000; margin-bottom:5%; border-radius:24px; text-align: left;">
+	<div class="container-fluid">
+		<div class="row">
 
-					<h1 style="padding-left:1%; font-size:50px; font-weight:900">EDIT SERVICE</h1>
-				
-                    <form action="<?php echo $this->config->base_url("services/ser_update/" . $this->uri->segment(3)) ?>" method="POST">
-
-                        <div class="form-group" style="align-content:left;">
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="Serivce Type" name="edit_Customer" value="<?php echo $services->services_tbl_name ?>" required/>
-
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="text" class="form-control" placeholder="Service Description" name="edit_Description" value="<?php echo $services->services_tbl_description ?>" required/>
-
-                            <input style="font-size:35px; height: auto; margin-top: 3%; margin-bottom: 3%; color:#000000;" type="number" class="form-control" placeholder="Service Price" name="edit_Price" value="<?php echo $services->services_tbl_price ?>" required/>
-
-							<div>
-								<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
-									<span class="btnshadow"></span>
-									<span class="btnedge"></span>
-									<span class="btnfront">CONFIRM</span>
-								</button>
-							</div>
-
-                        </div>
-
-                    </form>
-
-						<a href="<?php echo $this->config->base_url("services/ser_select/ser_edit")?>">
-
-							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="margin-top: 5%; margin-left: 1%; width:40%;">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CANCEL</span>
-							</button>
-						</a>
-
-                    </div>
-
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">SERVICE EDIT</h1>
+				<h3 style="margin-top: 0px;">Edit Service - COMPANY</h3>
 			</div>
+
+
+		</div>
+
+		<div class="row mt-s">
+			
+			<div class="col-sm-11 col-xs-11 box-white">
+
+			<form class="form-horizontal" action="<?php echo $this->config->base_url("services/ser_update/" . $this->uri->segment(3))?>" method="POST">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="fullname">Service Name:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="fullname" placeholder="Serivce Name" value="<?php echo $services->services_tbl_name ?>" name="edit_Customer" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="address">Description:</label>
+					<div class="col-sm-10">
+					<input type="text" class="form-control" id="address" placeholder="Service Description" value="<?php echo $services->services_tbl_description ?>" name="edit_Description" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="contact">Price:</label>
+					<div class="col-sm-10">
+					<input type="number" class="form-control" id="contact" placeholder="Service Price" value="<?php echo $services->services_tbl_price ?>" name="edit_Price" required>
+					</div>
+				</div>
+				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+					<div class="col-sm-12">
+						<button class="btn green-bg menu-btn-m ttsh" name="confirm edit">
+							<h4>EDIT SERVICE</h4>
+						</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
+				<a href="<?php echo $this->config->base_url("services")?>">
+					<button class="btn yellow-bg menu-btn-m ttsh" name="Cancel">
+						<h4>CANCEL</h4>
+					</button>
+				</a>
+			</div>
+
+			</div>
+
 		</div>
 
 	</div>
 
-	</div>
 </div>

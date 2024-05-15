@@ -5,11 +5,11 @@
 
 			<div class="col-xs-12 col-sm-12">
 				<h1 class="overflow-wrap">DASHBOARD</h1>
-				<h3 style="margin-top: 0px;">Welcome to VIAMM - COMPANY</h3>
+				<h3 style="margin-top: 0px;">Welcome to VIAMM - <?php echo $this->session->userdata('comp_Name') ?></h3>
 			</div>
 
 			<div class="col-xs-4 col-sm-4">
-				<a href="<?php echo $this->config->base_url("accounts")?>">
+				<a href="<?php echo $this->config->base_url("orders")?>">
 					<button class="btn white-bg menu-btn ttsh" name="ORDERING">
 						<h1 class="">ORDERING</h1>
 					</button>
@@ -17,7 +17,7 @@
 			</div>
 
 			<div class="col-xs-4 col-sm-4">
-				<a href="<?php echo $this->config->base_url("accounts")?>">
+				<a href="<?php echo $this->config->base_url("manage_hub")?>">
 					<button class="btn white-bg menu-btn ttsh" name="MANAGEMENT">
 						<h1 class="">MANAGE</h1>
 					</button>
@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="col-xs-4 col-sm-4">
-				<a href="<?php echo $this->config->base_url("accounts")?>">
+				<a href="<?php echo $this->config->base_url("records")?>">
 					<button class="btn white-bg menu-btn ttsh" name="RECORDS">
 						<h1 class="">RECORDS</h1>
 					</button>
