@@ -1,28 +1,37 @@
-<div class="col-lg-3">
-    <div class="profile-sidebar" style="border-style: solid; background-color: #F2F2F2; border-radius: 5px; padding:3%; margin-bottom:10%; display: flex; justify-content: space-between; align-items: center; margin-left: auto; width: 100%;">
-        <div style="display: flex;">
-            <!-- IMAGE DIV -->
-            <div style="width: 175px; height: 175px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
-                <!-- Placeholder Circle -->
-            </div>
+<div class="col-xs-2 col-sm-2" style="
+    background-color: #91E1D9;
+    margin: 0px;
+    ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="sidebar">
 
-            <!-- TEXT DIV -->
-            <div style="margin-left: 20px; display: flex; flex-direction: column; justify-content: center;">
-                <h3 style="margin: 10px;">VIAMM</h3>
-                <h4 style="margin: 5px;">EMPLOYEE NAME</h4>
+                    <div class="row center-item">
+                        <button type="button circle-button" class="btn btn-image" id="sidebar-image">
+                            <img src="" alt="">
+                        </button>
+                    </div>
+
+                    <div class="row center-item">
+                        <h3 class="overflow-wrap">EMPLOYEE NAME</h3>
+                    </div>
+
+                    <div class="row center-item">
+                        <h5 class="overflow-wrap">CONTACT</h5>
+                    </div>
+
+                    <div class="row center-item" style="margin-top: auto;">
+                        <a href="<?php echo $this->config->base_url("accounts")?>">
+                            <button class="btn sidebar-btn ttsh" name="SWITCH ACCOUNTS" style="background-color: #1cc88a;">
+                                SWITCH
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-    <div class="profile-sidebar" style="padding:3%; margin-bottom:10%; margin-top:101%;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-left: auto; width: 350px;">
-            <div style="align-items: center; width: 125px; height: 125px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa;">
-                <!-- Placeholder Circle -->
-                <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">HOME BUTTON</a>
-            </div>
-            <div style="width: 120px; height: 120px; background-color: #ccc; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #555; border: 2px solid #aaa; margin-left:25%;">
-                <!-- Placeholder Circle -->
-                <a style="margin: 0; line-height: 75px; font-size:10px">AUDIO</a>
-            </div>
-        </div>
-    </div>
+
 </div>

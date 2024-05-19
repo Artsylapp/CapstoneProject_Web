@@ -8,6 +8,9 @@ $route['translate_uri_dashes'] = FALSE;
 
   /* Main Home Page */
 $route['home'] = 'Main/index';
+$route['manage_hub'] = 'Main/manage_hub';
+$route['login'] = 'Main/login_page';
+$route['loginAuth'] = 'Main/login_auth';
 
 
     /* Accounts Page */

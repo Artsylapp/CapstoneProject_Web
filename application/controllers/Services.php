@@ -5,13 +5,18 @@ class Services extends CI_Controller {
         /* CONSTRUCTOR */
     public function __construct(){
         parent::__construct();
+        $this->load->model('Company_model');
         $this->load->model('Service_model');
+        $this->load->library('session');
     }
 
     public function index() //services hub
     {
+        $data['services'] = $this->Service_model->getServices();
+
         $info = array(
-            'title' => 'Services',
+            'title' => 'Edit Services',
+            'services' => $data['services'],
         );
 
         $this->load->view('page/include/header', $info);
@@ -24,7 +29,6 @@ class Services extends CI_Controller {
     {
         $info = array(
             'title' => 'Creating Services',
-            'selection_mode' => $this->uri->segment(3),
         );
 
 
@@ -99,44 +103,7 @@ class Services extends CI_Controller {
     public function ser_remove()
     {   
         $this->Service_model->deleteService($this->uri->segment(3));
-        redirect($this->config->base_url("services/ser_select/ser_delete")); //redirect to services selection page
-    }
-
-    public function ser_desc() //services - display service
-    {   
-        // $mode = $this->uri->segment(3);
-        $item = $this->uri->segment(3);
-        $data = $this->Service_model->getService($item);
-
-        $info = array(
-            'title' => 'View Description',
-            // 'selection_mode' => $mode,
-            'services' => $data,
-        );
-
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_desc');
-        $this->load->view('page/include/footer');
-
-        // print_r($data);
-    }
-
-    public function ser_select() //services - selection page
-    {
-        $mode = $this->uri->segment(3);
-        $data['services'] = $this->Service_model->getServices();
-
-        $info = array(
-            'title' => 'Edit Services',
-            'selection_mode' => $mode,
-            'services' => $data['services'],
-        );
-
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
-        $this->load->view('page/services/ser_select');
-        $this->load->view('page/include/footer');
+        redirect($this->config->base_url("services")); //redirect to services selection page
     }
 
 }

@@ -1,53 +1,68 @@
-<div>
-	<div class="col-lg-9">
+<div class="col-xs-10 col-sm-10">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-                    
-				<div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #F2F2F2; color: #000000; margin-bottom:5%; border-radius:24px; text-align: left;">
+	<div class="container-fluid">
+		<div class="row">
 
-					<h1 style="padding-left:1%; font-size:50px; font-weight:900">DELETE SERVICE</h1>
-				
-                    <form action="<?php echo $this->config->base_url("services/ser_remove/" . $this->uri->segment(3))?>">
-
-						<?php
-							$type = "Service Type: " . $services->services_tbl_name;
-							$description = "Service Description: " . $services->services_tbl_description;
-							$price = "Service Price: " . $services->services_tbl_price;
-						?>
-
-                        <div class="form-group ttsh" style="align-content:left;" data1="<?php echo $type ?>" data2="<?php echo $description ?>" data3="<?php echo $price?>">
-							<h1 style="padding-left:1%;"><?php echo $type ?></h1>
-
-							<h1 style="padding-left:1%;"><?php echo $description ?></h1>
-
-							<h1 style="padding-left:1%;"><?php echo $price ?></h1>
-						</div>	
-
-						<button type="submit" class="btnpushable btnStyle green ttsh" name="CONFIRM" style="margin-left: 1%; width:40%;">
-							<span class="btnshadow"></span>
-							<span class="btnedge"></span>
-							<span class="btnfront">CONFIRM</span>
-						</button>
-
-                    </form>
-
-					<a href="<?php echo $this->config->base_url("services/ser_select/ser_delete")?>">
-							<button class="btnpushable btnStyle red ttsh" name="CANCEL" style="width: 40%; margin-left: 1%; font-size: 50px;">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CANCEL</span>
-							</button>
-						</a>
-
-                    </div>
-
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">ACCOUNT DELETE</h1>
+				<h3 style="margin-top: 0px;">Delete Account - COMPANY</h3>
 			</div>
+
+
+		</div>
+
+		<div class="row mt-s">
+			
+			<div class="col-sm-11 col-xs-11 box-white">
+
+			<?php
+				$name = $services->services_tbl_name;
+				$description = $services->services_tbl_description;
+				$price = $services->services_tbl_price;
+			?>
+
+			<form class="form-horizontal" action="<?php echo $this->config->base_url("services/ser_remove/" . $this->uri->segment(3))?>" method="POST">
+				<div class="form-group">
+					<div class="col-sm-offset-1 col-sm-6" style="
+					display: flex;
+    				justify-content: left;
+					">
+						<h1>Service Name: <?php echo $name?></h1>
+					</div>
+					<div class="col-sm-offset-1 col-sm-6" style="
+					display: flex;
+    				justify-content: left;
+					">
+						<h1>Description: <?php echo $description?></h1>
+					</div>
+					<div class="col-sm-offset-1 col-sm-6" style="
+					display: flex;
+    				justify-content: left;
+					">
+						<h1>Price: <?php echo $price?></h1>
+					</div>
+				</div>
+				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+					<div class="col-sm-12">
+						<button class="btn red-bg menu-btn-m ttsh" name="confirm delete">
+							<h4>DELETE SERVICE</h4>
+						</button>
+					</div>
+				</div>
+			</form>
+
+			<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
+				<a href="<?php echo $this->config->base_url("services")?>">
+					<button class="btn yellow-bg menu-btn-m ttsh" name="cancel">
+						<h4>CANCEL</h4>
+					</button>
+				</a>
+			</div>
+
+			</div>
+
 		</div>
 
 	</div>
 
-	</div>
 </div>

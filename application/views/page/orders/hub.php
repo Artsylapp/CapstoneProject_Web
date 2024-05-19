@@ -1,45 +1,87 @@
-<div>
-		<div class="col-lg-9">
+<div class="col-xs-10 col-sm-10">
 
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("orders_create")?>">
-							<button class="btnpushable btnStyle cyan ttsh" name="NEW ORDER">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">NEW ORDER</span>
-							</button>
-						</a>
-					</div>
-				</div>
+	<div class="container-fluid">
+		<div class="row">
 
-                <div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("orders/orders_select/orders_going")?>">
-							<button class="btnpushable btnStyle blue ttsh" name="VIEW ORDER">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">VIEW ORDER</span>						
-							</button>
-					</div>
-				</div>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="overflow-wrap">ORDERS HUB</h1>
+				<h3 style="margin-top: 0px;">Manage Orders - COMPANY</h3>
+			</div>
 
-                <div class="row">
-					<div class="col-lg-12">
-						<a href="<?php echo $this->config->base_url("orders/orders_select/orders_cancel")?>">
-							<button class="btnpushable btnStyle red ttsh" name="CANCEL ORDER">
-								<span class="btnshadow"></span>
-								<span class="btnedge"></span>
-								<span class="btnfront">CANCEL ORDER</span>
-							</button>
-						</a>
-					</div>
-				</div>
+			<div class="col-xs-4 col-sm-4"></div>
+
+			<div class="col-xs-4 col-sm-4 center-item">
+				<a href="<?php echo $this->config->base_url("orders_create")?>">
+					<button class="btn green-bg menu-btn-m center-item ttsh" name="NEW ORDER">
+						<h3 class="">NEW ORDER</h3>
+					</button>
+				</a>
+			</div>
+
+		</div>
+
+		<div class="row mt-s center-item">
+			
+			<div class="col-sm-12 col-xs-12 box-white">
+
+				<table class="table table-hover" id="acc_table">
+					<thead>
+					<tr>
+						<th>Order Number</th>
+						<th>Status</th>
+						<th>Total Price</th>
+						<th>Cancel</th>
+					</tr>
+					</thead>
+					<tbody>
+
+					<!-- THIS IS FOR ORDERS
+						
+					<?php foreach($accounts as $account):  ?>
+
+							<?php 
+								$name = $account->accounts_tbl_name;
+								$contact = $account->accounts_tbl_contact;
+								$type = $account->accounts_tbl_empType;
+							?>
+
+							<tr>
+								<td><?php echo $name?></td>
+								<td><?php echo $contact?></td>
+								<td><?php echo $type?></td>
+								<td class="text-center">
+
+								<a href="<?php echo $this->config->base_url("accounts/acc_edit/$account->accounts_tbl_id")?>">
+									<button class="btn yellow-bg menu-btn-sm ttsh" name="<?php echo "EDIT: $name"?>" style="background-color: #f6c23e;">
+										<h4>EDIT</h4>
+									</button>
+								</a>
+
+								</td>
+								<td class="text-center">
+
+								<a href="<?php echo $this->config->base_url("accounts/acc_delete/$account->accounts_tbl_id")?>">
+									<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $name"?>">
+										<h4>DELETE</h4>
+									</button>
+								</a>
+
+								</td>
+							</tr>
+
+					<?php endforeach; ?>
+
+					-->
+					
+
+					
+					</tbody>
+				</table>
 
 			</div>
 
 		</div>
 
 	</div>
+
 </div>

@@ -14,10 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         ttsh.addEventListener('mouseenter', () => {
 
             // Stop any existing hover timeout
+
             clearTimeout(hoverTimeout);
 
             // Set a new hover timeout for 1 second (adjust as needed)
             hoverTimeout = setTimeout(() => {
+
+
                 var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
                 var data1 = ttsh.getAttribute('data1');
                 var data2 = ttsh.getAttribute('data2');
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var toSpeak = new SpeechSynthesisUtterance(textToSpeak);
                 synth.speak(toSpeak);
-            }, 250); // Adjust the duration as needed
+            }, 500); // Adjust the duration as needed
         });
 
         // Clear the hover timeout if mouse leaves the button before the timeout
@@ -87,11 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     var buttons = document.querySelectorAll('.btnpushable.ttsh');
     buttons.forEach(function(button) {
+        console.log("TALK 2");
         button.addEventListener('mouseover', speakText);
     });
 
     var divs = document.querySelectorAll('.form-group.ttsh');
     divs.forEach(function(div) {
+        console.log("TALK 3");
         div.addEventListener('mouseover', speakText);
     });
 

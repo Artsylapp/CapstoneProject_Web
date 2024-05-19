@@ -5,7 +5,8 @@ class Records extends CI_Controller {
         /* CONSTRUCTOR */
     public function __construct(){
         parent::__construct();
-
+		$this->load->model('Company_model');
+		$this->load->library('session');
     }
 
 	public function index()
