@@ -19,7 +19,6 @@ table th{
 }
 
 .sidebar {
-    background-color: #91E1D9;
     padding: 20px;
     margin-top: 0px;
     height: 91.5vh;
@@ -134,13 +133,29 @@ body {
     margin-left: 16.66666667%;
 }
 
+/*FONT COLOR*/
 
-
+.white-txt{
+    color:white;
+}
 
 /*BOXES*/
 
+.button-container {
+    margin: 0;
+    padding: 0;
+    border-radius: 25px;
+}
+
+.button-container .row {
+    border-radius: 25px;
+    background-color: hsla(175, 57%, 73%, 0.589);
+    margin: 0;
+    padding: 20px 0;
+}
+
 .box-white{
-    border-radius: 15px;
+    border-radius: 45px;
     background-color: white;
     padding-left: 0%;
     padding-right: 1%;
@@ -169,6 +184,7 @@ body {
 
 .menu-btn {
     color: #272626;
+    border-radius: 25px;
     width: 22vw;
     height: 25vh;
     justify-content: center;
