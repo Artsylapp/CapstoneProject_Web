@@ -1,5 +1,14 @@
 <div class="col-lg-3">
-<div class="profile-sidebar" style="border-style: solid; background-color: #F2F2F2; border-radius: 5px; padding:3%; margin-bottom:10%; display: flex; justify-content: space-between; align-items: center; margin-left: auto; width: 100%;">
+<div class="profile-sidebar" style="
+border-style: solid;
+background-color: hsla(22, 61%, 31%, 0.7); 
+border-radius: 5px; 
+padding:3%; margin-bottom:10%; 
+display: flex; 
+justify-content: space-between; 
+align-items: center;
+margin-left: auto; 
+width: 100%;">
         <div style="display: flex;">
 
             <!-- IMAGE DIV -->

@@ -24,7 +24,7 @@
 <body class="text-center">
     <nav class="navbar navbar-inverse" 
         style="
-        background-color: hsl(174.86, 30.43%, 30.9%);
+        background-color: hsla(22, 61%, 31%, 1);
         border-style:none;
         margin-bottom:0px;
         ">
@@ -56,5 +56,9 @@
             
     </nav>
 
-    <div class="container-fluid" style="margin:0px; padding:0px; background-image: url('<?php echo $this->config->base_url("assets/images/background.jpg")?>'); background-size: cover;
+    <div class="container-fluid" style="
+    margin:0px; 
+    padding:0px; 
+    background-image: url('<?php echo $this->config->base_url("assets/images/background.avif")?>'); 
+    background-size: cover;
     background-repeat: no-repeat;">
