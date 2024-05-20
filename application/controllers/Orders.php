@@ -28,7 +28,8 @@ class Orders extends CI_Controller {
         $data['services'] = $this->Service_model->getServices();
 
         $info = array(
-            'title' => 'Edit Services',
+            'title' => 'Select Services',
+            'mode' => 'create',
             'services' => $data['services'],
         );
 
@@ -37,24 +38,28 @@ class Orders extends CI_Controller {
         $this->load->view('page/orders/orders_create');
     }
 
-    public function orders_assign()
-    {
+    public function orders_assign() {
         $data = $this->Account_model->getAccounts();
-		$info = array(
-			'title' => 'Select Account',
-			'accounts' => $data,
-		);
-
+        $selected_services = $this->session->userdata('selected_services');
+        $info = array(
+            'title' => 'Select Masseur',
+            'mode' => 'assign',
+            'accounts' => $data,
+            'selected_services' => $selected_services ? json_decode($selected_services, true) : [],
+        );
+    
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/transaction_side');
-        $this->load->view('page/orders/orders_assign');
-        $this->load->library('session');
+        $this->load->view('page/include/transaction_side', $info); // Ensure the correct data is passed
+        $this->load->view('page/orders/orders_assign', $info);
     }
 
     public function orders_placement()
     {
         $info = array(
-            'title' => 'Orders',
+            'mode' => 'place',
+            'title' => 'Select Area',
+            //'selected_services' => $selected_services ? json_decode($selected_services, true) : [],
+            //was kinda hoping selected_services would carry over
         );
 
         $this->load->view('page/include/header', $info);
@@ -80,6 +85,22 @@ class Orders extends CI_Controller {
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/orders/orders_cancel');
+    }
+
+    public function save_services() {
+        $services = $this->input->post('services');
+        $this->session->set_userdata('selected_services', $services);
+        echo json_encode(['status' => 'success']);
+    }
+
+    public function assign() {
+        $data['title'] = 'Assign Order';
+        $data['services'] = json_decode($this->session->userdata('selected_services'), true);
+    
+        $this->load->view('header', $data);
+        $this->load->view('transaction_side', $data);
+        $this->load->view('orders_assign', $data);
+        $this->load->view('footer');
     }
 
 }

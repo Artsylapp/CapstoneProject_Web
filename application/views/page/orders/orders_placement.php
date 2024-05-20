@@ -11,11 +11,9 @@
 			<div class="col-xs-4 col-sm-4"></div>
 
 			<div class="col-xs-4 col-sm-4 center-item">
-				<a href="<?php echo $this->config->base_url("orders")?>">
-					<button class="btn green-bg menu-btn-m center-item ttsh" name="Finalize Order">
-						<h3 class="">CONTINUE</h3>
-					</button>
-				</a>
+                <button id="continue-button" class="btn green-bg menu-btn-m center-item ttsh" name="Proceed to finalizing" data-base-url="<?php echo $this->config->base_url('orders/save_services'); ?>">
+                    <h3>CONTINUE</h3>
+                </button>
 			</div>
 
 		</div>
