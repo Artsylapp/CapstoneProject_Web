@@ -151,18 +151,22 @@ body {
 
 .white-bg{
     background-color: white;
+    font-size: 25px;
 }
 
 .green-bg {
     background-color: #1cc88a;
+    font-size: 25px;
 }
 
 .yellow-bg {
     background-color: #f6c23e;
+    font-size: 25px;
 }
 
 .red-bg {
     background-color: #e74a3b;
+    font-size: 25px;
 }
 
 /* BUTTONS */
