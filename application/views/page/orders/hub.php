@@ -13,7 +13,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("orders_create")?>">
 					<button class="btn green-bg menu-btn-m center-item ttsh" name="NEW ORDER">
-						<h3 class="">NEW ORDER</h3>
+						<h3 class="white-txt">NEW ORDER</h3>
 					</button>
 				</a>
 			</div>
