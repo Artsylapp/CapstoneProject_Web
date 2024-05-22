@@ -23,11 +23,12 @@
     console.log(redirectUrl);
 
     let sessionData = <?php echo isset($selected_services) ? json_encode($selected_services) : '{}'; ?>;
+    console.log(sessionData);
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
 
-<div class="col-xs-3 col-sm-3" style="background-color: hsla(22, 61%, 31%, 0.7); margin: 0px;">
+<div class="col-xs-3 col-sm-3" style="background-color: hsla(22, 61%, 80%, 0.4); margin: 0px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12">

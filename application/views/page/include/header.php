@@ -38,8 +38,8 @@
                 <li>
                     <div class="container-fluid">
                         <a href="<?php echo $this->config->base_url("main/logout")?>">
-                            <button class="btn red-bg menu-btn-s ttsh" name="LOGOUT" style="margin-top:10%;">
-                                <h4>LOGOUT</h4>
+                            <button class="btn logout-btn ttsh" name="LOGOUT" style="margin:0px; padding:0px; background-image: url('<?php echo $this->config->base_url("assets/images/logout.png")?>'); background-size: cover; background-repeat: no-repeat;">
+                                
                             </button>
                         </a>
                     </div>

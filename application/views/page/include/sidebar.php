@@ -1,5 +1,5 @@
 <div class="col-xs-2 col-sm-2" style="
-    background-color: hsla(22, 61%, 31%, 0.7);
+    background-color: hsla(22, 61%, 80%, 0.4);
     margin: 0px;
     ">
     <div class="container-fluid">
