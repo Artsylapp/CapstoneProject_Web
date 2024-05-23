@@ -10,6 +10,14 @@ input[type=number] {
 -moz-appearance: textfield;
 }
 
+button{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.5);
+}
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.1);
+}
+
 table{
     text-align: left;
 }
@@ -100,6 +108,7 @@ body {
 .cancel-btn{
     font-size: 20px;
     padding: 10px 20px;
+    
 }
 
 /*FORMS*/
@@ -139,6 +148,19 @@ body {
 
 /*BOXES*/
 
+.button-container {
+    margin: 0;
+    padding: 0;
+    border-radius: 25px;
+}
+
+.button-container .row {
+    border-radius: 0px;
+    background-color: hsla(22, 61%, 80%, 0.4);
+    margin: 0;
+    padding: 20px 0;
+}
+
 .box-white{
     border-radius: 15px;
     background-color: white;
@@ -155,8 +177,7 @@ body {
 }
 
 .green-bg {
-    background-color: #1cc88a;
-    font-size: 25px;
+    background-color: #46aa8e;
 }
 
 .yellow-bg {
@@ -170,6 +191,12 @@ body {
 }
 
 /* BUTTONS */
+
+.logout-btn {
+    width: 90px;
+    height: 90px;
+    background-color: rgba(0,0,0,0);
+}
 
 .menu-btn {
     color: #272626;

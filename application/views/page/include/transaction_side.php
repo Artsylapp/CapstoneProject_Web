@@ -6,7 +6,6 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12">
                 <div class="sidebar">
-
                     <div class="row center-item">
                         <button type="button circle-button" class="btn btn-image" id="sidebar-image">
                             <img src="" alt="">
@@ -22,14 +21,27 @@
                     </div>
 
                     <div class="row center-item" style="margin-top: auto;">
-                        <div class="placeholder" style="height:50vh; width:100%; background-color: #ffffff;">
-                            TABLE FOR VIEWING CURRENT ORDER DETAIL
-                        </div>
+                        <table class="table" id="invoice_table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Price</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="item-list">
+                                <!-- Items will be populated by JavaScript -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Total Cost</td>
+                                    <td id="total-cost">$0.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 </div>
