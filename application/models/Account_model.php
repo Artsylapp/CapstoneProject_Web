@@ -10,8 +10,7 @@ class Account_model extends CI_Model{
     }
 
     public function createAccount($data){
-        $this->db->insert('accounts_tbl', $data);
-        // print_r($data);
+        return $this->db->insert('accounts_tbl', $data);
     }
 
     public function getAccounts(){
@@ -22,18 +21,35 @@ class Account_model extends CI_Model{
     public function getAccount($id){
         $query = $this->db->get_where('accounts_tbl', array('accounts_tbl_id' => $id));
         return $query->row(); //dont use result() because it will return an array
+
+        // $this->db->where('accounts_tbl_id', $id);
+        // $query = $this->db->get('accounts_tbl');
+        // return $query->row();
     }
 
     public function updateAccount($data){
         $this->db->where('accounts_tbl_id', $data['accounts_tbl_id']);
-        $this->db->update('accounts_tbl', $data);
+        return $this->db->update('accounts_tbl', $data);
 
         // echo "<pre>";
         // print_r($data);
     }
 
-    public function deleteAccount($item){
-        $this->db->where('accounts_tbl_id', $item);
-        $this->db->delete('accounts_tbl');
+    public function deleteAccount($id){
+        $this->db->where('accounts_tbl_id', $id);
+        return $this->db->delete('accounts_tbl');
+    }
+
+
+    /* API */
+    public function getAccountsAPI(){
+        $query = $this->db->get('accounts_tbl');
+        return $query->result();
+    }
+
+    // test API update
+    public function updateAcc($id, $data){
+        $this->db->where('accounts_tbl_id', $id);
+        return $this->db->update('accounts_tbl', $data);
     }
 }

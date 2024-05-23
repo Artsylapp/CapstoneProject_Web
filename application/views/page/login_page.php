@@ -13,15 +13,12 @@
     <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>
 </head>
 
-<body class="text-center" style="
-        background-image: url('<?php echo $this->config->base_url("assets/images/background.avif")?>'); 
-        background-size: cover;
-        background-repeat: no-repeat;">
+<body class="text-center">
     <nav class="navbar navbar-inverse" 
         style="
-        background-color: hsla(22, 61%, 31%, 1);
+        background-color: #41CDB4;
         margin-bottom:0px;
-        border-style:none;
+        border-color: #41CDB4;
         ">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -44,7 +41,7 @@
         <div class="container-fluid">
             <div class="row">
 
-            <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:25vh;">
+            <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6 box-white" style="margin-top:25vh">
 
                 <h1 class="overflow-wrap">LOGIN TO COMPANY ACCOUNT</h1>
 				<h3 style="margin-top: 0px;">Welcome to VIAMM</h3>
