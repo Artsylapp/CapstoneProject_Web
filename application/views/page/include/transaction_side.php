@@ -1,7 +1,34 @@
-<div class="col-xs-3 col-sm-3" style="
-    background-color: #91E1D9;
-    margin: 0px;
-    ">
+<script>
+    let baseUrl = "<?php echo base_url('orders/save_services'); ?>";
+    var mode = "<?php echo($mode)?>";
+    var redirectUrl = "";
+
+    switch (mode) {
+        case "create":
+            redirectUrl = "<?php echo base_url('orders/orders_assign'); ?>";
+            break;
+
+        case "assign":
+            redirectUrl = "<?php echo base_url('orders/orders_placement'); ?>";
+            break;
+
+        case "place":
+            redirectUrl = "<?php echo base_url('orders'); ?>";
+            break;
+    
+        default:
+            break;
+    }
+
+    console.log(redirectUrl);
+
+    let sessionData = <?php echo isset($selected_services) ? json_encode($selected_services) : '{}'; ?>;
+    console.log(sessionData);
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
+
+<div class="col-xs-3 col-sm-3" style="background-color: hsla(22, 61%, 80%, 0.4); margin: 0px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
