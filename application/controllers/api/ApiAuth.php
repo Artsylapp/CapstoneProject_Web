@@ -48,9 +48,4 @@ class ApiAuth extends RestController {
         }
     }
 
-<<<<<<< HEAD
-    // other api functions
-=======
->>>>>>> dcc885a5a2d7e8a35fa8c754749d6c4361b6306a
-
 }
