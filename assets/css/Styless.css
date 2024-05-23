@@ -10,6 +10,14 @@ input[type=number] {
 -moz-appearance: textfield;
 }
 
+button{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.5);
+}
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.1);
+}
+
 table{
     text-align: left;
 }
@@ -19,7 +27,6 @@ table th{
 }
 
 .sidebar {
-    background-color: #91E1D9;
     padding: 20px;
     margin-top: 0px;
     height: 91.5vh;
@@ -82,13 +89,8 @@ table th{
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #272626;
-    background:linear-gradient(
-        to bottom,
-        #cce0de,
-        #ebf3f2,
-        #cce0de
-    );
+    color: #ffffff;
+    background-color: white;
     padding: 0%;
     margin: 0%;
 }
@@ -100,6 +102,7 @@ body {
 .cancel-btn{
     font-size: 20px;
     padding: 10px 20px;
+    
 }
 
 /*FORMS*/
@@ -134,10 +137,26 @@ body {
     margin-left: 16.66666667%;
 }
 
+/*FONT COLOR*/
 
-
+.white-txt{
+    color:white;
+}
 
 /*BOXES*/
+
+.button-container {
+    margin: 0;
+    padding: 0;
+    border-radius: 25px;
+}
+
+.button-container .row {
+    border-radius: 0px;
+    background-color: hsla(22, 61%, 80%, 0.4);
+    margin: 0;
+    padding: 20px 0;
+}
 
 .box-white{
     border-radius: 15px;
@@ -155,8 +174,9 @@ body {
 }
 
 .green-bg {
-    background-color: #1cc88a;
-    font-size: 25px;
+
+    background-color: #46aa8e;
+
 }
 
 .yellow-bg {
@@ -171,8 +191,15 @@ body {
 
 /* BUTTONS */
 
+.logout-btn {
+    width: 90px;
+    height: 90px;
+    background-color: rgba(0,0,0,0);
+}
+
 .menu-btn {
     color: #272626;
+    border-radius: 25px;
     width: 22vw;
     height: 25vh;
     justify-content: center;
@@ -204,6 +231,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: break-word;
+    margin: 7px 0;
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 1.2;
+}
+h2 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+h3 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+h4 {
+    font-size: 20px;
+    line-height: 1.5;
+}
+h5 {
+    font-size: 16px;
+    line-height: 1.6;
+}
+h6 {
+    font-size: 14px;
+    line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
