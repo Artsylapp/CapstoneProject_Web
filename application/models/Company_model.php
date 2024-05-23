@@ -22,7 +22,6 @@ class Company_model extends CI_Model{
     public function getCompany($user,$pass) {
         $this->db->where('company_tbl_name',$user);
         $this->db->where('company_tbl_pass',$pass);
-
         $query = $this->db->get('company_tbl');
 
         return ($query->num_rows() > 0) ? $query->result() : FALSE;

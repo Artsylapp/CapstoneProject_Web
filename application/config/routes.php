@@ -49,3 +49,13 @@ $route['orders_cancel'] = 'Orders/orders_cancel';
     /* Records Page */
 $route['records'] = 'Records/index';
 
+
+  /* REST API */
+$route['api/auth'] = 'api/ApiAuth/index';
+$route['api/auth/login'] = 'api/ApiAuth/loginauth';
+
+$route['api/account'] = 'api/ApiAccounts/index';
+$route['api/account/add'] = 'api/ApiAccounts/insertUser';
+$route['api/account/edit/(:num)'] = 'api/ApiAccounts/editUser/$1';
+$route['api/account/update/(:num)'] = 'api/ApiAccounts/updateUser/$1';
+$route['api/account/delete/(:num)'] = 'api/ApiAccounts/deleteUser/$1';
