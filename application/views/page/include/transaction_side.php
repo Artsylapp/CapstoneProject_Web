@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
 <script>
     let baseUrl = "<?php echo base_url('orders/save_services'); ?>";
     var mode = "<?php echo($mode)?>";
@@ -15,18 +17,16 @@
         case "place":
             redirectUrl = "<?php echo base_url('orders'); ?>";
             break;
-    
+
         default:
             break;
     }
 
     console.log(redirectUrl);
 
-    let sessionData = <?php echo isset($selected_services) ? json_encode($selected_services) : '{}'; ?>;
+    let sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
     console.log(sessionData);
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
 
 <div class="col-xs-3 col-sm-3" style="background-color: hsla(22, 61%, 80%, 0.4); margin: 0px;">
     <div class="container-fluid">
@@ -59,6 +59,25 @@
                             <tbody id="item-list">
                                 <!-- Items will be populated by JavaScript -->
                             </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Masseur</th>
+                                </tr>
+                            </thead>
+                            <tbody id="assign-list">
+                                <!-- Masseurs will be populated by JavaScript -->
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Area</th>
+                                </tr>
+                            </thead>
+                            <tbody id="placement-list">
+                                <!-- Area will be populated by JavaScript -->
+                            </tbody>
+
                             <tfoot>
                                 <tr>
                                     <td colspan="2">Total Cost</td>

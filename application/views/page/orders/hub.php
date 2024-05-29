@@ -11,11 +11,11 @@
 			<div class="col-xs-4 col-sm-4"></div>
 
 			<div class="col-xs-4 col-sm-4 center-item">
-				<a href="<?php echo $this->config->base_url("orders_create")?>">
-					<button class="btn green-bg menu-btn-m center-item ttsh" name="NEW ORDER">
-						<h3 class="white-txt">NEW ORDER</h3>
-					</button>
-				</a>
+				<a href="<?php echo $this->config->base_url("orders_create")?>" id="new-order-button">
+                    <button class="btn green-bg menu-btn-m center-item ttsh" name="NEW ORDER">
+                        <h3 class="white-txt">NEW ORDER</h3>
+                    </button>
+                </a>
 			</div>
 
 		</div>
@@ -85,3 +85,12 @@
 	</div>
 
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#new-order-button').on('click', function() {
+            localStorage.removeItem('selected_services');
+			localStorage.removeItem('assigned_masseurs');
+        });
+    });
+</script>

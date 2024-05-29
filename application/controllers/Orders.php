@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Orders extends CI_Controller {
     
     public function __construct() {
@@ -26,18 +27,16 @@ class Orders extends CI_Controller {
             'services' => $data['services'],
         );
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/transaction_side');
+        $this->load->view('page/include/transaction_side', $info);
         $this->load->view('page/orders/orders_create');
     }
 
     public function orders_assign() {
         $data = $this->Account_model->getAccounts();
-        $selected_services = $this->session->userdata('selected_services');
         $info = array(
-            'title' => 'Select Masseur',
+            'title' => 'Assign Masseur',
             'mode' => 'assign',
             'accounts' => $data,
-            'selected_services' => $selected_services ? json_decode($selected_services, true) : [],
         );
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/transaction_side', $info);
@@ -45,20 +44,16 @@ class Orders extends CI_Controller {
     }
 
     public function orders_placement() {
-        $selected_services = $this->session->userdata('selected_services');
         $info = array(
             'mode' => 'place',
             'title' => 'Select Area',
-            'selected_services' => $selected_services ? json_decode($selected_services, true) : [],
         );
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/transaction_side', $info);
         $this->load->view('page/orders/orders_placement', $info);
     }
 
-    public function save_services() {
-        $services = $this->input->post('services');
-        $this->session->set_userdata('selected_services', $services);
-        echo json_encode(['status' => 'success']);
+    public function save_order() {
+        // THIS IS FOR SAVING AN ORDER
     }
 }
