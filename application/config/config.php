@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost/Capstoneproject_web/';
-$config['base_url'] = 'http://192.168.254.145/Capstoneproject_web/';
+$config['base_url'] = 'http://192.168.254.100/Capstoneproject_web/';
 
 /*
 |--------------------------------------------------------------------------

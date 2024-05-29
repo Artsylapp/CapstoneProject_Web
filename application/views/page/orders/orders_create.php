@@ -7,7 +7,7 @@
             </div>
             <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">
-                <button id="continue-button" class="btn green-bg menu-btn-m center-item ttsh" name="Proceed to masseur assignment" data-base-url="<?php echo $this->config->base_url('orders/save_services'); ?>">
+                <button id="continue-button" class="btn green-bg menu-btn-m center-item ttsh" name="Proceed to masseur assignment" data-base-url="<?php echo $this->config->base_url('orders/orders_assign'); ?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
@@ -15,36 +15,35 @@
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
                 <table class="table table-hover" id="acc_table">
-                    <thead>
+                <thead>
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Add</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($services as $service): ?>
                         <tr>
-                            <th>Service Name</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Add</th>
-                            <th>Remove</th>
+                            <td><?php echo $service->services_tbl_name?></td>
+                            <td><?php echo $service->services_tbl_description?></td>
+                            <td><?php echo $service->services_tbl_price?></td>
+                            <td class="text-center">
+                                <button class="btn green-bg menu-btn-sm ttsh add-service" data-service-name="<?php echo $service->services_tbl_name?>" name="Add 1 <?php echo $service->services_tbl_name?>" data-service-price="<?php echo $service->services_tbl_price?>">
+                                    <h4>ADD</h4>
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn red-bg menu-btn-sm ttsh remove-service" data-service-name="<?php echo $service->services_tbl_name?>" name="Remove 1 <?php echo $service->services_tbl_name?>" data-service-price="<?php echo $service->services_tbl_price?>">
+                                    <h4>REMOVE</h4>
+                                </button>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($services as $service): ?>
-                            <tr>
-                                <td><?php echo $service->services_tbl_name?></td>
-                                <td><?php echo $service->services_tbl_description?></td>
-                                <td><?php echo $service->services_tbl_price?></td>
-                                <td class="text-center">
-                                    <button class="btn green-bg menu-btn-sm ttsh add-service" data-service-name="<?php echo $service->services_tbl_name?>" data-service-price="<?php echo $service->services_tbl_price?>">
-                                        <h4>ADD</h4>
-                                    </button>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn red-bg menu-btn-sm ttsh remove-service" data-service-name="<?php echo $service->services_tbl_name?>" data-service-price="<?php echo $service->services_tbl_price?>">
-                                        <h4>REMOVE</h4>
-                                    </button>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

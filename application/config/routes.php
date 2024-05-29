@@ -51,8 +51,14 @@ $route['records'] = 'Records/index';
 
 
   /* REST API */
-$route['api/auth'] = 'api/ApiAuth/index';
-$route['api/auth/login'] = 'api/ApiAuth/loginauth';
+// $route['api/auth'] = 'api/ApiAuth/index';
+$route['api/login'] = 'api/ApiAuth/index';
+
+$route['api/order'] = 'api/ApiOrder/index';
+$route['api/order/edit/(:num)'] = 'api/ApiOrder/orderEdit/$1';
+$route['api/order/update'] = 'api/ApiOrder/orderUpdate';
+$route['api/order/delete'] = 'api/ApiOrder/orderDelete';
+
 
 $route['api/account'] = 'api/ApiAccounts/index';
 $route['api/account/add'] = 'api/ApiAccounts/insertUser';

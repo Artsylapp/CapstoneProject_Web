@@ -1,10 +1,14 @@
 $(document).ready(function() {
-    let services = sessionData || {};
+    let services = JSON.parse(localStorage.getItem('selected_services')) || {};
+    let masseurs = JSON.parse(localStorage.getItem('assigned_masseurs')) || {};
+    let redirectUrl = $('#continue-button').data('base-url');
 
     function updateTable() {
         let totalCost = 0;
         let itemList = $('#item-list');
+        let masseurList = $('#assign-list');
         itemList.empty();
+        masseurList.empty();
 
         for (let serviceName in services) {
             if (services.hasOwnProperty(serviceName)) {
@@ -22,35 +26,23 @@ $(document).ready(function() {
             }
         }
 
+        for (let masseurName in masseurs) {
+            if (masseurs.hasOwnProperty(masseurName)) {
+                masseurList.append(
+                    `<tr>
+                        <td colspan="3">${masseurName}</td>
+                    </tr>`
+                );
+            }
+        }
+
         $('#total-cost').text(`$${totalCost.toFixed(2)}`);
     }
 
-    function saveServicesToSession(baseUrl) {
-        console.log("Saving services to session at URL:", baseUrl);
-        console.log("Services data:", services);
-        $.ajax({
-            url: baseUrl,
-            method: 'POST',
-            data: { services: JSON.stringify(services) },
-            success: function(response) {
-                console.log("AJAX response:", response);
-                try {
-                    let jsonResponse = JSON.parse(response);
-                    if (jsonResponse.status === 'success') {
-                        window.location.href = redirectUrl;
-                    } else {
-                        console.error('Failed to save services to session. Response:', jsonResponse);
-                    }
-                } catch (e) {
-                    console.error('Error parsing JSON response:', e);
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error('AJAX request error:', error);
-                console.error('Status:', status);
-                console.error('XHR:', xhr);
-            }
-        });
+    function saveDataToLocalStorage() {
+        localStorage.setItem('selected_services', JSON.stringify(services));
+        localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
+        window.location.href = redirectUrl;
     }
 
     $('.add-service').click(function() {
@@ -79,9 +71,22 @@ $(document).ready(function() {
         updateTable();
     });
 
+    $('.assign-masseur').click(function() {
+        let masseurName = $(this).data('masseur-name');
+        masseurs[masseurName] = true;
+        updateTable();
+    });
+
+    $('.remove-masseur').click(function() {
+        let masseurName = $(this).data('masseur-name');
+        delete masseurs[masseurName];
+        updateTable();
+    });
+
     $('#continue-button').click(function() {
-        saveServicesToSession(baseUrl);
+        saveDataToLocalStorage();
     });
 
     updateTable();
 });
+
