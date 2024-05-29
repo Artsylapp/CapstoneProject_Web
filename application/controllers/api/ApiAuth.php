@@ -10,10 +10,10 @@ class ApiAuth extends RestController {
     public function __construct() {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('Account_model');
         $this->load->model('Company_model');
     }
 
+    // To authenticate user from the Android App
     public function index_post() {
         $comp_name = $this->post('username');
         $comp_pass = $this->post('password');
