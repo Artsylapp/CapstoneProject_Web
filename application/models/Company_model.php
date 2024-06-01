@@ -19,12 +19,20 @@ class Company_model extends CI_Model{
         return $query->result();
     }
 
-    public function getCompany($user,$pass) {
-        $this->db->where('company_tbl_name',$user);
-        $this->db->where('company_tbl_pass',$pass);
-        $query = $this->db->get('company_tbl');
+    public function getCompany($user) {
+        $this->db->where('company_tbl_name', $user);
+        $query = $this->db->get('company_tbl'); // Assuming company_tbl is the table name
+        return $query->result();
+    }
 
-        return ($query->num_rows() > 0) ? $query->result() : FALSE;
+    public function getCompanyWeb($username) {
+        $this->db->where('company_tbl_name', $username);
+        $query = $this->db->get('company_tbl'); // Replace 'company_table' with your actual table name
+        if ($query->num_rows() == 1) {
+            return $query->result();
+        } else {
+            return FALSE;
+        }
     }
 
     public function updateCompany($data){
