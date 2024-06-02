@@ -8,6 +8,8 @@ class Orders extends CI_Controller {
         $this->load->model('Company_model');
         $this->load->model('Service_model');
         $this->load->model('Account_model');
+        $this->load->model('Location_model');
+        $this->load->model('Booking_model');
         $this->load->library('session');
     }
 
@@ -44,16 +46,25 @@ class Orders extends CI_Controller {
     }
 
     public function orders_placement() {
+        $data = $this->Location_model->getLocations();
         $info = array(
+            'title' => 'Assign Location',
             'mode' => 'place',
-            'title' => 'Select Area',
+            'locations' => $data,
         );
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/transaction_side', $info);
         $this->load->view('page/orders/orders_placement', $info);
     }
 
-    public function save_order() {
-        // THIS IS FOR SAVING AN ORDER
+    public function save_booking() {
+        $data = json_decode(file_get_contents('php://input'), true);
+        if (!empty($data)) {
+            $this->Booking_model->saveBooking($data);
+            redirect(base_url("orders"));
+        } else {
+            redirect(base_url("orders"));
+        }
     }
+    
 }

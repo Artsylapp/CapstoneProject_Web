@@ -82,4 +82,17 @@ class Main extends CI_Controller {
 
 	}
 
+	public function temporary(){
+		
+		$info = array(
+			'title' => 'temporary',
+		);
+
+		$this->load->view('page/include/header', $info);
+		$this->load->view('page/include/sidebar');
+		$this->load->view('page/temp_page');
+		$this->load->view('page/include/footer');
+
+	}
+
 }

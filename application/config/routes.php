@@ -11,6 +11,7 @@ $route['home'] = 'Main/index';
 $route['manage_hub'] = 'Main/manage_hub';
 $route['login'] = 'Main/login_page';
 $route['loginAuth'] = 'Main/login_auth';
+$route['temporary'] = 'Main/temporary';
 
 
     /* Accounts Page */
