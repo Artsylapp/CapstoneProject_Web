@@ -6,12 +6,11 @@
 			
 	<div class="col-sm-11 col-xs-11 box-white">
 
+        <div>
+            <video id="webcam" width="640" height="480" autoplay></video>
+            <canvas id="output" width="640" height="480"></canvas>
+        </div>
         
-        <video id="webcam" width="640" height="480" autoplay></video>
-        <canvas id="output" width="640" height="480"></canvas>
-        
-        
-
         <script>
             async function runObjectDetection() {
                 const video = document.getElementById('webcam');
