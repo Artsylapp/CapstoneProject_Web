@@ -29,22 +29,24 @@ class ApiAuth extends RestController {
     
         // Authenticate user
         $auth = $this->Company_model->getCompany($comp_name, $comp_pass);
-    
-        if ($auth == FALSE) {
-            $this->response([
-                'error' => true,
-                'message' => "Invalid Name or Password"
-            ], 401);
-        } else {
+
+        if ($auth == true && $auth[0]->company_tbl_pass == $comp_pass && $auth[0]->company_tbl_name == $comp_name) {
             $loginData = [
                 'error' => false,
-                'message' => 'Login Successful!',
+                'message' => 'Login Successful',
                 'user' => [
                     'username' => $auth[0]->company_tbl_name,
                     'password' => $auth[0]->company_tbl_pass,
                 ]
             ];
             $this->response($loginData, 200);
+            
+        } else {
+            $this->response([
+                'error' => true,
+                'message' => "Invalid Name or Password"
+            ], 401);
+
         }
     }
 
