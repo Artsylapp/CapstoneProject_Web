@@ -60,6 +60,8 @@ $route['api/order/update'] = 'api/ApiOrder/orderUpdate';
 $route['api/order/delete'] = 'api/ApiOrder/orderDelete';
 $route['api/order/updatestatus'] = 'api/ApiOrder/orderUpdateStatus';
 $route['api/order/ongoing'] = 'api/ApiOrder/orderOngoing';
+$route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
+
 
 
 $route['api/account'] = 'api/ApiAccounts/index';

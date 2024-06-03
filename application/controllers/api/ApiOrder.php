@@ -112,9 +112,9 @@ class ApiOrder extends RestController {
         $this->response($orderResponse, 200);
     }
 
-    public function orderFinished_get(){
+    public function orderCompleted_get(){
         $orders = new Order_model;
-        $results = $orders->getFinishedOrders();
+        $results = $orders->getCompletedOrders();
         
         // Prepare OrderResponse object
         $orderResponse = [

@@ -10,10 +10,15 @@ class Order_model extends CI_Model{
 
     public function getOrders() {
         $query = $this->db->get('orders_tbl');
-        $this->where('orders_tbl_status', 'Finished');
-        $this->where('orders_tbl_status', 'Cancelled');
         return $query->result();
     }
+
+    public function getCompletedOrders() {
+        $this->db->where_in('orders_tbl_status', ['Finished', 'Cancelled']);
+        $query = $this->db->get('orders_tbl');
+        return $query->result();
+    }
+    
 
     public function getOrder($id) {
         $query = $this->db->get_where('orders_tbl', array('orders_tbl_id' => $id));
@@ -36,6 +41,6 @@ class Order_model extends CI_Model{
         return $query->result();
     }
 
-
+    
 
 }
