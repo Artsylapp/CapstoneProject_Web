@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12">
                 <h1 class="overflow-wrap">ASSIGN PLACEMENT</h1>
-                <h3 style="margin-top: 0px;">Assign Location For Servicing - COMPANY</h3>
+                <h3 style="margin-top: 0px;">Assign Location For Booking - COMPANY</h3>
             </div>
             <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">

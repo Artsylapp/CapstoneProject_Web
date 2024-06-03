@@ -5,7 +5,7 @@
 
             <div class="col-xs-12 col-sm-12">
                 <h1 class="overflow-wrap">ASSIGN MASSEUR</h1>
-                <h3 style="margin-top: 0px;">Assign Masseur To Order - COMPANY</h3>
+                <h3 style="margin-top: 0px;">Assign Masseur To Booking - COMPANY</h3>
             </div>
 
             <div class="col-xs-4 col-sm-4"></div>
