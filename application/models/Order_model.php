@@ -10,6 +10,8 @@ class Order_model extends CI_Model{
 
     public function getOrders() {
         $query = $this->db->get('orders_tbl');
+        $this->where('orders_tbl_status', 'Finished');
+        $this->where('orders_tbl_status', 'Cancelled');
         return $query->result();
     }
 
@@ -28,5 +30,12 @@ class Order_model extends CI_Model{
         $this->db->where('orders_tbl_id', $id);
         $this->db->delete('orders_tbl');
     }
+
+    public function getOngoingOrders() {
+        $query = $this->db->get_where('orders_tbl', array('orders_tbl_status' => 'Ongoing'));
+        return $query->result();
+    }
+
+
 
 }

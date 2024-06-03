@@ -98,4 +98,32 @@ class ApiOrder extends RestController {
         $this->response($orderResponse, 200);
     }
 
+    public function orderOngoing_get() {
+        $orders = new Order_model;
+        $results = $orders->getOngoingOrders();
+        
+        // Prepare OrderResponse object
+        $orderResponse = [
+            'error' => false,
+            'message' => 'Ongoing Orders retrieved successfully',
+            'orders' => $results
+        ];
+        
+        $this->response($orderResponse, 200);
+    }
+
+    public function orderFinished_get(){
+        $orders = new Order_model;
+        $results = $orders->getFinishedOrders();
+        
+        // Prepare OrderResponse object
+        $orderResponse = [
+            'error' => false,
+            'message' => 'Finished Orders retrieved successfully',
+            'orders' => $results
+        ];
+        
+        $this->response($orderResponse, 200);
+    }
+
 }
