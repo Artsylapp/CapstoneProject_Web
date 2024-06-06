@@ -46,8 +46,8 @@
             <div class="row">
                 <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:10vh;">
 
-                    <h1 class="overflow-wrap">LOGIN TO COMPANY ACCOUNT</h1>
-                    <h3 style="margin-top: 0px;">Welcome to VIAMM</h3>
+                    <h1 class="overflow-wrap">Welcome To VIAMM</h1>
+                    <h3 style="margin-top: 0px;">Login using Company Credentials</h3>
 
                     <!-- Flash message div -->
                     <div class="row" style="margin-bottom: 20px;">
@@ -67,7 +67,7 @@
                     <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="fullname">Company Name:</label>
+                            <label class="control-label col-sm-2" for="fullname">Company Username:</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="fullname" placeholder="Company Name" name="com_u" required>
                             </div>
