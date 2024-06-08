@@ -5,7 +5,7 @@
 
             <div class="col-xs-12 col-sm-12">
                 <h1 class="overflow-wrap">ASSIGN MASSEUR</h1>
-                <h3 style="margin-top: 0px;">Assign Masseur To Order - COMPANY</h3>
+                <h3 style="margin-top: 0px;">Assign Masseur To Booking - COMPANY</h3>
             </div>
 
             <div class="col-xs-4 col-sm-4"></div>
@@ -33,7 +33,7 @@
                     </thead>
                     <tbody>
                         <?php foreach($accounts as $account): ?>
-                            <?php if ($account->accounts_tbl_empType == "Masseur"): ?>
+                            <?php if ($account->accounts_tbl_empType == "Masseur" AND $account->accounts_tbl_status == "AVAILABLE"): ?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>

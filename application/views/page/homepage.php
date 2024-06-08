@@ -19,8 +19,8 @@
 
 						<div class="col-xs-4 col-sm-4">
 							<a href="<?php echo $this->config->base_url("orders")?>">
-								<button class="btn white-bg menu-btn ttsh" name="ORDERING">
-									<h1 class="">ORDERING</h1>
+								<button class="btn white-bg menu-btn ttsh" name="BOOKING">
+									<h1 class="">BOOKING</h1>
 								</button>
 							</a>
 						</div>

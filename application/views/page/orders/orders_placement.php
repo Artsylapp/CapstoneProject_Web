@@ -3,13 +3,16 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12">
                 <h1 class="overflow-wrap">ASSIGN PLACEMENT</h1>
-                <h3 style="margin-top: 0px;">Assign Location For Servicing - COMPANY</h3>
+                <h3 style="margin-top: 0px;">Assign Location For Booking - COMPANY</h3>
             </div>
             <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">
-                <button id="finalize-button" class="btn green-bg menu-btn-m center-item ttsh" name="Proceed to finalizing" data-base-url="<?php echo base_url('orders/save_booking'); ?>">
-                    <h3>CONTINUE</h3>
-                </button>
+            <button id="finalize-button" class="btn green-bg menu-btn-m center-item ttsh" 
+                name="Proceed to finalizing" 
+                data-base-url="<?php echo base_url('orders/save_booking'); ?>" 
+                data-redirect-url="<?php echo base_url('orders'); ?>">
+                <h3>CONTINUE</h3>
+            </button>
             </div>
         </div>
         <div class="row mt-s center-item">

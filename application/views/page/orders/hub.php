@@ -13,7 +13,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("orders_create")?>" id="new-order-button">
                     <button class="btn green-bg menu-btn-m center-item ttsh" name="NEW ORDER">
-                        <h3 class="white-txt">NEW ORDER</h3>
+                        <h3 class="white-txt">NEW BOOKING</h3>
                     </button>
                 </a>
 			</div>
@@ -27,42 +27,32 @@
 				<table class="table table-hover" id="acc_table">
 					<thead>
 					<tr>
-						<th>Order Number</th>
+						<th>Booking Number</th>
 						<th>Status</th>
 						<th>Total Price</th>
 						<th>Cancel</th>
 					</tr>
 					</thead>
 					<tbody>
-
-					<!-- THIS IS FOR ORDERS
 						
-					<?php foreach($accounts as $account):  ?>
+					<?php foreach($orders as $order):  ?>
 
 							<?php 
-								$name = $account->accounts_tbl_name;
-								$contact = $account->accounts_tbl_contact;
-								$type = $account->accounts_tbl_empType;
+								$Booking_Number = $order->orders_tbl_id;
+								$Status = $order->orders_tbl_status;
+								$Total_Price = $order->orders_tbl_cost;
 							?>
 
 							<tr>
-								<td><?php echo $name?></td>
-								<td><?php echo $contact?></td>
-								<td><?php echo $type?></td>
+								<td><?php echo $Booking_Number?></td>
+								<td><?php echo $Status?></td>
+								<td><?php echo $Total_Price?></td>
+
 								<td class="text-center">
 
-								<a href="<?php echo $this->config->base_url("accounts/acc_edit/$account->accounts_tbl_id")?>">
-									<button class="btn yellow-bg menu-btn-sm ttsh" name="<?php echo "EDIT: $name"?>" style="background-color: #f6c23e;">
-										<h4>EDIT</h4>
-									</button>
-								</a>
-
-								</td>
-								<td class="text-center">
-
-								<a href="<?php echo $this->config->base_url("accounts/acc_delete/$account->accounts_tbl_id")?>">
-									<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $name"?>">
-										<h4>DELETE</h4>
+								<a href="<?php echo $this->config->base_url("")?>">
+									<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "CANCEL BOOKING NUMBER: $Booking_Number"?>">
+										<h4>CANCEL</h4>
 									</button>
 								</a>
 
@@ -70,10 +60,6 @@
 							</tr>
 
 					<?php endforeach; ?>
-
-					-->
-					
-
 					
 					</tbody>
 				</table>
@@ -91,6 +77,7 @@
         $('#new-order-button').on('click', function() {
             localStorage.removeItem('selected_services');
 			localStorage.removeItem('assigned_masseurs');
+			localStorage.removeItem('assigned_locations');
         });
     });
 </script>

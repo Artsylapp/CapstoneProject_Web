@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Styless.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Stylesacc.css'); ?>">
     <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>
+    <script src="<?php echo $this->config->base_url('assets/js/scrollableTable.js'); ?>"></script>
 </head>
 
 <?php
@@ -26,9 +27,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">
-                    <button type="button" class="btn btn-image">
-                        <img src="" alt="">
-                    </button>
+                    <img class="header_img" src='<?php echo $this->config->base_url("assets/images/logo.png");?>' alt="">
                 </a>
                 <div class="container-fluid header-container">
                     <select id='voiceList' class="form-control header-select"></select>
