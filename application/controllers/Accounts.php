@@ -56,7 +56,8 @@ class Accounts extends CI_Controller {
 			'accounts_tbl_name' => $this->input->post('create_Account'),
 			'accounts_tbl_address' => $this->input->post('create_Address'),
 			'accounts_tbl_contact' => $this->input->post('create_Contact'),
-			'accounts_tbl_empType' => $this->input->post('optradio') // 1 = Admin, 2 = Masseur radio button
+			'accounts_tbl_empType' => $this->input->post('optradio'), // 1 = Admin, 2 = Masseur radio button
+			'accounts_tbl_status' => "AVAILABLE",
         );
 
 		$this->Account_model->createAccount($data);

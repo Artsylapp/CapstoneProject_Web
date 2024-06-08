@@ -10,8 +10,6 @@ class Order_model extends CI_Model{
 
     public function getOrders() {
         $query = $this->db->get('orders_tbl');
-        $this->where('orders_tbl_status', 'Finished');
-        $this->where('orders_tbl_status', 'Cancelled');
         return $query->result();
     }
 

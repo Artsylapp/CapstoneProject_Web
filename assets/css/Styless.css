@@ -10,6 +10,22 @@ input[type=number] {
 -moz-appearance: textfield;
 }
 
+.table-wrapper {
+    max-height: 500px; /* Set the maximum height for the table wrapper */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* or fixed, depending on your needs */
+  }
+
+.navbar{
+    border-radius: 0px;
+}
+
 #webcam, #output {
     position: absolute;
     top: 0;
@@ -101,6 +117,7 @@ body {
     background-color: white;
     padding: 0%;
     margin: 0%;
+    overflow: hidden;
 }
 
 .radio-selection{
@@ -172,6 +189,7 @@ body {
     padding-left: 0%;
     padding-right: 1%;
     padding-top: 15px;
+    color: black;
 }
 
 /* BG COLOR */
@@ -179,6 +197,7 @@ body {
 .white-bg{
     background-color: white;
     font-size: 25px;
+    
 }
 
 .green-bg {
@@ -252,7 +271,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 45px;
     line-height: 1.2;
 }
 h2 {
@@ -274,6 +293,14 @@ h5 {
 h6 {
     font-size: 14px;
     line-height: 1.7;
+}
+
+.header_img{
+    margin: 0px;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 @media (max-width: 1024px) {

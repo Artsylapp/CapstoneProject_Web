@@ -6,6 +6,7 @@ class Orders extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Company_model');
+        $this->load->model('Order_model');
         $this->load->model('Service_model');
         $this->load->model('Account_model');
         $this->load->model('Location_model');
@@ -14,7 +15,13 @@ class Orders extends CI_Controller {
     }
 
     public function index() {
-        $info = array('title' => 'Orders');
+        $data['orders'] = $this->Order_model->getOrders();
+
+        $info = array(
+            'title' => 'Booking',
+            'orders' => $data['orders'],
+        );
+
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/hub');
@@ -60,11 +67,26 @@ class Orders extends CI_Controller {
     public function save_booking() {
         $data = json_decode(file_get_contents('php://input'), true);
         if (!empty($data)) {
+            // Debugging output
+            log_message('debug', 'Booking Data: ' . print_r($data, true));
+    
             $this->Booking_model->saveBooking($data);
+            // Check for database errors
+            if ($this->db->affected_rows() > 0) {
+                log_message('info', 'Booking saved successfully.');
+            } else {
+                log_message('error', 'Failed to save booking: ' . $this->db->last_query());
+            }
             redirect(base_url("orders"));
         } else {
+            log_message('error', 'No data received for booking.');
             redirect(base_url("orders"));
         }
+    }
+    
+    public function cancel_booking() {
+        $this->Booking_model->saveBooking($data);
+        redirect(base_url("orders"));
     }
     
 }

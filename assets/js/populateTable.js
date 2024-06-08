@@ -63,30 +63,29 @@ $(document).ready(function() {
         localStorage.setItem('selected_services', JSON.stringify(services));
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
-
+    
         updateTable();
-
+    
         const bookingData = {
             services: services,
             masseurs: masseurs,
             locations: locations,
-            totalCost: parseFloat($('#total-cost').text().replace('P', ''))
+            totalCost: parseFloat($('#total-cost').text().replace('$', ''))
         };
-
+    
         console.log("Booking Data:", bookingData);
-
+    
         $.ajax({
-            url: redirectUrl,
+            url: $('#finalize-button').data('base-url'),
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(bookingData),
             success: function(response) {
                 console.log("Server Response:", response);
-                //window.location.href = redirectUrl;
+                window.location.href = $('#finalize-button').data('redirect-url');
             },
             error: function(xhr, status, error) {
                 console.error('Error saving booking:', error);
-                //window.location.href = redirectUrl;
             }
         });
     }

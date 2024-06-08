@@ -19,10 +19,10 @@
 					$name = $accounts->accounts_tbl_name;
 					$address = $accounts->accounts_tbl_address;
 					$contact = $accounts->accounts_tbl_contact;
-					if($accounts->accounts_tbl_empType == 1){
-						$type = "ADMIN";
-					}else if($accounts->accounts_tbl_empType == 2){
-						$type = "MASSEUR";
+					if($accounts->accounts_tbl_empType == "Admin"){
+						$type = "Admin";
+					}else if($accounts->accounts_tbl_empType == "Masseur"){
+						$type = "Masseur";
 					}else{
 						$type = "Unapplicable";
 					}
