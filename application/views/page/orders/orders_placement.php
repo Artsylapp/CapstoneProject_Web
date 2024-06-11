@@ -23,7 +23,6 @@
                         <th>Location</th>
                         <th>Type</th>
                         <th>Assign</th>
-                        <th>Remove</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,11 +34,6 @@
                                 <td class="text-center">
                                     <button class="btn green-bg menu-btn-sm ttsh assign-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "ASSIGN: $location->location_tbl_name"; ?>">
                                         <h4>ASSIGN</h4>
-                                    </button>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn red-bg menu-btn-sm ttsh remove-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "REMOVE: $location->location_tbl_name"; ?>">
-                                        <h4>REMOVE</h4>
                                     </button>
                                 </td>
                             </tr>

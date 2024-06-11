@@ -11,19 +11,18 @@ class Booking_model extends CI_Model {
     public function saveBooking($data) {
         // Structure the data correctly based on your table schema
         $bookingData = [
-            'orders_tbl_services' => json_encode($data['services']),
-            'orders_tbl_empName' => json_encode($data['masseurs']),
-            'orders_tbl_location' => json_encode($data['locations']),
+            'orders_tbl_details' => json_encode([
+                'services' => $data['services'],
+                'masseurs' => $data['masseurs'],
+                'locations' => $data['locations'],
+                'orders_tbl_cost' => $data['totalCost'],
+            ]),
             'orders_tbl_status' => "ON-GOING",
-            'orders_tbl_cost' => $data['totalCost']
         ];
-
-        $changeStatus = [
-            'accounts_tbl_name' => $data['masseurs'],
-            'accounts_tbl_status' => 'UNAVAILABLE'
-        ];
-
+    
+        // Insert the booking data into the orders_tbl
         $this->db->insert('orders_tbl', $bookingData);
     }
+    
 }
 ?>
