@@ -43,7 +43,8 @@ class Services extends CI_Controller {
         $data = array(
             'services_tbl_name' => $this->input->post('create_Customer'),
             'services_tbl_description' => $this->input->post('create_Description'),
-            'services_tbl_price' => $this->input->post('create_Price')
+            'services_tbl_price' => $this->input->post('create_Price'),
+            'services_tbl_designation' => $this->input->post('optradio'),
         );
 
         $this->Service_model->createService($data);

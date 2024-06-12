@@ -34,7 +34,16 @@
 					<input type="number" class="form-control" id="contact" placeholder="Service Price" name="create_Price" required>
 					</div>
 				</div>
-				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+				<div class="form-group">
+						<label class="control-label col-sm-2" for="sel1">Service Designation:</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="sel1" name="optradio">
+								<option>Bed</option>
+								<option>Chair</option>
+							</select>
+						</div>
+					</div>
+				<div class="col-sm-offset-9 col-sm-3" style="margin-top:25px;">
 					<div class="col-sm-12">
 						<button class="btn green-bg menu-btn-m ttsh" name="confirm creation">
 							<h4>CREATE SERVICE</h4>
@@ -43,7 +52,7 @@
 				</div>
 			</form>
 
-			<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
+			<div class="col-sm-offset-9 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
 				<a href="<?php echo $this->config->base_url("services")?>">
 					<button class="btn yellow-bg menu-btn-m ttsh" name="Cancel">
 						<h4>CANCEL</h4>

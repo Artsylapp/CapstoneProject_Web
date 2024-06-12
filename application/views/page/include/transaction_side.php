@@ -32,7 +32,7 @@
     console.log(sessionData);
 </script>
 
-<div class="col-xs-3 col-sm-3" style="background-color: hsla(22, 61%, 80%, 0.4); margin: 0px;">
+<div class="col-xs-3 col-sm-3" style="background-color:hsla(22, 61%, 37%, 0.25); margin: 0px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12">

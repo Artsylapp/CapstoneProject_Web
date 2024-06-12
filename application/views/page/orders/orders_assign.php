@@ -28,7 +28,6 @@
                             <th>Employee Name</th>
                             <th>Type</th>
                             <th>Assign</th>
-                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,11 +39,6 @@
                                     <td class="text-center">
                                         <button class="btn green-bg menu-btn-sm ttsh assign-masseur" data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "ASSIGN: $account->accounts_tbl_name"; ?>">
                                             <h4>ASSIGN</h4>
-                                        </button>
-                                    </td>
-                                    <td class="text-center">
-                                        <button class="btn red-bg menu-btn-sm ttsh remove-masseur" data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "REMOVE: $account->accounts_tbl_name"; ?>">
-                                            <h4>REMOVE</h4>
                                         </button>
                                     </td>
                                 </tr>

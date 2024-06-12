@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-12">
+			<div class="col-xs-12 col-sm-12" style="text-align: right;">
 				<h1 class="overflow-wrap">MANAGE HUB</h1>
 				<h3 style="margin-top: 0px;">Welcome to VIAMM - COMPANY</h3>
 			</div>
