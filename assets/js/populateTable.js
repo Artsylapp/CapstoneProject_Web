@@ -3,6 +3,15 @@ $(document).ready(function() {
     let masseurs = JSON.parse(localStorage.getItem('assigned_masseurs')) || {};
     let locations = JSON.parse(localStorage.getItem('assigned_locations')) || {};
 
+    if (window.location.pathname.includes('orders_create')) {
+        filterServicesByType();
+    }else if (window.location.pathname.includes('orders_placement')){
+        filterLocationByType(); //NOT WORKING YET
+    }else{
+        console.log(window.location.pathname.toString());
+    }
+    
+
     function updateTable() {
         let totalCost = 0;
         let itemList = $('#item-list');
@@ -59,14 +68,6 @@ $(document).ready(function() {
     }
 
     function saveDataToServer() {
-        // Store data in localStorage
-        localStorage.setItem('selected_services', JSON.stringify(services));
-        localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
-        localStorage.setItem('assigned_locations', JSON.stringify(locations));
-    
-        updateTable();
-    
-        // Prepare booking data
         const bookingData = {
             services: services,
             masseurs: masseurs,
@@ -74,7 +75,6 @@ $(document).ready(function() {
             totalCost: parseFloat($('#total-cost').text().replace('$', ''))
         };
     
-        // AJAX call to save booking data
         $.ajax({
             url: $('#finalize-button').data('base-url'),
             type: 'POST',
@@ -82,14 +82,15 @@ $(document).ready(function() {
             data: JSON.stringify(bookingData),
             success: function(response) {
                 console.log("Server Response:", response);
-                // Redirect to a new page after successful save
                 window.location.href = $('#finalize-button').data('redirect-url');
             },
             error: function(xhr, status, error) {
                 console.error('Error saving booking:', error);
+                console.error('Response:', xhr.responseText);
             }
         });
     }
+    
         
 
     function getCurrentServiceType() {
@@ -112,6 +113,25 @@ $(document).ready(function() {
                     $(this).show();
                 }
             });
+            console.log(currentType);
+        } else {
+            $('#acc_table tbody tr').show();
+        }
+    }
+
+    //NOT WORKING YET
+    function filterLocationByType() {
+        let currentType = getCurrentServiceType();
+        if (currentType) {
+            $('#acc_table tbody tr').each(function() {
+                let locationType = $(this).data('location-type');
+                if (locationType !== currentType) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+            console.log(currentType);
         } else {
             $('#acc_table tbody tr').show();
         }

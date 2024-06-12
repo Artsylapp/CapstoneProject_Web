@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 class Orders extends CI_Controller {
     
@@ -64,7 +67,7 @@ class Orders extends CI_Controller {
         $this->load->view('page/orders/orders_placement', $info);
     }
 
-    public function save_booking() {
+    /* function save_booking() {
         // Read the incoming JSON data
         $data = json_decode(file_get_contents('php://input'), true);
     
@@ -89,7 +92,23 @@ class Orders extends CI_Controller {
             //redirect(base_url("orders"));
         }
     }
-    
+    */
+
+    public function save_booking() {
+        $this->load->model('Booking_model');
+        
+        // Retrieve the JSON input
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        if ($data) {
+            // Pass the data to the model
+            $this->Booking_model->saveBooking($data);
+            echo json_encode(['status' => 'success']);
+        } else {
+            // Handle the error
+            echo json_encode(['status' => 'error', 'message' => 'Invalid data']);
+        }
+    }
     
     public function cancel_booking() {
         $this->Booking_model->saveBooking($data);

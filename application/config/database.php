@@ -75,14 +75,14 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root', // 'root' is the default username
-	'password' => '',
-	'database' => 'viammDB', // 'viammDB' is the name of the database
-	'dbdriver' => 'mysqli',
+	'hostname' => 'localhost', // Ensure MySQL is running on localhost
+	'username' => 'root', // Default MySQL username
+	'password' => '', // No password for root user (not recommended for production)
+	'database' => 'viammDB', // Name of your database
+	'dbdriver' => 'mysqli', // Using MySQL Improved driver
 	'dbprefix' => '',
 	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
+	'db_debug' => (ENVIRONMENT !== 'production'), // Debugging enabled for non-production environments
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
@@ -92,5 +92,6 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => TRUE // Saves queries for debugging purposes
 );
+

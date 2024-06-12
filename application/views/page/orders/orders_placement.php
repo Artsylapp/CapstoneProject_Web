@@ -28,7 +28,7 @@
                     <tbody>
                     <?php foreach($locations as $location): ?>
                         <?php if ($location->location_tbl_status == "Open"): ?>
-                            <tr>
+                            <tr data-location-type="<?php echo $location->location_tbl_type; ?>">
                                 <td><?php echo $location->location_tbl_name; ?></td>
                                 <td><?php echo $location->location_tbl_type; ?></td>
                                 <td class="text-center">
