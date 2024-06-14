@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="overflow-wrap">BOOKING CANCEL</h1>
-                <h3 style="margin-top: 0px;">Cancel Booking - COMPANY</h3>
+                <h1 class="overflow-wrap">VIEW RECORD</h1>
+                <h3 style="margin-top: 0px;">Display Booking Details - COMPANY</h3>
             </div>
         </div>
         <div class="row mt-s">
@@ -14,7 +14,7 @@
                         $status = $booking->orders_tbl_status;
                         $services = $services;
                     ?>
-                    <form class="form-horizontal" action="<?php echo $this->config->base_url("orders/cancel_booking/" . $id)?>" method="POST">
+                    <form class="form-horizontal" action="<?php echo $this->config->base_url("order/loc_remove/" . $this->uri->segment(3))?>" method="POST">
                         <div class="form-group">
                             <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                                 <h2>Booking Number: <?php echo $id; ?></h2>
@@ -30,6 +30,9 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
+                                            <th class="text-left">
+                                                <h3>Amount</h3>
+                                            </th>
                                             <th class="text-left">
                                                 <h3>Service</h3>
                                             </th>
@@ -55,18 +58,10 @@
                                 </table>
                             </div>
                         </div>
-
-                        <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
-                            <div class="col-sm-12">
-                                <button class="btn red-bg menu-btn-m ttsh" name="confirm delete">
-                                    <h4>CANCEL BOOKING</h4>
-                                </button>
-                            </div>
-                        </div>
                     </form>
                     <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
-                        <a href="<?php echo $this->config->base_url("locations")?>">
-                            <button class="btn yellow-bg menu-btn-m ttsh" name="cancel">
+                        <a href="<?php echo $this->config->base_url("records")?>">
+                            <button class="btn yellow-bg menu-btn-m ttsh" name="Back to booking hub">
                                 <h4>BACK</h4>
                             </button>
                         </a>

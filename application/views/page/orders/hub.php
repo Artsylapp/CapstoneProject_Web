@@ -28,25 +28,27 @@
                     </thead>
                     <tbody>
                         <?php foreach ($orders as $order): ?>
-                            <tr>
-                                <td><?php echo $order->orders_tbl_id; ?></td>
-                                <td><?php echo $order->orders_tbl_status; ?></td>
-                                <td><?php echo $order->totalCost; ?></td>
-								<td class="text-center">
-                                    <a href="<?php echo $this->config->base_url("orders/view_booking/" . $order->orders_tbl_id); ?>">
-                                        <button class="btn green-bg menu-btn-sm ttsh" name="VIEW BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
-                                            <h4>VIEW</h4>
-                                        </button>
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    <a href="<?php echo $this->config->base_url("orders/orders_delete/" . $order->orders_tbl_id); ?>">
-                                        <button class="btn red-bg menu-btn-sm ttsh" name="CANCEL BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
-                                            <h4>CANCEL</h4>
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php if ($order->orders_tbl_status == "ON-GOING"): ?>
+                                <tr>
+                                    <td><?php echo $order->orders_tbl_id; ?></td>
+                                    <td><?php echo $order->orders_tbl_status; ?></td>
+                                    <td><?php echo $order->totalCost; ?></td>
+                                    <td class="text-center">
+                                        <a href="<?php echo $this->config->base_url("orders/orders_view/" . $order->orders_tbl_id); ?>">
+                                            <button class="btn green-bg menu-btn-sm ttsh" name="VIEW BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
+                                                <h4>VIEW</h4>
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="<?php echo $this->config->base_url("orders/orders_delete/" . $order->orders_tbl_id); ?>">
+                                            <button class="btn red-bg menu-btn-sm ttsh" name="CANCEL BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
+                                                <h4>CANCEL</h4>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
