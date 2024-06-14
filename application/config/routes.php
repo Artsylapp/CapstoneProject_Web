@@ -51,6 +51,10 @@ $route['orders_placement'] = 'Orders/orders_placement';
 $route['orders_going'] = 'Orders/orders_going';
 $route['orders_cancel'] = 'Orders/orders_cancel';
 
+/* Booking page Page */
+$route['cancel'] = 'Orders/cancel_booking';
+$route['save'] = 'Orders/save_booking';
+
 
     /* Records Page */
 $route['records'] = 'Records/index';

@@ -12,7 +12,7 @@ class Orders extends CI_Controller {
         $this->load->model('Order_model');
         $this->load->model('Service_model');
         $this->load->model('Account_model');
-        $this->load->model('Location_model');
+        $this->load->model('Locations_model');
         $this->load->model('Booking_model');
         $this->load->library('session');
     }
@@ -56,7 +56,7 @@ class Orders extends CI_Controller {
     }
 
     public function orders_placement() {
-        $data = $this->Location_model->getLocations();
+        $data = $this->Locations_model->getLocations();
         $info = array(
             'title' => 'Assign Location',
             'mode' => 'place',
@@ -99,20 +99,39 @@ class Orders extends CI_Controller {
         
         // Retrieve the JSON input
         $data = json_decode(file_get_contents('php://input'), true);
+        print_r($data);
 
         if ($data) {
             // Pass the data to the model
             $this->Booking_model->saveBooking($data);
             echo json_encode(['status' => 'success']);
+
+            log_message('info', 'Booking saved successfully.'. $data);
         } else {
             // Handle the error
             echo json_encode(['status' => 'error', 'message' => 'Invalid data']);
         }
     }
+
+    // public function view_booking($id) {
+    //     $data['order'] = $this->Order_model->getOrder($id);
+    //     $info = array(
+    //         'title' => 'View Booking',
+    //         'order' => $data['order'],
+    //     );
+    //     $this->load->view('page/include/header', $info);
+    //     $this->load->view('page/include/sidebar');
+    //     $this->load->view('page/orders/view_booking');
+    //     $this->load->view('page/include/footer');
+    // }
     
-    public function cancel_booking() {
+    public function cancel_booking($data) {
         $this->Booking_model->saveBooking($data);
-        redirect(base_url("orders"));
+        
+
+        error_log(print_r($data, true));
+
+        // redirect(base_url("orders"));
     }
     
 }
