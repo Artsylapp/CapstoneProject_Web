@@ -173,6 +173,7 @@ class Orders extends CI_Controller {
             return;
         }
 
+        echo"<pre>";
         print_r($data);
 
         // Save the booking (or cancel in your case)
