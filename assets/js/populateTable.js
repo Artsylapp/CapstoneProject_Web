@@ -2,6 +2,14 @@ $(document).ready(function() {
     let services = JSON.parse(localStorage.getItem('selected_services')) || {};
     let masseurs = JSON.parse(localStorage.getItem('assigned_masseurs')) || {};
     let locations = JSON.parse(localStorage.getItem('assigned_locations')) || {};
+
+    if (window.location.pathname.includes('orders_create')) {
+        filterServicesByType();
+    }else if (window.location.pathname.includes('orders_placement')){
+        filterLocationByType(); //NOT WORKING YET
+    }else{
+        console.log(window.location.pathname.toString());
+    }
     
 
     function updateTable() {
@@ -60,20 +68,12 @@ $(document).ready(function() {
     }
 
     function saveDataToServer() {
-        localStorage.setItem('selected_services', JSON.stringify(services));
-        localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
-        localStorage.setItem('assigned_locations', JSON.stringify(locations));
-    
-        updateTable();
-    
         const bookingData = {
             services: services,
             masseurs: masseurs,
             locations: locations,
             totalCost: parseFloat($('#total-cost').text().replace('$', ''))
         };
-    
-        console.log("Booking Data:", bookingData);
     
         $.ajax({
             url: $('#finalize-button').data('base-url'),
@@ -86,20 +86,69 @@ $(document).ready(function() {
             },
             error: function(xhr, status, error) {
                 console.error('Error saving booking:', error);
+                console.error('Response:', xhr.responseText);
             }
         });
+    }
+    
+        
+
+    function getCurrentServiceType() {
+        for (let serviceName in services) {
+            if (services.hasOwnProperty(serviceName)) {
+                return services[serviceName].type;
+            }
+        }
+        return null;
+    }
+
+    function filterServicesByType() {
+        let currentType = getCurrentServiceType();
+        if (currentType) {
+            $('#acc_table tbody tr').each(function() {
+                let serviceType = $(this).data('service-type');
+                if (serviceType !== currentType) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+            console.log(currentType);
+        } else {
+            $('#acc_table tbody tr').show();
+        }
+    }
+
+    //NOT WORKING YET
+    function filterLocationByType() {
+        let currentType = getCurrentServiceType();
+        if (currentType) {
+            $('#acc_table tbody tr').each(function() {
+                let locationType = $(this).data('location-type');
+                if (locationType !== currentType) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+            console.log(currentType);
+        } else {
+            $('#acc_table tbody tr').show();
+        }
     }
 
     $('.add-service').click(function() {
         let serviceName = $(this).data('service-name');
         let servicePrice = parseFloat($(this).data('service-price'));
+        let serviceType = $(this).data('service-type');
 
         if (services[serviceName]) {
             services[serviceName].amount++;
         } else {
-            services[serviceName] = { price: servicePrice, amount: 1 };
+            services[serviceName] = { price: servicePrice, amount: 1, type: serviceType };
         }
 
+        filterServicesByType();
         updateTable();
     });
 
@@ -113,11 +162,13 @@ $(document).ready(function() {
             }
         }
 
+        filterServicesByType();
         updateTable();
     });
 
     $('.assign-masseur').click(function() {
         let masseurName = $(this).data('masseur-name');
+        masseurs = {}; // Clear current masseurs
         masseurs[masseurName] = true;
         updateTable();
     });
@@ -130,6 +181,7 @@ $(document).ready(function() {
 
     $('.assign-location').click(function() {
         let locationName = $(this).data('location-name');
+        locations = {}; // Clear current locations
         locations[locationName] = true;
         updateTable();
     });

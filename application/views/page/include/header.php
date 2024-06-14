@@ -23,7 +23,7 @@
 ?>
 
 <body style="font-family: 'Outfit', sans-serif;">
-    <nav class="navbar navbar-inverse" style="background-color: hsla(22, 61%, 31%, 1); border-style:none; margin-bottom:0px;">
+    <nav class="navbar navbar-inverse" style="background-color: hsla(22, 40%, 51%, 1); border-style:none; margin-bottom:0px;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="<?php echo $this->config->base_url("home")?>" style="margin: 0; line-height: 75px; font-size:10px">
@@ -47,4 +47,4 @@
         </div>
     </nav>
 
-    <div class="container-fluid" style="margin:0px; padding:0px; background-image: url('<?php echo $this->config->base_url("assets/images/background.avif")?>'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid" style="margin:0px; padding:0px; background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg")?>'); background-size: cover; background-repeat: no-repeat;">

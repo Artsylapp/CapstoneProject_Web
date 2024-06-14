@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Order_model extends CI_Model{
+class Order_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
@@ -10,7 +10,18 @@ class Order_model extends CI_Model{
 
     public function getOrders() {
         $query = $this->db->get('orders_tbl');
-        return $query->result();
+        $orders = $query->result();
+
+        // Decode JSON data from database and set object attributes with them.
+        foreach ($orders as &$order) {
+            $order_details = json_decode($order->orders_tbl_details, true);
+            $order->services = $order_details['services'];
+            $order->masseurs = $order_details['masseurs'];
+            $order->locations = $order_details['locations'];
+            $order->totalCost = $order_details['orders_tbl_cost'];
+        }
+
+        return $orders;
     }
 
     public function getCompletedOrders() {
@@ -40,7 +51,5 @@ class Order_model extends CI_Model{
         $query = $this->db->get_where('orders_tbl', array('orders_tbl_status' => 'Ongoing'));
         return $query->result();
     }
-
-    
-
 }
+?>

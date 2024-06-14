@@ -178,7 +178,7 @@ body {
 
 .button-container .row {
     border-radius: 0px;
-    background-color: hsla(22, 61%, 80%, 0.4);
+    background-color: hsla(22, 61%, 56%, 0.2);
     margin: 0;
     padding: 20px 0;
 }
@@ -254,6 +254,10 @@ body {
     align-items: center;
 }
 
+.sidebar{
+    color: black;
+}
+
 .sidebar-btn {
     color: #272626;
     width: 100%;
@@ -299,7 +303,7 @@ h6 {
     margin: 0px;
     width: 90px;
     height: 90px;
-    background-color: white;
+    background-color: hsla(22, 61%, 93%, 0.4);
     border-radius: 50%;
 }
 
