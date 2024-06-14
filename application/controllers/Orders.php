@@ -136,20 +136,52 @@ class Orders extends CI_Controller {
         
         // Retrieve the JSON input
         $data = json_decode(file_get_contents('php://input'), true);
+        print_r($data);
 
         if ($data) {
             // Pass the data to the model
             $this->Booking_model->saveBooking($data);
             echo json_encode(['status' => 'success']);
+
+            log_message('info', 'Booking saved successfully.'. $data);
         } else {
             // Handle the error
             echo json_encode(['status' => 'error', 'message' => 'Invalid data']);
         }
     }
+
+    // public function view_booking($id) {
+    //     $data['order'] = $this->Order_model->getOrder($id);
+    //     $info = array(
+    //         'title' => 'View Booking',
+    //         'order' => $data['order'],
+    //     );
+    //     $this->load->view('page/include/header', $info);
+    //     $this->load->view('page/include/sidebar');
+    //     $this->load->view('page/orders/view_booking');
+    //     $this->load->view('page/include/footer');
+    // }
+
     
-    public function cancel_booking() {
-        $this->Booking_model->saveBooking($data);
-        redirect(base_url("orders"));
+    public function cancel_booking($id) {
+        // Retrieve booking data by ID
+        $data = $this->Booking_model->get_booking_data_by_id($id);
+
+        if (!$data) {
+            // Handle the case where no data is found
+            show_error('No booking found with the given ID.');
+            return;
+        }
+
+        echo"<pre>";
+        print_r($data);
+
+        // Save the booking (or cancel in your case)
+        // $this->Booking_model->saveBooking($data);
+
+        // Redirect to the orders page
+        // redirect(base_url("orders"));
     }
+    
     
 }

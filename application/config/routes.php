@@ -51,6 +51,11 @@ $route['orders_placement'] = 'Orders/orders_placement';
 $route['orders_going'] = 'Orders/orders_going';
 $route['orders_cancel'] = 'Orders/orders_cancel';
 
+/* Booking page Page */
+$route['booking/cancel/(:num)'] = 'Orders/cancel_booking/$1';
+$route['booking/save'] = 'Orders/save_booking';
+$route['booking/view/(:num)'] = 'Orders/view_booking/$1';
+
 
     /* Records Page */
 $route['records'] = 'Records/index';
@@ -67,11 +72,3 @@ $route['api/order/delete'] = 'api/ApiOrder/orderDelete';
 $route['api/order/updatestatus'] = 'api/ApiOrder/orderUpdateStatus';
 $route['api/order/ongoing'] = 'api/ApiOrder/orderOngoing';
 $route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
-
-
-
-$route['api/account'] = 'api/ApiAccounts/index';
-$route['api/account/add'] = 'api/ApiAccounts/insertUser';
-$route['api/account/edit/(:num)'] = 'api/ApiAccounts/editUser/$1';
-$route['api/account/update/(:num)'] = 'api/ApiAccounts/updateUser/$1';
-$route['api/account/delete/(:num)'] = 'api/ApiAccounts/deleteUser/$1';
