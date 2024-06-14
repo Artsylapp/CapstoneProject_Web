@@ -124,14 +124,26 @@ class Orders extends CI_Controller {
     //     $this->load->view('page/orders/view_booking');
     //     $this->load->view('page/include/footer');
     // }
+
     
-    public function cancel_booking($data) {
-        $this->Booking_model->saveBooking($data);
-        
+    public function cancel_booking($id) {
+        // Retrieve booking data by ID
+        $data = $this->Booking_model->get_booking_data_by_id($id);
 
-        error_log(print_r($data, true));
+        if (!$data) {
+            // Handle the case where no data is found
+            show_error('No booking found with the given ID.');
+            return;
+        }
 
+        print_r($data);
+
+        // Save the booking (or cancel in your case)
+        // $this->Booking_model->saveBooking($data);
+
+        // Redirect to the orders page
         // redirect(base_url("orders"));
     }
+    
     
 }
