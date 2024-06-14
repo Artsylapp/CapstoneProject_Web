@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="col-xs-4 col-sm-4">
-				<a href="<?php echo $this->config->base_url("temporary")?>">
+				<a href="<?php echo $this->config->base_url("locations")?>">
 					<button class="btn white-bg menu-btn ttsh" name="LOCATION">
 						<h1 class="">LOCATION</h1>
 					</button>

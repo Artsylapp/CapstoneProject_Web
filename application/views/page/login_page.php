@@ -14,7 +14,7 @@
     <script src="<?php echo $this->config->base_url('assets/js/Utils.js'); ?>"></script>
 </head>
 <body class="text-center" style="
-    background-image: url('<?php echo $this->config->base_url("assets/images/background.avif") ?>'); 
+    background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg") ?>'); 
     background-size: cover;
     background-repeat: no-repeat;">
     <nav class="navbar navbar-inverse" 
