@@ -13,21 +13,26 @@ class ApiOrder extends RestController {
         $this->load->model('Order_model');
     }
 
-    // To get all orders from the database to Android App
-    public function index_get()
-    {
+    // To get all ongoing orders from the database to Android App
+    public function index_get() {
         $orders = new Order_model;
-        $results = $orders->getOrders();
-        
+        $query = $orders->getOrders('ON-GOING'); // Fetch only "ON-GOING" orders
+    
+        $results = [];
+        foreach ($query as $order) {
+            $results[] = $order;
+        }
+    
         // Prepare OrderResponse object
         $orderResponse = [
             'error' => false,
             'message' => 'Orders retrieved successfully',
             'orders' => $results
         ];
-        
+    
         $this->response($orderResponse, 200);
     }
+    
 
     // To get a specific order from the database to Android App
     public function orderEdit_get($id)
