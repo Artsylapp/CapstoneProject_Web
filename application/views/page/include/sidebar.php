@@ -1,7 +1,4 @@
-<div class="col-xs-2 col-sm-2" style="
-    background-color: hsla(22, 61%, 37%, 0.25);
-    margin: 0px;
-    ">
+<div class="col-xs-2 col-sm-2" style="background-color: hsla(22, 61%, 37%, 0.25); margin: 0px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -33,5 +30,4 @@
             </div>
         </div>
     </div>
-
 </div>

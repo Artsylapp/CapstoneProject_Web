@@ -3,14 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Services extends CI_Controller {
         
         /* CONSTRUCTOR */
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Company_model');
         $this->load->model('Service_model');
         $this->load->library('session');
     }
 
-    public function index() //services hub
+    //services hub
+    public function index() 
     {
         $data['services'] = $this->Service_model->getServices();
 
@@ -25,12 +27,12 @@ class Services extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
-    public function ser_create() //services - create service
+    //services - create service page
+    public function ser_create() 
     {
         $info = array(
             'title' => 'Creating Services',
         );
-
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
@@ -38,7 +40,8 @@ class Services extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
-    public function ser_add() //services - add service
+    //services - add service function
+    public function ser_add() 
     {
         $data = array(
             'services_tbl_name' => $this->input->post('create_Customer'),
@@ -48,12 +51,11 @@ class Services extends CI_Controller {
         );
 
         $this->Service_model->createService($data);
-        redirect('Services'); // redirect to services hub
-        // print_r($data);
+        redirect('Services');
     }
 
-
-    public function ser_edit() //services - edit service
+    //services - edit service page
+    public function ser_edit() 
     {   
         $data = $this->Service_model->getService($this->uri->segment(3));
 
@@ -66,11 +68,9 @@ class Services extends CI_Controller {
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_edit');
         $this->load->view('page/include/footer');
-
-        // echo"<pre>";
-        // print_r($data);
     }
 
+    // services - update service function
     public function ser_update()
     {
         $data = array(
@@ -82,9 +82,9 @@ class Services extends CI_Controller {
 
         $this->Service_model->updateService($data, $this->uri->segment(3));
         redirect('Services');
-        // print_r($data);
     }
 
+    // services - delete service page
     public function ser_delete() //services - delete service
     {   
         $data = $this->Service_model->getService($this->uri->segment(3));
@@ -94,17 +94,17 @@ class Services extends CI_Controller {
             'services' => $data,
         );
 
-
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
         $this->load->view('page/services/ser_delete');
         $this->load->view('page/include/footer');        
     }
 
+    // services - remove service function
     public function ser_remove()
     {   
         $this->Service_model->deleteService($this->uri->segment(3));
-        redirect($this->config->base_url("services")); //redirect to services selection page
+        redirect($this->config->base_url("services"));
     }
 
 }

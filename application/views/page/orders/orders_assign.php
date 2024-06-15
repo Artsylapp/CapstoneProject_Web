@@ -1,6 +1,6 @@
 <div class="col-xs-9 col-sm-9">
-
     <div class="container-fluid">
+
         <div class="row">
 
             <div class="col-xs-12 col-sm-12">
@@ -19,9 +19,7 @@
         </div>
 
         <div class="row mt-s center-item">
-            
             <div class="col-sm-12 col-xs-12 box-white">
-
                 <table class="table table-hover" id="acc_table">
                     <thead>
                         <tr>
@@ -46,11 +44,8 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-
             </div>
-
         </div>
 
     </div>
-
 </div>

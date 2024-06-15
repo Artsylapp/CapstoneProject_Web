@@ -12,6 +12,7 @@ class Accounts extends CI_Controller {
 		$this->load->library('session');
 	}
 
+	// Accounts - load accounts hub
 	public function index()
   	{
 		$data = $this->Account_model->getAccounts();
@@ -26,6 +27,7 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
+	// Accounts - redirect to account page
 	public function user()
 	{	
 		$info = array(
@@ -38,6 +40,7 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
+	// Accounts - redirect to create account page
 	public function acc_create()
 	{	
 		$info = array(
@@ -50,7 +53,9 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
-	public function acc_add(){
+	// Accounts - create account function
+	public function acc_add()
+	{
 		
 		$data = array(
 			'accounts_tbl_name' => $this->input->post('create_Account'),
@@ -65,6 +70,7 @@ class Accounts extends CI_Controller {
 		// print_r($_POST);
 	}
 
+	// Accounts - redirect to edit account page
     public function acc_edit()
 	{	
 		$data = $this->Account_model->getAccount($this->uri->segment(3));
@@ -84,6 +90,7 @@ class Accounts extends CI_Controller {
 		
 	}
 
+	// Accounts - update account function
 	public function acc_update()
 	{
 		$data = array(
@@ -99,6 +106,7 @@ class Accounts extends CI_Controller {
 
 	}
 
+	// Accounts - redirect to delete account page
     public function acc_delete()
 	{	
 		$data = $this->Account_model->getAccount($this->uri->segment(3));
@@ -116,6 +124,7 @@ class Accounts extends CI_Controller {
 		// print_r($data);
 	}
 
+	// Accounts - delete account function
 	public function acc_remove()
 	{
 		$this->Account_model->deleteAccount($this->uri->segment(3));

@@ -2,30 +2,31 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Company_model extends CI_Model{
-    
-        /* CONSTRUCTOR */
-    public function __construct(){
-        parent::__construct();
-        $this->load->database();
-    }
 
-    public function createCompany($data){
+    // create company account
+    public function createCompany($data)
+    {
         $this->db->insert('company_tbl', $data);
-        // print_r($data);
     }
 
-    public function getCompanies(){
+    // get all company account
+    public function getCompanies()
+    {
         $query = $this->db->get('company_tbl');
         return $query->result();
     }
 
-    public function getCompany($user) {
+    // get company account by id
+    public function getCompany($user)
+    {
         $this->db->where('company_tbl_name', $user);
         $query = $this->db->get('company_tbl'); // Assuming company_tbl is the table name
         return $query->result();
     }
 
-    public function getCompanyWeb($username) {
+    // get company account by id
+    public function getCompanyWeb($username)
+    {
         $this->db->where('company_tbl_name', $username);
         $query = $this->db->get('company_tbl'); // Replace 'company_table' with your actual table name
         if ($query->num_rows() == 1) {
@@ -35,12 +36,16 @@ class Company_model extends CI_Model{
         }
     }
 
-    public function updateCompany($data){
+    // update company account
+    public function updateCompany($data)
+    {
         $this->db->where('company_tbl_id', $data['company_tbl_id']);
         $this->db->update('company_tbl', $data);
     }
 
-    public function deleteCompany($item){
+    // delete company account
+    public function deleteCompany($item)
+    {
         $this->db->where('company_tbl', $item);
         $this->db->delete('company_tbl');
     }

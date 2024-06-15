@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,12 @@
     <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>
     <script src="<?php echo $this->config->base_url('assets/js/Utils.js'); ?>"></script>
 </head>
+
 <body class="text-center" style="
     background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg") ?>'); 
     background-size: cover;
     background-repeat: no-repeat;">
+
     <nav class="navbar navbar-inverse" 
         style="
         background-color: hsla(22, 61%, 31%, 1);
@@ -41,9 +44,9 @@
     </nav>
 
     <div class="container-fluid" style="margin:0px; padding:0px;">
-    
         <div class="container-fluid">
             <div class="row">
+
                 <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:10vh;">
 
                     <h1 class="overflow-wrap">Welcome To VIAMM</h1>
@@ -51,17 +54,18 @@
 
                     <!-- Flash message div -->
                     <div class="row" style="margin-bottom: 20px;">
-                            <!-- Error message alert display -->
-                            <?php if ($this->session->flashdata('status')) { ?>
-                                <div class="alert alert-success">
-                                    <?php echo $this->session->flashdata('status'); ?>
-                                </div>
-                            <?php } elseif ($this->session->flashdata('invalid')) { ?>
-                                <div class="alert alert-danger">
-                                    <?php echo $this->session->flashdata('invalid'); ?>
-                                </div>
-                            <?php } ?>
 
+                    <!-- Error message alert display -->
+                    <?php if ($this->session->flashdata('status')) { ?>
+                        <div class="alert alert-success">
+                            <?php echo $this->session->flashdata('status'); ?>
+                        </div>
+                    <?php } elseif ($this->session->flashdata('invalid')) { ?>
+                        <div class="alert alert-danger">
+                            <?php echo $this->session->flashdata('invalid'); ?>
+                        </div>
+                    <?php } ?>
+                    
                     </div>
 
                     <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
@@ -92,8 +96,10 @@
 
                     </form>
                 </div>
+
             </div>
         </div>
     </div>
+
 </body>
 </html>

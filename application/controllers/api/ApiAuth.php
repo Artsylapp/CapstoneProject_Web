@@ -7,14 +7,16 @@ use chriskacerguis\RestServer\RestController;
 
 class ApiAuth extends RestController {
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->library('session');
         $this->load->model('Company_model');
     }
 
     // To authenticate user from the Android App
-    public function index_post() {
+    public function index_post()
+    {
         $comp_name = $this->post('username');
         $comp_pass = $this->post('password');
     
@@ -49,6 +51,4 @@ class ApiAuth extends RestController {
 
         }
     }
-
-
 }
