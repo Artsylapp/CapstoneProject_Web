@@ -3,14 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Locations extends CI_Controller {
         
         /* CONSTRUCTOR */
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Company_model');
         $this->load->model('Locations_model');
         $this->load->library('session');
     }
 
-    public function index() //locations hub
+    //Location - locations hub
+    public function index() 
     {
         $data['locations'] = $this->Locations_model->getLocations();
 
@@ -25,12 +27,12 @@ class Locations extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
-    public function loc_create() //Locations - create location
+    // Location - redirect to create location page
+    public function loc_create()
     {
         $info = array(
             'title' => 'Creating Locations',
         );
-
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
@@ -38,7 +40,8 @@ class Locations extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
-    public function loc_add() //Locations - add location
+    // Location - create location function
+    public function loc_add()
     {
         $data = array(
             'location_tbl_name' => $this->input->post('create_Customer'),
@@ -47,12 +50,11 @@ class Locations extends CI_Controller {
         );
 
         $this->Locations_model->createlocation($data);
-        redirect('Locations'); // redirect to Locations hub
-        // print_r($data);
+        redirect('Locations'); 
     }
 
-
-    public function loc_edit() //Locations - edit location
+    // Location - redirect ti edit location page
+    public function loc_edit()
     {   
         $data = $this->Locations_model->getlocation($this->uri->segment(3));
 
@@ -65,11 +67,9 @@ class Locations extends CI_Controller {
         $this->load->view('page/include/sidebar');
         $this->load->view('page/locations/loc_edit');
         $this->load->view('page/include/footer');
-
-        // echo"<pre>";
-        // print_r($data);
     }
 
+    // Location - update location function
     public function loc_update()
     {
         $data = array(
@@ -80,10 +80,10 @@ class Locations extends CI_Controller {
 
         $this->Locations_model->updatelocation($data, $this->uri->segment(3));
         redirect('Locations');
-        // print_r($data);
     }
 
-    public function loc_delete() //Locations - delete location
+    // Location - redirect to delete location page
+    public function loc_delete()
     {   
         $data = $this->Locations_model->getlocation($this->uri->segment(3));
 
@@ -99,10 +99,11 @@ class Locations extends CI_Controller {
         $this->load->view('page/include/footer');        
     }
 
+    // Location - delete location function
     public function loc_remove()
     {   
         $this->Locations_model->deletelocation($this->uri->segment(3));
-        redirect($this->config->base_url("locations")); //redirect to Locations selection page
+        redirect($this->config->base_url("locations")); 
     }
 
 }

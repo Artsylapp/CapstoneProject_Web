@@ -1,20 +1,15 @@
 <div class="col-xs-10 col-sm-10">
-
 	<div class="container-fluid">
-		<div class="row">
 
+		<div class="row">
 			<div class="col-xs-12 col-sm-12">
 				<h1 class="overflow-wrap">ACCOUNT EDIT</h1>
 				<h3 style="margin-top: 0px;">Edit Account - COMPANY</h3>
 			</div>
-
-
 		</div>
 
 		<div class="row mt-s">
-			
 			<div class="col-sm-11 col-xs-11 box-white">
-
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3))?>" method="POST">
 					
 					<div class="form-group">
@@ -68,9 +63,7 @@
 				</div>
 
 			</div>
-
 		</div>
 
 	</div>
-
 </div>

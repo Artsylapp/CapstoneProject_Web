@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Records extends CI_Controller {
 
     /* CONSTRUCTOR */
-	public function __construct() {
+	public function __construct()
+    {
 		parent::__construct();
 		$this->load->model('Company_model');
 		$this->load->model('Order_model');
@@ -14,7 +15,9 @@ class Records extends CI_Controller {
 		$this->load->library('session');
 	}
 
-	public function index() {
+    // Orders hub main page
+	public function index()
+    {
 		$data['orders'] = $this->Order_model->getOrders();
 		$info = array(
 			'title' => 'Booking',
@@ -27,7 +30,8 @@ class Records extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
-	public function records_view() // Orders - delete order
+    // Orders - delete order
+	public function records_view() 
     {
         $data = $this->Order_model->getOrder($this->uri->segment(3));
 
@@ -43,14 +47,16 @@ class Records extends CI_Controller {
             $masseurs = isset($booking_details['masseurs']) ? $booking_details['masseurs'] : [];
             $locations = isset($booking_details['locations']) ? $booking_details['locations'] : [];
             $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : 'N/A';
+
         } else {
             $services = $masseurs = $locations = [];
             $totalCost = 'N/A';
         }
 
+        // Pass the single object
         $info = array(
             'title' => 'Cancel Booking',
-            'booking' => $booking, // Pass the single object
+            'booking' => $booking, 
             'services' => $services,
             'masseurs' => $masseurs,
             'locations' => $locations,
@@ -59,8 +65,7 @@ class Records extends CI_Controller {
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
-        $this->load->view('page/records/records_view', $info); // Pass $info to the view
+        $this->load->view('page/records/records_view', $info); 
         $this->load->view('page/include/footer');        
     }
-
 }

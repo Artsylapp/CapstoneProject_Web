@@ -3,12 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Booking_model extends CI_Model {
 
-    public function __construct() {
-        parent::__construct();
-        $this->load->database();
-    }
-
-    public function saveBooking($data) {
+    // Get all bookings and save the data of the booking
+    public function saveBooking($data)
+    {
         // Start transaction
         $this->db->trans_start();
     
@@ -49,7 +46,9 @@ class Booking_model extends CI_Model {
         }
     }
 
-    public function updateBooking($data) {
+    // Get all bookings and update the data of the booking
+    public function updateBooking($data)
+    {
         $id = $data['id'];
     
         // Start a transaction to ensure all updates are applied atomically
@@ -79,8 +78,5 @@ class Booking_model extends CI_Model {
         $this->db->trans_complete();
     
         return $this->db->trans_status(); // Returns true if all updates are successful
-    }
-      
-    
+    } 
 }
-?>

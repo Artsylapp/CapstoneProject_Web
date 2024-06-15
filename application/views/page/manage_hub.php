@@ -1,5 +1,4 @@
 <div class="col-xs-10 col-sm-10">
-
 	<div class="container-fluid">
 		<div class="row">
 
@@ -33,7 +32,5 @@
 			</div>
 
 		</div>
-
 	</div>
-
 </div>

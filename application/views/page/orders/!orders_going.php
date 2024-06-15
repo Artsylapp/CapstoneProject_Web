@@ -1,8 +1,8 @@
 <div>
 	<div class="container">
+
 		<div class="row">
 			<div class="col-lg-12">
-                    
 			    <div style="width: 100%; padding: 15px; border-style: solid; border-color:#404040; border-width: medium; background-color: #F2F2F2; color: #000000; margin-bottom:3%; border-radius:24px; text-align: left;">
 
                     <div style="display: flex;">
@@ -56,6 +56,7 @@
                     </div>
 
                 </div>
+                
                 <div class="" style="">
                     <a href="<?php echo $this->config->base_url("orders/orders_select/orders_going")?>">
 						<button class="btnpushable btnStyle red ttsh" name="RETURN" style="width:50%; margin-left:25%">

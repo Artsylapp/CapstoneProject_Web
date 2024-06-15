@@ -1,5 +1,6 @@
 <div class="col-xs-10 col-sm-10">
     <div class="container-fluid">
+
         <div class="row">
             <div class="col-xs-12 col-sm-12" style="text-align: right;">
                 <h1 class="overflow-wrap">RECORDS HUB</h1>
@@ -7,6 +8,7 @@
             </div>
             <div class="col-xs-4 col-sm-4"></div>
         </div>
+
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
                 <table class="table table-hover" id="acc_table">
@@ -39,6 +41,7 @@
                 </table>
             </div>
         </div>
+        
     </div>
 </div>
 

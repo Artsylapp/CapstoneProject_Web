@@ -3,7 +3,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
 
 <div class="row mt-s center-item">
-			
 	<div class="col-sm-11 col-xs-11 box-white">
 
         <div>
@@ -50,5 +49,4 @@
         </script>
 
     </div>
-
 </div>

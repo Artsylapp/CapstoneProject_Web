@@ -41,7 +41,7 @@
                                         </a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="<?php echo $this->config->base_url("orders/orders_delete/" . $order->orders_tbl_id); ?>">
+                                        <a href="<?php echo $this->config->base_url("booking/cancel" . $order->orders_tbl_id); ?>">
                                             <button class="btn red-bg menu-btn-sm ttsh" name="CANCEL BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
                                                 <h4>CANCEL</h4>
                                             </button>
