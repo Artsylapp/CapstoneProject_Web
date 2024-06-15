@@ -1,25 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-  /* Other Utilities */
+/* Other Utilities */
 $route['default_controller'] = 'Main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-  /* Main Home Page */
+/* Main Home Page */
 $route['home'] = 'Main/index';
 $route['manage_hub'] = 'Main/manage_hub';
 $route['login'] = 'Main/login_page';
 $route['loginAuth'] = 'Main/login_auth';
 $route['temporary'] = 'Main/temporary';
 
-  /*Locations Page */
+/*Locations Page */
 $route['locations'] = 'locations/index';
 $route['loc_create'] = 'locations/loc_create';
 $route['loc_edit'] = 'locations/loc_edit';
 $route['loc_delete'] = 'locations/acc_delete';
 
-    /* Accounts Page */
+/* Accounts Page */
 $route['accounts'] = 'Accounts/index';
 $route['user'] = 'Accounts/user';
 $route['acc_create'] = 'Accounts/acc_create';
@@ -31,7 +31,7 @@ $route['acc_update']['POST'] = 'Accounts/acc_update';
 $route['acc_remove'] = 'Accounts/acc_remove';
 
 
-    /* Services Page */
+/* Services Page */
 $route['services'] = 'Services/index';
 $route['ser_create'] = 'Services/ser_create';
 $route['ser_edit'] = 'Services/ser_edit';
@@ -43,7 +43,7 @@ $route['ser_update']['POST'] = 'Services/ser_update';
 $route['ser_remove'] = 'Services/ser_remove';
 
 
-    /* Orders Page */
+/* Orders Page */
 $route['orders'] = 'Orders/index';
 $route['orders_create'] = 'Orders/orders_create';
 $route['orders_assign'] = 'Orders/orders_assign';
@@ -57,11 +57,11 @@ $route['booking/save'] = 'Orders/save_booking';
 $route['booking/view/(:num)'] = 'Orders/view_booking/$1';
 
 
-    /* Records Page */
+/* Records Page */
 $route['records'] = 'Records/index';
 
 
-  /* REST API */
+/* REST API */
 // $route['api/auth'] = 'api/ApiAuth/index';
 $route['api/login'] = 'api/ApiAuth/index';
 
