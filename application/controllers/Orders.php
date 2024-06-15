@@ -103,34 +103,6 @@ class Orders extends CI_Controller {
     $this->load->view('page/include/footer');        
 }
 
-
-    /* function save_booking() {
-        // Read the incoming JSON data
-        $data = json_decode(file_get_contents('php://input'), true);
-    
-        if (!empty($data)) {
-            // Debugging output
-            log_message('debug', 'Booking Data: ' . print_r($data, true));
-            
-            // Save the booking data
-            $this->Booking_model->saveBooking($data);
-    
-            // Check for database errors
-            if ($this->db->affected_rows() > 0) {
-                log_message('info', 'Booking saved successfully.');
-            } else {
-                log_message('error', 'Failed to save booking: ' . $this->db->last_query());
-            }
-    
-            // Redirect to the orders page
-            //redirect(base_url("orders"));
-        } else {
-            log_message('error', 'No data received for booking.');
-            //redirect(base_url("orders"));
-        }
-    }
-    */
-
     public function save_booking() {
         $this->load->model('Booking_model');
         
@@ -149,38 +121,64 @@ class Orders extends CI_Controller {
             echo json_encode(['status' => 'error', 'message' => 'Invalid data']);
         }
     }
-
-    // public function view_booking($id) {
-    //     $data['order'] = $this->Order_model->getOrder($id);
-    //     $info = array(
-    //         'title' => 'View Booking',
-    //         'order' => $data['order'],
-    //     );
-    //     $this->load->view('page/include/header', $info);
-    //     $this->load->view('page/include/sidebar');
-    //     $this->load->view('page/orders/view_booking');
-    //     $this->load->view('page/include/footer');
-    // }
-
     
     public function cancel_booking($id) {
-        // Retrieve booking data by ID
-        $data = $this->Booking_model->get_booking_data_by_id($id);
+        $booking = $this->Order_model->getOrder($id);
+        if (!empty($booking)) {
+            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+    
+            $data = array(
+                'id' => $id,
+                'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
+                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : []
+            );
+    
+            $success = $this->Booking_model->updateBooking($data);
+            if ($success) {
+                $this->session->set_flashdata('message', 'Booking cancelled successfully.');
+            } else {
+                $this->session->set_flashdata('error', 'Failed to cancel booking.');
+            }
+        } else {
+            $this->session->set_flashdata('error', 'Booking not found.');
+        }
+        redirect(base_url("orders"));
+    }
 
-        if (!$data) {
-            // Handle the case where no data is found
-            show_error('No booking found with the given ID.');
-            return;
+    public function orders_view() // Orders - delete order
+    {
+        $data = $this->Order_model->getOrder($this->uri->segment(3));
+
+        // Ensure $data is not empty and get the first element
+        $booking = !empty($data) ? $data[0] : null;
+
+        if ($booking) {
+            // Parse the JSON string
+            $booking_details = json_decode($booking->orders_tbl_details, true);
+
+            // Prepare individual variables from the JSON
+            $services = isset($booking_details['services']) ? $booking_details['services'] : [];
+            $masseurs = isset($booking_details['masseurs']) ? $booking_details['masseurs'] : [];
+            $locations = isset($booking_details['locations']) ? $booking_details['locations'] : [];
+            $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : 'N/A';
+        } else {
+            $services = $masseurs = $locations = [];
+            $totalCost = 'N/A';
         }
 
-        echo"<pre>";
-        print_r($data);
+        $info = array(
+            'title' => 'Cancel Booking',
+            'booking' => $booking, // Pass the single object
+            'services' => $services,
+            'masseurs' => $masseurs,
+            'locations' => $locations,
+            'totalCost' => $totalCost,
+        );
 
-        // Save the booking (or cancel in your case)
-        // $this->Booking_model->saveBooking($data);
-
-        // Redirect to the orders page
-        // redirect(base_url("orders"));
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/include/sidebar');
+        $this->load->view('page/orders/orders_view', $info); // Pass $info to the view
+        $this->load->view('page/include/footer');        
     }
     
     
