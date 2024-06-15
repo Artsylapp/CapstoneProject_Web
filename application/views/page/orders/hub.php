@@ -8,7 +8,7 @@
             <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">
                 <a href="<?php echo $this->config->base_url("orders_create") ?>" id="new-order-button">
-                    <button class="btn green-bg menu-btn-m center-item ttsh" name="NEW ORDER">
+                    <button class="btn green-bg menu-btn-m center-item ttsh" name="NEW BOOKING">
                         <h3 class="white-txt">NEW BOOKING</h3>
                     </button>
                 </a>
@@ -34,7 +34,7 @@
                                     <td><?php echo $order->orders_tbl_status; ?></td>
                                     <td><?php echo $order->totalCost; ?></td>
                                     <td class="text-center">
-                                        <a href="<?php echo $this->config->base_url("orders/orders_view/" . $order->orders_tbl_id); ?>">
+                                        <a href="<?php echo $this->config->base_url("booking/view/" . $order->orders_tbl_id); ?>">
                                             <button class="btn green-bg menu-btn-sm ttsh" name="VIEW BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
                                                 <h4>VIEW</h4>
                                             </button>

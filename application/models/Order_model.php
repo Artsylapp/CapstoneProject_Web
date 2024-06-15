@@ -51,11 +51,19 @@ class Order_model extends CI_Model {
         $this->db->delete('orders_tbl');
     }
 
+// API SECTION
+    // get booking with ongoing status
+    public function getOngoingOrders($status = null) {
+        if ($status) {
+            $this->db->where('orders_tbl_status', $status);
+        }
+        $query = $this->db->get('orders');
+  
     // getting all ongoing orders
-    public function getOngoingOrders()
-    {
-        $query = $this->db->get_where('orders_tbl', array('orders_tbl_status' => 'Ongoing'));
-        return $query->result();
-    }
+    //public function getOngoingOrders()
+    //{
+    //    $query = $this->db->get_where('orders_tbl', array('orders_tbl_status' => 'Ongoing'));
+    //    return $query->result();
+    //}
 }
 ?>

@@ -54,7 +54,7 @@ $route['orders_cancel'] = 'Orders/orders_cancel';
 /* Booking page Page */
 $route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
 $route['booking/save'] = 'Orders/save_booking';
-$route['booking/view/(:num)'] = 'Orders/view_booking/$1';
+$route['booking/view/(:num)'] = 'Orders/orders_view/$1';
 
 
 /* Records Page */
