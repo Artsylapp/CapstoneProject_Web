@@ -13,6 +13,7 @@ class ApiOrder extends RestController {
         $this->load->model('Order_model');
     }
 
+
     // To get all ongoing orders from the database to Android App
     public function index_get() {
         $orders = new Order_model;
