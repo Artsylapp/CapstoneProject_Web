@@ -4,7 +4,7 @@
 		<div class="row">
 
 			<div class="col-xs-12 col-sm-12" style="text-align: right;">
-				<h1 class="overflow-wrap">SERVICE HUB</h1>
+				<h1 class="overflow-wrap">SERVICES HUB</h1>
 				<h3 style="margin-top: 0px;">Manage Services - COMPANY</h3>
 			</div>
 
