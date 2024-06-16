@@ -125,13 +125,22 @@ class ApiOrder extends RestController {
     
             $success = $this->Booking_model->updateBooking($data);
             if ($success) {
-                $this->session->set_flashdata('message', 'Booking cancelled successfully.');
+                $orderResponse = [
+                    'error' => false,
+                    'message' => 'Booking cancelled successfully.'
+                ];
+                $this->response($orderResponse, 200);
             } else {
                 $this->session->set_flashdata('error', 'Failed to cancel booking.');
+                $this->response($orderResponse, 500);
             }
+            
         } else {
-            $this->session->set_flashdata('error', 'Booking not found.');
+            $orderResponse = [
+                'error' => true,
+                'message' => 'Booking not found.'
+            ];
+            $this->response($orderResponse, 500);
         }
-        redirect(base_url("orders"));
     }
 }
