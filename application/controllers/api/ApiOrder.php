@@ -111,8 +111,9 @@ class ApiOrder extends RestController {
     }
 
     // Orders - Cancel booking
-    public function orderCancelled_get($id)
+    public function orderCancelled_post()
     {
+        $id = $this->post('orderId');
         // Retrieve order based on $id
         $booking = $this->Order_model->getOrder($id);
         
