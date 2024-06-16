@@ -11,6 +11,7 @@ class ApiOrder extends RestController {
     {
         parent::__construct();
         $this->load->model('Order_model');
+        $this->load->model('Booking_model');
     }
 
     // To get all ongoing orders from the database to Android App
