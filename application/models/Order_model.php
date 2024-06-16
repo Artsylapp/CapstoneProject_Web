@@ -48,6 +48,7 @@ class Order_model extends CI_Model {
     public function getOngoingOrders($status) {
         $this->db->where('orders_tbl_status', $status);
         $query = $this->db->get('orders_tbl');
+        return $query->result();
     }
 
     // getting all completed orders
