@@ -109,80 +109,29 @@ class ApiOrder extends RestController {
     
         $this->response($orderResponse, 200); // Send success response with HTTP status code 200
     }
+
+    // Orders - Cancel booking
+    public function orderCancelled_get()
+    {
+        $booking = $this->Order_model->getOrder($id);
+        if (!empty($booking)) {
+            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
     
-
-    // To get a specific order from the database to Android App
-    public function orderEdit_get($id)
-    {
-        $orders = new Order_model;
-        $results = $orders->getOrder($id);
-        
-        // Prepare OrderResponse object
-        $orderResponse = [
-            'error' => false,
-            'message' => 'Order retrieved successfully',
-            'orders' => [$results] // Wrap result in array to match data class structure
-        ];
-        
-        $this->response($orderResponse, 200);
-    }
-
-    // To get data from App and update a specific order from the Android App to the database
-    public function orderUpdate_post()
-    {
-        $orders = new Order_model;
-        $data = [
-            'orders_tbl_id' => $this->post('orderId'),
-            'orders_tbl_services' => $this->post('orderService'),
-            'orders_tbl_empName' => $this->post('orderEmpName'),
-            'orders_tbl_status' => $this->post('orderStatus')
-        ];
-        $results = $orders->updateOrder($data);
-        
-        // Prepare OrderResponse object
-        $orderResponse = [
-            'error' => false,
-            'message' => 'Order updated successfully',
-            'orders' => [$results] // Wrap result in array to match data class structure
-        ];
-        
-        $this->response($orderResponse, 200);
-    }
-
-    // To get order ID from App and delete a specific order from the Android App to the database
-    public function orderDelete_post()
-    {
-        $id = $this->post('orderId');
-        $orders = new Order_model;
-        $results = $orders->deleteOrder($id);
-        
-        // Prepare OrderResponse object
-        $orderResponse = [
-            'error' => false,
-            'message' => 'Order deleted successfully',
-            'orders' => [$results] // Wrap result in array to match data class structure
-        ];
-        
-        $this->response($orderResponse, 200);
-    }
-
-    public function orderUpdateStatus_post()
-    {
-        $orders = new Order_model;
-        $data = [
-            'orders_tbl_id' => $this->post('orderId'),
-            'orders_tbl_status' => $this->post('orderStatus')
-        ];
-        
-        $results = $orders->updateOrder($data);
-        
-        // Prepare OrderResponse object
-        $orderResponse = [
-            'error' => false,
-            'message' => 'Order status updated Successfully!',
-            'orders' => [$results] // Wrap result in array to match data class structure
-        ];
-        
-        $this->response($orderResponse, 200);
+            $data = array(
+                'id' => $id,
+                'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
+                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : []
+            );
+    
+            $success = $this->Booking_model->updateBooking($data);
+            if ($success) {
+                $this->session->set_flashdata('message', 'Booking cancelled successfully.');
+            } else {
+                $this->session->set_flashdata('error', 'Failed to cancel booking.');
+            }
+        } else {
+            $this->session->set_flashdata('error', 'Booking not found.');
+        }
+        redirect(base_url("orders"));
     }
 }
