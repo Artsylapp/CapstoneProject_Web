@@ -113,34 +113,36 @@ class ApiOrder extends RestController {
     // Orders - Cancel booking
     public function orderCancelled_get($id)
     {
+        // Retrieve order based on $id
         $booking = $this->Order_model->getOrder($id);
+        
         if (!empty($booking)) {
             $booking_details = json_decode($booking[0]->orders_tbl_details, true);
-    
+
             $data = array(
                 'id' => $id,
                 'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
                 'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : []
             );
-    
+
+            // Update booking status in the model
             $success = $this->Booking_model->updateBooking($data);
+
             if ($success) {
+                // Respond with success message
                 $orderResponse = [
                     'error' => false,
                     'message' => 'Booking cancelled successfully.'
                 ];
                 $this->response($orderResponse, 200);
             } else {
-                $this->session->set_flashdata('error', 'Failed to cancel booking.');
-                $this->response($orderResponse, 500);
+                // Respond with error message
+                $this->response(['error' => true, 'message' => 'Failed to cancel booking.'], 500);
             }
-            
         } else {
-            $orderResponse = [
-                'error' => true,
-                'message' => 'Booking not found.'
-            ];
-            $this->response($orderResponse, 500);
+            // Respond with booking not found message
+            $this->response(['error' => true, 'message' => 'Booking not found.'], 500);
         }
     }
+
 }
