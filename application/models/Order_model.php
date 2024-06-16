@@ -27,7 +27,7 @@ class Order_model extends CI_Model {
         $query = $this->db->get_where('orders_tbl', array('orders_tbl_id' => $id));
         return $query->result();
     }
-    
+
 // API SECTION
     // updating order data
     public function updateOrder($data)
@@ -47,7 +47,7 @@ class Order_model extends CI_Model {
     // get booking with ongoing status
     public function getOngoingOrders($status) {
         $this->db->where('orders_tbl_status', $status);
-        $query = $this->db->get('orders');
+        $query = $this->db->get('orders_tbl');
     }
 
     // getting all completed orders
@@ -58,4 +58,3 @@ class Order_model extends CI_Model {
         return $query->result();
     }
 }
-?>
