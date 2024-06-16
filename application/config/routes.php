@@ -14,10 +14,10 @@ $route['loginAuth'] = 'Main/login_auth';
 $route['temporary'] = 'Main/temporary';
 
 /*Locations Page */
-$route['locations'] = 'locations/index';
-$route['loc_create'] = 'locations/loc_create';
-$route['loc_edit'] = 'locations/loc_edit';
-$route['loc_delete'] = 'locations/acc_delete';
+$route['locations'] = 'Locations/index';
+$route['loc_create'] = 'Locations/loc_create';
+$route['loc_edit'] = 'Locations/loc_edit';
+$route['loc_delete'] = 'Locations/acc_delete';
 
 /* Accounts Page */
 $route['accounts'] = 'Accounts/index';

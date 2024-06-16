@@ -36,7 +36,7 @@ class Locations extends CI_Controller {
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/include/sidebar');
-        $this->load->view('page/Locations/loc_create');
+        $this->load->view('page/locations/loc_create');
         $this->load->view('page/include/footer');
     }
 

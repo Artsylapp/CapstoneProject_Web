@@ -22,7 +22,7 @@
 
 					<div class="col-xs-4 col-sm-4">
 						<a href="<?php echo $this->config->base_url("manage_hub")?>">
-							<button class="btn white-bg menu-btn ttsh" name="MANAGEMENT">
+							<button class="btn white-bg menu-btn ttsh" name="MANAGE">
 								<h1 class="">MANAGE</h1>
 							</button>
 						</a>

@@ -65,7 +65,7 @@
 
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
                     <a href="<?php echo $this->config->base_url("records")?>">
-                        <button class="btn yellow-bg menu-btn-m ttsh" name="Back to booking hub">
+                        <button class="btn yellow-bg menu-btn-m ttsh" name="Back to records hub">
                             <h4>BACK</h4>
                         </button>
                     </a>
