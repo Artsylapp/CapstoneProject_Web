@@ -57,7 +57,7 @@ class Booking_model extends CI_Model {
     
         // Update the booking status
         $this->db->where('orders_tbl_id', $id);
-        if (isempty($status)) {
+        if (empty($status)) {
             $this->db->update('orders_tbl', array('orders_tbl_status' => 'CANCELLED'));
         }else{
             $this->db->update('orders_tbl', array('orders_tbl_status' => $status));
