@@ -73,4 +73,4 @@ $route['api/order/updatestatus'] = 'api/ApiOrder/orderUpdateStatus';
 $route['api/order/ongoing'] = 'api/ApiOrder/index';
 $route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
 $route['api/order/finished'] = 'api/ApiOrder/orderFinished';
-$route['api/order/cancelled'] = 'api/ApiOrder/orderCancelled';
+$route['api/order/update'] = 'api/ApiOrder/orderUpdate';

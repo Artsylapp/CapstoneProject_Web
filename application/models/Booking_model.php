@@ -50,13 +50,18 @@ class Booking_model extends CI_Model {
     public function updateBooking($data)
     {
         $id = $data['id'];
+        $status = $data['status'];
     
         // Start a transaction to ensure all updates are applied atomically
         $this->db->trans_start();
     
         // Update the booking status
         $this->db->where('orders_tbl_id', $id);
-        $this->db->update('orders_tbl', array('orders_tbl_status' => 'CANCELLED'));
+        if (isempty($status)) {
+            $this->db->update('orders_tbl', array('orders_tbl_status' => 'CANCELLED'));
+        }else{
+            $this->db->update('orders_tbl', array('orders_tbl_status' => $status));
+        }
     
         // Update masseur status to AVAILABLE
         if (isset($data['masseurs'])) {

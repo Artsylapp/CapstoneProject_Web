@@ -112,9 +112,12 @@ class ApiOrder extends RestController {
     }
 
     // Orders - Cancel booking
-    public function orderCancelled_post()
+    public function orderUpdate_post()
     {
+        // Get order ID and status from POST request
         $id = $this->post('orderId');
+        $status = $this->post('orderStatus');
+
         // Retrieve order based on $id
         $booking = $this->Order_model->getOrder($id);
         
@@ -123,6 +126,7 @@ class ApiOrder extends RestController {
 
             $data = array(
                 'id' => $id,
+                'status' => $status,
                 'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
                 'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : []
             );
