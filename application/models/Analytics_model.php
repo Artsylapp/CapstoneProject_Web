@@ -24,7 +24,7 @@ class Analytics_model extends CI_Model{
             SELECT MONTH(orders_tbl_createDate) as month, COUNT(*) as count
             FROM orders_tbl
             WHERE YEAR(orders_tbl_createDate) = $currentYear
-              AND orders_tbl_status IN ('completed', 'cancelled')
+              AND orders_tbl_status IN ('completed')
             GROUP BY MONTH(orders_tbl_createDate)
         ")->result();
     
@@ -33,7 +33,7 @@ class Analytics_model extends CI_Model{
             SELECT MONTH(orders_tbl_createDate) as month, COUNT(*) as count
             FROM orders_tbl
             WHERE YEAR(orders_tbl_createDate) = $previousYear
-              AND orders_tbl_status IN ('completed', 'cancelled')
+              AND orders_tbl_status IN ('completed')
             GROUP BY MONTH(orders_tbl_createDate)
         ")->result();
     
@@ -44,6 +44,8 @@ class Analytics_model extends CI_Model{
         );
     }
     
-    
+    public function getRevenueData(){
+        print("Revenue Data");
+    }
 }
     

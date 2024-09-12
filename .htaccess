@@ -17,7 +17,7 @@
     ErrorDocument 404 /index.php
 </IfModule>
 
-#Use for Server Hosting Deployment
+# Use for Server Hosting Deployment
 # <IfModule mod_rewrite.c>
 #     RewriteEngine On
 #     RewriteBase /

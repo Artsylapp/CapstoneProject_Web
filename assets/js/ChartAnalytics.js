@@ -1,9 +1,15 @@
 console.log("Fetching data");
+// Chart Data Analysis
+
 // Fetch data from the controller
 fetch('/Capstoneproject_web/getYearAnalytics')
+    // Parse the passed data to JSON
     .then(response => response.json())
+
+    // Process the data
     .then(data => {
-        const thisYearData = new Array(12).fill(0); // Initialize with 0s for each month
+        // Initialize with 0s for each month, which fills the array with 12 individual zeros
+        const thisYearData = new Array(12).fill(0); 
         const previousYearData = new Array(12).fill(0);
 
         // Process current year data
@@ -53,4 +59,8 @@ fetch('/Capstoneproject_web/getYearAnalytics')
             }
         });
     })
-    .catch(error => console.error('Error fetching data:', error));
+    // Catch any errors
+    .catch(err => console.error('Error fetching data:', err));
+
+// Revenue Data Analysis
+
