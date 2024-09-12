@@ -214,6 +214,7 @@ $config['auth_library_function'] = '';
 |
 */
 $config['rest_valid_logins'] = ['aDm1n%v1AmM' => '1A7*ajHy6p$ag5'];
+$config['rest_valid_logins'] = ['aDm1n%v1AmM' => '1A7*ajHy6p$ag5'];
 
 /*
 |--------------------------------------------------------------------------

@@ -60,9 +60,13 @@ $route['booking/view/(:num)'] = 'Orders/orders_view/$1';
 /* Records Page */
 $route['records'] = 'Records/index';
 
+/* Analytics Page */
+$route['analytics'] = 'Analytics/index';
+$route['getYearAnalytics'] = 'Analytics/getYearAnalytics';
+$route['getVaueData'] = 'Analytics/getVaueData';
+
 
 /* REST API */
-// $route['api/auth'] = 'api/ApiAuth/index';
 $route['api/login'] = 'api/ApiAuth/index';
 
 // $route['api/order'] = 'api/ApiOrder/index';

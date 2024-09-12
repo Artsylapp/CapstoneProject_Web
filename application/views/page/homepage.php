@@ -1,6 +1,7 @@
 <div class="col-xs-10 col-sm-10">
 	<div class="container-fluid">
 
+		<!-- Header Title -->
 		<div class="row">
 			<div class="col-xs-12 col-sm-12" style="text-align: right;">
 				<h1 class="overflow-wrap white-txt">DASHBOARD</h1>
@@ -8,6 +9,7 @@
 			</div>
 		</div>
 
+		<!-- Button Containers -->
 		<div class="button-container">
 
 			<div class="container-fluid">
