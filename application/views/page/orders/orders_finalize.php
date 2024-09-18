@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
+
 <div class="col-xs-10 col-sm-10">
     <div class="container-fluid">
         
@@ -23,7 +26,34 @@
         <div class="row mt-s">
             <div class="col-sm-11 col-xs-11 box-white">
 
-            
+                <tbody id="item-list">
+                                <!-- Items will be populated by JavaScript -->
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Masseur</th>
+                                </tr>
+                            </thead>
+                            <tbody id="assign-list">
+                                <!-- Masseurs will be populated by JavaScript -->
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th colspan="3">Area</th>
+                                </tr>
+                            </thead>
+                            <tbody id="placement-list">
+                                <!-- Area will be populated by JavaScript -->
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">Total Cost</td>
+                                    <td id="total-cost">₱0.00</td>
+                                </tr>
+                </tfoot>
                 
             </div>
         </div>

@@ -158,6 +158,16 @@ class Orders extends CI_Controller {
         redirect(base_url("orders"));
     }
 
+    public function orders_finalize(){
+        $info = array(
+            'title' => 'Finalize Booking',
+            'mode' => 'finalize'
+        );
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/include/sidebar', $info);
+        $this->load->view('page/orders/orders_finalize', $info);
+    }
+
     // Orders - Updating masseur status and booking status
     public function orders_view() // Orders - delete order
     {

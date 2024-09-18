@@ -12,7 +12,7 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="continue-button" class="btn green-bg menu-btn-m center-item ttsh" 
                     name="Proceed to finalizing" 
-                    data-base-url="<?php echo base_url('orders_finalize'); ?>">
+                    data-base-url="<?php echo base_url('orders/orders_finalize');?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
@@ -37,6 +37,16 @@
                                 <td class="text-center">
                                     <button class="btn green-bg menu-btn-sm ttsh assign-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "ASSIGN: $location->location_tbl_name"; ?>">
                                         <h4>ASSIGN</h4>
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php else: ?>
+                            <tr data-location-type="<?php echo $location->location_tbl_type; ?>">
+                                <td><?php echo $location->location_tbl_name; ?></td>
+                                <td><?php echo $location->location_tbl_type; ?></td>
+                                <td class="text-center">
+                                    <button disabled class="btn red-bg menu-btn-sm ttsh assign-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "IN-USE: $location->location_tbl_name"; ?>">
+                                        <h4>IN-USE</h4>
                                     </button>
                                 </td>
                             </tr>

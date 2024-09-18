@@ -1,5 +1,5 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script> 
 
 <script>
     let baseUrl = "<?php echo base_url('orders/save_services'); ?>";

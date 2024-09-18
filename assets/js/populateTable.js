@@ -119,7 +119,6 @@ $(document).ready(function() {
         }
     }
 
-    //NOT WORKING YET
     function filterLocationByType() {
         let currentType = getCurrentServiceType();
         if (currentType) {
