@@ -40,6 +40,16 @@
                                         </button>
                                     </td>
                                 </tr>
+                            <?php elseif ($account->accounts_tbl_empType == "Masseur" AND $account->accounts_tbl_status == "BOOKED"):?>
+                                <tr>
+                                    <td><?php echo $account->accounts_tbl_name; ?></td>
+                                    <td><?php echo $account->accounts_tbl_empType; ?></td>
+                                    <td class="text-center">
+                                        <button class="btn red-bg menu-btn-sm ttsh assign-masseur" disabled data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "UNAVAILABLE: $account->accounts_tbl_name"; ?>">
+                                            <h4>BOOKED</h4>
+                                        </button>
+                                    </td>
+                                </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </tbody>
