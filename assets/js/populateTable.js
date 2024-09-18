@@ -8,7 +8,7 @@ $(document).ready(function() {
     }else if (window.location.pathname.includes('orders_placement')){
         filterLocationByType(); //NOT WORKING YET
     }else{
-        console.log(window.location.pathname.toString());
+        console.log("Current page: " + window.location.pathname.toString());
     }
     
 

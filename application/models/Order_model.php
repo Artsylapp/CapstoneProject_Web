@@ -5,7 +5,8 @@ class Order_model extends CI_Model {
 
     // Get all orders
     public function getOrders()
-    {
+    {   
+        // Get all orders from database
         $query = $this->db->get('orders_tbl');
         $orders = $query->result();
 
@@ -38,6 +39,13 @@ class Order_model extends CI_Model {
     {
         $query = $this->db->get_where('orders_tbl', array('orders_tbl_id' => $id));
         return $query->result();
+    }
+
+    // complete order
+    public function completeOrder($id)
+    {
+        $this->db->where('orders_tbl_id', $id);
+        $this->db->update('orders_tbl', array('orders_tbl_status' => 'COMPLETED'));
     }
 
 // API SECTION

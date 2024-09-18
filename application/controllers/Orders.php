@@ -195,5 +195,5 @@ class Orders extends CI_Controller {
         $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/orders_view', $info); // Pass $info to the view
         $this->load->view('page/include/footer');        
-    }   
+    }
 }

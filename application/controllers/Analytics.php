@@ -24,8 +24,18 @@ class Analytics extends CI_Controller{
 	public function getYearAnalytics(){
 		$data = $this->Analytics_model->getYearsOrders();
 		echo json_encode($data);
-		// echo"<pre>";
-		// print_r($data);
-		// echo"<pre>";
+	}
+
+	public function getRevenueAnalytics(){
+		$data = $this->Analytics_model->getRevenueData();
+		echo json_encode($data);
+	}
+
+	public function getAnalyticsData(){
+		$data = $this->Analytics_model->getAnalyticsData();
+	// 	echo json_encode($data);
+		echo"<pre>";
+		print_r($data);
+		echo"<pre>";
 	}
 }

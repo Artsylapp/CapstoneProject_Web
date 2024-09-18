@@ -55,15 +55,16 @@ $route['orders_cancel'] = 'Orders/orders_cancel';
 $route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
 $route['booking/save'] = 'Orders/save_booking';
 $route['booking/view/(:num)'] = 'Orders/orders_view/$1';
-
+$route['booking/MPayment/(:num)'] = 'Orders/manualpayment/$1';
 
 /* Records Page */
 $route['records'] = 'Records/index';
 
 /* Analytics Page */
 $route['analytics'] = 'Analytics/index';
-$route['getYearAnalytics'] = 'Analytics/getYearAnalytics';
-$route['getVaueData'] = 'Analytics/getVaueData';
+$route['getYearData'] = 'Analytics/getYearAnalytics';
+$route['getRevenueData'] = 'Analytics/getRevenueAnalytics';
+$route['getAnalyticsData'] = 'Analytics/getAnalyticsData';
 
 
 /* REST API */

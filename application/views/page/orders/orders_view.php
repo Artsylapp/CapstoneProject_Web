@@ -64,9 +64,11 @@
 
                         <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                             <div class="col-sm-12">
-                                <button class="btn green-bg menu-btn-m ttsh" name="Manual Payment">
-                                    <h4>MANUAL PAYMENT</h4>
-                                </button>
+                                <a href="<?php echo $this->config->base_url("booking/MPayment/" . $this->uri->segment(3))?>">
+                                    <button class="btn green-bg menu-btn-m ttsh" name="Manual Payment">
+                                        <h4>MANUAL PAYMENT</h4>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </form>

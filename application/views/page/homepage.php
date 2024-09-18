@@ -47,6 +47,9 @@
 					<div class="col-xs-8 col-sm-8">
 						<div class="placeholder" style="height:40vh; width:100%; background-color: #ffffff; border-radius:25px;">
 							placeholder until record gets done
+							<button>
+								<a href="<?php echo $this->config->base_url("analytics")?>">Go to Analytics </a>
+							</button>
 						</div>
 					</div>
 
