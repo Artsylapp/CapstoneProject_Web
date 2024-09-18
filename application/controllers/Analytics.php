@@ -33,9 +33,9 @@ class Analytics extends CI_Controller{
 
 	public function getAnalyticsData(){
 		$data = $this->Analytics_model->getAnalyticsData();
-	// 	echo json_encode($data);
-		echo"<pre>";
-		print_r($data);
-		echo"<pre>";
+		echo json_encode($data);
+		// echo"<pre>";
+		// print_r($data);
+		// echo"<pre>";
 	}
 }
