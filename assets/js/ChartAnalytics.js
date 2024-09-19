@@ -117,7 +117,7 @@ function analyzeRevenueData(data) {
 // fetchData('/Capstoneproject_web/getYearData')
 
 // for deployment
-fetchData('/getYearData')
+fetchData('getYearData')
     .then(data => analyzeOrderData(data));
 
 // For revenue data
@@ -125,5 +125,5 @@ fetchData('/getYearData')
 // fetchData('/Capstoneproject_web/getRevenueData')
 
 // for deployment
-fetchData('/getRevenueData')
+fetchData('getRevenueData')
     .then(data => analyzeRevenueData(data));

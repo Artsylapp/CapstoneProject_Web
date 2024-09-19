@@ -29,7 +29,7 @@ function displayAnalyticsData(data) {
 // fetchData('/Capstoneproject_web/getAnalyticsData')
 
 // for deployment
-fetchData('/getAnalyticsData')
+fetchData('getAnalyticsData')
     .then(data => {
         displayAnalyticsData(data);
     });
