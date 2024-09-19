@@ -1,6 +1,6 @@
 // Fetch data from the server (controller)
 async function fetchData(url) {
-    // console.log("urls for the current analytics pages " + url);
+    console.log("urls for the current analytics pages " + url);
 
     try {
         const response = await fetch(url);

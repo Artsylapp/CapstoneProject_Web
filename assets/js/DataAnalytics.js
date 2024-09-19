@@ -1,6 +1,6 @@
 // Function to get the data from the server
 async function fetchData(url) {
-    // console.log("Fetching data from URL: " + url);
+    console.log("Fetching data from URL: " + url);
 
     try {
         const response = await fetch(url);
