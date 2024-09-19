@@ -113,9 +113,17 @@ function analyzeRevenueData(data) {
 }
 
 // For order data
-fetchData('/Capstoneproject_web/getYearData')
+// for local testing
+// fetchData('/Capstoneproject_web/getYearData')
+
+// for deployment
+fetchData('/getYearData')
     .then(data => analyzeOrderData(data));
 
 // For revenue data
-fetchData('/Capstoneproject_web/getRevenueData')
+// for local testing
+// fetchData('/Capstoneproject_web/getRevenueData')
+
+// for deployment
+fetchData('/getRevenueData')
     .then(data => analyzeRevenueData(data));

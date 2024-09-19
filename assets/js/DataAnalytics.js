@@ -25,7 +25,11 @@ function displayAnalyticsData(data) {
 }
 
 // Fetch and display data
-fetchData('/Capstoneproject_web/getAnalyticsData')
+// for local testing
+// fetchData('/Capstoneproject_web/getAnalyticsData')
+
+// for deployment
+fetchData('/getAnalyticsData')
     .then(data => {
         displayAnalyticsData(data);
     });
