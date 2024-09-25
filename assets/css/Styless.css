@@ -168,6 +168,10 @@ body {
     color:white;
 }
 
+.black-txt{
+    color:rgb(36, 36, 36);
+}
+
 /*BOXES*/
 
 .button-container {
@@ -194,6 +198,30 @@ body {
 
 /* BG COLOR */
 
+.lb-bg{
+    background-color: rgb(159, 157, 240);
+    font-size: 25px;
+    
+}
+
+.lg-bg{
+    background-color: rgb(150, 255, 150);
+    font-size: 25px;
+    
+}
+
+.lbr-bg{
+    background-color: rgb(255, 210, 152);
+    font-size: 25px;
+    
+}
+
+.lr-bg{
+    background-color: rgb(255, 167, 167);
+    font-size: 25px;
+    
+}
+
 .white-bg{
     background-color: white;
     font-size: 25px;
@@ -203,12 +231,6 @@ body {
 .green-bg {
 
     background-color: #46aa8e;
-
-}
-
-.gray-bg {
-
-    background-color: #726d6d;
 
 }
 
@@ -235,11 +257,15 @@ body {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.0);
 }
 
+.btn-text-menu {
+    font-size: 75px;
+}
+
 .menu-btn {
     color: #272626;
     border-radius: 25px;
-    width: 22vw;
-    height: 25vh;
+    width: 44.75vw;
+    height: 35vh;
     justify-content: center;
     align-items: center;
 }
