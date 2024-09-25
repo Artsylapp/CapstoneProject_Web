@@ -20,6 +20,8 @@ function createChart(chartElementId, labels, datasets, ChartType) {
             datasets: datasets
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
@@ -95,15 +97,15 @@ function analyzeRevenueData(data) {
         {
             label: 'This Year Revenue',
             data: thisYearRevenue,
-            backgroundColor: 'rgba(192, 75, 75, 0.5)', // Bar color for last year
-            borderColor: 'rgba(192, 75, 75, 1)', // Border color
+            backgroundColor: 'rgba(62, 255, 0, 0.5)', // Bar color for last year
+            borderColor: 'rgba(62, 255, 0, 1)', // Border color
             borderWidth: 1
         },
         {
             label: 'Last Year Revenue',
             data: previousYearRevenue,
-            backgroundColor: 'rgba(192, 75, 75, 0.5)', // Bar color for last year
-            borderColor: 'rgba(192, 75, 75, 1)', // Border color
+            backgroundColor: 'rgba(255, 74, 74, 0.5)', // Bar color for last year
+            borderColor: 'rgba(255, 74, 74, 1)', // Border color
             borderWidth: 1
         }
     ];
