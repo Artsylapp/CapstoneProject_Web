@@ -46,7 +46,7 @@
     border-radius: 20px;
     box-sizing: border-box;
     display: grid;
-    gap: 20px; /* Space between the cards */
+    gap: 10px; /* Space between the cards */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid for cards */
 }
 
@@ -57,7 +57,6 @@
 
 /* Title styling */
 .title h2 {
-    margin-bottom: 10px;
     font-weight: bold;
 }
 
