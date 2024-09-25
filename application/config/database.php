@@ -77,16 +77,16 @@ $db['default'] = array(
 	'dsn'	=> '',
 
 	// if using localhost to debug
-	'hostname' => 'localhost', // Ensure MySQL is running on localhost
-	'username' => 'root', // Default MySQL username for hostinger
-	'password' => '', // No password for root user (not recommended for production)
-	'database' => 'viammdb', // Name of your database
+	// 'hostname' => 'localhost', // Ensure MySQL is running on localhost
+	// 'username' => 'root', // Default MySQL username for hostinger
+	// 'password' => '', // No password for root user (not recommended for production)
+	// 'database' => 'viammdb', // Name of your database
 
 	// if using hostinger
-	// 'hostname' => 'localhost', // Ensure MySQL is running on localhost
-	// 'username' => 'u265772247_viammDB', // Default MySQL username for hostinger
-	// 'password' => 'n7JS8r88P?', // No password for root user (not recommended for production)
-	// 'database' => 'u265772247_viammdb', // Name of your database
+	'hostname' => 'localhost', // Ensure MySQL is running on localhost
+	'username' => 'u265772247_viammDB', // Default MySQL username for hostinger
+	'password' => 'n7JS8r88P?', // No password for root user (not recommended for production)
+	'database' => 'u265772247_viammdb', // Name of your database
 
 	'dbdriver' => 'mysqli', // Using MySQL Improved driver
 	'dbprefix' => '',

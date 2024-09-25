@@ -9,32 +9,32 @@ class Analytics_model extends CI_Model{
 
         // sql code
         // SELECT 
-        //     MONTH(orders_tbl_createDate) AS month, 
+        //     MONTH(orders_date) AS month, 
         //     COUNT(*) AS count
         // FROM 
         //     orders_tbl
         // WHERE 
-        //     YEAR(orders_tbl_createDate) = 2024
+        //     YEAR(orders_date) = 2024
         //     AND orders_tbl_status IN ('completed', 'cancelled')
         // GROUP BY 
-        //     MONTH(orders_tbl_createDate);
+        //     MONTH(orders_date);
     
         // Query to count orders by month for the current year
         $currentYearOrders = $this->db->query("
-            SELECT MONTH(orders_tbl_createDate) as month, COUNT(*) as count
+            SELECT MONTH(orders_date) as month, COUNT(*) as count
             FROM orders_tbl
-            WHERE YEAR(orders_tbl_createDate) = $currentYear
+            WHERE YEAR(orders_date) = $currentYear
               AND orders_tbl_status IN ('completed')
-            GROUP BY MONTH(orders_tbl_createDate)
+            GROUP BY MONTH(orders_date)
         ")->result();
     
         // Query to count orders by month for the previous year
         $previousYearOrders = $this->db->query("
-            SELECT MONTH(orders_tbl_createDate) as month, COUNT(*) as count
+            SELECT MONTH(orders_date) as month, COUNT(*) as count
             FROM orders_tbl
-            WHERE YEAR(orders_tbl_createDate) = $previousYear
+            WHERE YEAR(orders_date) = $previousYear
               AND orders_tbl_status IN ('completed')
-            GROUP BY MONTH(orders_tbl_createDate)
+            GROUP BY MONTH(orders_date)
         ")->result();
     
         // Return both years' data
@@ -67,8 +67,8 @@ class Analytics_model extends CI_Model{
             $totalCost = isset($order_details['orders_tbl_cost']) && is_numeric($order_details['orders_tbl_cost']) ? $order_details['orders_tbl_cost'] : 0;
     
             // Determine the year and month of the order
-            $orderYear = date('Y', strtotime($order->orders_tbl_createDate));
-            $orderMonth = date('m', strtotime($order->orders_tbl_createDate));
+            $orderYear = date('Y', strtotime($order->orders_date));
+            $orderMonth = date('m', strtotime($order->orders_date));
     
             // Add totalCost to the respective year's monthly revenue
             if ($order->orders_tbl_status == 'COMPLETED') {
@@ -120,7 +120,7 @@ class Analytics_model extends CI_Model{
         $totalRevenue = 0;
         $AOV = 0;
         
-        // Arrays to store monthly revenue
+        // initializing Arrays to store monthly revenue (option)
         $monthlyRevenue = array_fill(1, 12, 0); // Indexes 1 to 12 for months January to December
         $orderCounts = array();
         
@@ -130,12 +130,13 @@ class Analytics_model extends CI_Model{
         // Count the number of orders per service
         $serviceCounts = array();
     
+        // Process each order to calculate the revenue and other analytics
         foreach ($orders as $order) {
             $order_details = json_decode($order->orders_tbl_details, true);
     
             if ($order_details !== null) {
                 $totalCost = isset($order_details['orders_tbl_cost']) ? (float)$order_details['orders_tbl_cost'] : 0;
-                $orderDate = strtotime($order->orders_tbl_createDate);
+                $orderDate = strtotime($order->orders_date);
                 $orderYear = date('Y', $orderDate);
                 $orderMonth = date('m', $orderDate); // Month as '01' to '12'
     
@@ -146,14 +147,46 @@ class Analytics_model extends CI_Model{
                     $totalOrder++;
     
                     // Track counts services
-                    $service = isset($order_details['orders_tbl_service']) ? $order_details['orders_tbl_service'] : 'Unknown';
-                    if (!isset($serviceCounts[$service])) {
-                        $serviceCounts[$service] = 0;
+                    if (isset($order_details['services']) && is_array($order_details['services'])) {
+                        foreach ($order_details['services'] as $serviceName => $serviceDetails) {
+                            // Track counts for each service
+                            if (!isset($serviceCounts[$serviceName])) {
+                                $serviceCounts[$serviceName] = 0;
+                            }
+                            // Increment the count based on the 'amount' or assume 1 if not set
+                            $serviceCounts[$serviceName] += isset($serviceDetails['amount']) ? $serviceDetails['amount'] : 1;
+                        }
+                    } else {
+                        $serviceCounts['Unknown Service'] = isset($serviceCounts['Unknown Service']) ? $serviceCounts['Unknown Service'] + 1 : 1;
                     }
-                    $serviceCounts[$service]++;
                 }
             }
         }
+
+        // Calculate for most active employee
+        $employeeCounts = array();
+        foreach ($orders as $order) {
+            $order_details = json_decode($order->orders_tbl_details, true);
+
+            // Check if the 'masseurs' key exists and is an array
+            if (isset($order_details['masseurs']) && is_array($order_details['masseurs'])) {
+                // Loop through each employee in the 'masseurs' array
+                foreach ($order_details['masseurs'] as $employee => $count) {
+                    // If the employee is not yet tracked, initialize their count to 0
+                    if (!isset($employeeCounts[$employee])) {
+                        $employeeCounts[$employee] = 0;
+                    }
+                    // Increment the employee count based on their activity
+                    $employeeCounts[$employee] += $count;
+                }
+            } else {
+                // If 'masseurs' is not set or not an array, count it as 'Undefined Employee'
+                $employeeCounts['Undefined Employee'] = isset($employeeCounts['Undefined Employee']) ? $employeeCounts['Undefined Employee'] + 1 : 1;
+            }
+        }
+        // Find the most active employee
+        $mostActiveEmployee = array_search(max($employeeCounts), $employeeCounts);
+        $mostActiveEmployeeCount = $employeeCounts[$mostActiveEmployee];    
     
         // Calculate the most ordered service
         if (!empty($serviceCounts)) {
@@ -166,15 +199,26 @@ class Analytics_model extends CI_Model{
     
         // Calculate average order value
         $AOV = $totalOrder > 0 ? $totalRevenue / $totalOrder : 0;
+
+        // Calculate the most profitable month
+        $mostMonthProfit = max($monthlyRevenue);
+        $mostProfitableMonth = array_search($mostMonthProfit, $monthlyRevenue);
     
         // Output the results
         return [
             'totalProfit' => number_format($totalProfit, 2),
             'totalOrder' => $totalOrder,
             'mostService' => $mostService,
+            'mostServiceCount' => $serviceCounts[$mostService] ?? 0,
             'totalRevenue' => number_format($totalRevenue, 2),
             'AOV' => number_format($AOV, 2),
-            'monthlyRevenue' => $monthlyRevenue // Optional: return monthly revenue data
+            'monthlyRevenue' => $monthlyRevenue, // Optional: return monthly revenue data
+            'mostActiveEmployee' => $mostActiveEmployee,
+            'mostActiveEmployeeCount' => $mostActiveEmployeeCount,// Return the most active employee's name and count
+            'mostMonthProfit' => [
+                'month' => $mostProfitableMonth,
+                'profit' => number_format($mostMonthProfit, 2),
+            ], // Optional: return the most profitable month
         ];
     }
     

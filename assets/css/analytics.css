@@ -1,0 +1,118 @@
+/* Analytics container */
+.analytics {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default for small screens */
+    grid-gap: 20px; /* Space between grid items */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    max-height: 85vh; /* Set max height for the entire analytics section */
+    overflow-y: auto;  /* Enables vertical scrolling for the entire analytics container */
+}
+
+/* Charts section */
+.charts {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.charts canvas {
+    width: 100% !important;  /* Ensures the canvas takes full width of its container */
+    height: auto !important; /* Keeps the aspect ratio */
+    max-height: 260px;       /* Adjust max height to prevent chart overflow */
+    max-width: 100%;         /* Ensure chart doesn't overflow horizontally */
+}
+
+#analysisChartContainer, .revenueChartContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Data analytics section */
+/* Analytics container */
+.AnalyticsData {
+    background: white;
+    padding: 20px;
+    color: black;
+    text-align: left;
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: grid;
+    gap: 10px; /* Space between the cards */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid for cards */
+}
+
+.title {
+    text-align: center;
+    grid-column: 1 / span 2;
+}
+
+/* Title styling */
+.title h2 {
+    font-weight: bold;
+}
+
+/* Individual card styling */
+.cardData {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Paragraph styling within cards */
+.cardData p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling for the values in the cards */
+.cardData p span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Grid layout for responsiveness */
+
+/* larger screens layout adjustments */
+@media screen and (min-width: 768px) {
+    .analytics {
+        grid-template-columns: 1fr 1fr; /* Two equal columns for medium screens */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .analytics {
+        grid-template-columns: 2fr 1fr; /* 2/3 width for charts, 1/3 for data on larger screens */
+    }
+}
+
+/* Mobile screens layout adjustments */
+@media screen and (max-width: 600px) {
+    .charts, .AnalyticsData {
+        padding: 10px;
+    }
+
+    .AnalyticsData h2 {
+        font-size: 18px;
+    }
+
+    .AnalyticsData p {
+        font-size: 14px;
+    }
+}

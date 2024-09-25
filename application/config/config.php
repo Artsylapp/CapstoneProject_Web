@@ -23,8 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Capstoneproject_web/';
-// $config['base_url'] = 'https://viamm.xyz/';
+// Use for Local host
+// $config['base_url'] = 'http://localhost/Capstoneproject_web/';
+
+// Use for Live server
+$config['base_url'] = 'https://viamm.xyz/';
 
 // mysql password and file is located in application/config/database.php
 

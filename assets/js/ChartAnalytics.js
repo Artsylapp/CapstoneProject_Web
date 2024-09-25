@@ -1,22 +1,27 @@
 // Fetch data from the server (controller)
-function fetchData(url) {
-    // console.log("urls for the current analytics pages " + url);
+async function fetchData(url) {
+    console.log("urls for the current analytics pages " + url);
 
-    return fetch(url)
-        .then(response => response.json())
-        .catch(err => console.error('Error fetching data:', err));
+    try {
+        const response = await fetch(url);
+        return await response.json();
+    } catch (err) {
+        return console.error('Error fetching data:', err);
+    }
 }
 
 // Create the chart with given data
-function createChart(chartElementId, labels, datasets) {
+function createChart(chartElementId, labels, datasets, ChartType) {
     const ctx = document.getElementById(chartElementId).getContext('2d');
     return new Chart(ctx, {
-        type: 'line',
+        type: ChartType,
         data: {
             labels: labels,
             datasets: datasets
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
@@ -61,7 +66,7 @@ function analyzeOrderData(data) {
     ];
 
     // Create orders chart
-    createChart('ChartAnalysis', months, orderDatasets);
+    createChart('ChartAnalysis', months, orderDatasets, 'line');
 }
 
 // Analyze Revenue Data
@@ -90,34 +95,37 @@ function analyzeRevenueData(data) {
 
     const revenueDatasets = [
         {
-            label: "This Year Revenue",
+            label: 'This Year Revenue',
             data: thisYearRevenue,
-            fill: false,
-            borderColor: 'rgb(75, 192, 75)',
-            tension: 0
+            backgroundColor: 'rgba(62, 255, 0, 0.5)', // Bar color for last year
+            borderColor: 'rgba(62, 255, 0, 1)', // Border color
+            borderWidth: 1
         },
         {
             label: 'Last Year Revenue',
             data: previousYearRevenue,
-            fill: false,
-            borderColor: 'rgb(192, 75, 75)',
-            tension: 0.6
+            backgroundColor: 'rgba(255, 74, 74, 0.5)', // Bar color for last year
+            borderColor: 'rgba(255, 74, 74, 1)', // Border color
+            borderWidth: 1
         }
     ];
 
     // Create revenue chart
-    createChart('RevenueChart', months, revenueDatasets);
+    createChart('RevenueChart', months, revenueDatasets, 'bar');
 }
 
-// Call the data analytics functions
-
-
-
-
 // For order data
-fetchData('/Capstoneproject_web/getYearData')
+// for local testing
+// fetchData('/Capstoneproject_web/getYearData')
+
+// for deployment
+fetchData('getYearData')
     .then(data => analyzeOrderData(data));
 
 // For revenue data
-fetchData('/Capstoneproject_web/getRevenueData')
+// for local testing
+// fetchData('/Capstoneproject_web/getRevenueData')
+
+// for deployment
+fetchData('getRevenueData')
     .then(data => analyzeRevenueData(data));
