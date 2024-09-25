@@ -18,7 +18,6 @@ class Main extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
 		$this->load->view('page/homepage');
 		$this->load->view('page/include/footer');
 	}
