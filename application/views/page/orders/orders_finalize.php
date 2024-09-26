@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
 
-<div class="col-xs-10 col-sm-10">
+<div class="col-xs-12 col-sm-12">
     <div class="container-fluid">
         
         <div class="row">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="row mt-s">
-            <div class="col-sm-11 col-xs-11 box-white">
+            <div class="col-sm-12 col-xs-12 box-white">
 
                 <tbody id="item-list">
                                 <!-- Items will be populated by JavaScript -->
