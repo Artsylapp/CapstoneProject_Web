@@ -9,6 +9,11 @@
     box-sizing: border-box;
     max-height: 85vh; /* Set max height for the entire analytics section */
     overflow-y: auto;  /* Enables vertical scrolling for the entire analytics container */
+    
+    justify-content: center; /* Horizontally center all containers */
+    align-items: center; /* Vertically center all containers */
+    text-align: center; /* Center text inside containers */
+
 }
 
 /* Charts section */

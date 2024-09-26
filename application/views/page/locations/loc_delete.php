@@ -1,10 +1,10 @@
-<div class="col-xs-10 col-sm-10">
+<div class="col-xs-12 col-sm-12">
 	<div class="container-fluid">
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
-				<h1 class="overflow-wrap">LOCATION DELETE</h1>
-				<h3 style="margin-top: 0px;">Delete Location - COMPANY</h3>
+				<h1 class="overflow-wrap black-txt">LOCATION DELETE</h1>
+				<h3 class="black-txt" style="margin-top: 0px;">Delete Location - COMPANY</h3>
 			</div>
 		</div>
 
@@ -15,7 +15,7 @@
 		?>
 
 		<div class="row mt-s">
-			<div class="col-sm-11 col-xs-11 box-white">
+			<div class="col-sm-12 col-xs-12 box-white">
 
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("locations/loc_remove/" . $this->uri->segment(3))?>" method="POST">
 					<div class="form-group">

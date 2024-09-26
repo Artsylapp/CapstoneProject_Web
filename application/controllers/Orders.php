@@ -163,8 +163,8 @@ class Orders extends CI_Controller {
             'title' => 'Finalize Booking',
             'mode' => 'finalize'
         );
+        
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar', $info);
         $this->load->view('page/orders/orders_finalize', $info);
     }
 

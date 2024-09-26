@@ -48,9 +48,9 @@ $route['orders'] = 'Orders/index';
 $route['orders_create'] = 'Orders/orders_create';
 $route['orders_assign'] = 'Orders/orders_assign';
 $route['orders_placement'] = 'Orders/orders_placement';
-$route['orders_finalize'] = 'Orders/orders_finalize';
 $route['orders_going'] = 'Orders/orders_going';
 $route['orders_cancel'] = 'Orders/orders_cancel';
+$route['orders_finalize'] = 'Orders/orders_finalize';
 
 /* Booking page Page */
 $route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
@@ -80,3 +80,4 @@ $route['api/order/ongoing'] = 'api/ApiOrder/index';
 $route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
 $route['api/order/finished'] = 'api/ApiOrder/orderFinished';
 $route['api/order/update'] = 'api/ApiOrder/orderUpdate';
+

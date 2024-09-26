@@ -50,8 +50,8 @@
 							</div>
 
 							<div class="col-xs-6 col-sm-6">
-								<a href="">
-									<button class="btn menu-btn lr-bg ttsh " name="ANALYTICS">
+								<a href="<?php echo $this->config->base_url("analytics")?>">
+									<button class="btn menu-btn lr-bg ttsh" name="ANALYTICS">
 										<h1 class="btn-text-menu">ANALYTICS</h1>
 									</button>
 								</a>
