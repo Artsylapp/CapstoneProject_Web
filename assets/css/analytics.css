@@ -1,25 +1,40 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.parent-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Analytics container */
 .analytics {
     display: grid;
     grid-template-columns: 1fr; /* Single column by default for small screens */
-    grid-gap: 20px; /* Space between grid items */
-    margin-top: 10px;
-    margin-bottom: 20px;
+    grid-gap: 10px; /* Space between grid items */
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding: 20px;
     box-sizing: border-box;
-    max-height: 85vh; /* Set max height for the entire analytics section */
-    overflow-y: auto;  /* Enables vertical scrolling for the entire analytics container */
+    height: 95%; /* Take full height of the parent container */
+    overflow-y: auto;  /* Enables vertical scrolling if needed */
 }
 
 /* Charts section */
 .charts {
     background: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Adjust to match parent height */
 }
+
 
 .charts canvas {
     width: 100% !important;  /* Ensures the canvas takes full width of its container */
@@ -40,7 +55,7 @@
 /* Analytics container */
 .AnalyticsData {
     background: white;
-    padding: 20px;
+    padding: 10px;
     color: black;
     text-align: left;
     border-radius: 20px;
