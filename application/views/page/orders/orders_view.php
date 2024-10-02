@@ -1,15 +1,15 @@
-<div class="col-xs-10 col-sm-10">
+<div class="col-xs-12 col-sm-12">
     <div class="container-fluid">
         
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="overflow-wrap">VIEW BOOKING</h1>
-                <h3 style="margin-top: 0px;">Display Booking Details - COMPANY</h3>
+                <h1 class="overflow-wrap black-txt">VIEW BOOKING</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">Display Booking Details - COMPANY</h3>
             </div>
         </div>
 
         <div class="row mt-s">
-            <div class="col-sm-11 col-xs-11 box-white">
+            <div class="col-sm-12 col-xs-12 box-white">
 
                 <?php if ($booking):
                     $id = $booking->orders_tbl_id;
@@ -45,6 +45,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <?php foreach($masseurs as $masseurName => $isSelected):?>
+                                                <h1>Masseur: <?php echo htmlspecialchars($masseurName); ?></h1>
+                                            <?php endforeach;?>
+                                        </tr>
                                         <?php foreach ($services as $serviceName => $serviceDetails): ?>
                                             <tr>
                                                 <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
@@ -65,7 +70,7 @@
                         <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                             <div class="col-sm-12">
                                 <a href="<?php echo $this->config->base_url("booking/MPayment/" . $this->uri->segment(3))?>">
-                                    <button class="btn green-bg menu-btn-m ttsh" name="Manual Payment">
+                                    <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
                                 </a>

@@ -29,7 +29,6 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/hub');
         $this->load->view('page/include/footer');
     }
@@ -107,7 +106,6 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/orders_delete', $info); // Pass $info to the view
         $this->load->view('page/include/footer');        
     }
@@ -161,7 +159,7 @@ class Orders extends CI_Controller {
     public function orders_finalize(){
         $info = array(
             'title' => 'Finalize Booking',
-            'mode' => 'finalize'
+            'mode' => 'finalize',
         );
         
         $this->load->view('page/include/header', $info);
@@ -202,7 +200,6 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/orders_view', $info); // Pass $info to the view
         $this->load->view('page/include/footer');        
     }
