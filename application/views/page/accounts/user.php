@@ -1,5 +1,5 @@
 <div>
-    <div class="col-lg-9">
+    <div class="col-lg-12">
         <div class="" style="border-style: solid; background-color: #F2F2F2; border-radius: 5px;">
             
             <div style="display: flex;">

@@ -1,5 +1,5 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script> 
 
 <script>
     let baseUrl = "<?php echo base_url('orders/save_services'); ?>";
@@ -8,17 +8,21 @@
 
     switch (mode) {
         case "create":
-            redirectUrl = "<?php echo base_url('orders/orders_assign'); ?>";
+            redirectUrl = "<?php echo base_url('orders_assign'); ?>";
             break;
 
         case "assign":
-            redirectUrl = "<?php echo base_url('orders/orders_placement'); ?>";
+            redirectUrl = "<?php echo base_url('orders_placement'); ?>";
             break;
 
         case "place":
-            redirectUrl = "<?php echo base_url('orders'); ?>";
+            redirectUrl = "<?php echo base_url('orders_finalize'); ?>";
             break;
 
+        case "place":
+            redirectUrl = "<?php echo base_url('save_booking'); ?>";
+            break;
+            
         default:
             break;
     }
@@ -38,22 +42,9 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12">
                 <div class="sidebar">
-                    <div class="row center-item">
-                        <button type="button circle-button" class="btn btn-image" id="sidebar-image">
-                            <img src="" alt="">
-                        </button>
-                    </div>
 
-                    <div class="row center-item">
-                        <h3 class="overflow-wrap">EMPLOYEE NAME</h3>
-                    </div>
-
-                    <div class="row center-item">
-                        <h5 class="overflow-wrap">CONTACT</h5>
-                    </div>
-
-                    <div class="row center-item" style="margin-top: auto;">
-                        <table class="table" id="invoice_table">
+                    <div class="row center-item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; margin-top: auto;">
+                        <table class="table table-striped box-white mw-table" id="invoice_table" style="width: 20vw;">
                             <thead>
                                 <tr>
                                     <th>Service</th>

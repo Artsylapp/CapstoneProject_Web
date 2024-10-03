@@ -3,17 +3,16 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="overflow-wrap">ASSIGN PLACEMENT</h1>
-                <h3 style="margin-top: 0px;">Assign Location For Booking - COMPANY</h3>
+                <h1 class="black-txt overflow-wrap">ASSIGN PLACEMENT</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">Assign Location For Booking - COMPANY</h3>
             </div>
             
             <div class="col-xs-4 col-sm-4"></div>
 
             <div class="col-xs-4 col-sm-4 center-item">
-                <button id="finalize-button" class="btn green-bg menu-btn-m center-item ttsh" 
-                    name="Proceed to finalizing" 
-                    data-base-url="<?php echo base_url('orders/save_booking'); ?>" 
-                    data-redirect-url="<?php echo base_url('orders'); ?>">
+                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" 
+                    name="Proceed to masseur assignment" 
+                    data-base-url="<?php echo $this->config->base_url('orders_finalize');?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
@@ -36,8 +35,18 @@
                                 <td><?php echo $location->location_tbl_name; ?></td>
                                 <td><?php echo $location->location_tbl_type; ?></td>
                                 <td class="text-center">
-                                    <button class="btn green-bg menu-btn-sm ttsh assign-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "ASSIGN: $location->location_tbl_name"; ?>">
+                                    <button class="btn lg-bg menu-btn-sm ttsh assign-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "ASSIGN: $location->location_tbl_name"; ?>">
                                         <h4>ASSIGN</h4>
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php else: ?>
+                            <tr data-location-type="<?php echo $location->location_tbl_type; ?>">
+                                <td><?php echo $location->location_tbl_name; ?></td>
+                                <td><?php echo $location->location_tbl_type; ?></td>
+                                <td class="text-center">
+                                    <button disabled class="btn lr-bg menu-btn-sm ttsh assign-location" data-location-name="<?php echo $location->location_tbl_name; ?>" name="<?php echo "IN-USE: $location->location_tbl_name"; ?>">
+                                        <h4>IN-USE</h4>
                                     </button>
                                 </td>
                             </tr>

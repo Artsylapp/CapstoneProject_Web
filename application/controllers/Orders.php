@@ -29,7 +29,6 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/hub');
         $this->load->view('page/include/footer');
     }
@@ -107,7 +106,6 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/orders_delete', $info); // Pass $info to the view
         $this->load->view('page/include/footer');        
     }
@@ -158,6 +156,16 @@ class Orders extends CI_Controller {
         redirect(base_url("orders"));
     }
 
+    public function orders_finalize(){
+        $info = array(
+            'title' => 'Finalize Booking',
+            'mode' => 'finalize',
+        );
+        
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/orders/orders_finalize', $info);
+    }
+
     // Orders - Updating masseur status and booking status
     public function orders_view() // Orders - delete order
     {
@@ -192,7 +200,6 @@ class Orders extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/orders/orders_view', $info); // Pass $info to the view
         $this->load->view('page/include/footer');        
     }

@@ -1,15 +1,15 @@
-<div class="col-xs-10 col-sm-10">
+<div class="col-xs-12 col-sm-12">
     <div class="container-fluid">
 
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="overflow-wrap">BOOKING CANCEL</h1>
-                <h3 style="margin-top: 0px;">Cancel Booking - COMPANY</h3>
+                <h1 class="black-txt overflow-wrap">BOOKING CANCEL</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">Cancel Booking - COMPANY</h3>
             </div>
         </div>
 
         <div class="row mt-s">
-            <div class="col-sm-11 col-xs-11 box-white">
+            <div class="col-sm-12 col-xs-12 box-white">
 
                 <?php if ($booking):
                     $id = $booking->orders_tbl_id;
@@ -61,7 +61,7 @@
 
                     <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                         <div class="col-sm-12">
-                            <button class="btn red-bg menu-btn-m ttsh" name="confirm delete">
+                            <button class="btn lr-bg menu-btn-m ttsh" name="confirm delete">
                                 <h4>CANCEL BOOKING</h4>
                             </button>
                         </div>
@@ -69,7 +69,7 @@
                 </form>
             
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
-                    <a href="<?php echo $this->config->base_url("locations")?>">
+                    <a href="<?php echo $this->config->base_url("orders")?>">
                         <button class="btn yellow-bg menu-btn-m ttsh" name="cancel">
                             <h4>BACK</h4>
                         </button>

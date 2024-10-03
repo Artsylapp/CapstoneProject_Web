@@ -6,7 +6,7 @@ $(document).ready(function() {
     if (window.location.pathname.includes('orders_create')) {
         filterServicesByType();
     }else if (window.location.pathname.includes('orders_placement')){
-        filterLocationByType(); //NOT WORKING YET
+        filterLocationByType();
     }else{
         console.log("Current page: " + window.location.pathname.toString());
     }
@@ -119,7 +119,6 @@ $(document).ready(function() {
         }
     }
 
-    //NOT WORKING YET
     function filterLocationByType() {
         let currentType = getCurrentServiceType();
         if (currentType) {

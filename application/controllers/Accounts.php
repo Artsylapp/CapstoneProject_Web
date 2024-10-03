@@ -22,7 +22,6 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/hub');
 		$this->load->view('page/include/footer');
 	}
@@ -35,7 +34,6 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/user');
 		$this->load->view('page/include/footer');
 	}
@@ -48,7 +46,6 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_create');
 		$this->load->view('page/include/footer');
 	}
@@ -81,7 +78,6 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_edit');
 		$this->load->view('page/include/footer');
 
@@ -116,7 +112,6 @@ class Accounts extends CI_Controller {
 		);
 
 		$this->load->view('page/include/header', $info);
-		$this->load->view('page/include/sidebar');
 		$this->load->view('page/accounts/acc_delete');
 		$this->load->view('page/include/footer');
 

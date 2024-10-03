@@ -22,7 +22,6 @@ class Locations extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/locations/hub');
         $this->load->view('page/include/footer');
     }
@@ -35,7 +34,6 @@ class Locations extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/locations/loc_create');
         $this->load->view('page/include/footer');
     }
@@ -64,7 +62,6 @@ class Locations extends CI_Controller {
         );
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/locations/loc_edit');
         $this->load->view('page/include/footer');
     }
@@ -94,7 +91,6 @@ class Locations extends CI_Controller {
 
 
         $this->load->view('page/include/header', $info);
-        $this->load->view('page/include/sidebar');
         $this->load->view('page/locations/loc_delete');
         $this->load->view('page/include/footer');        
     }

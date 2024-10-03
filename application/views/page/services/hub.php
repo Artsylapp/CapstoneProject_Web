@@ -1,11 +1,11 @@
-<div class="col-xs-10 col-sm-10">
+<div class="col-xs-12 col-sm-12">
 
 	<div class="container-fluid">
 		<div class="row">
 
 			<div class="col-xs-12 col-sm-12" style="text-align: right;">
-				<h1 class="overflow-wrap">SERVICES HUB</h1>
-				<h3 style="margin-top: 0px;">Manage Services - COMPANY</h3>
+				<h1 class="overflow-wrap black-txt">SERVICES HUB</h1>
+				<h3 class="black-txt" style="margin-top: 0px;">Manage Services - COMPANY</h3>
 			</div>
 
 			<div class="col-xs-4 col-sm-4"></div>
