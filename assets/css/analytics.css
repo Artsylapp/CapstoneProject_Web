@@ -11,16 +11,15 @@ html, body {
     flex-direction: column;
 }
 
+.container{
+    width: 100%;
+}
+
 /* Analytics container */
 .analytics {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column by default for small screens */
-    grid-gap: 10px; /* Space between grid items */
-    margin-top: 15px;
-    margin-bottom: 15px;
     padding: 20px;
     box-sizing: border-box;
-    height: 95%; /* Take full height of the parent container */
+    height: 100%; /* Take full height of the parent container */
     overflow-y: auto;  /* Enables vertical scrolling if needed */
 }
 
@@ -41,10 +40,10 @@ html, body {
     height: auto !important; /* Keeps the aspect ratio */
     max-height: 260px;       /* Adjust max height to prevent chart overflow */
     max-width: 100%;         /* Ensure chart doesn't overflow horizontally */
+    margin: 10px !important; /* Center the chart */
 }
 
-#analysisChartContainer, .revenueChartContainer {
-    flex: 1;
+.analysisChartContainer, .revenueChartContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,20 +53,15 @@ html, body {
 /* Data analytics section */
 /* Analytics container */
 .AnalyticsData {
+    margin-left: 20px;
+    padding: 5px;
+    height: 100%;
     background: white;
     padding: 10px;
     color: black;
     text-align: left;
     border-radius: 20px;
     box-sizing: border-box;
-    display: grid;
-    gap: 10px; /* Space between the cards */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid for cards */
-}
-
-.title {
-    text-align: center;
-    grid-column: 1 / span 2;
 }
 
 /* Title styling */
@@ -75,17 +69,31 @@ html, body {
     font-weight: bold;
 }
 
+.title{
+    display: flex;
+    justify-content: center; /* Horizontally centers the text */
+    align-items: center; /* Vertically centers the text */
+    padding: 20px 0; /* Add padding to vertically center it within the container */
+}
+
 /* Individual card styling */
+
+
+
 .cardData {
-    border: 1px solid #e0e0e0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     color: white;
+}
+
+/* Adjust spacing between columns */
+.row {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Paragraph styling within cards */
