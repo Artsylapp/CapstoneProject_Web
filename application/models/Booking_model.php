@@ -52,7 +52,7 @@ class Booking_model extends CI_Model {
         $id = $data['id'];
         $status = $data['status'];
     
-        // Start a transaction to ensure all updates are applied atomically
+        // Start a transaction to ensure all updates are applied automically
         $this->db->trans_start();
     
         // Update the booking status
