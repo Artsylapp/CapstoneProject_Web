@@ -1,7 +1,5 @@
 <div class="analytics">
     <!-- Dynamic layout with flexbox -->
-
-    <div class="container">
         <div class="row">
 
             <div class="col-xs-9">
@@ -19,7 +17,7 @@
             <div class="col-xs-3">
                 <div class="AnalyticsData" id="DataAnalytics">
                     
-                    <div class="container">
+                    <div class="">
                         <div class="row">
                             <div class="col-xs-12 justify-content-center">
                                 <div class="title">
@@ -29,7 +27,7 @@
                         </div>
                         
                         
-                        <div class="row">
+                        <div class="row d-flex align-items-stretch">
 
                             <div class="col-xs-6">
                                 <div class="cardData">
@@ -74,6 +72,7 @@
                             </div>
 
                         </div>
+
 
                     </div>
 
