@@ -28,7 +28,7 @@
                         </div>
                         
                         
-                        <div class="row d-flex align-items-stretch">
+                        <div class="row display-flex">
 
                             <div class="col-xs-6">
                                 <div class="cardData">
