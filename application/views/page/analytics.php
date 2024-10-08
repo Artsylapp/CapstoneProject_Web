@@ -1,6 +1,6 @@
 <div class="analytics">
     <!-- Dynamic layout with flexbox -->
-    <div class="container">
+    <div class="container" style="width:100vx;">
         <div class="row">
 
             <div class="col-xs-9">
