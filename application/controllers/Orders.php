@@ -156,6 +156,32 @@ class Orders extends CI_Controller {
         redirect(base_url("orders"));
     }
 
+    // Orders - Complete booking
+    public function complete_booking($id)
+    {
+        $booking = $this->Order_model->getOrder($id);
+        if (!empty($booking)) {
+            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+    
+            $data = array(
+                'id' => $id,
+                'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
+                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : [],
+                'status' => 'COMPLETED'
+            );
+    
+            $success = $this->Booking_model->updateBooking($data);
+            if ($success) {
+                $this->session->set_flashdata('message', 'Booking Completed.');
+            } else {
+                $this->session->set_flashdata('error', 'Failed to complete booking.');
+            }
+        } else {
+            $this->session->set_flashdata('error', 'Booking not found.');
+        }
+        redirect(base_url("orders"));
+    }
+
     public function orders_finalize(){
         $info = array(
             'title' => 'Finalize Booking',
