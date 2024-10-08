@@ -16,8 +16,9 @@
             </div>
 
             <div class="col-xs-3">
-                <div class="AnalyticsData" id="DataAnalytics">
-                    
+                <div class="container">
+                    <div class="AnalyticsData" id="DataAnalytics">
+                        
                         <div class="row">
                             <div class="col-xs-12 justify-content-center">
                                 <div class="title">
@@ -73,6 +74,7 @@
 
                         </div>
 
+                    </div>
                 </div>
             </div>
             
