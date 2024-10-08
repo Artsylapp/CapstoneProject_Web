@@ -16,11 +16,11 @@
             </div>
 
             <div class="col-xs-3">
-                <div class="container">
+                <div class="container" style="width:100%;">
                     <div class="AnalyticsData" id="DataAnalytics">
                         
                         <div class="row">
-                            <div class="col-xs-12 justify-content-center">
+                            <div class="col-m-12 justify-content-center">
                                 <div class="title">
                                     <h2>Analytics Report</h2>
                                 </div>
@@ -30,42 +30,42 @@
                         
                         <div class="row display-flex">
 
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="cardData">
                                     <p>Total Sale</p>
                                     <p><span id="totalProfit"></span></p>
                                 </div>
                             </div>
 
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="cardData">
                                     <p>Total Number of Orders</p>
                                     <p><span id="totalOrder"></span></p>
                                 </div>
                             </div>
 
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="cardData">
                                     <p>Most Ordered Service</p>
                                     <p><span id="mostService"></span></p>
                                 </div>
                             </div>
 
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="cardData">
                                     <p>Most Active Employee</p>
                                     <p><span id="mostActiveEmployee"></span></p>
                                 </div>
                             </div>
 
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="cardData">
                                     <p>Overall Total Revenue</p>
                                     <p><span id="totalRevenue"></span></p>
                                 </div>
                             </div>
 
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="cardData">
                                     <p>Average Order Value</p>
                                     <p><span id="AOV"></span></p>
