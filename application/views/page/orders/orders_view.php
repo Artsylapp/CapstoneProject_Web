@@ -15,6 +15,7 @@
                     $id = $booking->orders_tbl_id;
                     $status = $booking->orders_tbl_status;
                     $services = $services;
+                    $paid = $booking->orders_paid_amount;
                 ?>
 
                     <form class="form-horizontal" action="<?php echo $this->config->base_url("orders/manual_payment/" . $this->uri->segment(3))?>" method="POST">
@@ -62,6 +63,12 @@
                                             <td style="font-weight: bold;"><h2></h2></td>
                                             <td style="font-weight: bold;"><h2><?php echo $totalCost?></h2></td>
                                         </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;"><h2>CURRENT PAID AMOUNT</h2></td>
+                                            <td style="font-weight: bold;"><h2></h2></td>
+                                            <td style="font-weight: bold;"><h2><?php echo $paid?></h2></td>
+                                        </tr>
+                                            
                                     </tbody>
                                 </table>
                             </div>
@@ -69,12 +76,21 @@
 
                         <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                             <div class="col-sm-12">
-                                <a href="<?php echo $this->config->base_url("booking/MPayment/" . $this->uri->segment(3))?>">
+                                <?php if ($paid == $totalCost) :?>
+                                    <a href="<?php echo $this->config->base_url("orders/complete_booking/" . $this->uri->segment(3))?>">
+                                    <button class="btn lg-bg menu-btn-m ttsh" name="COMPLETE BOOKING" formaction="<?php echo $this->config->base_url("orders/complete_booking/" . $this->uri->segment(3))?>">
+                                        <h4>COMPLETE BOOKING</h4>
+                                    </button>
+                                    </a>
+                                <?php else:?>
+                                    <a href="<?php echo $this->config->base_url("booking/MPayment/" . $this->uri->segment(3))?>">
                                     <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
-                                </a>
+                                    </a>
+                                <?php endif;?>
                             </div>
+
                         </div>
                     </form>
 
