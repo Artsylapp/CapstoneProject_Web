@@ -1,9 +1,10 @@
 <div class="analytics">
     <!-- Dynamic layout with flexbox -->
-    <div class="container" style="width:95vw; height:80vh;">
+
+    <div class="container">
         <div class="row">
 
-            <div class="col-xs-9">
+            <div class="col-xs-8">
                 <div class="charts" style>
                     <div id="analysisChartContainer">
                         <canvas id="ChartAnalysis" class="analytics_canvas"></canvas>
@@ -15,12 +16,13 @@
                 </div>
             </div>
 
-            <div class="col-xs-3">
-                <div class="container" style="width:100%;">
-                    <div class="AnalyticsData" id="DataAnalytics">
-                        
-                        <div class="row">
-                            <div class="col-m-12 justify-content-center">
+            <div class="col-xs-4">
+                <div class="AnalyticsData" id="DataAnalytics">
+                    
+                    <div class="container">
+
+                        <div class="justify-content-center">
+                            <div class="col">
                                 <div class="title">
                                     <h2>Analytics Report</h2>
                                 </div>
@@ -62,6 +64,7 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
             
