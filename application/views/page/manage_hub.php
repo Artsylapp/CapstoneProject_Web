@@ -10,6 +10,7 @@
 			<div class="col-xs-6 col-sm-6">
 				<a href="<?php echo $this->config->base_url("accounts")?>">
 					<button class="btn menu-btn lg-bg ttsh" name="ACCOUNTS">
+						<img class="menu-icon" src='<?php echo $this->config->base_url("assets/images/icon/icon_accounts.png");?>' alt="">
 						<h1 class="">ACCOUNTS</h1>
 					</button>
 				</a>
@@ -18,6 +19,7 @@
 			<div class="col-xs-6 col-sm-6">
 				<a href="<?php echo $this->config->base_url("services")?>">
 					<button class="btn menu-btn lbr-bg ttsh " name="SERVICES">
+						<img class="menu-icon" src='<?php echo $this->config->base_url("assets/images/icon/icon_services.png");?>' alt="">
 						<h1 class="">SERVICES</h1>
 					</button>
 				</a>
@@ -28,6 +30,7 @@
 			<div class="col-xs-6 col-sm-6">
 				<a href="<?php echo $this->config->base_url("locations")?>">
 					<button class="btn menu-btn ttsh lb-bg" name="WORK STATIONS">
+						<img class="menu-icon" src='<?php echo $this->config->base_url("assets/images/icon/icon_station.png");?>' alt="">
 						<h1 class="">WORK STATIONS</h1>
 					</button>
 				</a>
