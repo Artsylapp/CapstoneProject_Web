@@ -50,6 +50,10 @@ html, body {
 
 /* Data analytics section */
 /* Analytics container */
+.DataContainer{
+    margin-top: 0;
+}
+
 .AnalyticsData {
     padding: 5px;
     height: 100%;
@@ -119,19 +123,6 @@ html, body {
     color: #333;
 }
 
-/* larger screens layout adjustments */
-@media screen and (min-width: 768px) {
-    .analytics {
-        grid-template-columns: 1fr 1fr; /* Two equal columns for medium screens */
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .analytics {
-        grid-template-columns: 2fr 1fr; /* 2/3 width for charts, 1/3 for data on larger screens */
-    }
-}
-
 /* Mobile screens layout adjustments */
 @media screen and (max-width: 600px) {
     .charts, .AnalyticsData {
@@ -144,5 +135,12 @@ html, body {
 
     .AnalyticsData p {
         font-size: 14px;
+    }
+}
+
+/* Media query on smaller screens */
+@media screen and (max-width: 900px) {
+    .DataContainer{
+        margin-top: 20px;
     }
 }

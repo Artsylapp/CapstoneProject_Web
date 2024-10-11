@@ -195,6 +195,8 @@ body {
     padding: 0;
     border-radius: 25px;
     max-height: fit-content;
+    justify-content: center;
+    align-items: center;
 }
 
 .button-container .row {

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-xs-8">
+            <div class="col-sm-8 ChartContainer">
                 <div class="charts" style>
                     <div id="analysisChartContainer">
                         <canvas id="ChartAnalysis" class="analytics_canvas"></canvas>
@@ -16,8 +16,8 @@
                 </div>
             </div>
 
-            <div class="col-xs-4">
-                <div class="AnalyticsData" id="DataAnalytics">
+            <div class="col-sm-4">
+                <div class="AnalyticsData DataContainer" id="DataAnalytics">
                     
                     <div class="container">
 
