@@ -264,7 +264,7 @@ body {
 }
 
 .btn-text-menu {
-    font-size: clamp(25px, 125px, 75px);
+    font-size: 7.5vh;
 }
 
 .menu-btn {
