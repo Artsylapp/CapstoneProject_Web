@@ -34,13 +34,9 @@ table-layout: auto;
     border-radius: 0px;
 }
 
-#webcam, #output {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1280px;   
-    height: 720px;
-}
+/* ANYTHING THAT DOES NOT HAVE ANYTHING TO DO WITH SIZING*/
+
+/* ANYTHING THAT DOES HAVE ANYTHING TO DO WITH SIZING*/
 
 button{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.5);
@@ -94,8 +90,8 @@ table th{
 }
 #voiceList{
     margin-bottom: 2%;
-    font-size: 16px;
-    height: 58px;
+    font-size: 100%;
+    height: 5vh;
     margin-top: 2%;
 }
 .mt-s{
