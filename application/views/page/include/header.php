@@ -69,5 +69,5 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid" style="margin: 0; padding: 0; height: calc(100vh - 80px); background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg");?>'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="container-fluid" style="margin: 0; padding: 0; height: 100%; background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg");?>'); background-size: cover; background-repeat: no-repeat; background-position: center;">
         <!-- Content goes here -->
