@@ -88,6 +88,10 @@ table th{
     background-color: white;
     margin: 2px;
 }       
+.menu-icon {
+    height: clamp(25px, 150px, 75px);
+    width: clamp(25px, 150px, 75px);
+}
 #voiceList{
     margin-bottom: 2%;
     font-size: 16px;

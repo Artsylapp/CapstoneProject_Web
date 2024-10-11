@@ -18,7 +18,7 @@
 					<div class="col-xs-6 col-sm-6">
 						<a href="<?php echo $this->config->base_url("orders")?>">
 							<button class="btn menu-btn lg-bg ttsh" name="BOOKING">
-								<img src='<?php echo $this->config->base_url("assets/images/icon/icon_booking.png");?>' alt="">
+								<img class="menu-icon" src='<?php echo $this->config->base_url("assets/images/icon/icon_booking.png");?>' alt="">
 								<h1 class="btn-text-menu">BOOKING</h1>
 							</button>
 						</a>
