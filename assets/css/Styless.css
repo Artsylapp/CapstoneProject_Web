@@ -89,7 +89,7 @@ table th{
     margin: 2px;
 }       
 .menu-icon {
-    height: clamp(5%, 200%, 80%);
+    height: clamp(5%, 150%, 75%);
     aspect-ratio: 1/1;
 }
 #voiceList{
