@@ -22,11 +22,11 @@ function displayAnalyticsData(data) {
         document.getElementById('mostActiveEmployee').textContent = data.mostActiveEmployee + " (" + data.mostActiveEmployeeCount + " orders total)";
     
         // Dynamically update the name attribute for each card
-        document.getElementById('totalProfitCard').setAttribute('name', 'Total Sales of ₱' + data.totalProfit);
+        document.getElementById('totalProfitCard').setAttribute('name', 'Total Sales of ' + data.totalProfit);
         document.getElementById('totalOrderCard').setAttribute('name', 'Total Orders of ' + data.totalOrder);
         document.getElementById('mostServiceCard').setAttribute('name', 'Most Service Ordered: ' + data.mostService + ' with ' + data.mostServiceCount + ' orders');
         document.getElementById('totalRevenueCard').setAttribute('name', 'Total Revenue of ₱' + data.totalRevenue);
-        document.getElementById('AOVCard').setAttribute('name', 'Average Order Value of ₱' + data.AOV);
+        document.getElementById('AOVCard').setAttribute('name', 'Average Order Value of ' + data.AOV);
         document.getElementById('mostActiveEmployeeCard').setAttribute('name', 'Most Active Employee: ' + data.mostActiveEmployee + ' with ' + data.mostActiveEmployeeCount + ' orders');
     
     } else {

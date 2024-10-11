@@ -119,10 +119,6 @@ html, body {
     color: #333;
 }
 
-
-
-/* Grid layout for responsiveness */
-
 /* larger screens layout adjustments */
 @media screen and (min-width: 768px) {
     .analytics {
