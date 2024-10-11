@@ -1,9 +1,10 @@
 <div class="analytics">
     <!-- Dynamic layout with flexbox -->
-    <div class="container" style="width:95vw; height:80vh;">
+
+    <div class="container">
         <div class="row">
 
-            <div class="col-xs-9">
+            <div class="col-xs-8">
                 <div class="charts" style>
                     <div id="analysisChartContainer">
                         <canvas id="ChartAnalysis" class="analytics_canvas"></canvas>
@@ -15,66 +16,56 @@
                 </div>
             </div>
 
-            <div class="col-xs-3">
-                <div class="container" style="width:100%;">
-                    <div class="AnalyticsData" id="DataAnalytics">
-                        
-                        <div class="row">
-                            <div class="col-m-12 justify-content-center">
+            <div class="col-xs-4">
+                <div class="AnalyticsData" id="DataAnalytics">
+                    
+                    <div class="container">
+
+                        <div class="justify-content-center">
+                            <div class="col">
                                 <div class="title">
                                     <h2>Analytics Report</h2>
                                 </div>
                             </div>
                         </div>
                         
-                        
-                        <div class="row display-flex">
+                        <div class="row">
 
-                            <div class="col-md-6">
-                                <div class="cardData">
-                                    <p>Total Sale</p>
-                                    <p><span id="totalProfit"></span></p>
-                                </div>
-                            </div>
+                        <div class="cardData col-md ttsh" id="totalProfitCard">
+                            <p>Total Sale</p>
+                            <p><span id="totalProfit"></span></p>
+                        </div>
 
-                            <div class="col-md-6">
-                                <div class="cardData">
-                                    <p>Total Number of Orders</p>
-                                    <p><span id="totalOrder"></span></p>
-                                </div>
-                            </div>
+                        <div class="cardData col-md ttsh" id="totalOrderCard">
+                            <p>Total Number of Orders</p>
+                            <p><span id="totalOrder"></span></p>
+                        </div>
 
-                            <div class="col-md-6">
-                                <div class="cardData">
-                                    <p>Most Ordered Service</p>
-                                    <p><span id="mostService"></span></p>
-                                </div>
-                            </div>
+                        <div class="cardData col-md ttsh" id="mostServiceCard">
+                            <p>Most Ordered Service</p>
+                            <p><span id="mostService"></span></p>
+                        </div>
 
-                            <div class="col-md-6">
-                                <div class="cardData">
-                                    <p>Most Active Employee</p>
-                                    <p><span id="mostActiveEmployee"></span></p>
-                                </div>
-                            </div>
+                        <div class="cardData col-md ttsh" id="mostActiveEmployeeCard">
+                            <p>Most Active Employee</p>
+                            <p><span id="mostActiveEmployee"></span></p>
+                        </div>
 
-                            <div class="col-md-6">
-                                <div class="cardData">
-                                    <p>Overall Total Revenue</p>
-                                    <p><span id="totalRevenue"></span></p>
-                                </div>
-                            </div>
+                        <div class="cardData col-md ttsh" id="totalRevenueCard">
+                            <p>Total Revenue</p>
+                            <p><span id="totalRevenue"></span></p>
+                        </div>
 
-                            <div class="col-md-6">
-                                <div class="cardData">
-                                    <p>Average Order Value</p>
-                                    <p><span id="AOV"></span></p>
-                                </div>
-                            </div>
+                        <div class="cardData col-md ttsh" id="AOVCard">
+                            <p>Average Order Value</p>
+                            <p><span id="AOV"></span></p>
+                        </div>
+
 
                         </div>
 
                     </div>
+
                 </div>
             </div>
             

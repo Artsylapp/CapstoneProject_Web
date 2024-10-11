@@ -81,7 +81,7 @@ $db['default'] = array(
 	// 'username' => 'root', // Default MySQL username for hostinger
 	// 'password' => '', // No password for root user (not recommended for production)
 	// 'database' => 'viammdb', // Name of your database
-	// 'dbdriver' => 'mysqli'
+	// 'dbdriver' => 'mysqli',
 
 	// if using hostinger
 	'hostname' => 'localhost', // Ensure MySQL is running on localhost

@@ -61,7 +61,7 @@
             <!-- Logout Button -->
             <ul class="nav navbar-nav navbar-right" style="display: flex; align-items: center;">
                     <a href="<?php echo $this->config->base_url("main/logout")?>" style="line-height: 80px;">
-                        <button class="btn logout-btn ttsh" name="LOGOUT" style="background-image: url('<?php echo $this->config->base_url("assets/images/logout.png");?>'); background-size: cover; background-position: center; width: 60px; height: 60px; border: none; border-radius: 50%; display: block; padding-right: 10px;">
+                        <button class="btn logout-btn ttsh" name="LOGOUT" style="background-image: url('<?php echo $this->config->base_url("assets/images/logout.png");?>'); background-size: cover; background-position: center; width: 60px; height: 60px; border: none; border-radius: 10%; margin-right: 25px; display: block; padding-right: 10px;">
                         </button>
                     </a>
             </ul>
