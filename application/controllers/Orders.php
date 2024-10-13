@@ -217,7 +217,7 @@ class Orders extends CI_Controller {
         }
 
         $info = array(
-            'title' => 'Cancel Booking',
+            'title' => 'Booking Info',
             'booking' => $booking, // Pass the single object
             'services' => $services,
             'masseurs' => $masseurs,

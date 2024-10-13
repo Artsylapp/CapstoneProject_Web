@@ -54,7 +54,7 @@ class Records extends CI_Controller {
 
         // Pass the single object
         $info = array(
-            'title' => 'Cancel Booking',
+            'title' => 'Record Info',
             'booking' => $booking, 
             'services' => $services,
             'masseurs' => $masseurs,

@@ -17,7 +17,7 @@ class Services extends CI_Controller {
         $data['services'] = $this->Service_model->getServices();
 
         $info = array(
-            'title' => 'Edit Services',
+            'title' => 'Services',
             'services' => $data['services'],
         );
 
@@ -30,7 +30,7 @@ class Services extends CI_Controller {
     public function ser_create() 
     {
         $info = array(
-            'title' => 'Creating Services',
+            'title' => 'Create Service',
         );
 
         $this->load->view('page/include/header', $info);
@@ -58,7 +58,7 @@ class Services extends CI_Controller {
         $data = $this->Service_model->getService($this->uri->segment(3));
 
         $info = array(
-            'title' => 'Services',
+            'title' => 'Edit Service',
             'services' => $data,
         );
 
@@ -87,7 +87,7 @@ class Services extends CI_Controller {
         $data = $this->Service_model->getService($this->uri->segment(3));
 
         $info = array(
-            'title' => 'Deleting Services',
+            'title' => 'Delete Service',
             'services' => $data,
         );
 

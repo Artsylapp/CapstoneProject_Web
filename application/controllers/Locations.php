@@ -17,7 +17,7 @@ class Locations extends CI_Controller {
         $data['locations'] = $this->Locations_model->getLocations();
 
         $info = array(
-            'title' => 'Work Stations',
+            'title' => 'Workstations',
             'locations' => $data['locations'],
         );
 
@@ -57,7 +57,7 @@ class Locations extends CI_Controller {
         $data = $this->Locations_model->getlocation($this->uri->segment(3));
 
         $info = array(
-            'title' => 'Edit Locations',
+            'title' => 'Edit Workstation',
             'locations' => $data,
         );
 
@@ -85,7 +85,7 @@ class Locations extends CI_Controller {
         $data = $this->Locations_model->getlocation($this->uri->segment(3));
 
         $info = array(
-            'title' => 'Deleting Locations',
+            'title' => 'Delete Workstation',
             'locations' => $data,
         );
 
