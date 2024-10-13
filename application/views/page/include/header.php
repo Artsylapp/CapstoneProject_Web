@@ -17,7 +17,6 @@
     <!-- Custom CSS files-->
     <link rel="stylesheet" href="<?php echo $this->config->base_url("assets/css/bootstrap.css")?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Styless.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Stylesacc.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/analytics.css'); ?>">
 
     <!-- Custom JS files -->

@@ -7,7 +7,7 @@
             </div>
             <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">
-                <a href="<?php echo $this->config->base_url("orders_create") ?>" id="new-order-button">
+                <a href="<?php echo $this->config->base_url("booking/create") ?>" id="new-order-button">
                     <button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW BOOKING">
                         <h3 class="black-txt">NEW BOOKING</h3>
                     </button>

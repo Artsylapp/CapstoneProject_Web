@@ -17,7 +17,7 @@
                     $services = $services;
                 ?>
 
-                <form class="form-horizontal" action="<?php echo $this->config->base_url("orders/cancel_booking/" . $id)?>" method="POST">
+                <form class="form-horizontal" action="<?php echo $this->config->base_url("booking/cancel/" . $id)?>" method="POST">
                     <div class="form-group">
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <h2>Booking Number: <?php echo $id; ?></h2>

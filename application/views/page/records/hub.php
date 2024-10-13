@@ -28,8 +28,8 @@
                                     <td><?php echo $order->orders_tbl_status; ?></td>
                                     <td><?php echo $order->totalCost; ?></td>
                                     <td class="text-center">
-                                        <a href="<?php echo $this->config->base_url("records/records_view/" . $order->orders_tbl_id); ?>">
-                                            <button class="btn green-bg menu-btn-sm ttsh" name="VIEW BOOKING NUMBER: <?php echo $order->orders_tbl_id; ?>">
+                                        <a href="<?php echo $this->config->base_url("records/view/" . $order->orders_tbl_id); ?>">
+                                            <button class="btn green-bg menu-btn-sm ttsh" name="VIEW RECORD NUMBER: <?php echo $order->orders_tbl_id; ?>">
                                                 <h4>VIEW</h4>
                                             </button>
                                         </a>

@@ -25,11 +25,9 @@ $route['user'] = 'Accounts/user';
 $route['acc_create'] = 'Accounts/acc_create';
 $route['acc_edit'] = 'Accounts/acc_edit';
 $route['acc_delete'] = 'Accounts/acc_delete';
-
 $route['acc_add']['POST'] = 'Accounts/acc_add';
 $route['acc_update']['POST'] = 'Accounts/acc_update';
 $route['acc_remove'] = 'Accounts/acc_remove';
-
 
 /* Services Page */
 $route['services'] = 'Services/index';
@@ -41,24 +39,31 @@ $route['ser_add']['POST'] = 'Services/ser_add';
 $route['ser_update']['POST'] = 'Services/ser_update';
 $route['ser_remove'] = 'Services/ser_remove';
 
-
-/* Orders Page */
-$route['orders'] = 'Orders/index';
-$route['orders_create'] = 'Orders/orders_create';
-$route['orders_assign'] = 'Orders/orders_assign';
-$route['orders_placement'] = 'Orders/orders_placement';
-$route['orders_going'] = 'Orders/orders_going';
-$route['orders_cancel'] = 'Orders/orders_cancel';
-$route['orders_finalize'] = 'Orders/orders_finalize';
-
 /* Booking page Page */
-$route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
-$route['booking/save'] = 'Orders/save_booking';
+$route['booking'] = 'Orders/index';
+
+$route['booking/create'] = 'Orders/orders_create'; //redirects to page/orders/orders_create
 $route['booking/view/(:num)'] = 'Orders/orders_view/$1';
+$route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
+
+// $route['booking/assign'] = 'Orders/orders_assign';
+$route['orders_assign'] = 'Orders/orders_assign'; //redirects to page/orders/orders_assign
+
+// $route['booking/placement'] = 'Orders/orders_placement';
+$route['orders_placement'] = 'Orders/orders_placement';  //redirects to page/orders/orders_placement
+
+// $route['booking/finalize'] = 'Orders/orders_finalize';
+$route['orders_finalize'] = 'Orders/orders_finalize';  //redirects to page/orders/orders_finalize
+
+
+$route['booking/save'] = 'Orders/save_booking';
 $route['booking/MPayment/(:num)'] = 'Orders/manualpayment/$1';
+$route['booking/ongoing'] = 'Orders/orders_going';
+
 
 /* Records Page */
 $route['records'] = 'Records/index';
+$route['records/view/(:num)'] = 'Records/records_view/$1';
 
 /* Analytics Page */
 $route['analytics'] = 'Analytics/index';

@@ -18,7 +18,7 @@
                     $paid = $booking->orders_paid_amount;
                 ?>
 
-                    <form class="form-horizontal" action="<?php echo $this->config->base_url("orders/manual_payment/" . $this->uri->segment(3))?>" method="POST">
+                    <form class="form-horizontal" action="<?php echo $this->config->base_url("booking/MPayment/" . $this->uri->segment(3))?>" method="POST">
                         <div class="form-group">
                             <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                                 <h2>Booking Number: <?php echo $id; ?></h2>

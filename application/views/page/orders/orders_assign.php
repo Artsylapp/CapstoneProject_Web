@@ -11,7 +11,7 @@
             <div class="col-xs-4 col-sm-4"></div>
 
             <div class="col-xs-4 col-sm-4 center-item">
-                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" name="Proceed to placement" data-base-url="<?php echo $this->config->base_url('orders/orders_placement'); ?>">
+                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" name="Proceed to placement" data-base-url="<?php echo $this->config->base_url('booking/placement'); ?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>

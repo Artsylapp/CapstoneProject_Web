@@ -11,7 +11,6 @@ $(document).ready(function() {
         console.log("Current page: " + window.location.pathname.toString());
     }
     
-
     function updateTable() {
         let totalCost = 0;
         let itemList = $('#item-list');
@@ -113,7 +112,7 @@ $(document).ready(function() {
                     $(this).show();
                 }
             });
-            console.log(currentType);
+            console.log("Type:" + currentType);
         } else {
             $('#acc_table tbody tr').show();
         }
@@ -130,7 +129,7 @@ $(document).ready(function() {
                     $(this).show();
                 }
             });
-            console.log(currentType);
+            console.log("Type:" + currentType);
         } else {
             $('#acc_table tbody tr').show();
         }

@@ -15,7 +15,7 @@
 				<div class="row">
 
 					<div class="col-6 homenavbtn">
-						<a href="<?php echo $this->config->base_url("orders")?>">
+						<a href="<?php echo $this->config->base_url("booking")?>">
 							<button class="btn menu-btn lg-bg ttsh" name="BOOKING">
 								<img class="menu-icon" src='<?php echo $this->config->base_url("assets/images/icon/icon_booking.png");?>' alt="">
 								<h1 class="btn-text-menu">BOOKING</h1>

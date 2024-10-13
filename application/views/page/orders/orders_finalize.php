@@ -1,6 +1,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script>
 
+sdhasdgasdagdug
+
 <script>
     let baseUrl = "<?php echo base_url('orders/save_services'); ?>";
     var mode = "<?php echo($mode)?>";
@@ -27,14 +29,14 @@
             break;
     }
 
-    console.log(redirectUrl);
+    console.log("Redirected URL: " + redirectUrl);
 
     let sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
-    console.log(sessionData);
+    console.log("Session Data: " + sessionData);
     sessionData = localStorage.getItem('assigned_masseurs') ? JSON.parse(localStorage.getItem('assigned_masseurs')) : {};
-    console.log(sessionData);
+    console.log("Session Data: " + sessionData);
     sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
-    console.log(sessionData);
+    console.log("Session Data: " + sessionData);
 </script>
 
 

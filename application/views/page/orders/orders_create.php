@@ -12,7 +12,7 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" 
                     name="Proceed to masseur assignment" 
-                    data-base-url="<?php echo $this->config->base_url('orders/orders_assign'); ?>">
+                    data-base-url="<?php echo $this->config->base_url('booking/assign'); ?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
@@ -35,7 +35,7 @@
                         <tr data-service-type="<?php echo $service->services_tbl_designation; ?>">
                         <td><?php echo $service->services_tbl_name; ?></td>
                         <td><?php echo $service->services_tbl_description; ?></td>
-                        <td>₱<?php echo $service->services_tbl_price; ?></td>
+                        <td>₱ <?php echo $service->services_tbl_price; ?></td>
                         <td class="text-center">
                             <button class="btn lg-bg menu-btn-sm ttsh add-service" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>" name="Add <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>">
                                 <h4>ADD</h4>
