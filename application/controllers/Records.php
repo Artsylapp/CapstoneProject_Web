@@ -20,7 +20,7 @@ class Records extends CI_Controller {
     {
 		$data['orders'] = $this->Order_model->getOrders();
 		$info = array(
-			'title' => 'Booking',
+			'title' => 'Records',
 			'orders' => $data['orders'],
 		);
 	

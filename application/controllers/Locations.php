@@ -17,7 +17,7 @@ class Locations extends CI_Controller {
         $data['locations'] = $this->Locations_model->getLocations();
 
         $info = array(
-            'title' => 'Edit Locations',
+            'title' => 'Work Stations',
             'locations' => $data['locations'],
         );
 
@@ -30,7 +30,7 @@ class Locations extends CI_Controller {
     public function loc_create()
     {
         $info = array(
-            'title' => 'Creating Locations',
+            'title' => 'Create Workstation',
         );
 
         $this->load->view('page/include/header', $info);

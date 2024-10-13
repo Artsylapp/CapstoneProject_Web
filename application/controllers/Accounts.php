@@ -17,7 +17,7 @@ class Accounts extends CI_Controller {
   	{
 		$data = $this->Account_model->getAccounts();
 		$info = array(
-			'title' => 'Select Account',
+			'title' => 'Accounts',
 			'accounts' => $data,
 		);
 

@@ -58,7 +58,7 @@ class Services extends CI_Controller {
         $data = $this->Service_model->getService($this->uri->segment(3));
 
         $info = array(
-            'title' => 'Edit Services',
+            'title' => 'Services',
             'services' => $data,
         );
 

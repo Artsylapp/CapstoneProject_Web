@@ -103,7 +103,7 @@ class Main extends CI_Controller {
 	public function manage_hub()
 	{
 		$info = array(
-			'title' => 'Home',
+			'title' => 'Management',
 		);
 
 		$this->load->view('page/include/header', $info);
