@@ -49,7 +49,7 @@
 
                 <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:10vh;">
 
-                    <h1 class="overflow-wrap">Welcome To VIAMMshadfgasjhfkgsdjhf</h1>
+                    <h1 class="overflow-wrap">Welcome To VIAMM</h1>
                     <h3 style="margin-top: 0px;">Login using Company Credentials</h3>
 
                     <!-- Flash message div -->
