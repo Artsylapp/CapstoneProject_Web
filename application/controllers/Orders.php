@@ -144,7 +144,7 @@ class Orders extends CI_Controller {
             $data = array(
                 'id' => $id,
                 'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
-                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : []
+                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : [],
                 'status' => "CANCELLED"
             );
     
