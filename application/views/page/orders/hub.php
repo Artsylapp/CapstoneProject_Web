@@ -4,15 +4,6 @@
             <div class="col-xs-12 col-sm-12" style="text-align: left;">
                 <h1 class="overflow-wrap black-txt">BOOKING HUB</h1>
                 <h3 class="black-txt" style="margin-top: 0px;">Manage Bookings - COMPANY</h3>
-
-                <script>
-
-                var error = <?php echo($this->session->flashdata('error')) ?>;
-
-                console.log("Flash Error:", error);
-
-                </script>
-
             </div>
             <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">
