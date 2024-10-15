@@ -134,6 +134,8 @@ class Orders extends CI_Controller {
     // Orders - Cancel booking
     public function cancel_booking()
     {
+        redirect(base_url("orders"));
+
         $id = $this->uri->segment(3);
 
         $booking = $this->Order_model->getOrder($id);
