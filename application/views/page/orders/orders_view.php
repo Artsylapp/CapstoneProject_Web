@@ -83,7 +83,7 @@
                                     </button>
                                     </a>
                                 <?php else:?>
-                                    <a href="">
+                                    <a href="<?php echo $this->config->base_url("booking/view/" . $order->orders_tbl_id); ?>">
                                     <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment" onclick="openPopup()">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
