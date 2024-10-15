@@ -58,18 +58,21 @@
                             </table>
                         </div>
                     </div>
+                </form>
 
                     <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                         <div class="col-sm-12">
-                            <button class="btn lr-bg menu-btn-m ttsh" name="confirm cancel">
-                                <h4>CANCEL BOOKING</h4>
-                            </button>
+                            <a href="<?php echo $this->config->base_url("orders")?>">
+                                <button class="btn lr-bg menu-btn-m ttsh" name="confirm cancel">
+                                    <h4>CANCEL BOOKING</h4>
+                                </button>
+                            </a>
                         </div>
                     </div>
-                </form>
+                
             
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
-                    <a href="<?php echo $this->config->base_url("orders")?>">
+                    <a href="<?php echo $this->config->base_url("booking/cancel/" . $id)?>">
                         <button class="btn yellow-bg menu-btn-m ttsh" name="cancel">
                             <h4>BACK</h4>
                         </button>
