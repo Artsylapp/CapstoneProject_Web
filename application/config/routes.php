@@ -45,6 +45,7 @@ $route['booking'] = 'Orders/index';
 $route['booking/create'] = 'Orders/orders_create'; //redirects to page/orders/orders_create
 $route['booking/view/(:num)'] = 'Orders/orders_view/$1';
 $route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
+$route['booking/cancel_booking/(:num)'] = 'Orders/cancel_booking/$1';
 
 // $route['booking/assign'] = 'Orders/orders_assign';
 $route['orders_assign'] = 'Orders/orders_assign'; //redirects to page/orders/orders_assign
