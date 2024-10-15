@@ -356,8 +356,9 @@ table-layout: auto;
         height: 75px;
         margin: 0px;
         margin-right: 25px;
-        background-color: rgb(255, 167, 167);
+        background-color: hsl(218deg 31.92% 82.78%);
         scale: 0.95;
+        border-radius: 40%;
     }
 
     .sidebar {
@@ -490,8 +491,9 @@ table-layout: auto;
             width: 50px;
             height: 50px;
             margin: 0px;
-            background-color: rgb(255, 167, 167);
+            background-color: hsl(218deg 31.92% 82.78%);
             scale: 0.95;
+            border-radius: 40%;
         }
 
         .top-cont{
@@ -624,8 +626,9 @@ table-layout: auto;
             width: 50px;
             height: 50px;
             margin: 0px;
-            background-color: rgb(255, 167, 167);
+            background-color: hsl(218deg 31.92% 82.78%);
             scale: 0.95;
+            border-radius: 40%;
         }
 
         .top-cont{
@@ -757,8 +760,9 @@ table-layout: auto;
             width: 50px;
             height: 50px;
             margin: 0px;
-            background-color: rgb(255, 167, 167);
+            background-color: hsl(218deg 31.92% 82.78%);
             scale: 0.95;
+            border-radius: 40%;
         }
 
         .top-cont{
