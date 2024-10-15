@@ -45,7 +45,7 @@
 					</div>
 				<div class="col-sm-offset-9 col-sm-3" style="margin-top:25px;">
 					<div class="col-sm-12">
-						<button class="btn green-bg menu-btn-m ttsh" name="confirm creation">
+						<button class="btn lg-bg menu-btn-m ttsh" name="confirm creation">
 							<h4>CREATE SERVICE</h4>
 						</button>
 					</div>
@@ -54,7 +54,7 @@
 
 			<div class="col-sm-offset-9 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
 				<a href="<?php echo $this->config->base_url("services")?>">
-					<button class="btn yellow-bg menu-btn-m ttsh" name="Cancel">
+					<button class="btn lr-bg menu-btn-m ttsh" name="Cancel">
 						<h4>CANCEL</h4>
 					</button>
 				</a>

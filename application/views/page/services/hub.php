@@ -12,7 +12,7 @@
 
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("ser_create")?>">
-					<button class="btn green-bg menu-btn-m center-item ttsh" name="NEW Service">
+					<button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW Service">
 						<h3 class="">NEW SERVICE</h3>
 					</button>
 				</a>
@@ -60,7 +60,7 @@
 								<td class="text-center">
 
 								<a href="<?php echo $this->config->base_url("services/ser_delete/$service->services_tbl_id")?>">
-									<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $type"?>">
+									<button class="btn lr-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $type"?>">
 										<h4>DELETE</h4>
 									</button>
 								</a>
