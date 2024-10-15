@@ -98,33 +98,6 @@
                                     <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment" onclick="openPopup()">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
-
-                                    <!-- Payment Pop-up -->
-                                    
-                                    <div id="paymentPopup" class="popup">
-                                        <div class="popup-header">Enter Payment Amount</div>
-                                            <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
-                                            <div class="form-group">
-                                                <input type="number" name="updatePayment" placeholder="Payment Amount" required>
-                                                <button>Submit</button>
-                                                <button type="button" onclick="closePopup()">Close</button>
-                                            </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    
-
-                                    <script>
-                                        // JavaScript to open and close the pop-up
-                                        function openPopup() {
-                                            document.getElementById("paymentPopup").classList.add("active");
-                                        }
-
-                                        function closePopup() {
-                                            document.getElementById("paymentPopup").classList.remove("active");
-                                        }
-                                    </script>
-
                                 <?php endif;?>
                             </div>
 
@@ -137,6 +110,32 @@
                             </button>
                         </a>
                     </div>
+
+                    <!-- Payment Pop-up -->
+                                    
+                    <div id="paymentPopup" class="popup">
+                        <div class="popup-header">Enter Payment Amount</div>
+                            <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
+                                <div class="form-group">
+                                    <input type="number" name="updatePayment" placeholder="Payment Amount" required>
+                                    <button>Submit</button>
+                                    <button type="button" onclick="closePopup()">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                                    
+
+                    <script>
+                        // JavaScript to open and close the pop-up
+                        function openPopup() {
+                            document.getElementById("paymentPopup").classList.add("active");
+                        }
+
+                        function closePopup() {
+                            document.getElementById("paymentPopup").classList.remove("active");
+                        }
+                    </script>
 
                 <?php else: ?>
                     <p>Booking not found.</p>
