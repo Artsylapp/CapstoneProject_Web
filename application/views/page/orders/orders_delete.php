@@ -72,7 +72,7 @@
                 
             
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
-                    <a href="<?php echo $this->config->base_url("booking")?>">
+                    <a href="<?php echo $this->config->base_url("orders")?>">
                         <button class="btn yellow-bg menu-btn-m ttsh" name="cancel">
                             <h4>BACK</h4>
                         </button>
