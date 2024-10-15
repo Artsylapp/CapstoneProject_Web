@@ -84,4 +84,21 @@ class Booking_model extends CI_Model {
     
         return $this->db->trans_status(); // Returns true if all updates are successful
     } 
+
+    function updatePaidAmount($data) {
+        $id = $data['id'];
+    
+        // Start database transaction
+        $this->db->trans_start();
+    
+        // Update the payment amount
+        $this->db->where('orders_tbl_id', $id);
+        $this->db->update('orders_tbl', array('orders_paid_amount' => $data['paid_amount']));
+    
+        // Complete transaction
+        $this->db->trans_complete();
+    
+        // Return success or failure based on transaction status
+        return $this->db->trans_status();
+    }
 }
