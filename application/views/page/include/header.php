@@ -39,10 +39,10 @@
 ?>
 
 <!-- Body tag -->
-<body style="font-family: 'Outfit', sans-serif; margin: 0; padding: 0; background-color: hsla(22, 40%, 51%, 0.5);;">
+<body style="font-family: 'Outfit', sans-serif; margin: 0; padding: 0; background-color: hsl(196, 64%, 73%, 0.5);">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-inverse top-cont" style="background-color: hsla(22, 40%, 51%, 1); border: none; margin-bottom: 0;">
+    <nav class="navbar navbar-inverse top-cont" style="background-color: hsl(218 53% 65%); border: none; margin-bottom: 0;">
         <div class="container-fluid" style="display: flex; align-items: center; justify-content: space-between;">
             
             <!-- Logo -->
@@ -53,7 +53,7 @@
             </div>
             
             <!-- Voice Selection Dropdown -->
-            <div class="header-container" style="flex-grow: 1; text-align: center;">
+            <div class="header-container" style="flex-grow: 1; text-align: center; visibility: hidden;" >
                 <select id='voiceList' class="form-control header-select" style="margin-top: 10px;"></select>
             </div>
             
@@ -67,5 +67,5 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid" style="margin: 0; padding: 0; height: 100vh; background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg");?>'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="container-fluid bg-image" style="margin: 0; padding: 0; height: 100vh; background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png");?>');">
         <!-- Content goes here -->

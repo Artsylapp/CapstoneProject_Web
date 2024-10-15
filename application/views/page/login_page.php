@@ -15,14 +15,13 @@
     <script src="<?php echo $this->config->base_url('assets/js/Utils.js'); ?>"></script>
 </head>
 
-<body class="text-center" style="
-    background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg") ?>'); 
-    background-size: cover;
-    background-repeat: no-repeat;">
+<body class="text-center bg-image" style="
+    background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png") ?>');
+    background-color: hsl(196, 64%, 73%, 0.5);">
 
     <nav class="navbar navbar-inverse" 
         style="
-        background-color: hsla(22, 61%, 31%, 1);
+        background-color: hsl(218 53% 65%);
         margin-bottom:0px;
         border-style:none;">
         
@@ -34,7 +33,7 @@
             </div>
                 
                 <div class="container-fluid header-container">
-                    <select id='voiceList' class="form-control header-select"></select>
+                    <select id='voiceList' class="form-control header-select" style="visibility: hidden;"></select>
                 </div>
 
             </div>
@@ -47,52 +46,57 @@
 
                 <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:10vh;">
 
-                    <h1 class="overflow-wrap black-txt">Welcome To VIAMM</h1>
-                    <h3 class="black-txt" style="margin-top: 0px;">Login using Company Credentials</h3>
+                    <div class="login-div">
 
-                    <!-- Flash message div -->
-                    <div class="row" style="margin-bottom: 20px;">
+                        <h1 class="overflow-wrap black-txt">Welcome To VIAMM</h1>
+                        <h3 class="black-txt" style="margin-top: 0px;">Login using Company Credentials</h3>
 
-                    <!-- Error message alert display -->
-                    <?php if ($this->session->flashdata('status')) { ?>
-                        <div class="alert alert-success">
-                            <?php echo $this->session->flashdata('status'); ?>
-                        </div>
-                    <?php } elseif ($this->session->flashdata('invalid')) { ?>
-                        <div class="alert alert-danger">
-                            <?php echo $this->session->flashdata('invalid'); ?>
-                        </div>
-                    <?php } ?>
-                    
-                    </div>
+                        <!-- Flash message div -->
+                        <div class="row" style="margin-bottom: 20px;">
 
-                    <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2 black-txt" for="fullname">Company Username:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fullname" placeholder="Company Name" name="com_u" required>
-                            </div>
+                            <!-- Error message alert display -->
+                            <?php if ($this->session->flashdata('status')) { ?>
+                                <div class="alert alert-success">
+                                    <?php echo $this->session->flashdata('status'); ?>
+                                </div>
+                            <?php } elseif ($this->session->flashdata('invalid')) { ?>
+                                <div class="alert alert-danger">
+                                    <?php echo $this->session->flashdata('invalid'); ?>
+                                </div>
+                            <?php } ?>
+                        
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-2 black-txt" for="address">Password:</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="address" placeholder="Password" name="com_p" required>
-                            </div>
-                        </div>
+                        <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
-                                <div class="col-sm-12">
-                                    <button class="btn green-bg menu-btn-m ttsh" name="LOG IN">
-                                        <h4>LOGIN</h4>
-                                    </button>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2 black-txt" for="fullname">Company Username:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="fullname" placeholder="Company Name" name="com_u" required>
                                 </div>
                             </div>
-                        </div>
 
-                    </form>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2 black-txt" for="address">Password:</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="address" placeholder="Password" name="com_p" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+                                    <div class="col-sm-12">
+                                        <button class="btn lg-bg login-btn ttsh" name="LOG IN">
+                                            <h4>LOGIN</h4>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
                 </div>
 
             </div>
