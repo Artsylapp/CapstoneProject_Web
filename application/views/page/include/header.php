@@ -39,34 +39,33 @@
 ?>
 
 <!-- Body tag -->
-<body style="font-family: 'Outfit', sans-serif; margin: 0; padding: 0;">
+<body style="font-family: 'Outfit', sans-serif; margin: 0; padding: 0; background-color: hsla(22, 40%, 51%, 0.5);;">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-inverse" style="background-color: hsla(22, 40%, 51%, 1); border: none; margin-bottom: 0;">
+    <nav class="navbar navbar-inverse top-cont" style="background-color: hsla(22, 40%, 51%, 1); border: none; margin-bottom: 0;">
         <div class="container-fluid" style="display: flex; align-items: center; justify-content: space-between;">
             
             <!-- Logo -->
             <div class="navbar-header" style="display: flex; align-items: center;">
                 <a href="<?php echo $this->config->base_url("home")?>">
-                    <img class="header_img" src='<?php echo $this->config->base_url("assets/images/logo.png");?>' alt="Logo" style="height: 70px; width: 70px; object-fit: cover;">
+                    <img class="header_img" src='<?php echo $this->config->base_url("assets/images/logo.png");?>' alt="Logo">
                 </a>
             </div>
             
             <!-- Voice Selection Dropdown -->
             <div class="header-container" style="flex-grow: 1; text-align: center;">
-                <select id='voiceList' class="form-control header-select" style="width: 335px; margin-top: 10px;"></select>
+                <select id='voiceList' class="form-control header-select" style="margin-top: 10px;"></select>
             </div>
             
             <!-- Logout Button -->
             <ul class="nav navbar-nav navbar-right" style="display: flex; align-items: center;">
-                    <a href="<?php echo $this->config->base_url("main/logout")?>" style="line-height: 80px;">
-                        <button class="btn logout-btn ttsh" name="LOGOUT" style="background-image: url('<?php echo $this->config->base_url("assets/images/logout.png");?>'); background-size: cover; background-position: center; width: 60px; height: 60px; border: none; border-radius: 10%; margin-right: 25px; display: block; padding-right: 10px;">
-                        </button>
+                    <a href="<?php echo $this->config->base_url("main/logout")?>">
+                        <img class="btn logout-btn ttsh logout_img" name="LOGOUT" src='<?php echo $this->config->base_url("assets/images/logout.png");?>' alt="Logout">
                     </a>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid" style="margin: 0; padding: 0; height: 100%; background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg");?>'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <div class="container-fluid" style="margin: 0; padding: 0; height: 100vh; background-image: url('<?php echo $this->config->base_url("assets/images/web_bg.jpg");?>'); background-size: cover; background-repeat: no-repeat; background-position: center;">
         <!-- Content goes here -->
