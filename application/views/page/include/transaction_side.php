@@ -77,7 +77,7 @@
                             <tfoot>
                                 <tr>
                                     <td colspan="2">Total Cost</td>
-                                    <td id="total-cost">₱0.00</td>
+                                    <td id="total-cost">$0.00</td>
                                 </tr>
                             </tfoot>
                         </table>
