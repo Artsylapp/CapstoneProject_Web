@@ -17,7 +17,7 @@
                     $services = $services;
                 ?>
 
-                <form class="form-horizontal" action="<?php echo $this->config->base_url("booking/cancel/" . $id)?>" method="POST">
+                <form class="form-horizontal" action="<?php echo $this->config->base_url("booking")?>" method="POST">
                     <div class="form-group">
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <h2>Booking Number: <?php echo $id; ?></h2>
@@ -61,7 +61,7 @@
 
                     <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                         <div class="col-sm-12">
-                            <button class="btn lr-bg menu-btn-m ttsh" name="confirm delete">
+                            <button class="btn lr-bg menu-btn-m ttsh" name="confirm cancel">
                                 <h4>CANCEL BOOKING</h4>
                             </button>
                         </div>

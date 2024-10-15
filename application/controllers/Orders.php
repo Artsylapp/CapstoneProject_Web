@@ -132,8 +132,10 @@ class Orders extends CI_Controller {
     }
     
     // Orders - Cancel booking
-    public function cancel_booking($id)
+    public function cancel_booking()
     {
+        $id = $this->uri->segment(3);
+
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
             $booking_details = json_decode($booking[0]->orders_tbl_details, true);
@@ -270,3 +272,4 @@ class Orders extends CI_Controller {
     }
     
 }
+
