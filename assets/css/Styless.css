@@ -367,6 +367,34 @@ table-layout: auto;
     height: 91.5vh;
     align-items: center;}
 
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .popup.active {
+        display: block;
+    }
+    .popup-header {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .popup input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .popup button {
+        padding: 10px 20px;
+    }
+
     /*MEDIA SETTING*/
 
     /* Media query scroll on phone screens */
