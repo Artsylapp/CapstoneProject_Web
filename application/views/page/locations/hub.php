@@ -12,7 +12,7 @@
 
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("loc_create")?>">
-					<button class="btn green-bg menu-btn-m center-item ttsh" name="NEW Location">
+					<button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW Location">
 						<h3 class="">NEW LOCATION</h3>
 					</button>
 				</a>
@@ -48,7 +48,7 @@
 								</td>
 								<td class="text-center">
 									<a href="<?php echo $this->config->base_url("locations/loc_delete/$location->location_tbl_id")?>">
-										<button class="btn red-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $location->location_tbl_name"?>">
+										<button class="btn lr-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $location->location_tbl_name"?>">
 											<h4>DELETE</h4>
 										</button>
 									</a>

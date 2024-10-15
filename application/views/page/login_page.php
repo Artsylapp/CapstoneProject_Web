@@ -28,12 +28,10 @@
         
         <div class="container-fluid">
             <div class="navbar-header">
-
-                <a href="<?php echo $this->config->base_url("home") ?>" style="margin: 0; line-height: 75px; font-size:10px">
-                    <button type="button" class="btn btn-image">
-                        <img src="" alt="">
-                    </button>
+                <a href="<?php echo $this->config->base_url("home")?>">
+                    <img class="header_img" src='<?php echo $this->config->base_url("assets/images/logo.png");?>' alt="Logo">
                 </a>
+            </div>
                 
                 <div class="container-fluid header-container">
                     <select id='voiceList' class="form-control header-select"></select>
@@ -49,8 +47,8 @@
 
                 <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:10vh;">
 
-                    <h1 class="overflow-wrap">Welcome To VIAMM</h1>
-                    <h3 style="margin-top: 0px;">Login using Company Credentials</h3>
+                    <h1 class="overflow-wrap black-txt">Welcome To VIAMM</h1>
+                    <h3 class="black-txt" style="margin-top: 0px;">Login using Company Credentials</h3>
 
                     <!-- Flash message div -->
                     <div class="row" style="margin-bottom: 20px;">
@@ -71,14 +69,14 @@
                     <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="fullname">Company Username:</label>
+                            <label class="control-label col-sm-2 black-txt" for="fullname">Company Username:</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="fullname" placeholder="Company Name" name="com_u" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="address">Password:</label>
+                            <label class="control-label col-sm-2 black-txt" for="address">Password:</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="address" placeholder="Password" name="com_p" required>
                             </div>

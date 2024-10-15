@@ -44,7 +44,7 @@
 				</div>
 				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 					<div class="col-sm-12">
-						<button class="btn red-bg menu-btn-m ttsh" name="confirm delete">
+						<button class="btn lr-bg menu-btn-m ttsh" name="confirm delete">
 							<h4>DELETE SERVICE</h4>
 						</button>
 					</div>
