@@ -7,8 +7,8 @@
 
                 <script>
 
-                    var message = <?php echo($this->session->flashdata('message')); ?>;
-                    var error = <?php echo($this->session->flashdata('error')); ?>;
+                    var message = <?php echo($this->session->flashdata('message')) ?>;
+                    var error = <?php echo($this->session->flashdata('error')) ?>;
 
                     console.log("Flash Message:", message);
                     console.log("Flash Error:", error);
