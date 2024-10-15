@@ -43,7 +43,7 @@
             <div class="col-xs-12 col-sm-12">
                 <div class="sidebar">
 
-                    <div class="row center-item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80vh; margin-top: auto;">
+                    <div class="row center-item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; margin-top: auto;">
                         <table class="table table-striped box-white mw-table" id="invoice_table" style="width: 20vw;">
                             <thead>
                                 <tr>
