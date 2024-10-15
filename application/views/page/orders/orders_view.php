@@ -100,16 +100,19 @@
                                     </button>
 
                                     <!-- Payment Pop-up -->
-                                    <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
+                                    
                                     <div id="paymentPopup" class="popup">
                                         <div class="popup-header">Enter Payment Amount</div>
+                                            <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
                                             <div class="form-group">
                                                 <input type="number" name="updatePayment" placeholder="Payment Amount" required>
                                                 <button>Submit</button>
                                                 <button type="button" onclick="closePopup()">Close</button>
                                             </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    </form>
+                                    
 
                                     <script>
                                         // JavaScript to open and close the pop-up
