@@ -24,8 +24,6 @@
 					</button>
 				</a>
 			</div>
-		</div>
-		<div class="row mt-s">
 
 			<div class="col-xs-6 col-sm-6">
 				<a href="<?php echo $this->config->base_url("locations")?>">
@@ -37,5 +35,6 @@
 			</div>
 
 		</div>
+		
 	</div>
 </div>
