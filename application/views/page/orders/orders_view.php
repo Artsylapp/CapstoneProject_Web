@@ -6,9 +6,15 @@
                 <h1 class="overflow-wrap black-txt">VIEW BOOKING</h1>
                 <h3 class="black-txt" style="margin-top: 0px;">Display Booking Details - COMPANY</h3>
 
-                <h3 class="text-success"><?php echo $this->session->flashdata('message'); ?></h3>
+                <script>
 
-                <h3 class="text-success"><?php echo $this->session->flashdata('error'); ?></h3>
+                var message = "<?php echo addslashes($this->session->flashdata('message')); ?>"; // Escape quotes for JS
+                var error = "<?php echo addslashes($this->session->flashdata('error')); ?>"; // Escape quotes for JS
+
+                console.log("Flash Message:", message);
+                console.log("Flash Error:", error);
+
+                </script>
             </div>
         </div>
 
@@ -78,6 +84,8 @@
                             </div>
                         </div>
 
+                        </form>
+
                         <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                             <div class="col-sm-12">
                                 <?php if ($paid == $totalCost) :?>
@@ -87,21 +95,21 @@
                                     </button>
                                     </a>
                                 <?php else:?>
-                                    <a href="<?php echo $this->config->base_url("home")?>">
                                     <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment" onclick="openPopup()">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
-                                    </a>
 
                                     <!-- Payment Pop-up -->
+                                    <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
                                     <div id="paymentPopup" class="popup">
                                         <div class="popup-header">Enter Payment Amount</div>
-                                        <form id="paymentForm" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $id); ?>">
-                                            <input type="number" name="updatePayment" placeholder="Payment Amount" required>
-                                            <button type="submit">Submit</button>
-                                            <button type="button" onclick="closePopup()">Close</button>
-                                        </form>
+                                            <div class="form-group">
+                                                <input type="number" name="updatePayment" placeholder="Payment Amount" required>
+                                                <button>Submit</button>
+                                                <button type="button" onclick="closePopup()">Close</button>
+                                            </div>
                                     </div>
+                                    </form>
 
                                     <script>
                                         // JavaScript to open and close the pop-up
@@ -118,7 +126,6 @@
                             </div>
 
                         </div>
-                    </form>
 
                     <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
                         <a href="<?php echo $this->config->base_url("orders")?>">
