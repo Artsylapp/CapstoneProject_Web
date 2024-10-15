@@ -9,6 +9,13 @@ $(document).ready(function() {
         filterLocationByType();
     }else{
         console.log("Current page: " + window.location.pathname.toString());
+        
+        const message = "<?php echo $this->session->flashdata('message'); ?>";
+        const error = "<?php echo $this->session->flashdata('error'); ?>";
+
+        // Log the messages to the console
+        console.log("Flash Message:", message);
+        console.log("Flash Error:", error);
     }
     
     function updateTable() {

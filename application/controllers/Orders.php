@@ -195,6 +195,10 @@ class Orders extends CI_Controller {
     // Orders - Updating masseur status and booking status
     public function orders_view() // Orders - delete order
     {
+
+        $data['orders'] = $this->Order_model->getOrders();
+        $orders = $data['orders'];
+
         // Get the order details based on the ID
         $data = $this->Order_model->getOrder($this->uri->segment(3));
 
@@ -223,10 +227,46 @@ class Orders extends CI_Controller {
             'masseurs' => $masseurs,
             'locations' => $locations,
             'totalCost' => $totalCost,
+            'orders' => $orders,
         );
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/orders/orders_view', $info); // Pass $info to the view
         $this->load->view('page/include/footer');        
     }
+
+    public function manual_pay() {
+        $id = $this->uri->segment(3);
+        $booking = $this->Order_model->getOrder($id);
+    
+        if (!empty($booking)) {
+            // Check if form was submitted with a new payment amount
+            $paid_amount = $this->input->post('updatePayment');
+    
+            if ($paid_amount !== null) {
+                // Prepare data for updating the paid amount
+                $data = array(
+                    'id' => $id,
+                    'paid_amount' => $paid_amount,
+                );
+    
+                // Update the payment in the database
+                $success = $this->Booking_model->updatePaidAmount($data);
+                
+                if ($success) {
+                    $this->session->set_flashdata('message', 'Payment updated successfully.');
+                } else {
+                    $this->session->set_flashdata('error', 'Failed to update payment.');
+                }
+            } else {
+                $this->session->set_flashdata('error', 'No payment amount provided.');
+            }
+        } else {
+            $this->session->set_flashdata('error', 'Booking not found.');
+        }
+    
+        // Redirect back to the booking details page after the update
+        redirect('orders/orders_view/' . $id);
+    }
+    
 }

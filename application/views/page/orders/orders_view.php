@@ -5,6 +5,10 @@
             <div class="col-xs-12 col-sm-12">
                 <h1 class="overflow-wrap black-txt">VIEW BOOKING</h1>
                 <h3 class="black-txt" style="margin-top: 0px;">Display Booking Details - COMPANY</h3>
+
+                <h3 class="text-success"><?php echo $this->session->flashdata('message'); ?></h3>
+
+                <h3 class="text-success"><?php echo $this->session->flashdata('error'); ?></h3>
             </div>
         </div>
 
@@ -83,11 +87,33 @@
                                     </button>
                                     </a>
                                 <?php else:?>
-                                    <a href="<?php echo $this->config->base_url("booking/view/" . $order->orders_tbl_id); ?>">
+                                    <a href="<?php echo $this->config->base_url("home")?>">
                                     <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment" onclick="openPopup()">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
                                     </a>
+
+                                    <!-- Payment Pop-up -->
+                                    <div id="paymentPopup" class="popup">
+                                        <div class="popup-header">Enter Payment Amount</div>
+                                        <form id="paymentForm" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $id); ?>">
+                                            <input type="number" name="updatePayment" placeholder="Payment Amount" required>
+                                            <button type="submit">Submit</button>
+                                            <button type="button" onclick="closePopup()">Close</button>
+                                        </form>
+                                    </div>
+
+                                    <script>
+                                        // JavaScript to open and close the pop-up
+                                        function openPopup() {
+                                            document.getElementById("paymentPopup").classList.add("active");
+                                        }
+
+                                        function closePopup() {
+                                            document.getElementById("paymentPopup").classList.remove("active");
+                                        }
+                                    </script>
+
                                 <?php endif;?>
                             </div>
 
