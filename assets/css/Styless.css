@@ -409,6 +409,10 @@ table-layout: auto;
             height: 100vh;
         }
 
+        .btn-label {
+            visibility: hidden;
+        }
+
         .bg-image{
             background-size: 550px; 
             background-repeat: no-repeat; 
@@ -541,6 +545,10 @@ table-layout: auto;
             height: 100vh;
         }
 
+        .btn-label {
+            visibility: hidden;
+        }
+
         .bg-image{
             background-size: 550px; 
             background-repeat: no-repeat; 
@@ -671,6 +679,10 @@ table-layout: auto;
             overflow: auto; 
             width: 100vw;
             height: 100vh;
+        }
+
+        .btn-label {
+            visibility: hidden;
         }
 
         .bg-image{

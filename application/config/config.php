@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // Use for Local host
-//$config['base_url'] = 'http://localhost/Capstoneproject_web/';
+// $config['base_url'] = 'http://localhost/Capstoneproject_web/';
 
 // Use for Live server
 $config['base_url'] = 'https://viamm.xyz/';

@@ -76,18 +76,18 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 
-	// if using localhost to debug
-	// 'hostname' => 'localhost', // Ensure MySQL is running on localhost
-	// 'username' => 'root', // Default MySQL username for hostinger
-	// 'password' => '', // No password for root user (not recommended for production)
-	// 'database' => 'viammdb', // Name of your database
+	// if using local hosting
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'viammdb',
 	// 'dbdriver' => 'mysqli',
 
-	// if using hostinger
-	'hostname' => 'localhost', // Ensure MySQL is running on localhost
-	'username' => 'u265772247_viammDB', // Default MySQL username for hostinger
+	// if using live hosting
+	'hostname' => 'localhost',
+	'username' => 'u265772247_viammDB',
 	'password' => 'n7JS8r88P?',
-	'database' => 'u265772247_viammdb', // Name of your database
+	'database' => 'u265772247_viammdb',
 
 	'dbdriver' => 'mysqli', // Using MySQL Improved driver
 	'dbprefix' => '',
