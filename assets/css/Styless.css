@@ -730,7 +730,8 @@ table-layout: auto;
         }
 
         .btn-text-menu {
-            font-size: 95%;
+            font-size: 80%;
+            margin-top: 1px;
         }
 
         h1, h2, h3, h4, h5, h6, p {
@@ -763,8 +764,8 @@ table-layout: auto;
         }
 
         .menu-icon{
-            height: 150px;
-            width: 150px;
+            height: 125px;
+            width: 125px;
         }
 
         #voiceList{
@@ -863,8 +864,8 @@ table-layout: auto;
         }
 
         .btn-text-menu {
-            margin-top: -5px;
-            font-size: 175%;
+            margin-top: -6px;
+            font-size: 150%;
         }
 
         h1, h2, h3, h4, h5, h6, p {
