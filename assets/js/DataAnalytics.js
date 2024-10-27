@@ -15,7 +15,7 @@ function displayAnalyticsData(data) {
     if (data || data.totalProfit !== undefined) {
         // Update the content inside the elements
         document.getElementById('totalOrder').textContent = data.totalOrder;
-        document.getElementById('mostService').textContent = data.mostService + " (" + data.mostServiceCount + " orders total)";
+        document.getElementById('mostService').textContent = data.mostService + " (" + data.mostServiceCount + " orders)";
         document.getElementById('totalRevenue').textContent = "₱" + data.totalRevenue;
         document.getElementById('AOV').textContent = data.AOV;
         document.getElementById('mostActiveEmployee').textContent = data.mostActiveEmployee + " (" + data.mostActiveEmployeeCount + " orders total)";
