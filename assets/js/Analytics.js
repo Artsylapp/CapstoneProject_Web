@@ -10,3 +10,20 @@ cards.forEach((card, index) => {
     card.style.backgroundColor = colors[index % colors.length]; // Loop through colors if there are more cards than colors
 });
 
+// shuffled colored cards
+// // Function to shuffle the colors array
+// function shuffleArray(array) {
+//     for (let i = array.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+//     }
+//     return array;
+// }
+
+// // Shuffle the colors to ensure uniqueness
+// const shuffledColors = shuffleArray(colors.slice(0, cards.length)); // Limit to number of cards
+
+// // Apply a unique color to each card
+// cards.forEach((card, index) => {
+//     card.style.backgroundColor = shuffledColors[index];
+// });
