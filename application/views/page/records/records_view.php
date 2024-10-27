@@ -23,7 +23,17 @@
                             <h2>Booking Number: <?php echo $id; ?></h2>
                         </div>
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Status: <?php echo $status; ?></h2>
+                            <?php 
+                                if ($status == 'COMPLETED') {
+                                    echo '<h2>Status: <span style="color: green">' . $status . '</span></h2>';
+                                } elseif ($status == 'CANCELLED') {
+                                    echo '<h2>Status: <span style="color: red">' . $status . '</span></h2>';
+                                } elseif ($status == 'ON-GOING') {
+                                    echo '<h2>Status: <span style="color: orange">' . $status . '</span></h2>';
+                                } else {
+                                    echo '<h2>Status: <span>' . $status . '</span></h2>';
+                                }
+                            ?>
                         </div>
                     </div>
 

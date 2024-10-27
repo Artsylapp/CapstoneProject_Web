@@ -114,11 +114,11 @@ class Analytics_model extends CI_Model{
         $orders = $query->result();
     
         // Initialize variables
-        $totalProfit = 0;
         $totalOrder = 0;
         $mostService = '';
         $totalRevenue = 0;
         $AOV = 0;
+        $MOD = 0;
         
         // initializing Arrays to store monthly revenue (option)
         $monthlyRevenue = array_fill(1, 12, 0); // Indexes 1 to 12 for months January to December
@@ -194,31 +194,32 @@ class Analytics_model extends CI_Model{
             $mostService = key($serviceCounts);
         }
     
-        // Calculate total profit
-        $totalProfit = $totalRevenue;
-    
         // Calculate average order value
         $AOV = $totalOrder > 0 ? $totalRevenue / $totalOrder : 0;
 
         // Calculate the most profitable month
         $mostMonthProfit = max($monthlyRevenue);
-        $mostProfitableMonth = array_search($mostMonthProfit, $monthlyRevenue);
+        $ProfitableMonth = array_search($mostMonthProfit, $monthlyRevenue);
+        $mostProfitableMonth = date('F', mktime(0, 0, 0, $ProfitableMonth, 1));
     
         // Output the results
         return [
-            'totalProfit' => number_format($totalProfit, 2),
             'totalOrder' => $totalOrder,
             'mostService' => $mostService,
             'mostServiceCount' => $serviceCounts[$mostService] ?? 0,
             'totalRevenue' => number_format($totalRevenue, 2),
             'AOV' => number_format($AOV, 2),
-            'monthlyRevenue' => $monthlyRevenue, // Optional: return monthly revenue data
             'mostActiveEmployee' => $mostActiveEmployee,
             'mostActiveEmployeeCount' => $mostActiveEmployeeCount,// Return the most active employee's name and count
-            'mostMonthProfit' => [
-                'month' => $mostProfitableMonth,
-                'profit' => number_format($mostMonthProfit, 2),
-            ], // Optional: return the most profitable month
+            'mostRevenueMonth' => number_format($mostMonthProfit, 2), // Optional: return monthly revenue data
+            'mostProfitMonth' => $mostProfitableMonth,
+
+            // 'mostMonthProfit' => [
+            //     'month' => $mostProfitableMonth,
+            //     'profit' => number_format($mostMonthProfit, 2),
+            // ], // Optional: return the most profitable month
+
+            //'monthlyRevenue' => $monthlyRevenue, // Optional: return monthly revenue data
         ];
     }
     
