@@ -28,7 +28,6 @@ function displayAnalyticsData(data) {
         document.getElementById('AOVCard').setAttribute('name', 'Average Order Value of ' + data.AOV);
         document.getElementById('mostActiveEmployeeCard').setAttribute('name', 'Most Active Employee: ' + data.mostActiveEmployee + ' with ' + data.mostActiveEmployeeCount + ' orders');
         document.getElementById('MPMCard').setAttribute('name', 'Most Profitable Month: ' + data.mostProfitMonth + ' with total revenue of ' + data.mostRevenueMonth + ' pesos');
-
     } else {
         console.error('Data format is not as expected:', data);
     }

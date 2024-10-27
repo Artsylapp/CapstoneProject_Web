@@ -213,13 +213,6 @@ class Analytics_model extends CI_Model{
             'mostActiveEmployeeCount' => $mostActiveEmployeeCount,// Return the most active employee's name and count
             'mostRevenueMonth' => number_format($mostMonthProfit, 2), // Optional: return monthly revenue data
             'mostProfitMonth' => $mostProfitableMonth,
-
-            // 'mostMonthProfit' => [
-            //     'month' => $mostProfitableMonth,
-            //     'profit' => number_format($mostMonthProfit, 2),
-            // ], // Optional: return the most profitable month
-
-            //'monthlyRevenue' => $monthlyRevenue, // Optional: return monthly revenue data
         ];
     }
     
