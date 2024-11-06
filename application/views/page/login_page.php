@@ -17,8 +17,7 @@
 
 <body class="text-center bg-image" style="
     background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png") ?>');
-    background-color: hsl(196, 64%, 73%, 0.5);
-">
+    background-color: hsl(196, 64%, 73%, 0.5);">
 
     <nav class="navbar navbar-inverse" 
         style="
@@ -43,14 +42,14 @@
 
     <div class="container-fluid" style="margin:0px; padding:0px;">
         <div class="container-fluid">
-            <div class="row">
+            <div class="loginform">
 
-                <div class="col-sm-offset-3 col-xs-offset-3 col-sm-6 col-xs-6" style="margin-top:10vh;">
+                <div class="col-sm-6 col-xs-6" style="margin-top:20vh;">
 
                     <div class="login-div">
 
-                        <h1 class="overflow-wrap black-txt">Welcome To VIAMM</h1>
-                        <h3 class="black-txt" style="margin-top: 0px;">Login using Company Credentials</h3>
+                        <h1 class="overflow-wrap black-txt" style="font-weight: bold;">Welcome To VIAMM</h1>
+                        <h3 class="black-txt" style="margin-top: 0px; font-weight: bold;">Login using Company Credentials</h3>
 
                         <!-- Flash message div -->
                         <div class="row" style="margin-bottom: 20px;">
@@ -68,33 +67,36 @@
                         
                         </div>
 
-                        <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
+                        <div class="form-container">
+                            <form class="form-horizontal" action="<?php echo $this->config->base_url("loginAuth") ?>" method="POST">
 
-                            <div class="form-group">
-                                <label class="control-label col-sm-2 black-txt" for="fullname">Company Username:</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="fullname" placeholder="Company Name" name="com_u" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-sm-2 black-txt" for="address">Password:</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="address" placeholder="Password" name="com_p" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
-                                    <div class="col-sm-12">
-                                        <button class="btn lg-bg login-btn ttsh" name="LOG IN">
-                                            <h4>LOGIN</h4>
-                                        </button>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 black-txt formlabel" for="fullname">Username:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="fullname" placeholder="Company Name" name="com_u" required>
                                     </div>
                                 </div>
-                            </div>
 
-                        </form>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 black-txt formlabel" for="address">Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="address" placeholder="Password" name="com_p" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+                                        <div class="col-sm-12">
+                                            <button class="btn lg-bg login-btn ttsh" name="LOG IN">
+                                                <h4>LOGIN</h4>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
 
                     </div>
 
