@@ -107,6 +107,12 @@ table-layout: auto;
         font-size: 25px;
     }
 
+    .loginform{
+        display: flex; 
+        justify-content: center; /* Center horizontally */ 
+        align-items: center; /* Center vertically */ 
+    }
+
     .login-div{
         border-radius: 15px;
         background-color: hsl(218, 53%, 65%, 0.4);
@@ -301,14 +307,14 @@ table-layout: auto;
     .login-btn{
         color: #272626;
         width: 13vw;
-        height: 5vh;
+        height: 8vh;
         justify-content: center;
         align-items: center;
     }
     
     h1, h2, h3, h4, h5, h6, p {
         overflow-wrap: break-word;
-        margin: 7px 0;
+        margin: 1px 0;
     }
     h1 {
         font-size: 45px;
