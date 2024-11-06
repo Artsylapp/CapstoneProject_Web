@@ -3,9 +3,9 @@
 	<div class="container-fluid">
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-12" style="text-align: right;">
-				<h1 class="overflow-wrap black-txt">SERVICES HUB</h1>
-				<h3 class="black-txt" style="margin-top: 0px;">Manage Services - COMPANY</h3>
+			<div class="col-xs-12 col-sm-12">
+				<h1 class="black-txt overflow-wrap ">SERVICES HUB</h1>
+				<h3 class="black-txt" style="margin-top: 0px;">Manage Services - <?php echo $this->session->userdata('comp_Name') ?></h3>
 			</div>
 
 			<div class="col-xs-4 col-sm-4"></div>

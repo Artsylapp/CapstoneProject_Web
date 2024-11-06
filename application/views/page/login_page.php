@@ -17,7 +17,8 @@
 
 <body class="text-center bg-image" style="
     background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png") ?>');
-    background-color: hsl(196, 64%, 73%, 0.5);">
+    background-color: hsl(196, 64%, 73%, 0.5);
+">
 
     <nav class="navbar navbar-inverse" 
         style="

@@ -1,11 +1,19 @@
 <div class="analytics">
+    
     <!-- Dynamic layout with flexbox -->
 
     <div class="container">
         <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h1 class="overflow-wrap black-txt">Analytics</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">View Analytics - <?php echo $this->session->userdata('comp_Name') ?></h3>
+            </div>
+        </div>
+
+        <div class="row">
 
             <div class="col-sm-8 ChartContainer">
-                <div class="charts" style>
+                <div class="charts">
                     <div id="analysisChartContainer">
                         <canvas id="ChartAnalysis" class="analytics_canvas"></canvas>
                     </div>

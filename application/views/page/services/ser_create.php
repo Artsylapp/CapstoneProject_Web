@@ -4,8 +4,8 @@
 		<div class="row">
 
 			<div class="col-xs-12 col-sm-12">
-				<h1 class="overflow-wrap black-txt">SERVICE CREATE</h1>
-				<h3 class="black-txt" style="margin-top: 0px;">Create Service - COMPANY</h3>
+				<h1 class="black-txt overflow-wrap">SERVICE CREATE</h1>
+				<h3 class="black-txt" style="margin-top: 0px;">Create Service - <?php echo $this->session->userdata('comp_Name') ?></h3>
 			</div>
 
 

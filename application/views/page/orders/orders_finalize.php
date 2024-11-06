@@ -43,8 +43,8 @@
         
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="overflow-wrap black-txt">Booking Details</h1>
-                <h3 class="black-txt" style="margin-top: 0px;">Display Booking Details - VIAMM</h3>
+                <h1 class="black-txt overflow-wrap">Booking Details</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">Display Booking Details - <?php echo $this->session->userdata('comp_Name') ?></h3>
             </div>
         </div>
 

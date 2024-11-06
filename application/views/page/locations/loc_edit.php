@@ -3,8 +3,8 @@
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
-				<h1 class="overflow-wrap black-txt">SERVICE EDIT</h1>
-				<h3 class="black-txt" style="margin-top: 0px;">Edit Service - COMPANY</h3>
+				<h1 class="black-txt overflow-wrap">LOCATION EDIT</h1>
+				<h3 class="black-txt" style="margin-top: 0px;">Edit Location - <?php echo $this->session->userdata('comp_Name') ?></h3>
 			</div>
 		</div>
 
