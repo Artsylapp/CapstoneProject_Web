@@ -77,17 +77,17 @@ $db['default'] = array(
 	'dsn'	=> '',
 
 	// if using local hosting
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'viammdb',
-	'dbdriver' => 'mysqli',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'viammdb',
+	// 'dbdriver' => 'mysqli',
 
 	// if using live hosting
-	// 'hostname' => 'localhost',
-	// 'username' => 'u265772247_viammDB',
-	// 'password' => 'n7JS8r88P?',
-	// 'database' => 'u265772247_viammdb',
+	'hostname' => 'localhost',
+	'username' => 'u265772247_viammDB',
+	'password' => 'n7JS8r88P?',
+	'database' => 'u265772247_viammdb',
 
 	'dbdriver' => 'mysqli', // Using MySQL Improved driver
 	'dbprefix' => '',
