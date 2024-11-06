@@ -68,5 +68,5 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid bg-image" style="margin: 0; background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png");?>');">
+    <div class="container-fluid bg-image" style="margin: 0; padding: 0; height: 100vh; background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png");?>');">
         <!-- Content goes here -->

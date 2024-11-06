@@ -19,19 +19,15 @@ input[type=number] {
 }
 
 .table-wrapper {
-    max-height: calc(100vh - 23em);
+    max-height: clamp(20vh, 60vh, 60vh); /* Set the maximum height for the table wrapper */
     overflow-y: auto;  /* Enable vertical scrolling */
     -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
-}
-
-.nobuttonstab{
-    margin-top: 2.5em;
-}
+  }
   
 table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+width: 100%;
+border-collapse: collapse;
+table-layout: auto;
 }
 
 .navbar{
@@ -46,12 +42,12 @@ table {
     button:hover{
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.1);
     }
-
-    table th{
-        text-align: center;
+    
+    table{
+        text-align: left;
     }
 
-    td{
+    table th{
         text-align: center;
     }
 
@@ -239,23 +235,30 @@ table {
     }
 
     /*BOXES*/
+
     .button-container {
+        margin: 0;
         padding: 0;
         border-radius: 25px;
         max-height: fit-content;
+        justify-content: center;
         align-items: center;
     }
 
     .button-container .row {
         border-radius: 15px;
         background-color: hsl(218, 53%, 65%, 0.4);
+        margin: 0;
+        padding: 5px;
+        justify-content: center;
     }
 
     .box-white{
-        border-radius: 1em;
+        border-radius: 15px;
         background-color: white;
         padding-left: 0%;
-        padding-top: 1em;
+        padding-right: 1%;
+        padding-top: 15px;
         color: black;
     }
 
@@ -428,6 +431,12 @@ table {
             margin: 0;
         }
 
+        .table-wrapper {
+            height: 75vh; /* Set the maximum height for the table wrapper */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+          }
+
         .menu-btn {
             color: #272626;
             border-radius: 15px;
@@ -529,10 +538,6 @@ table {
             height: 70px;
         }
 
-        .table-wrapper{
-            max-height: calc(100vh - 20em);
-        }
-
     }
 
     @media (min-width: 321px) and (max-width: 424px) {
@@ -557,6 +562,12 @@ table {
             font-size: 15px;
             margin: 0;
         }
+
+        .table-wrapper {
+            height: 75vh; /* Set the maximum height for the table wrapper */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+          }
 
         .menu-btn {
             color: #272626;
@@ -659,14 +670,6 @@ table {
             height: 70px;
         }
 
-        .table-wrapper{
-            max-height: calc(100vh - 20em);
-        }
-
-        .nobuttonstab{
-            margin-top: 3.5em;
-        }
-
     }
 
     @media (min-width: 425px) and (max-width: 767px) {
@@ -691,6 +694,12 @@ table {
             font-size: 15px;
             margin: 0;
         }
+
+        .table-wrapper {
+            height: 75vh; /* Set the maximum height for the table wrapper */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+          }
 
         .menu-btn {
             color: #272626;
@@ -794,10 +803,6 @@ table {
             height: 70px;
         }
 
-        .table-wrapper{
-            max-height: calc(100vh - 20em);
-        }
-
     }
 
     /*Media for tablets*/
@@ -823,6 +828,12 @@ table {
             font-size: 15px;
             margin: 0;
         }
+
+        .table-wrapper {
+            height: 75vh; /* Set the maximum height for the table wrapper */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+          }
 
         .menu-btn {
             color: #272626;
@@ -926,10 +937,6 @@ table {
         .top-cont{
             height: 67px;
         }
-
-        .table-wrapper{
-            max-height: calc(100vh - 20em);
-        }
     }
 
     @media (min-width: 992px) and (max-width: 1199px) {
@@ -955,6 +962,12 @@ table {
             font-size: 15px;
             margin: 0;
         }
+
+        .table-wrapper {
+            height: 75vh; /* Set the maximum height for the table wrapper */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+          }
 
         .menu-btn {
             color: #272626;
@@ -1057,10 +1070,6 @@ table {
 
         .top-cont{
             height: 100px;
-        }
-
-        .table-wrapper{
-            max-height: calc(100vh - 20em);
         }
 
       }

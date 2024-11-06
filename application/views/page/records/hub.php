@@ -10,7 +10,7 @@
         </div>
 
         <div class="row mt-s center-item">
-            <div class="col-sm-12 col-xs-12 box-white nobuttonstab">
+            <div class="col-sm-12 col-xs-12 box-white">
                 <table class="table table-hover" id="acc_table">
                     <thead>
                         <tr>

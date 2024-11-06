@@ -56,3 +56,27 @@
 
 	</div>
 </div>
+
+<script>
+    (function() {
+        async function updateSize() {
+            const width = await getWidth();
+            const height = await getHeight();
+            console.log("Width: " + width + " Height: " + height);
+        }
+
+        async function getWidth() {
+            return window.innerWidth;
+        }
+
+        async function getHeight() {
+            return window.innerHeight;
+        }
+
+        // Initial call to display the current size
+        updateSize();
+
+        // Update the size and log it whenever the window is resized
+        window.addEventListener('resize', updateSize);
+    })();
+</script>
