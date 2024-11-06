@@ -5,7 +5,6 @@
                 <h1 class="black-txt overflow-wrap">BOOKING HUB</h1>
                 <h3 class="black-txt" style="margin-top: 0px;">Manage Bookings - <?php echo $this->session->userdata('comp_Name') ?></h3>
             </div>
-            <div class="col-xs-4 col-sm-4"></div>
             <div class="col-xs-4 col-sm-4 center-item">
                 <a href="<?php echo $this->config->base_url("booking/create") ?>" id="new-order-button">
                     <button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW BOOKING">
@@ -16,7 +15,7 @@
         </div>
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
-                <table class="table table-hover" id="acc_table">
+                <table class="table table-hover nobuttonstab" id="acc_table">
                     <thead>
                         <tr>
                             <th>Booking Number</th>

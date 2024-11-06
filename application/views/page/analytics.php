@@ -69,7 +69,6 @@
                                 <p><span id="AOV"></span></p>
                             </div>
 
-
                         </div>
 
                     </div>
