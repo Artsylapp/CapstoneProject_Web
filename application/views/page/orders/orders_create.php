@@ -6,9 +6,7 @@
                 <h1 class="black-txt overflow-wrap">SELECT SERVICES</h1>
                 <h3 class="black-txt" style="margin-top: 0px;">Select Services For Booking - <?php echo $this->session->userdata('comp_Name') ?></h3>
             </div>
-
-            <div class="col-xs-4 col-sm-4"></div>
-            
+                        
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" 
                     name="Proceed to masseur assignment" 
