@@ -66,4 +66,6 @@ class Records extends CI_Controller {
         $this->load->view('page/records/records_view', $info); 
         $this->load->view('page/include/footer');        
     }
+
+    
 }

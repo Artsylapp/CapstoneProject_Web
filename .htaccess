@@ -23,7 +23,7 @@
     RewriteRule . /index.php [L]
 </IfModule>
 
-# # Error Handling
+# Error Handling
 # <IfModule !mod_rewrite.c>
 #      ErrorDocument 404 /index.php
 # </IfModule>

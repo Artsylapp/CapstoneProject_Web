@@ -6,7 +6,12 @@
                 <h1 class="overflow-wrap black-txt">RECORDS HUB</h1>
                 <h3 class="black-txt" style="margin-top: 0px;">View Records - <?php echo $this->session->userdata('comp_Name') ?></h3>
             </div>
-            <div class="col-xs-4 col-sm-4"></div>
+
+            <div class="col-xs-4 col-sm-4 center-item">
+                <button id="exportPDF" class="btn lg-bg menu-btn-m center-item ttsh" name="Export Records as PDF">
+                    <h3>Export as PDF</h3>
+                </button>
+            </div>
         </div>
 
         <div class="row mt-s center-item">
