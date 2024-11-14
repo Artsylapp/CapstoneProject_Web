@@ -67,5 +67,29 @@ class Records extends CI_Controller {
         $this->load->view('page/include/footer');        
     }
 
-    
+    // Export PDF in php
+    // public function exportPDF()
+    // {
+    //     $this->load->library('pdf');
+    //     $this->pdf->load_view('page/records/records_view');
+    //     $this->pdf->render();
+    //     $this->pdf->stream("records.pdf");
+    // }
+
+    // Records to PDF
+    public function recordsToPDF()
+    {
+        $data['orders'] = $this->Order_model->getCompletedOrders();
+
+        // echo'<pre>';
+        // print_r($data['orders']);
+
+        if (!empty($data['orders'])) {
+            echo json_encode($data['orders']);
+        } else {
+            echo json_encode(['error' => 'No orders found']);
+        }
+            
+    }
+
 }

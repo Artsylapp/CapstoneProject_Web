@@ -82,7 +82,7 @@
 </div>
 
 <!-- Chart Analytics -->
-<!-- <script src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> -->
+<script type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script>
 <!-- Data Analytics --> 
 <script src="<?php echo $this->config->base_url('assets/js/DataAnalytics.js') ?>"></script>
 <!-- Analytics -->

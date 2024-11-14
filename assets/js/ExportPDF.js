@@ -35,11 +35,35 @@ document.getElementById('exportPDF').addEventListener('click', () => {
         // }
 
         // Text Record report
+        // Fetch the data from the controller using AJAX
+        fetch('records/pdf')  // Ensure this is the correct URL
+        .then(response => response.text())  // Log the raw response for debugging
+        .then(data => {
+            console.log("Raw response data:", data);  // Log the raw response
 
+            try {
+                const orders = JSON.parse(data);  // Manually parse the response if it's valid JSON
+                console.log("Parsed orders:", orders);
 
+                let yPosition = 400; // Start position for the records text
+                doc.text('Order Records:', 40, yPosition);
 
-        // Save the PDF
-        doc.save('RecordsReport.pdf');
+                // Loop through the orders and add them to the PDF
+                orders.forEach((order, index) => {
+                    yPosition += 20; // Increase the Y position for each order
+                    doc.text(`${index + 1}. Order ID: ${order.id}, Date: ${order.date}`, 40, yPosition);
+                });
+
+                // Save the PDF after adding the data
+                // doc.save('RecordsReport.pdf');
+            } catch (error) {
+                console.error("Failed to parse orders data:", error);
+            }
+        })
+        .catch(error => {
+            console.error("Failed to fetch orders data:", error);
+        });
+
     } else {
         console.error("Failed to export chart image.");
     }

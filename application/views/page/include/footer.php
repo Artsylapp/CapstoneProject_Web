@@ -7,12 +7,6 @@
 <!-- Populate table -->
 <script src="<?php echo $this->config->base_url('assets/js/populateTable.js'); ?>"></script>
 
-<!-- Chart JS -->
-<script type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> <!-- Chart Analytics -->
-
-<!-- Export PDF -->
-<script type="module" src="<?php echo $this->config->base_url('assets/js/exportPDF.js'); ?>"></script>
-
 </body>
 
 </html>
