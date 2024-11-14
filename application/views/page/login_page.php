@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <title>VIAMM | <?php echo $title; ?></title>
+
+    <!-- Login CSS import -->
     <link rel="stylesheet" href="<?php echo $this->config->base_url("assets/css/bootstrap.css") ?>"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Login Scripts Import  -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>VIAMM | <?php echo $title; ?></title>
+
+    <!-- Login CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Styless.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Stylesacc.css'); ?>">
+
+    <!-- Login Scripts -->
     <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>
     <script src="<?php echo $this->config->base_url('assets/js/Utils.js'); ?>"></script>
 </head>
