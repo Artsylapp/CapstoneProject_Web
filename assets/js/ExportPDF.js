@@ -43,7 +43,7 @@ document.getElementById('exportPDF').addEventListener('click', () => {
 
             try {
                 const orders = JSON.parse(data);  // Manually parse the response if it's valid JSON
-                console.log("Parsed orders:", orders);
+                // console.log("Parsed orders:", orders);
 
                 let yPosition = 400; // Start position for the records text
                 doc.text('Order Records:', 40, yPosition);
