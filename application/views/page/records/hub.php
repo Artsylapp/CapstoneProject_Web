@@ -67,4 +67,4 @@
 <script type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> 
 
 <!-- Export PDF -->
-<script defer type="module" src="<?php echo $this->config->base_url('assets/js/exportPDF.js') ?>"></script>
+<script async="false" defer type="module" src="<?php echo $this->config->base_url('assets/js/exportPDF.js') ?>"></script>
