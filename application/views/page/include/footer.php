@@ -8,6 +8,13 @@
 <!-- Populate table -->
 <script src="<?php echo $this->config->base_url('assets/js/populateTable.js'); ?>"></script>
 
+<script>
+    window.addEventListener('load', () => {
+        import('<?php echo $this->config->base_url('assets/js/exportPDF.js') ?>')
+            .catch(console.error);
+    });
+</script>
+
 </body>
 
 </html>

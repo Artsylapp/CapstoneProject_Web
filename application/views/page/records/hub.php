@@ -60,8 +60,11 @@
     });
 </script>
 
+<!-- JS min query -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
 <!-- Chart JS Analytics -->
 <script type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> 
 
 <!-- Export PDF -->
-<script type="module" src="<?php echo $this->config->base_url('assets/js/exportPDF.js') ?>"></script>
+<script defer type="module" src="<?php echo $this->config->base_url('assets/js/exportPDF.js') ?>"></script>
