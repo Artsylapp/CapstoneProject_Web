@@ -1,7 +1,5 @@
 // Fetch data from the server (controller)
 async function fetchData(url) {
-    console.log("urls for the current analytics pages " + url);
-
     try {
         const response = await fetch(url);
         return await response.json();
@@ -12,7 +10,21 @@ async function fetchData(url) {
 
 // Create the chart with given data
 function createChart(chartElementId, labels, datasets, ChartType) {
-    const ctx = document.getElementById(chartElementId).getContext('2d');
+
+    let canvas = document.getElementById(chartElementId);
+    if (!canvas) {
+        // console.error(`Canvas element with id "${chartElementId}" not found.`);
+
+        // If not, create a hidden canvas dynamically
+        canvas = document.createElement('canvas');
+        canvas.id = chartElementId;
+        canvas.style.display = 'none'; // Hide the canvas
+        document.body.appendChild(canvas); // Append to body
+        
+        // console.log(`Canvas element with id "${chartElementId}" created.`);
+    }
+
+    const ctx = canvas.getContext('2d');
     return new Chart(ctx, {
         type: ChartType,
         data: {
@@ -114,18 +126,40 @@ function analyzeRevenueData(data) {
     createChart('RevenueChart', months, revenueDatasets, 'bar');
 }
 
-// For order data
-// for local testing
-// fetchData('/Capstoneproject_web/getYearData')
+// fetch data url from server
+fetchData('getYearData') // route url 'Analytics/getYearAnalytics'
+    .then(data => analyzeOrderData(data)); // then the data is passed from the server to the analyzeOrderData function
 
-// for deployment
-fetchData('getYearData')
-    .then(data => analyzeOrderData(data));
+fetchData('getRevenueData') // 'Analytics/getRevenueAnalytics'
+    .then(data => analyzeRevenueData(data)); // then the data is passed from the server to the analyzeRevenueData function
 
-// For revenue data
-// for local testing
-// fetchData('/Capstoneproject_web/getRevenueData')
 
-// for deployment
-fetchData('getRevenueData')
-    .then(data => analyzeRevenueData(data));
+function exportChartAsImage(chartElementId) {
+    const canvas = document.getElementById(chartElementId);
+    if (!canvas) {
+        console.error(`Canvas with id "${chartElementId}" not found.`);
+        return null;
+    }
+
+    // Create a temporary canvas
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = canvas.width;
+    tempCanvas.height = canvas.height;
+
+    // Get the context of the temporary canvas
+    const ctx = tempCanvas.getContext('2d');
+
+    // Fill the background with white
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+    // Draw the original chart onto the temporary canvas
+    ctx.drawImage(canvas, 0, 0);
+
+    // Export the temporary canvas as an image
+    return tempCanvas.toDataURL('image/jpeg', 1.0);
+}
+
+export { exportChartAsImage };
+    
+
