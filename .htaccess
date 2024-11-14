@@ -24,6 +24,6 @@
 </IfModule>
 
 # Error Handling
-<IfModule !mod_rewrite.c>
-    ErrorDocument 404 /index.php
-</IfModule>
+# <IfModule !mod_rewrite.c>
+#    ErrorDocument 404 /index.php
+# </IfModule>
