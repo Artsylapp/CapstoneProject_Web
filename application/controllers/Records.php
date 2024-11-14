@@ -85,9 +85,9 @@ class Records extends CI_Controller {
         // print_r($data['orders']);
 
         if (!empty($data['orders'])) {
-            echo'<pre>';
+            // echo'<pre>';
             echo json_encode($data['orders'], JSON_PRETTY_PRINT);
-            echo'</pre>';
+            // echo'</pre>';
         } else {
             echo json_encode(['error' => 'No orders found']);
         }
