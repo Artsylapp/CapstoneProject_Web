@@ -61,7 +61,7 @@
 </script>
 
 <!-- Chart JS Analytics -->
-<script type="module" type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> 
+<script type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> 
 
 <!-- Export PDF -->
 <script type="module" src="<?php echo $this->config->base_url('assets/js/exportPDF.js'); ?>"></script>

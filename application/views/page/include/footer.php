@@ -1,4 +1,5 @@
-<!-- Closing tag for Header Html -->
+
+<!-- Closing tag for Body Html -->
 </div>
 </div>
 <!-- Footer scripts -->

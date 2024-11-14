@@ -3,9 +3,9 @@ import { exportChartAsImage } from './ChartAnalytics.js';
 
 document.getElementById('exportPDF').addEventListener('click', () => {
     const chartImage = exportChartAsImage('ChartAnalysis'); // ID of the chart's canvas element
-    console.log('chartimage retrived')
+    // console.log('chartimage retrived')
     const revenueImage = exportChartAsImage('RevenueChart'); // For another chart if needed
-    console.log('chartimage retrived')
+    // console.log('chartimage retrived')
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF('p', 'pt', 'a4');
