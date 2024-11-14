@@ -51,11 +51,11 @@ document.getElementById('exportPDF').addEventListener('click', () => {
                 // Loop through the orders and add them to the PDF
                 orders.forEach((order, index) => {
                     yPosition += 20; // Increase the Y position for each order
-                    doc.text(`${index + 1}. Order ID: ${order.id}, Date: ${order.date}`, 40, yPosition);
+                    doc.text(`${index + 1}. Record ID: ${order.orders_tbl_id}, Date: ${order.orders_date}, Status: ${order.orders_tbl_status}`, 40, yPosition);
                 });
 
                 // Save the PDF after adding the data
-                // doc.save('RecordsReport.pdf');
+                doc.save('RecordsReport.pdf');
             } catch (error) {
                 console.error("Failed to parse orders data:", error);
             }
