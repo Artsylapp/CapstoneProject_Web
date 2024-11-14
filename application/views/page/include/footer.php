@@ -7,9 +7,6 @@
 <!-- Populate table -->
 <script src="<?php echo $this->config->base_url('assets/js/populateTable.js'); ?>"></script>
 
-<!-- Export PDF -->
-<script src="<?php echo $this->config->base_url('assets/js/exportPDF.js'); ?>"></script>
-
 </body>
 
 </html>

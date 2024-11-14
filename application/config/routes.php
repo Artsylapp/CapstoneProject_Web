@@ -64,7 +64,7 @@ $route['booking/ongoing'] = 'Orders/orders_going';
 
 /* Records Page */
 $route['records'] = 'Records/index';
-// $route['records/PDF'] = 'Records/export_pdf';
+$route['records/pdf'] = 'Records/recordsToPDF';
 $route['records/view/(:num)'] = 'Records/records_view/$1';
 
 /* Analytics Page */

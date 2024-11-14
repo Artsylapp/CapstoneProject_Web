@@ -81,6 +81,9 @@
 
 </div>
 
-<script src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> <!-- Chart Analytics -->
-<script src="<?php echo $this->config->base_url('assets/js/DataAnalytics.js') ?>"></script> <!-- Data Analytics -->
-<script src="<?php echo $this->config->base_url('assets/js/Analytics.js') ?>"></script> <!-- Analytics -->
+<!-- Chart Analytics -->
+<script type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script>
+<!-- Data Analytics --> 
+<script src="<?php echo $this->config->base_url('assets/js/DataAnalytics.js') ?>"></script>
+<!-- Analytics -->
+<script src="<?php echo $this->config->base_url('assets/js/Analytics.js') ?>"></script>
