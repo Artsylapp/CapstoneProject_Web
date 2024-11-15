@@ -12,7 +12,7 @@ document.getElementById('exportPDF').addEventListener('click', () => {
     // chart
     if (chartImage) {
         // Get the width of the text 'Records Report'
-        const title = 'Records Report';
+        const title = 'Chart Report';
         const titleWidth = doc.getTextWidth(title);
         
         // Calculate the X position to center the text
@@ -20,7 +20,7 @@ document.getElementById('exportPDF').addEventListener('click', () => {
         const xPosition = (pageWidth - titleWidth) / 2;
 
         // Set the Y position for the title
-        const yPosition = 65; // Adjust as necessary
+        const yPosition = 60; // Adjust as necessary
 
         // Add centered title to the PDF
         doc.text(title, xPosition, yPosition);
@@ -58,8 +58,10 @@ document.getElementById('exportPDF').addEventListener('click', () => {
                 const orders = JSON.parse(data); // Parse the JSON response
                 console.log("Parsed orders:", orders);
 
+                const title = 'Table Report';
+                let xPosition = (pageWidth - titleWidth) / 2;
                 let yPosition = 420; // Start position for the records text
-                doc.text('Order Records:', 40, yPosition);
+                doc.text(title, xPosition, yPosition);
 
                 // Create a table dynamically using autoTable
                 doc.autoTable({
