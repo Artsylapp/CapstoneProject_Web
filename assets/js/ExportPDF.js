@@ -1,5 +1,4 @@
 
-import { exportChartAsImage } from './ChartAnalytics.js';
 
 document.getElementById('exportPDF').addEventListener('click', () => {
     const chartImage = exportChartAsImage('ChartAnalysis'); // ID of the chart's canvas element
@@ -9,6 +8,8 @@ document.getElementById('exportPDF').addEventListener('click', () => {
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF('p', 'pt', 'a4');
+
+    // chart
     if (chartImage) {
         // Get the width of the text 'Records Report'
         const title = 'Records Report';
@@ -29,35 +30,74 @@ document.getElementById('exportPDF').addEventListener('click', () => {
 
         // Optionally add another chart
         // if (revenueImage) {
-        //     doc.addPage();
+        //     doc.addPage(); // adds new page for the next chart
         //     doc.text('Revenue Analytics', xPosition, yPosition);
         //     doc.addImage(revenueImage, 'JPEG', 40, 80, 500, 300);
         // }
 
-        // Text Record report
-        // Fetch the data from the controller using AJAX
-        fetch('records/pdf')  // Ensure this is the correct URL
-        .then(response => response.text())  // Log the raw response for debugging
+
+
+        // Records Table
+        // create hidden table if not exist
+        if (!document.getElementById('pdf-table')) { // Check if the table with id 'my-table' already exists 
+            const table = document.createElement('table'); // Create a table element
+            table.id = 'pdf-table';
+            table.style.display = 'none';
+            document.body.appendChild(table);
+        }
+
+        doc.autoTable({ html: '#pdf-table' }); // Add the table to the PDF
+
+        // Fetch the data from the controller
+        fetch('records/pdf') // Controller URL
+        .then(response => response.text()) // Log the raw response for debugging
         .then(data => {
-            console.log("Raw response data:", data);  // Log the raw response
+            // console.log("Raw response data:", data); // Log the raw response
 
             try {
-                const orders = JSON.parse(data);  // Manually parse the response if it's valid JSON
-                // console.log("Parsed orders:", orders);
+                const orders = JSON.parse(data); // Parse the JSON response
+                console.log("Parsed orders:", orders);
 
-                let yPosition = 400; // Start position for the records text
+                let yPosition = 420; // Start position for the records text
                 doc.text('Order Records:', 40, yPosition);
 
-                // Loop through the orders and add them to the PDF
-                orders.forEach((order, index) => {
-                    yPosition += 20; // Increase the Y position for each order
-                    doc.text(`${index + 1}. Record ID: ${order.orders_tbl_id}, Date: ${order.orders_date}, Status: ${order.orders_tbl_status}`, 40, yPosition);
+                // Create a table dynamically using autoTable
+                doc.autoTable({
+
+                    theme: 'grid', // 'striped', 'grid', 'plain', 'css', 'grid' (default)
+                    head: [['Record ID', 'Status', 'Services', 'Total Amount', 'Date']],
+                    body: orders.map(order => {
+
+                        // breaking down services details
+                        let serviceDetails = ''; // Initialize the services details for storing the formatted data
+                        for (const [key, service] of Object.entries(order.services)) {
+                            serviceDetails += `Type: ${key} - ${service.type}\n`;
+                            serviceDetails += `Quantity: ${service.amount}\n`;
+                            serviceDetails += `Price: ${service.price}\n\n`;
+                        }
+
+                        // Return the row data
+                        return [
+                            order.order_id,           // Record ID
+                            order.status,             // Status
+                            serviceDetails.trim(),    // Detailed Services
+                            order.total_cost,         // Amount
+                            order.date                // Date
+                        ];
+                    }),
+                    startY: yPosition + 20, // Adjust position below the title
+                    styles: { cellWidth: 'wrap' }, // Allow content to wrap within cells
+                    columnStyles: {
+                        2: { cellWidth: 200 } // Adjust width for the services column if needed
+                    }
                 });
+
 
                 // Save the PDF after adding the data
                 doc.save('RecordsReport.pdf');
+
             } catch (error) {
-                console.error("Failed to parse orders data:", error);
+                console.error("Failed to process the PDF:\n", error);
             }
         })
         .catch(error => {

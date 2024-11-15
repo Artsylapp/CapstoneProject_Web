@@ -160,6 +160,6 @@ function exportChartAsImage(chartElementId) {
     return tempCanvas.toDataURL('image/jpeg', 1.0);
 }
 
-export { exportChartAsImage };
+window.exportChartAsImage = exportChartAsImage;
     
 

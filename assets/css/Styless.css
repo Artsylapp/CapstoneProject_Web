@@ -19,7 +19,7 @@ input[type=number] {
 }
 
 .table-wrapper {
-    max-height: calc(100vh - 23em);
+    max-height: calc(100vh - 25em);
     overflow-y: auto;  /* Enable vertical scrolling */
     -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
 }
@@ -192,6 +192,14 @@ table {
         margin: 0%;
         overflow: auto;
         height: 100vh;
+    }
+
+    footer{
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        opacity: 2;
+        text-align: center;
     }
 
     .radio-selection{
@@ -656,7 +664,7 @@ table {
         }
 
         .table-wrapper{
-            max-height: calc(100vh - 20em);
+            max-height: calc(100vh - 21em);
         }
 
         .nobuttonstab{
@@ -791,7 +799,7 @@ table {
         }
 
         .table-wrapper{
-            max-height: calc(100vh - 20em);
+            max-height: calc(100vh - 24em);
         }
 
     }
@@ -924,7 +932,7 @@ table {
         }
 
         .table-wrapper{
-            max-height: calc(100vh - 20em);
+            max-height: calc(100vh - 28em);
         }
     }
 
@@ -1056,36 +1064,51 @@ table {
         }
 
         .table-wrapper{
-            max-height: calc(100vh - 20em);
+            max-height: calc(100vh - 29.50em);
         }
 
       }
-
-    /* Media query scroll on small screens 
-    @media screen and (max-width: 900px) {
-        body {
-            overflow: auto; 
-            width: 100vw;
-            height: 100vh;
+    
+      /* Media query for screen width 1200 and abox */
+      @media (min-width: 1200px) {
+        .table-wrapper{
+            max-height: calc(100vh - 31em);
         }
-    }
-    */
+      }
 
+      /* height adjustment */
+      @media (min-height: 400px){
+        .table-wrapper{
+            max-height: calc(100vh - 25em);
+        }
+      }
 
+      @media (min-height: 500px){
+        .table-wrapper{
+            max-height: calc(100vh - 25.6em);
+        }
+      }
 
+      @media (min-height: 800px){
+        .table-wrapper{
+            max-height: calc(100vh - 28em);
+        }
+      }
 
+      @media (min-height: 900px){
+        .table-wrapper{
+            max-height: calc(100vh - 29.5em);
+        }
+      }
 
+      @media (min-height: 100px) and (min-width: 100px) {
+        .table-wrapper{
+            max-height: calc(100vh - 28em);
+        }
+      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+      @media (min-height: 1000px) and (min-width: 1000px) {
+        .table-wrapper{
+            max-height: calc(100vh - 31.29em);
+        }
+      }

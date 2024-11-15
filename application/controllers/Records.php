@@ -76,22 +76,45 @@ class Records extends CI_Controller {
     //     $this->pdf->stream("records.pdf");
     // }
 
-    // Records to PDF
     public function recordsToPDF()
     {
         $data['orders'] = $this->Order_model->getCompletedOrders();
 
-        // echo'<pre>';
-        // print_r($data['orders']);
-
         if (!empty($data['orders'])) {
-            // echo'<pre>';
-            echo json_encode($data['orders'], JSON_PRETTY_PRINT);
-            // echo'</pre>';
+            // Array to hold all parsed orders
+            $parsedOrders = [];
+
+            foreach ($data['orders'] as $order) {
+                // Decode JSON-encoded details for each order
+                $booking_details = json_decode($order->orders_tbl_details, true);
+
+                // Extract specific fields
+                $services = isset($booking_details['services']) ? $booking_details['services'] : [];
+                $masseurs = isset($booking_details['masseurs']) ? $booking_details['masseurs'] : [];
+                $locations = isset($booking_details['locations']) ? $booking_details['locations'] : [];
+                $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : 'N/A';
+
+                // Add parsed order details to the array
+                $parsedOrders[] = [
+                    'order_id' => $order->orders_tbl_id,
+                    'status' => $order->orders_tbl_status,
+                    'total_cost' => $totalCost,
+                    'services' => $services,
+                    'masseurs' => $masseurs,
+                    'locations' => $locations,
+                    'date' => $order->orders_date,
+                ];
+            }
+
+            // Return parsed orders as JSON
+            // echo '<pre>';
+            echo json_encode($parsedOrders, JSON_PRETTY_PRINT);
+            // echo '</pre>';
         } else {
+            // Handle case where no orders are found
             echo json_encode(['error' => 'No orders found']);
         }
-            
     }
+
 
 }

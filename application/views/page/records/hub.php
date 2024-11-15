@@ -61,7 +61,13 @@
 </script>
 
 <!-- Chart JS Analytics -->
-<script type="module" type="module" src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> 
+<script src="<?php echo $this->config->base_url('assets/js/ChartAnalytics.js') ?>"></script> 
+
+<!-- JsPDF -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script> -->
+
+<!-- JsPDF autoTable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
 
 <!-- Export PDF -->
-<script defer type="module" src="<?php echo $this->config->base_url('assets/js/ExportPDF.js'); ?>"></script>
+<script defer src="<?php echo $this->config->base_url('assets/js/ExportPDF.js'); ?>"></script>
