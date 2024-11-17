@@ -38,7 +38,7 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
-	// Accounts - redirect to create account page
+	// Accounts - redirect to create account page view
 	public function acc_create()
 	{	
 		$info = array(
@@ -50,25 +50,57 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/footer');
 	}
 
-	// Accounts - create account function
+	// Accounts - create account function with phone number and name validation
 	public function acc_add()
 	{
-		
-		$data = array(
-			'accounts_tbl_name' => $this->input->post('create_Account'),
-			'accounts_tbl_address' => $this->input->post('create_Address'),
-			'accounts_tbl_contact' => $this->input->post('create_Contact'),
-			'accounts_tbl_empType' => $this->input->post('optradio'), // 1 = Admin, 2 = Masseur radio button
-			'accounts_tbl_status' => "AVAILABLE",
-        );
+			// Get contact number and name from form input
+			$contact = $this->input->post('create_Contact');
+			$name = $this->input->post('create_Account');
+			
+			// Validate phone number: should start with 09 and be exactly 11 digits long
+			if (!preg_match('/^09\d{9}$/', $contact)) {
+					$info['error'] = 'Invalid phone number. It should start with 09 and be exactly 11 digits long.';
+					
+					// Load view and show error message
+					$this->load->view('page/include/header', $info);
+					$this->load->view('page/accounts/acc_create');
+					$this->load->view('page/include/footer');
+					return; // Exit function early if validation fails
+			}
 
-		$this->Account_model->createAccount($data);
-		redirect('Accounts'); // redirect to accounts hub
-		// print_r($_POST);
+			// Check if an account with the same name already exists
+			$existing_account = $this->Account_model->getAccountByName($name);
+			
+			if ($existing_account) {
+					// If account with the same name exists, show error message
+					$info['error'] = 'An account with this name already exists. Please choose a different name.';
+					
+					// Load view and show error message
+					$this->load->view('page/include/header', $info);
+					$this->load->view('page/accounts/acc_create');
+					$this->load->view('page/include/footer');
+					return; // Exit function early if validation fails
+			}
+
+			// If validation passes, create account
+			$data = array(
+					'accounts_tbl_name' => $name,
+					'accounts_tbl_address' => $this->input->post('create_Address'),
+					'accounts_tbl_contact' => $contact,
+					'accounts_tbl_empType' => $this->input->post('optradio'), // 1 = Admin, 2 = Masseur radio button
+					'accounts_tbl_status' => "AVAILABLE",
+			);
+
+			// Create the account in the database
+			$this->Account_model->createAccount($data);
+
+			// Redirect to accounts hub
+			redirect('Accounts');
 	}
 
-	// Accounts - redirect to edit account page
-    public function acc_edit()
+
+	// Accounts - redirect to edit account page view
+  public function acc_edit()
 	{	
 		$data = $this->Account_model->getAccount($this->uri->segment(3));
 
@@ -80,27 +112,48 @@ class Accounts extends CI_Controller {
 		$this->load->view('page/include/header', $info);
 		$this->load->view('page/accounts/acc_edit');
 		$this->load->view('page/include/footer');
-
-		// echo "<pre>";
-		// print_r($data);
 		
 	}
 
 	// Accounts - update account function
 	public function acc_update()
 	{
-		$data = array(
-			'accounts_tbl_id' => $this->uri->segment(3),
-			'accounts_tbl_name' => $this->input->post('update_Account'),
-			'accounts_tbl_address' => $this->input->post('update_Address'),
-			'accounts_tbl_contact' => $this->input->post('update_Contact'),
-			'accounts_tbl_empType' => $this->input->post('optradio_update')
-		);
+			// Get the contact number from the form input
+			$contact = $this->input->post('update_Contact');
 
-		$this->Account_model->updateAccount($data);
-		redirect('Accounts');
+			// Validate phone number: should start with 09 and be exactly 11 digits long
+			if (!preg_match('/^09\d{9}$/', $contact)) {
+					// If invalid, set error message
+					$info['error'] = 'Invalid phone number. It should start with 09 and be exactly 11 digits long.';
 
+					// Load the view with error message
+					$data = array(
+							'title' => 'Update Account',
+							'accounts' => $this->Account_model->getAccount($this->uri->segment(3)),
+					);
+					$this->load->view('page/include/header', $data);
+					$this->load->view('page/accounts/acc_edit', $info); // Assuming your view is named acc_edit.php
+					$this->load->view('page/include/footer');
+					
+					return; // Stop further processing if validation fails
+			}
+
+			// If phone number is valid, proceed to update the account
+			$data = array(
+					'accounts_tbl_id' => $this->uri->segment(3),
+					'accounts_tbl_name' => $this->input->post('update_Account'),
+					'accounts_tbl_address' => $this->input->post('update_Address'),
+					'accounts_tbl_contact' => $contact,
+					'accounts_tbl_empType' => $this->input->post('optradio_update'),
+			);
+
+			// Call the model to update the account with the provided data
+			$this->Account_model->updateAccount($data);
+
+			// Redirect to the Accounts hub after update
+			redirect('Accounts');
 	}
+
 
 	// Accounts - redirect to delete account page
     public function acc_delete()

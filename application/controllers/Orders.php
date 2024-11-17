@@ -21,12 +21,14 @@ class Orders extends CI_Controller {
     // Orders hub main page
     public function index()
     {
-        $data['orders'] = $this->Order_model->getOrders();
+        $data['orders'] = $this->Order_model->getOngoing();
 
         $info = array(
             'title' => 'Booking',
             'orders' => $data['orders'],
         );
+        // echo "<pre>";
+        // print_r($info);
 
         $this->load->view('page/include/header', $info);
         $this->load->view('page/orders/hub');

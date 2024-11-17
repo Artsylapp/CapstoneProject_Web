@@ -13,6 +13,12 @@
 			</div>
 		</div>
 
+		<?php if (isset($info['error'])): ?>
+			<div class="alert alert-danger">
+					<?php echo $info['error']; ?>
+			</div>
+		<?php endif; ?>
+
 		<div class="row mt-s">
 			<div class="col-sm-12 col-xs-12 box-white">
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3)) ?>" method="POST">

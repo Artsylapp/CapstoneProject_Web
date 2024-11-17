@@ -41,6 +41,35 @@ class Order_model extends CI_Model {
         return $query->result();
     }
 
+    public function getOngoing()
+    {
+        // Get orders with status 'ON-GOING'
+        $this->db->where('orders_tbl_status', 'ON-GOING');
+        $query = $this->db->get('orders_tbl');
+        $orders = $query->result();
+
+        // Decode JSON data from the database and set object attributes
+        foreach ($orders as &$order) {
+            $order_details = json_decode($order->orders_tbl_details, true);
+
+            if (is_array($order_details)) {
+                $order->services = $order_details['services'] ?? null;
+                $order->masseurs = $order_details['masseurs'] ?? null;
+                $order->locations = $order_details['locations'] ?? null;
+                $order->totalCost = $order_details['orders_tbl_cost'] ?? null;
+            } else {
+                // Handle invalid or null JSON
+                $order->services = null;
+                $order->masseurs = null;
+                $order->locations = null;
+                $order->totalCost = null;
+            }
+        }
+
+        return $orders;
+    }
+
+
     // complete order
     public function completeOrder($id)
     {

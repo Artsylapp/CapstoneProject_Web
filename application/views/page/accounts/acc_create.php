@@ -13,6 +13,12 @@
 			</div>
 		</div>
 
+		<?php if (isset($info['error'])): ?>
+			<div class="alert alert-danger">
+					<?php echo $info['error']; ?>
+			</div>
+		<?php endif; ?>
+
 		<div class="row mt-s box-white">
 			<div class="col-sm-12 col-xs-12 ">
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("acc_add") ?>" method="POST">
@@ -45,8 +51,8 @@
 						<label class="control-label col-sm-2" for="sel1">Employee Type:</label>
 						<div class="col-sm-10">
 							<select class="form-control" id="sel1" name="optradio">
-								<option>Admin</option>
 								<option>Masseur</option>
+								<option>Admin</option>
 							</select>
 						</div>
 					</div>

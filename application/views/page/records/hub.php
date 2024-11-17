@@ -16,39 +16,47 @@
 
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white nobuttonstab">
-                <table class="table table-hover" id="acc_table">
-                    <thead>
-                        <tr>
-                            <th>Booking Number</th>
-                            <th>Status</th>
-                            <th>Total Price</th>
-							<th>View</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($orders as $order): ?>
-                            <?php if ($order->orders_tbl_status !== "ON-GOING"): ?>
-                                <tr>
-                                    <td><?php echo $order->orders_tbl_id; ?></td>
-                                    <td><?php echo $order->orders_tbl_status; ?></td>
-                                    <td><?php echo $order->totalCost; ?></td>
-                                    <td class="text-center">
-                                        <a href="<?php echo $this->config->base_url("records/view/" . $order->orders_tbl_id); ?>">
-                                            <button class="btn lg-bg menu-btn-sm ttsh" name="VIEW RECORD NUMBER: <?php echo $order->orders_tbl_id; ?>">
-                                                <h4>VIEW</h4>
-                                            </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                <?php if (!empty($orders)): ?>
+                    <table class="table table-hover" id="acc_table">
+                        <thead>
+                            <tr>
+                                <th>Booking Number</th>
+                                <th>Status</th>
+                                <th>Total Price</th>
+                                <th>View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($orders as $order): ?>
+                                <?php if ($order->orders_tbl_status !== "ON-GOING"): ?>
+                                    <tr>
+                                        <td><?php echo $order->orders_tbl_id; ?></td>
+                                        <td><?php echo $order->orders_tbl_status; ?></td>
+                                        <td><?php echo $order->totalCost; ?></td>
+                                        <td class="text-center">
+                                            <a href="<?php echo $this->config->base_url("records/view/" . $order->orders_tbl_id); ?>">
+                                                <button class="btn lg-bg menu-btn-sm ttsh" name="VIEW RECORD NUMBER: <?php echo $order->orders_tbl_id; ?>">
+                                                    <h4>VIEW</h4>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
+                    <div class="text-center" style="margin: 20px;">
+                        <h2>No records found🙁</h2>
+                        <p>It seems there are no past records to display right now. Keep track of your bookings and check back later!</p>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
-        
+
     </div>
 </div>
+
 
 <script>
     $(document).ready(function() {

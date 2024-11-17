@@ -105,7 +105,7 @@
                                     </button>
                                     </a>
                                 <?php else:?>
-                                    <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment" onclick="openPopup()">
+                                    <button class="btn lg-bg menu-btn-m ttsh" name="Proceed with Manual Payment" onclick="openPopup()">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
                                 <?php endif;?>
