@@ -50,7 +50,7 @@
 					</div>
 				<div class="col-sm-offset-9 col-sm-3" style="margin-top:25px;">
 					<div class="col-sm-12">
-						<button class="btn lg-bg menu-btn-m ttsh" name="CREATE">
+						<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Create Service">
 							<h4>CREATE</h4>
 						</button>
 					</div>

@@ -34,8 +34,8 @@
 						</div>
 					<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
-							<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Edit <?php echo $locations->location_tbl_name ?>">
-								<h4>Confirm</h4>
+							<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Edit, <?php echo $locations->location_tbl_name ?>">
+								<h4>EDIT</h4>
 							</button>
 						</div>
 					</div>
