@@ -66,17 +66,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="text-left">
                                             <?php foreach($masseurs as $masseurName => $isSelected):?>
                                                 <h1>Masseur: <?php echo htmlspecialchars($masseurName); ?></h1>
                                             <?php endforeach;?>
                                         </tr>
                                         <?php foreach ($services as $serviceName => $serviceDetails): ?>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
                                                 <td><h3><?php echo htmlspecialchars($serviceName); ?></h3></td>
                                                 <td><h3>₱<?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
-                                            </tr>
+                                            </tr class="text-right">
                                         <?php endforeach; ?>
                                         <tr>
                                             <td style="font-weight: bold;"><h2>TOTAL</h2></td>
