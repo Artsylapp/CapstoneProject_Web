@@ -18,7 +18,7 @@
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3)) ?>" method="POST">
 
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="fullname">Fullname:</label>
+						<label class="control-label col-sm-2" for="fullname">Employee Name:</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $accounts->accounts_tbl_name ?>" name="update_Account" required>
 						</div>

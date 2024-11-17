@@ -18,7 +18,7 @@
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("acc_add") ?>" method="POST">
 				
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="fullname">Fullname:</label>
+						<label class="control-label col-sm-2" for="fullname">Employee Name:</label>
 
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="fullname" placeholder="Fullname" name="create_Account" required>

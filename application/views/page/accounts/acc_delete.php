@@ -32,7 +32,7 @@
 					<div class="form-group">
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-							<label class="control-label col-sm-2" for="fullname">Employee:</label>
+							<label class="control-label col-sm-2" for="fullname">Employee Name:</label>
 							<div class="col-sm-10">
 								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $name ?>">
 							</div>

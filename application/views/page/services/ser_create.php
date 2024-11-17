@@ -40,7 +40,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-						<label class="control-label col-sm-2" for="sel1">Service Designation:</label>
+						<label class="control-label col-sm-2" for="sel1">Designation:</label>
 						<div class="col-sm-10">
 							<select class="form-control" id="sel1" name="optradio">
 								<option>Bed</option>

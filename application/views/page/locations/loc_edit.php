@@ -18,13 +18,13 @@
 
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("locations/loc_update/" . $this->uri->segment(3))?>" method="POST">
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="fullname">Location Name:</label>
+						<label class="control-label col-sm-2" for="fullname">WorkStation Name:</label>
 						<div class="col-sm-10">
 						<input type="text" class="form-control" id="fullname" placeholder="Location Name" value="<?php echo $locations->location_tbl_name ?>" name="edit_Customer" required>
 						</div>
 					</div>
 					<div class="form-group">
-							<label class="control-label col-sm-2" for="sel1">Location Type:</label>
+							<label class="control-label col-sm-2" for="sel1">WorkStation Type:</label>
 							<div class="col-sm-10">
 								<select class="form-control" id="sel1" name="optradio">
 									<option value="Bed" <?php echo ($locations->location_tbl_type == 'Bed') ? 'selected' : ''; ?>>Bed</option>
