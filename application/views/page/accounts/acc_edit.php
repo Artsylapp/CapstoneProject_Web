@@ -55,7 +55,7 @@
 
 					<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
-							<button class="btn lg-bg menu-btn-m ttsh" name="CONFIRM EDIT <?php echo $accounts->accounts_tbl_name ?>">
+							<button class="btn lg-bg menu-btn-m ttsh" name="EDIT MASSEUR<?php echo $accounts->accounts_tbl_name ?>">
 								<h4>EDIT</h4>
 							</button>
 						</div>

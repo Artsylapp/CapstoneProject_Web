@@ -82,7 +82,7 @@
                 </div>
 
                 <?php else: ?>
-                    <p>Records not found. It seems Empty.</p>
+                    <p>No Record found. It looks like there’s nothing here yet.. Try searching for another one.</p>
                 <?php endif; ?>
 
             </div>

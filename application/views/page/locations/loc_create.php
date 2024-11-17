@@ -34,8 +34,8 @@
 					</div>
 					<div class="col-sm-offset-9 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
-							<button class="btn lg-bg menu-btn-m ttsh" name="confirm creation">
-								<h4>CREATE LOCATION</h4>
+							<button class="btn lg-bg menu-btn-m ttsh" name="Create WorkStation">
+								<h4>CREATE WORKSTATION</h4>
 							</button>
 						</div>
 					</div>

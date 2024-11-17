@@ -80,7 +80,7 @@
                 </div>
 
                 <?php else: ?>
-                    <p>Booking not found.</p>
+                    <p>No bookings found. It looks like there’s nothing here yet..</p>
                 <?php endif; ?>
                 
             </div>
