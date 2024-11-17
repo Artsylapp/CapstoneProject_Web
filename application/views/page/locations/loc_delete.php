@@ -36,8 +36,8 @@
 						<label class="control-label col-sm-2" for="sel1">WorkStation Type:</label>
 							<div class="col-sm-10">
 								<select disabled class="form-control" id="sel1" name="optradio">
-									<option value="Bed" <?php echo ($locations->location_tbl_type == 'Bed') ? 'selected' : ''; ?>>Bed</option>
-									<option value="Chair" <?php echo ($locations->location_tbl_type == 'Chair') ? 'selected' : ''; ?>>Chair</option>
+									<option value="Bed" <?php echo ($type == 'Bed') ? 'selected' : ''; ?>>Bed</option>
+									<option value="Chair" <?php echo ($type == 'Chair') ? 'selected' : ''; ?>>Chair</option>
 								</select>
 							</div>
 						</div>
