@@ -120,10 +120,11 @@ table {
         padding: 5px;
     }
 
-/* ANYTHING THAT DOES HAVE ANYTHING TO DO WITH SIZING*/
+/* ANYTHING THAT DOES HAVE ANYTHING TO DO WITH SIZING (default sizing)*/
 
     .bg-image{
-        background-size: 1250px; 
+        height: calc(100vh - 6em);
+        background-size: 100em;
         background-repeat: no-repeat; 
         background-position: center;
     }
@@ -409,7 +410,7 @@ table {
     /*MEDIA SETTING*/
 
     /* Media query scroll on phone screens */
-    @media (max-width: 320px) {
+    @media (max-width: 320px) and (max-height: 500px) {
         body {
             overflow: auto; 
             width: 100vw;
@@ -417,7 +418,7 @@ table {
         }
 
         .bg-image{
-            background-size: 550px; 
+            background-size: 100em; 
             background-repeat: no-repeat; 
             background-position: center;
         }
@@ -945,7 +946,7 @@ table {
         }
 
         .bg-image{
-            background-size: 1150px; 
+            background-size: 100em; 
             background-repeat: repeat-x; 
             background-position: center;
         }
