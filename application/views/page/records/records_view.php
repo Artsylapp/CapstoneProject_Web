@@ -75,14 +75,14 @@
 
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
                     <a href="<?php echo $this->config->base_url("records")?>">
-                        <button class="btn lr-bg menu-btn-m ttsh" name="Back to records hub">
+                        <button class="btn lr-bg menu-btn-m ttsh" name="Back to Records hub">
                             <h4>BACK</h4>
                         </button>
                     </a>
                 </div>
 
                 <?php else: ?>
-                    <p>Booking not found.</p>
+                    <p>Records not found. It seems Empty.</p>
                 <?php endif; ?>
 
             </div>

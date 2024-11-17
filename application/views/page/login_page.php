@@ -95,7 +95,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                                         <div class="col-sm-12">
-                                            <button class="btn lg-bg login-btn ttsh" name="LOG IN">
+                                            <button class="btn lg-bg login-btn ttsh" name="LOG IN TO VIAMM">
                                                 <h4>LOGIN</h4>
                                             </button>
                                         </div>

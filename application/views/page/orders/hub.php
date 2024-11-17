@@ -21,8 +21,8 @@
                             <th>Booking Number</th>
                             <th>Status</th>
                             <th>Total Price</th>
-							<th>View</th>
-                            <th>Cancel</th>
+							<th>View Booking</th>
+                            <th>Cancel Booking</th>
                         </tr>
                     </thead>
                     <tbody>

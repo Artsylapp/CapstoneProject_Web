@@ -63,7 +63,7 @@
                     <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                         <div class="col-sm-12">
                             <a href="<?php echo $this->config->base_url("booking/cancel_booking/" . $id)?>">
-                                <button class="btn lr-bg menu-btn-m ttsh" name="confirm cancel">
+                                <button class="btn lr-bg menu-btn-m ttsh" name="CANCEL BOOKING">
                                     <h4>CANCEL BOOKING</h4>
                                 </button>
                             </a>

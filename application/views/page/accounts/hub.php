@@ -10,8 +10,8 @@
 
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("acc_create")?>">
-					<button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW ACCOUNT">
-						<h4>NEW ACCOUNT</h4>
+					<button class="btn lg-bg menu-btn-m center-item ttsh" name="CREATE NEW ACCOUNT">
+						<h4>CREATE ACCOUNT</h4>
 					</button>
 				</a>
 			</div>
@@ -47,14 +47,14 @@
 							<td class="text-center">
 								<a href="<?php echo $this->config->base_url("accounts/acc_edit/$account->accounts_tbl_id")?>">
 									<button class="btn yellow-bg menu-btn-sm ttsh" name="<?php echo "EDIT $name"?>">
-										<h4>Edit</h4>
+										<h4>EDIT</h4>
 									</button>
 								</a>
 							</td>
 							<td class="text-center">
 								<a href="<?php echo $this->config->base_url("accounts/acc_delete/$account->accounts_tbl_id")?>">
 									<button class="btn lr-bg menu-btn-sm ttsh" name="<?php echo "DELETE $name"?>">
-										<h4>Delete</h4>
+										<h4>DELETE</h4>
 									</button>
 								</a>
 							</td>

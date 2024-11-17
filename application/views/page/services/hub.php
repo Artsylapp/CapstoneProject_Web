@@ -10,8 +10,8 @@
 
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("ser_create")?>">
-					<button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW Service">
-						<h3 class="">NEW SERVICE</h3>
+					<button class="btn lg-bg menu-btn-m center-item ttsh" name="Create New Service">
+						<h3 class="">CREATE SERVICE</h3>
 					</button>
 				</a>
 			</div>
