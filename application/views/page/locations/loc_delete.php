@@ -16,7 +16,7 @@
 		<?php
 			$name = $locations->location_tbl_name;
 			$type = $locations->location_tbl_type;
-			$price = $locations->location_tbl_status;
+			$status = $locations->location_tbl_status;
 		?>
 
 		<div class="row mt-s">
@@ -33,9 +33,12 @@
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-							<label class="control-label col-sm-2" for="fullname">WorkStation Type:</label>
+						<label class="control-label col-sm-2" for="sel1">WorkStation Type:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $type ?>">
+								<select disabled class="form-control" id="sel1" name="optradio">
+									<option value="Bed" <?php echo ($locations->location_tbl_type == 'Bed') ? 'selected' : ''; ?>>Bed</option>
+									<option value="Chair" <?php echo ($locations->location_tbl_type == 'Chair') ? 'selected' : ''; ?>>Chair</option>
+								</select>
 							</div>
 						</div>
 

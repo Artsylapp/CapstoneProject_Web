@@ -30,7 +30,7 @@
 				<div class="form-group">
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-						<label class="control-label col-sm-2" for="fullname">Service:</label>
+						<label class="control-label col-sm-2" for="fullname">Service Name:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
 							<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $name ?>">
 						</div>
