@@ -82,9 +82,16 @@ class Services extends CI_Controller {
     }
 
     // services - delete service page
-    public function ser_delete() //services - delete service
+    public function ser_delete() // services - delete service
     {   
         $data = $this->Service_model->getService($this->uri->segment(3));
+
+        if (!$data) {
+            // Show a user-friendly response if the service is not found
+            echo "<h1>Service Not Found</h1>";
+            echo "<p>Oops! The service you're looking for seems to have taken a break or doesn't exist anymore. Please check the list of services and try again.</p>";
+            return;
+        }
 
         $info = array(
             'title' => 'Delete Service',
@@ -96,10 +103,25 @@ class Services extends CI_Controller {
         $this->load->view('page/include/footer');        
     }
 
+
     // services - remove service function
     public function ser_remove()
     {   
-        $this->Service_model->deleteService($this->uri->segment(3));
+        $service_id = $this->uri->segment(3);
+        $data = $this->Service_model->getService($service_id);
+
+        if (!$data) {
+            // Redirect with an error message if the service is not found
+            $this->session->set_flashdata('error', "Oops! The service you're trying to remove doesn't exist.");
+            redirect($this->config->base_url("services"));
+            return;
+        }
+
+        // Proceed to delete the service
+        $this->Service_model->deleteService($service_id);
+
+        // Redirect with a success message
+        $this->session->set_flashdata('success', "The service has been successfully removed.");
         redirect($this->config->base_url("services"));
     }
 
