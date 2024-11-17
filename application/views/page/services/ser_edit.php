@@ -30,9 +30,9 @@
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="address">Description:</label>
+					<label class="control-label col-sm-2" for="desc">Description:</label>
 					<div class="col-sm-10">
-					<input type="text" class="form-control" id="address" placeholder="Service Description" value="<?php echo $services->services_tbl_description ?>" name="edit_Description" required>
+					<input type="text" class="form-control" id="desc" placeholder="Service Description" value="<?php echo $services->services_tbl_description ?>" name="edit_Description" required>
 					</div>
 				</div>
 
@@ -43,15 +43,17 @@
 					</div>
 				</div>
 
+				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
+					<div class="col-sm-12">
+						<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Edit, <?php echo $services->services_tbl_name ?>">
+							<h4>EDIT</h4>
+						</button>
+					</div>
+				</div>
+
 			</form>
 
-			<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
-				<div class="col-sm-12">
-					<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Edit, <?php echo $services->services_tbl_name ?>">
-						<h4>EDIT</h4>
-					</button>
-				</div>
-			</div>
+			
 
 			<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
 				<a href="<?php echo $this->config->base_url("services")?>">

@@ -18,20 +18,22 @@
 
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("locations/loc_update/" . $this->uri->segment(3))?>" method="POST">
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="fullname">WorkStation Name:</label>
+						<label class="control-label col-sm-2" for="WorkStation">WorkStation Name:</label>
 						<div class="col-sm-10">
-						<input type="text" class="form-control" id="fullname" placeholder="Workstation Name" value="<?php echo $locations->location_tbl_name ?>" name="edit_Customer" required>
+						<input type="text" class="form-control" id="WorkStation" placeholder="Workstation Name" value="<?php echo $locations->location_tbl_name ?>" name="edit_Customer" required>
 						</div>
 					</div>
+
 					<div class="form-group">
-							<label class="control-label col-sm-2" for="sel1">WorkStation Type:</label>
-							<div class="col-sm-10">
-								<select class="form-control" id="sel1" name="optradio">
-									<option value="Bed" <?php echo ($locations->location_tbl_type == 'Bed') ? 'selected' : ''; ?>>Bed</option>
-									<option value="Chair" <?php echo ($locations->location_tbl_type == 'Chair') ? 'selected' : ''; ?>>Chair</option>
-								</select>
-							</div>
+						<label class="control-label col-sm-2" for="sel1">WorkStation Type:</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="sel1" name="optradio">
+								<option value="Bed" <?php echo ($locations->location_tbl_type == 'Bed') ? 'selected' : ''; ?>>Bed</option>
+								<option value="Chair" <?php echo ($locations->location_tbl_type == 'Chair') ? 'selected' : ''; ?>>Chair</option>
+							</select>
 						</div>
+					</div>
+
 					<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
 							<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Edit, <?php echo $locations->location_tbl_name ?>">
@@ -39,6 +41,7 @@
 							</button>
 						</div>
 					</div>
+
 				</form>	
 
 				<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">

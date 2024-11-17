@@ -32,30 +32,30 @@
 					<div class="form-group">
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-							<label class="control-label col-sm-2" for="fullname">Employee Name:</label>
+							<label class="control-label col-sm-2" for="EmpName">Employee Name:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" placeholder="Fullname" value="<?php echo $name ?>">
+								<input disabled type="text" class="form-control" id="EmpName" placeholder="Employee Name" value="<?php echo $name ?>">
 							</div>
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left; padding-top: 1em">
-							<label class="control-label col-sm-2" for="fullname">Address:</label>
+							<label class="control-label col-sm-2" for="EmpAdd">Address:</label>
 							<div class="col-sm-10">
-								<input disabled ="text" placeholder="Fullname" value="<?php echo $address ?>">
+								<input disabled ="text" class="form-control" placeholder="EmpAdd" value="<?php echo $address ?>">
 							</div>
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left; padding-top: 1em">
-							<label class="control-label col-sm-2" for="fullname">Contact:</label>
+							<label class="control-label col-sm-2" for="EmpCtnt">Contact:</label>
 							<div class="col-sm-10">
-								<input disabled ="text" placeholder="Fullname" value="<?php echo $contact ?>">
+								<input disabled ="text" class="form-control" id="EmpCtnt" placeholder="Contact" value="<?php echo $contact ?>">
 							</div>
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left; padding-top: 1em">
-							<label class="control-label col-sm-2" for="fullname">Employee Type:</label>
+							<label class="control-label col-sm-2" for="EmpTyp">Employee Type:</label>
 							<div class="col-sm-10">
-								<input disabled ="text" placeholder="Fullname" value="<?php echo $type ?>"required>
+								<input disabled ="text" class="form-control" id="EmpTyp" placeholder="Type" value="<?php echo $type ?>"required>
 							</div>
 						</div>
 

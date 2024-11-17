@@ -17,12 +17,14 @@
 			<div class="col-sm-12 col-xs-12 box-white">
 
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("locations/loc_add")?>" method="POST">
+				
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="fullname">WorkStation Name:</label>
 						<div class="col-sm-10">
 						<input type="text" class="form-control" id="fullname" placeholder="Workstation Name" name="create_Customer" required>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="sel1">WorkStation Type:</label>
 						<div class="col-sm-10">
@@ -32,6 +34,7 @@
 							</select>
 						</div>
 					</div>
+
 					<div class="col-sm-offset-9 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
 							<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Create WorkStation">
@@ -39,6 +42,7 @@
 							</button>
 						</div>
 					</div>
+
 				</form>
 
 				<div class="col-sm-offset-9 col-sm-3" style="margin-bottom:25px; margin-top:25px;">

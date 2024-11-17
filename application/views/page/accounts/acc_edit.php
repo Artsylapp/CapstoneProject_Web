@@ -18,24 +18,24 @@
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("accounts/acc_update/" . $this->uri->segment(3)) ?>" method="POST">
 
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="fullname">Employee Name:</label>
+						<label class="control-label col-sm-2" for="EmpName">Employee Name:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $accounts->accounts_tbl_name ?>" name="update_Account" required>
+							<input type="text" class="form-control" id="EmpName" placeholder="Employee Name" value="<?php echo $accounts->accounts_tbl_name ?>" name="update_Account" required>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="address">Address:</label>
+						<label class="control-label col-sm-2" for="EmpAdd">Address:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="address" placeholder="Address" value="<?php echo $accounts->accounts_tbl_address ?>" name="update_Address" required>
+							<input type="text" class="form-control" id="EmpAdd" placeholder="Address" value="<?php echo $accounts->accounts_tbl_address ?>" name="update_Address" required>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="contact">Contact Number:</label>
+						<label class="control-label col-sm-2" for="EmpCtnt">Contact Number:</label>
 
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="contact" placeholder="Contact Number" value="<?php echo $accounts->accounts_tbl_contact ?>" name="update_Contact" required>
+							<input type="text" class="form-control" id="EmpCtnt" placeholder="Contact Number" value="<?php echo $accounts->accounts_tbl_contact ?>" name="update_Contact" required>
 						</div>
 					</div>
 

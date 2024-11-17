@@ -30,23 +30,23 @@
 				<div class="form-group">
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-						<label class="control-label col-sm-2" for="fullname">Service Name:</label>
+						<label class="control-label col-sm-2" for="SrvName">Service Name:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
-							<input disabled type="text" placeholder="Fullname" value="<?php echo $name ?>">
+							<input disabled type="text" class="form-control" id="SrvName" placeholder="Service Name" value="<?php echo $name ?>">
 						</div>
 					</div>
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-						<label class="control-label col-sm-2" for="fullname">Description:</label>
+						<label class="control-label col-sm-2" for="SrvDsc">Description:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
-							<input disabled type="text" placeholder="Fullname" value="<?php echo $description ?>">
+							<input disabled type="text" class="form-control" id="SrvDsc" placeholder="Service Description" value="<?php echo $description ?>">
 						</div>
 					</div>
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-						<label class="control-label col-sm-2" for="fullname">Price:</label>
+						<label class="control-label col-sm-2" for="SrvPrc">Price:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
-							<input disabled type="text" placeholder="Fullname" value="<?php echo $price ?>">
+							<input disabled type="text" class="form-control" id="SrvPrc" placeholder="Service Price" value="<?php echo $price ?>">
 						</div>
 					</div>
 

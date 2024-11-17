@@ -26,9 +26,9 @@
 					<div class="form-group">
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-							<label class="control-label col-sm-2" for="fullname">WorkStation Name:</label>
+							<label class="control-label col-sm-2" for="WSName">WorkStation Name:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" placeholder="Workstation Name" value="<?php echo $name ?>">
+								<input disabled type="text" class="form-control" id="WSName" placeholder="Workstation Name" value="<?php echo $name ?>">
 							</div>
 						</div>
 
@@ -43,9 +43,9 @@
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
-							<label class="control-label col-sm-2" for="fullname">Status:</label>
+							<label class="control-label col-sm-2" for="WSst">Status:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" placeholder="Status" value="<?php echo $status ?>">
+								<input disabled type="text" class="form-control" id="WSst" placeholder="Status" value="<?php echo $status ?>">
 							</div>
 						</div>
 						
@@ -58,6 +58,7 @@
 							</button>
 						</div>
 					</div>
+					
 				</form>
 
 				<div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
