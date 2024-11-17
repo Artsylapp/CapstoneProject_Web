@@ -56,7 +56,7 @@ $(document).ready(function() {
             }
         }
 
-        $('#total-cost').text(`$${totalCost.toFixed(2)}`);
+        $('#total-cost').text(`₱${totalCost.toFixed(2)}`);
     }
 
     function saveDataToLocalStorage() {
