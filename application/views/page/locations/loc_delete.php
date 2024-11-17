@@ -28,7 +28,7 @@
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
 							<label class="control-label col-sm-2" for="fullname">WorkStation Name:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $name ?>">
+								<input disabled type="text" placeholder="Workstation Name" value="<?php echo $name ?>">
 							</div>
 						</div>
 
@@ -45,7 +45,7 @@
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
 							<label class="control-label col-sm-2" for="fullname">Status:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $status ?>">
+								<input disabled type="text" placeholder="Status" value="<?php echo $status ?>">
 							</div>
 						</div>
 						

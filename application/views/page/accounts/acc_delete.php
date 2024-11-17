@@ -34,28 +34,28 @@
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
 							<label class="control-label col-sm-2" for="fullname">Employee Name:</label>
 							<div class="col-sm-10">
-								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $name ?>">
+								<input disabled type="text" placeholder="Fullname" value="<?php echo $name ?>">
 							</div>
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left; padding-top: 1em">
 							<label class="control-label col-sm-2" for="fullname">Address:</label>
 							<div class="col-sm-10">
-								<input disabled ="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $address ?>">
+								<input disabled ="text" placeholder="Fullname" value="<?php echo $address ?>">
 							</div>
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left; padding-top: 1em">
 							<label class="control-label col-sm-2" for="fullname">Contact:</label>
 							<div class="col-sm-10">
-								<input disabled ="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $contact ?>">
+								<input disabled ="text" placeholder="Fullname" value="<?php echo $contact ?>">
 							</div>
 						</div>
 
 						<div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left; padding-top: 1em">
 							<label class="control-label col-sm-2" for="fullname">Employee Type:</label>
 							<div class="col-sm-10">
-								<input disabled ="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $type ?>"required>
+								<input disabled ="text" placeholder="Fullname" value="<?php echo $type ?>"required>
 							</div>
 						</div>
 

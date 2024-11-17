@@ -20,7 +20,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="fullname">WorkStation Name:</label>
 						<div class="col-sm-10">
-						<input type="text" class="form-control" id="fullname" placeholder="Location Name" value="<?php echo $locations->location_tbl_name ?>" name="edit_Customer" required>
+						<input type="text" class="form-control" id="fullname" placeholder="Workstation Name" value="<?php echo $locations->location_tbl_name ?>" name="edit_Customer" required>
 						</div>
 					</div>
 					<div class="form-group">

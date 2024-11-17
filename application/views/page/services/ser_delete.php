@@ -32,21 +32,21 @@
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
 						<label class="control-label col-sm-2" for="fullname">Service Name:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
-							<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $name ?>">
+							<input disabled type="text" placeholder="Fullname" value="<?php echo $name ?>">
 						</div>
 					</div>
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
 						<label class="control-label col-sm-2" for="fullname">Description:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
-							<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $description ?>">
+							<input disabled type="text" placeholder="Fullname" value="<?php echo $description ?>">
 						</div>
 					</div>
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
 						<label class="control-label col-sm-2" for="fullname">Price:</label>
 						<div class="col-sm-10" style="padding-left: 2.5em;">
-							<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $price ?>">
+							<input disabled type="text" placeholder="Fullname" value="<?php echo $price ?>">
 						</div>
 					</div>
 
