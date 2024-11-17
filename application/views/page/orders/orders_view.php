@@ -54,7 +54,7 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="text-left">
+                                            <th class="text-center">
                                                 <h3>Amount</h3>
                                             </th>
                                             <th class="text-left">
