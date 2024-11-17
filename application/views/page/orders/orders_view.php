@@ -57,10 +57,10 @@
                                             <th class="text-center">
                                                 <h3>Amount</h3>
                                             </th>
-                                            <th class="text-left">
+                                            <th class="text-center">
                                                 <h3>Service</h3>
                                             </th>
-                                            <th class="text-left">
+                                            <th class="text-center">
                                                 <h3>Price</h3>
                                             </th>
                                         </tr>
