@@ -3,8 +3,8 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="black-txt overflow-wrap">BOOKING CANCEL</h1>
-                <h3 class="black-txt" style="margin-top: 0px;">Cancel Booking - <?php echo $this->session->userdata('comp_Name') ?></h3>
+                <h1 class="black-txt overflow-wrap">CANCEL BOOKING</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">Booking - <?php echo $this->session->userdata('comp_Name') ?></h3>
             </div>
         </div>
 
@@ -73,7 +73,7 @@
             
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
                     <a href="<?php echo $this->config->base_url("orders")?>">
-                        <button class="btn yellow-bg menu-btn-m ttsh" name="cancel">
+                        <button class="btn yellow-bg menu-btn-m ttsh" name="Back to Booking Hub">
                             <h4>BACK</h4>
                         </button>
                     </a>

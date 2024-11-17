@@ -119,16 +119,36 @@ class Orders extends CI_Controller {
         $data = json_decode(file_get_contents('php://input'), true);
         print_r($data);
 
-        if ($data) {
-            // Pass the data to the model
-            $this->Booking_model->saveBooking($data);
-            echo json_encode(['status' => 'success']);
-
-            log_message('info', 'Booking saved successfully.'. $data);
+        // Check if the data is valid and required fields are not empty
+        if (!empty($data)) {
+            // Validate required fields
+            if (empty($data['services']) || empty($data['masseurs']) || empty($data['locations']) || empty($data['totalCost'])) {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'One or more required fields are empty',
+                    'missing_fields' => [
+                        'services' => empty($data['services']),
+                        'masseurs' => empty($data['masseurs']),
+                        'locations' => empty($data['locations']),
+                        'totalCost' => empty($data['totalCost']),
+                    ]
+                ]);
+            } else {
+                // All required fields are valid, proceed to save
+                if ($this->Booking_model->saveBooking($data)) {
+                    echo json_encode(['status' => 'success']);
+                    // log_message('info', 'Booking saved successfully: ' . json_encode($data)); // Uncomment for logging
+                } else {
+                    // Handle model save failure
+                    echo json_encode(['status' => 'error', 'message' => 'Failed to save booking']);
+                }
+            }
         } else {
-            // Handle the error
-            echo json_encode(['status' => 'error', 'message' => 'Invalid data']);
+            // Handle invalid or empty data
+            echo json_encode(['status' => 'error', 'message' => 'Invalid or empty data']);
         }
+
+
     }
     
     // Orders - Cancel booking

@@ -4,14 +4,14 @@
 		<div class="row">
 
 			<div class="col-xs-12 col-sm-12">
-				<h1 class="black-txt overflow-wrap">LOCATION HUB</h1>
-				<h3 class="black-txt" style="margin-top: 0px;">Manage Location - <?php echo $this->session->userdata('comp_Name') ?></h3>
+				<h1 class="black-txt overflow-wrap">WORKSTATION HUB</h1>
+				<h3 class="black-txt" style="margin-top: 0px;">Manage WorkStations - <?php echo $this->session->userdata('comp_Name') ?></h3>
 			</div>
 
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("loc_create")?>">
 					<button class="btn lg-bg menu-btn-m center-item ttsh" name="NEW Location">
-						<h3 class="">NEW LOCATION</h3>
+						<h3 class="">NEW WORKSTATION</h3>
 					</button>
 				</a>
 			</div>
@@ -23,7 +23,7 @@
 				<table class="table table-hover" id="acc_table">
 					<thead>
 						<tr>
-							<th>Location Name</th>
+							<th>WorkStation</th>
 							<th>Type</th>
 							<th>Status</th>
 							<th>Edit</th>
