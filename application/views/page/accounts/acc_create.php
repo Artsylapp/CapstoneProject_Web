@@ -54,7 +54,7 @@
 					<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
 							<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Create Account">
-								<h4>CREATE ACCOUNT</h4>
+								<h4>CREATE</h4>
 							</button>
 						</div>
 					</div>
