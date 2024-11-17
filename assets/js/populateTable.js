@@ -146,8 +146,6 @@ $(document).ready(function() {
             services[serviceName] = { price: servicePrice, amount: 1, type: serviceType };
         }
 
-        console.log("Variable Check" + serviceName[serviceName].amount);
-
         filterServicesByType();
         updateTable();
     });
