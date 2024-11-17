@@ -21,7 +21,7 @@ class Accounts extends CI_Controller {
 			// Check if the contact number is valid and exactly 11 digits long
 			if (strlen($contact) == 11 && preg_match('/^09\d{9}$/', $contact)) {
 					// Format the number like "0912 3456 789"
-					return substr($contact, 0, 4) . ' ' . substr($contact, 4, 3) . ' ' . substr($contact, 8, 4);
+					return substr($contact, 0, 4) . ' ' . substr($contact, 4, 3) . ' ' . substr($contact, 7, 4);
 			}
 			
 			return $contact; // Return the original contact number if invalid
