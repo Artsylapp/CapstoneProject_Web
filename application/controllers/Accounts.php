@@ -12,10 +12,31 @@ class Accounts extends CI_Controller {
 		$this->load->library('session');
 	}
 
+	// Helper function to format the contact number
+	private function formatContactNumber($contact)
+	{
+			// Remove any non-digit characters (like spaces or hyphens)
+			$contact = preg_replace('/\D/', '', $contact);
+
+			// Check if the contact number is valid and exactly 11 digits long
+			if (strlen($contact) == 11 && preg_match('/^09\d{9}$/', $contact)) {
+					// Format the number like "0912 3456 789"
+					return substr($contact, 0, 4) . ' ' . substr($contact, 4, 4) . ' ' . substr($contact, 8, 3);
+			}
+			
+			return $contact; // Return the original contact number if invalid
+	}
+
 	// Accounts - load accounts hub
 	public function index()
   	{
 		$data = $this->Account_model->getAccounts();
+
+		// Format the contact numbers
+    foreach ($data as &$account) {
+			$account->accounts_tbl_contact = $this->formatContactNumber($account->accounts_tbl_contact);
+		}
+
 		$info = array(
 			'title' => 'Accounts',
 			'accounts' => $data,
