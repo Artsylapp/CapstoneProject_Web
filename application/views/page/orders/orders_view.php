@@ -86,7 +86,7 @@
                                         <tr>
                                             <td style="font-weight: bold;"><h2>CURRENT PAID AMOUNT</h2></td>
                                             <td style="font-weight: bold;"><h2></h2></td>
-                                            <td style="font-weight: bold;"><h2><?php echo $paid?></h2></td>
+                                            <td style="font-weight: bold;"><h2><?php echo ("₱" $paid)?></h2></td>
                                         </tr>
                                             
                                     </tbody>
