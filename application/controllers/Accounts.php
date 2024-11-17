@@ -115,11 +115,28 @@ class Accounts extends CI_Controller {
 		
 	}
 
-	// Accounts - update account function
 	public function acc_update()
 	{
 			// Get the contact number from the form input
 			$contact = $this->input->post('update_Contact');
+			$accountName = $this->input->post('update_Account'); // Get the account name from the form
+
+			// Check if the account name already exists
+			if ($this->Account_model->getAccountbyName($accountName)) {
+					// If the account name already exists, set error message
+					$info['error'] = 'Account with this name already exists. Please choose a different name.';
+
+					// Load the view with error message
+					$data = array(
+							'title' => 'Update Account',
+							'accounts' => $this->Account_model->getAccount($this->uri->segment(3)),
+					);
+					$this->load->view('page/include/header', $data);
+					$this->load->view('page/accounts/acc_edit', $info);
+					$this->load->view('page/include/footer');
+					
+					return; // Stop further processing if account exists
+			}
 
 			// Validate phone number: should start with 09 and be exactly 11 digits long
 			if (!preg_match('/^09\d{9}$/', $contact)) {
@@ -132,7 +149,7 @@ class Accounts extends CI_Controller {
 							'accounts' => $this->Account_model->getAccount($this->uri->segment(3)),
 					);
 					$this->load->view('page/include/header', $data);
-					$this->load->view('page/accounts/acc_edit', $info); // Assuming your view is named acc_edit.php
+					$this->load->view('page/accounts/acc_edit', $info);
 					$this->load->view('page/include/footer');
 					
 					return; // Stop further processing if validation fails
@@ -153,6 +170,7 @@ class Accounts extends CI_Controller {
 			// Redirect to the Accounts hub after update
 			redirect('Accounts');
 	}
+
 
 
 	// Accounts - redirect to delete account page
