@@ -24,25 +24,30 @@
 
 				<form class="form-horizontal" action="<?php echo $this->config->base_url("locations/loc_remove/" . $this->uri->segment(3))?>" method="POST">
 					<div class="form-group">
-						<div class="col-sm-offset-1 col-sm-6" style="
-						display: flex;
-						justify-content: left;
-						">
-							<h1>Service Name: <?php echo $name?></h1>
+
+						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
+							<label class="control-label col-sm-2" for="fullname">Service:</label>
+							<div class="col-sm-10">
+								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $name ?>">
+							</div>
 						</div>
-						<div class="col-sm-offset-1 col-sm-6" style="
-						display: flex;
-						justify-content: left;
-						">
-							<h1>Type: <?php echo $type?></h1>
+
+						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
+							<label class="control-label col-sm-2" for="fullname">Service Type:</label>
+							<div class="col-sm-10">
+								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $type ?>">
+							</div>
 						</div>
-						<div class="col-sm-offset-1 col-sm-6" style="
-						display: flex;
-						justify-content: left;
-						">
-							<h1>Status: <?php echo $price?></h1>
+
+						<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
+							<label class="control-label col-sm-2" for="fullname">Price:</label>
+							<div class="col-sm-10">
+								<input disabled type="text" class="form-control" id="fullname" placeholder="Fullname" value="<?php echo $price ?>">
+							</div>
 						</div>
+						
 					</div>
+
 					<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 						<div class="col-sm-12">
 							<button class="btn lr-bg menu-btn-m ttsh" name="Confirm Delete, <?php echo $name ?> ">
