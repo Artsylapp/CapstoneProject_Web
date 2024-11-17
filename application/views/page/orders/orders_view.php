@@ -75,13 +75,13 @@
                                             <tr>
                                                 <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
                                                 <td><h3><?php echo htmlspecialchars($serviceName); ?></h3></td>
-                                                <td><h3><?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
+                                                <td><h3>₱<?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
                                             </tr>
                                         <?php endforeach; ?>
                                         <tr>
                                             <td style="font-weight: bold;"><h2>TOTAL</h2></td>
                                             <td style="font-weight: bold;"><h2></h2></td>
-                                            <td style="font-weight: bold;"><h2><?php echo $totalCost?></h2></td>
+                                            <td style="font-weight: bold;"><h2>₱<?php echo $totalCost?></h2></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;"><h2>CURRENT PAID AMOUNT</h2></td>
