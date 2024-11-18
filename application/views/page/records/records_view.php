@@ -11,21 +11,34 @@
         <div class="row mt-s">
             <div class="col-sm-12 col-xs-12 box-white">
 
-                <?php if ($booking):
-                    $id = $booking->orders_tbl_id;
-                    $status = $booking->orders_tbl_status;
-                    $services = $services;
-                ?>
+            <?php if ($booking):
+                $id = $booking->orders_tbl_id;
+                $status = $booking->orders_tbl_status;
+                $services = $services;
+
+                $masseurname = array_keys($masseurs);
+                $masseur = implode(', ', $masseurname);
+                
+                // echo $masseur;
+                // echo'<pre>';
+                // print_r($masseurs);
+                // print_r($masseurname);
+                
+            ?>
                 
                 <form class="form-horizontal" action="<?php echo $this->config->base_url("order/loc_remove/" . $this->uri->segment(3))?>" method="POST">
                     <div class="form-group">
+
+                        <!-- booking ID -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <h2>Booking Number: <?php echo $id; ?></h2>
                         </div>
+
+                        <!-- Status -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
                                 if ($status == 'COMPLETED') {
-                                    echo '<h2>Status: <span style="color: green">' . $status . '</span></h2>';
+                                    echo '<h2>Status: <span style="color: #5ce65c">' . $status . '</span></h2>';
                                 } elseif ($status == 'CANCELLED') {
                                     echo '<h2>Status: <span style="color: red">' . $status . '</span></h2>';
                                 } elseif ($status == 'ON-GOING') {
@@ -35,6 +48,16 @@
                                 }
                             ?>
                         </div>
+
+                        <!-- Masseur's name -->
+                        <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
+                            <?php if (!empty($masseur)): ?>
+                                <h2>Masseur: <?php echo $masseur; ?></h2>
+                            <?php else: ?>
+                                <h2>Masseur: No masseur found 🙁</h2>
+                            <?php endif; ?>
+                        </div>
+
                     </div>
 
                     <!-- Services Table -->
@@ -55,6 +78,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Loop through the services array -->
                                     <?php foreach ($services as $serviceName => $serviceDetails): ?>
                                         <tr>
                                             <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
@@ -65,7 +89,7 @@
                                     <tr>
                                         <td style="font-weight: bold;"><h2>TOTAL</h2></td>
                                         <td style="font-weight: bold;"><h2></h2></td>
-                                        <td style="font-weight: bold;"><h2><?php echo $totalCost?></h2></td>
+                                        <td style="font-weight: bold;"><h2><?php echo $totalCost ?></h2></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -87,6 +111,7 @@
 
             </div>
         </div>
+
 
     </div>
 </div>
