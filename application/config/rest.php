@@ -307,7 +307,7 @@ $config['rest_database_group'] = 'default';
 |
 */
 // get the table name "api_keys_tbl" from the environment variable
-$config['rest_keys_table'] = 'viamm_api_keys_tbl';
+$config['rest_keys_table'] = 'api_keys_tbl';
 
 /*
 |--------------------------------------------------------------------------
