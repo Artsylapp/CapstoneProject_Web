@@ -111,6 +111,8 @@ $config['rest_realm'] = 'REST API';
 |
 */
 // $config['rest_auth'] = false;
+
+// get the value from the environment variable, if not found use the default value, add a basic authentication
 $config['rest_auth'] = 'basic';
 // 
 
@@ -213,7 +215,9 @@ $config['auth_library_function'] = '';
 | Array of usernames and passwords for login, if ldap is configured this is ignored
 |
 */
-$config['rest_valid_logins'] = ['aDm1n%v1AmM' => '1A7*ajHy6p$ag5'];
+// $config['rest_valid_logins'] = ['aDm1n%v1AmM' => '1A7*ajHy6p$ag5'];
+
+// get the API username and password for authentication from the environment variable
 $config['rest_valid_logins'] = ['aDm1n%v1AmM' => '1A7*ajHy6p$ag5'];
 
 /*
