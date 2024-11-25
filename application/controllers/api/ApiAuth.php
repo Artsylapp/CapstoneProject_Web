@@ -17,6 +17,7 @@ class ApiAuth extends RestController {
     // To authenticate user from the Android App
     public function index_post()
     {
+        // Get the post data
         $comp_name = $this->post('username');
         $comp_pass = $this->post('password');
     
@@ -32,6 +33,7 @@ class ApiAuth extends RestController {
         // Authenticate user
         $auth = $this->Company_model->getCompany($comp_name, $comp_pass);
 
+        // check if the user exists
         if ($auth == true && $auth[0]->company_tbl_pass == $comp_pass && $auth[0]->company_tbl_name == $comp_name) {
             $loginData = [
                 'error' => false,

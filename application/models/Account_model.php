@@ -9,6 +9,13 @@ class Account_model extends CI_Model{
         return $this->db->insert('accounts_tbl', $data);
     }
 
+    // get account by name
+    public function getAccountbyName($name)
+    {
+        $query = $this->db->get_where('accounts_tbl', array('accounts_tbl_name' => $name));
+        return $query->row();
+    }
+
     // get all accounts
     public function getAccounts()
     {

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /* Other Utilities */
 $route['default_controller'] = 'Main';
@@ -45,6 +45,7 @@ $route['booking'] = 'Orders/index';
 $route['booking/create'] = 'Orders/orders_create'; //redirects to page/orders/orders_create
 $route['booking/view/(:num)'] = 'Orders/orders_view/$1';
 $route['booking/cancel/(:num)'] = 'Orders/orders_cancel/$1';
+$route['booking/cancel_booking/(:num)'] = 'Orders/cancel_booking/$1';
 
 // $route['booking/assign'] = 'Orders/orders_assign';
 $route['orders_assign'] = 'Orders/orders_assign'; //redirects to page/orders/orders_assign
@@ -64,6 +65,7 @@ $route['booking/ongoing'] = 'Orders/orders_going';
 /* Records Page */
 $route['records'] = 'Records/index';
 $route['records/view/(:num)'] = 'Records/records_view/$1';
+$route['records/pdf'] = 'Records/recordsToPDF';
 
 /* Analytics Page */
 $route['analytics'] = 'Analytics/index';
@@ -84,4 +86,3 @@ $route['api/order/ongoing'] = 'api/ApiOrder/index';
 $route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
 $route['api/order/finished'] = 'api/ApiOrder/orderFinished';
 $route['api/order/update'] = 'api/ApiOrder/orderUpdate';
-

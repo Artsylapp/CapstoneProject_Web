@@ -3,13 +3,13 @@
         
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <h1 class="overflow-wrap black-txt">VIEW BOOKING</h1>
-                <h3 class="black-txt" style="margin-top: 0px;">Display Booking Details - COMPANY</h3>
+                <h1 class="black-txt overflow-wrap">BOOKING DETAILS</h1>
+                <h3 class="black-txt" style="margin-top: 0px;">Booking - <?php echo $this->session->userdata('comp_Name') ?></h3>
 
                 <script>
 
-                var message = "<?php echo addslashes($this->session->flashdata('message')); ?>"; // Escape quotes for JS
-                var error = "<?php echo addslashes($this->session->flashdata('error')); ?>"; // Escape quotes for JS
+                var message = "<?php echo($this->session->flashdata('message')); ?>"; // Escape quotes for JS
+                var error = "<?php echo($this->session->flashdata('error')); ?>"; // Escape quotes for JS
 
                 console.log("Flash Message:", message);
                 console.log("Flash Error:", error);
@@ -34,7 +34,17 @@
                                 <h2>Booking Number: <?php echo $id; ?></h2>
                             </div>
                             <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                                <h2>Status: <?php echo $status; ?></h2>
+                                <?php 
+                                    if ($status == 'ON-GOING'){
+                                        echo '<h2>Status: <span style="color: orange">' . $status . '</span></h2>';
+                                    } else if ($status == 'COMPLETED') {
+                                        echo '<h2>Status: <span style="color: green">' . $status . '</span></h2>';
+                                    } elseif ($status == 'CANCELLED') {
+                                        echo '<h2>Status: <span style="color: red">' . $status . '</span></h2>';
+                                    } else {
+                                        echo '<h2>Status: <span>' . $status . '</span></h2>';
+                                    }
+                                ?>
                             </div>
                         </div>
 
@@ -44,39 +54,39 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="text-left">
+                                            <th class="text-center">
                                                 <h3>Amount</h3>
                                             </th>
-                                            <th class="text-left">
+                                            <th class="text-center">
                                                 <h3>Service</h3>
                                             </th>
-                                            <th class="text-left">
+                                            <th class="text-center">
                                                 <h3>Price</h3>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr class="text-left">
                                             <?php foreach($masseurs as $masseurName => $isSelected):?>
                                                 <h1>Masseur: <?php echo htmlspecialchars($masseurName); ?></h1>
                                             <?php endforeach;?>
                                         </tr>
                                         <?php foreach ($services as $serviceName => $serviceDetails): ?>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
                                                 <td><h3><?php echo htmlspecialchars($serviceName); ?></h3></td>
-                                                <td><h3><?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
-                                            </tr>
+                                                <td><h3>₱<?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
+                                            </tr class="text-right">
                                         <?php endforeach; ?>
                                         <tr>
                                             <td style="font-weight: bold;"><h2>TOTAL</h2></td>
                                             <td style="font-weight: bold;"><h2></h2></td>
-                                            <td style="font-weight: bold;"><h2><?php echo $totalCost?></h2></td>
+                                            <td style="font-weight: bold;"><h2>₱<?php echo $totalCost?></h2></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;"><h2>CURRENT PAID AMOUNT</h2></td>
                                             <td style="font-weight: bold;"><h2></h2></td>
-                                            <td style="font-weight: bold;"><h2><?php echo $paid?></h2></td>
+                                            <td style="font-weight: bold;"><h2>₱<?php echo $paid; ?></h2></td>
                                         </tr>
                                             
                                     </tbody>
@@ -95,33 +105,9 @@
                                     </button>
                                     </a>
                                 <?php else:?>
-                                    <button class="btn lg-bg menu-btn-m ttsh" name="Manual Payment" onclick="openPopup()">
+                                    <button class="btn lg-bg menu-btn-m ttsh" name="Proceed with Manual Payment" onclick="openPopup()">
                                         <h4>MANUAL PAYMENT</h4>
                                     </button>
-
-                                    <!-- Payment Pop-up -->
-                                    <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
-                                    <div id="paymentPopup" class="popup">
-                                        <div class="popup-header">Enter Payment Amount</div>
-                                            <div class="form-group">
-                                                <input type="number" name="updatePayment" placeholder="Payment Amount" required>
-                                                <button>Submit</button>
-                                                <button type="button" onclick="closePopup()">Close</button>
-                                            </div>
-                                    </div>
-                                    </form>
-
-                                    <script>
-                                        // JavaScript to open and close the pop-up
-                                        function openPopup() {
-                                            document.getElementById("paymentPopup").classList.add("active");
-                                        }
-
-                                        function closePopup() {
-                                            document.getElementById("paymentPopup").classList.remove("active");
-                                        }
-                                    </script>
-
                                 <?php endif;?>
                             </div>
 
@@ -134,6 +120,32 @@
                             </button>
                         </a>
                     </div>
+
+                    <!-- Payment Pop-up -->
+                                    
+                    <div id="paymentPopup" class="popup">
+                        <div class="popup-header">Enter Payment Amount</div>
+                            <form class="form-horizontal" method="POST" action="<?php echo $this->config->base_url('orders/manual_pay/' . $this->uri->segment(3))?>">
+                                <div class="form-group">
+                                    <input type="number" name="updatePayment" placeholder="Payment Amount" required>
+                                    <button>Submit</button>
+                                    <button type="button" onclick="closePopup()">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                                    
+
+                    <script>
+                        // JavaScript to open and close the pop-up
+                        function openPopup() {
+                            document.getElementById("paymentPopup").classList.add("active");
+                        }
+
+                        function closePopup() {
+                            document.getElementById("paymentPopup").classList.remove("active");
+                        }
+                    </script>
 
                 <?php else: ?>
                     <p>Booking not found.</p>
