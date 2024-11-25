@@ -26,6 +26,21 @@ class Services extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
+    //services hub
+    public function ser_archived() 
+    {
+        $data['services'] = $this->Service_model->getServices();
+
+        $info = array(
+            'title' => 'Services',
+            'services' => $data['services'],
+        );
+
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/services/hub_archived');
+        $this->load->view('page/include/footer');
+    }
+
     //services - create service page
     public function ser_create() 
     {
@@ -41,11 +56,30 @@ class Services extends CI_Controller {
     //services - add service function
     public function ser_add() 
     {
+
+        switch ($this->input->post('srvDur')) {
+            case '120 Minutes':
+                $duration = 120;
+                break;
+            case '90 Minutes':
+                $duration = 90;
+                break;
+            case '60 Minutes':
+                $duration = 60;
+                break;
+            case '30 Minutes':
+                $duration = 30;
+                break;
+            default:
+                break;
+        }
+
         $data = array(
             'services_tbl_name' => $this->input->post('create_Customer'),
             'services_tbl_description' => $this->input->post('create_Description'),
             'services_tbl_price' => $this->input->post('create_Price'),
             'services_tbl_designation' => $this->input->post('optradio'),
+            'service_tbl_duration' => $duration
         );
 
         $this->Service_model->createService($data);
@@ -70,39 +104,59 @@ class Services extends CI_Controller {
     // services - update service function
     public function ser_update()
     {
+
+        switch ($this->input->post('srvDur')) {
+            case '120 Minutes':
+                $duration = 120;
+                break;
+            case '90 Minutes':
+                $duration = 90;
+                break;
+            case '60 Minutes':
+                $duration = 60;
+                break;
+            case '30 Minutes':
+                $duration = 30;
+                break;
+            default:
+                break;
+        }
+
         $data = array(
-            // 'services_tbl_id' => $this->uri->segment(3),
+            'services_tbl_id' => $this->uri->segment(3),
             'services_tbl_name' => $this->input->post('edit_Customer'),
             'services_tbl_description' => $this->input->post('edit_Description'),
-            'services_tbl_price' => $this->input->post('edit_Price')
+            'services_tbl_price' => $this->input->post('edit_Price'),
+            'services_tbl_designation' => $this->input->post('optradio'),
+            'service_tbl_duration' => $duration
         );
 
         $this->Service_model->updateService($data, $this->uri->segment(3));
         redirect('Services');
     }
 
-    // services - delete service page
-    public function ser_delete() // services - delete service
-    {   
-        $data = $this->Service_model->getService($this->uri->segment(3));
+    public function ser_update_archive()
+    {
 
-        if (!$data) {
-            // Show a user-friendly response if the service is not found
-            echo "<h1>Service Not Found</h1>";
-            echo "<p>Oops! The service you're looking for seems to have taken a break or doesn't exist anymore. Please check the list of services and try again.</p>";
-            return;
+        $service_id = $this->uri->segment(3);
+        
+        $data = $this->Service_model->getService($service_id);
+
+        if ($data->service_tbl_archived == 0) {
+            $archive = array(
+                'service_tbl_archived' => 1,
+            );
+        } else {
+            $archive = array(
+                'service_tbl_archived' => 0,
+            );
         }
 
-        $info = array(
-            'title' => 'Delete Service',
-            'services' => $data,
-        );
 
-        $this->load->view('page/include/header', $info);
-        $this->load->view('page/services/ser_delete');
-        $this->load->view('page/include/footer');        
+        $this->Service_model->updateService($archive, $this->uri->segment(3));
+
+        redirect($this->config->base_url("services"));
     }
-
 
     // services - remove service function
     public function ser_remove()
@@ -123,6 +177,30 @@ class Services extends CI_Controller {
         // Redirect with a success message
         $this->session->set_flashdata('success', "The service has been successfully removed.");
         redirect($this->config->base_url("services"));
+    }
+
+    //DEPRACATED FUNCTIONS AREA DOWN HERE
+
+    // services - delete service page - depracated! NO LONGER DELETE ANY SERVICES, JUST ARCHIVES
+    public function ser_delete() // services - delete service
+    {   
+        $data = $this->Service_model->getService($this->uri->segment(3));
+
+        if (!$data) {
+            // Show a user-friendly response if the service is not found
+            echo "<h1>Service Not Found</h1>";
+            echo "<p>Oops! The service you're looking for seems to have taken a break or doesn't exist anymore. Please check the list of services and try again.</p>";
+            return;
+        }
+
+        $info = array(
+            'title' => 'Delete Service',
+            'services' => $data,
+        );
+
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/services/ser_delete');
+        $this->load->view('page/include/footer');        
     }
 
 }

@@ -31,6 +31,7 @@ $route['acc_remove'] = 'Accounts/acc_remove';
 
 /* Services Page */
 $route['services'] = 'Services/index';
+$route['ser_archived'] = 'Services/ser_archived';
 $route['ser_create'] = 'Services/ser_create';
 $route['ser_edit'] = 'Services/ser_edit';
 $route['ser_delete'] = 'Services/ser_delete';

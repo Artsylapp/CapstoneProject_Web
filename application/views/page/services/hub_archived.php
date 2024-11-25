@@ -9,17 +9,9 @@
 			</div>
 
 			<div class="col-xs-4 col-sm-4 center-item">
-				<a href="<?php echo $this->config->base_url("ser_create")?>">
-					<button class="btn lg-bg menu-btn-m center-item ttsh" name="Create New Service">
-						<h3 class="">CREATE SERVICE</h3>
-					</button>
-				</a>
-			</div>
-
-			<div class="col-xs-4 col-sm-4 center-item">
-				<a href="<?php echo $this->config->base_url("ser_archived")?>">
-					<button class="btn yellow-bg menu-btn-m center-item ttsh" name="Check Archived Services">
-						<h4 class="">CHECK ARCHIVED SERVICE</h4>
+				<a href="<?php echo $this->config->base_url("services")?>">
+					<button class="btn lg-bg menu-btn-m center-item ttsh" name="Return To Services">
+						<h4 class="">BACK TO SERVICES</h4>
 					</button>
 				</a>
 			</div>
@@ -36,8 +28,7 @@
 						<th>Service Name</th>
 						<th>Description</th>
 						<th>Price</th>
-						<th>Edit</th>
-						<th>Delete</th>
+						<th></th>
 					</tr>
 					</thead>
 					<tbody>
@@ -51,7 +42,7 @@
 								$archived = $service->service_tbl_archived;
 							?>
 
-							<?php if($service->service_tbl_archived == 0) : ?>
+							<?php if($service->service_tbl_archived == 1) : ?>
 
 							<tr>
 								<td><?php echo $type?></td>
@@ -59,22 +50,14 @@
 								<td><?php echo $price?></td>
 								<td class="text-center">
 
-								<a href="<?php echo $this->config->base_url("services/ser_edit/$service->services_tbl_id")?>">
+								<a href="<?php echo $this->config->base_url("services/ser_update_archive/$service->services_tbl_id")?>">
 									<button class="btn yellow-bg menu-btn-sm ttsh" name="<?php echo "EDIT: $type"?>" style="background-color: #f6c23e;">
-										<h4>EDIT</h4>
+										<h4>UNARCHIVE</h4>
 									</button>
 								</a>
 
 								</td>
-								<td class="text-center">
 
-								<a href="<?php echo $this->config->base_url("services/ser_delete/$service->services_tbl_id")?>">
-									<button class="btn lr-bg menu-btn-sm ttsh" name="<?php echo "DELETE: $type"?>">
-										<h4>DELETE</h4>
-									</button>
-								</a>
-
-								</td>
 							</tr>
 							
 							<?php endif; ?>

@@ -53,6 +53,18 @@
 					</div>
 				</div>
 
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="SrvDur">Service Duration:</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="SrvDur" name="srvDur">
+							<option>120 Minutes</option>
+							<option>90 Minutes</option>
+							<option>60 Minutes</option>
+							<option>30 Minutes</option>
+						</select>
+					</div>
+				</div>
+
 				<div class="col-sm-offset-9 col-sm-3" style="margin-top:25px;">
 					<div class="col-sm-12">
 						<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Create Service">
