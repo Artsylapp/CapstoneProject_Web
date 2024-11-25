@@ -43,6 +43,28 @@
 					</div>
 				</div>
 
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="SrvDsg">Designation:</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="SrvDsg" name="optradio">
+							<option <?php echo ($services->services_tbl_designation == 'Bed') ? 'selected' : ''; ?>>Bed</option>
+							<option <?php echo ($services->services_tbl_designation == 'Chair') ? 'selected' : ''; ?>>Chair</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="SrvDur">Service Duration:</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="SrvDur" name="srvDur">
+							<option <?php echo ($services->service_tbl_duration == 120) ? 'selected' : ''; ?>>120 Minutes</option>
+							<option <?php echo ($services->service_tbl_duration == 90) ? 'selected' : ''; ?>>90 Minutes</option>
+							<option <?php echo ($services->service_tbl_duration == 60) ? 'selected' : ''; ?>>60 Minutes</option>
+							<option <?php echo ($services->service_tbl_duration == 30) ? 'selected' : ''; ?>>30 Minutes</option>
+						</select>
+					</div>
+				</div>
+
 				<div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
 					<div class="col-sm-12">
 						<button class="btn lg-bg menu-btn-m ttsh" name="Confirm Edit, <?php echo $services->services_tbl_name ?>">

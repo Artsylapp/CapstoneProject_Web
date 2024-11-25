@@ -26,7 +26,7 @@
 				$price = $services->services_tbl_price;
 			?>
 
-			<form class="form-horizontal" action="<?php echo $this->config->base_url("services/ser_remove/" . $this->uri->segment(3))?>" method="POST">
+			<form class="form-horizontal" action="<?php echo $this->config->base_url("services/ser_update_archive/" . $this->uri->segment(3))?>" method="POST">
 				<div class="form-group">
 
 					<div class="col-sm-offset-1 col-sm-6" style="display: flex;justify-content: left; padding-top: 1em;">
