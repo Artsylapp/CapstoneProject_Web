@@ -99,7 +99,7 @@ class Orders extends CI_Controller {
 
         if ($booking) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_services, true);
+            $booking_details = json_decode($booking->orders_tbl_service, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];
@@ -174,7 +174,7 @@ class Orders extends CI_Controller {
 
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_services, true);
+            $booking_details = json_decode($booking[0]->orders_tbl_service, true);
     
             $data = array(
                 'id' => $id,
@@ -200,7 +200,7 @@ class Orders extends CI_Controller {
     {
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_services, true);
+            $booking_details = json_decode($booking[0]->orders_tbl_service, true);
     
             $data = array(
                 'id' => $id,
@@ -247,7 +247,7 @@ class Orders extends CI_Controller {
         // checking if the booking is not empty
         if ($booking) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_services, true);
+            $booking_details = json_decode($booking->orders_tbl_service, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];
