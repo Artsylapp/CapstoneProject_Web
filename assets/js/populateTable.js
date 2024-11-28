@@ -136,6 +136,24 @@ $(document).ready(function() {
         }
     }
 
+    $('#CusName').blur(function() {
+        let name = $(this).val();
+        localStorage.setItem('customer_name', name);
+        console.log('Customer name saved:', name);
+    });
+
+    $('#CusCon').blur(function() {
+        let name = $(this).val();
+        localStorage.setItem('customer_name', name);
+        console.log('Customer name saved:', name);
+    });
+
+    $('#CusName').blur(function() {
+        let name = $(this).val();
+        localStorage.setItem('customer_name', name);
+        console.log('Customer name saved:', name);
+    });
+
     $('.add-service').click(function() {
         let serviceName = $(this).data('service-name');
         let servicePrice = parseFloat($(this).data('service-price'));

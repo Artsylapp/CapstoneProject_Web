@@ -18,7 +18,7 @@
 
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
-                <form class="form-horizontal" action="<?php echo $this->config->base_url("orders_placement") ?>" method="POST">
+                <form>
                     
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="CusName">Customer Name:</label>
@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="sel_gender">Gender Preferred:</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="sel_gender" name="optradio">
+                            <select class="form-control" id="sel_gender" name="optradio" value="SELECT">
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
