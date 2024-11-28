@@ -35,6 +35,9 @@
     console.log(sessionData);
     sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
     console.log(sessionData);
+    sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('customer_information')) : {};
+    console.log(sessionData);
+
 </script>
 
 <div class="col-xs-3 col-sm-3" style="background-color:hsl(218, 53%, 65%, 0.4); margin: 0px; height:100vh;">

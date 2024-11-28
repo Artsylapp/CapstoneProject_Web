@@ -201,7 +201,7 @@ $(document).ready(function() {
             };
         
             // Save customer information to localStorage
-            localStorage.setItem('customer', JSON.stringify(customer));
+            localStorage.setItem('customer_information', JSON.stringify(customer));
         
             // Redirect to the next page
             let redirectUrl = $('#continue-button').data('base-url');
