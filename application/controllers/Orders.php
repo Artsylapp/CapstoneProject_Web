@@ -152,7 +152,7 @@ class Orders extends CI_Controller {
                 // All required fields are valid, proceed to save
                 if ($this->Booking_model->saveBooking($data)) {
                     echo json_encode(['status' => 'success']);
-                    // log_message('info', 'Booking saved successfully: ' . json_encode($data)); // Uncomment for logging
+                    log_message('info', 'Booking saved successfully: ' . json_encode($data)); // Uncomment for logging
                 } else {
                     // Handle model save failure
                     echo json_encode(['status' => 'error', 'message' => 'Failed to save booking']);

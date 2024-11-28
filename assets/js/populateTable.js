@@ -5,9 +5,9 @@ $(document).ready(function() {
     let customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
 
     if (window.location.pathname.includes('orders_create')) {
-        filterServicesByType();
+        //USED TO BE FILTERING, PLEASE WAIT
     }else if (window.location.pathname.includes('orders_placement')){
-        filterLocationByType();
+        //USED TO BE FILTERING, PLEASE WAIT
     }else{
         console.log("Current page: " + window.location.pathname.toString());
     }
@@ -145,6 +145,7 @@ $(document).ready(function() {
     $('.remove-location').click(function() {
         let locationName = $(this).data('location-name');
         delete locations[locationName];
+        delete locations[locationType];
         updateTable();
     });
 

@@ -13,10 +13,11 @@ class Booking_model extends CI_Model {
         $bookingData = [
             'orders_tbl_services' => json_encode([
                 'services' => $data['services'],
-                'masseurs' => $data['masseurs'],
                 'locations' => $data['locations'],
                 'orders_tbl_cost' => $data['totalCost'],
             ]),
+            'orders_tbl_masseur', => json_encode('masseur' => [$data['masseurs']]),
+            //  'orders_tbl_customer', => json_encode([$data['customer']]),
             'orders_tbl_status' => "ON-GOING",
         ];
         
