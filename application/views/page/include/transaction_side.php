@@ -27,23 +27,6 @@
             break;
     }
 
-    $(document).ready(function() {
-        if (window.location.pathname === '/booking/create') {
-            filterServicesByType();
-
-            for (let workstationName in locations) {
-            if (workstationName.hasOwnProperty(workstationName)) {
-                log.console(locations[workstationName].type);
-            }
-            else
-            {
-                log.console("Nope");
-            }
-            
-            }
-        }
-    });
-
     console.log(redirectUrl);
 
     sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};

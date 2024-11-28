@@ -90,12 +90,10 @@ $(document).ready(function() {
                 console.error('Response:', xhr.responseText);
             }
         });
-    }
-    
-        
+    }   
 
     function getCurrentStationType() {
-        for (let workstationName in locations) {
+        for (let workstationName in lotions) {
             if (workstationName.hasOwnProperty(workstationName)) {
                 return locations[workstationName].type;
             }
@@ -202,4 +200,19 @@ $(document).ready(function() {
     });
 
     updateTable();
+
+    if (window.location.pathname === '/booking/create') {
+        filterServicesByType();
+
+        for (let workstationName in locations) {
+        if (workstationName.hasOwnProperty(workstationName)) {
+            log.console(locations[workstationName].type);
+        }
+        else
+        {
+            log.console("Nope");
+        }
+        
+        }
+    }
 });
