@@ -29,6 +29,18 @@
 
     if (window.location.pathname === 'create') {
         filterServicesByType();
+
+        for (let workstationName in locations) {
+            if (workstationName.hasOwnProperty(workstationName)) {
+                log.console(locations[workstationName].type);
+            }
+            else
+            {
+                log.console("Nope");
+            }
+            
+        }
+
     }
 
     console.log(redirectUrl);

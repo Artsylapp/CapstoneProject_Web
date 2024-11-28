@@ -95,7 +95,7 @@ $(document).ready(function() {
         
 
     function getCurrentStationType() {
-        for (let workstationName in loactions) {
+        for (let workstationName in locations) {
             if (workstationName.hasOwnProperty(workstationName)) {
                 return locations[workstationName].type;
             }
