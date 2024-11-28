@@ -56,18 +56,20 @@
 <script>
 
     document.getElementById('CusName').addEventListener('blur', function() {
-        console.log('You left the Customer Name field.');
-        // Additional logic goes here
+        var Customer_Name = document.getElementById('CusName').value;
+        console.log('Saved', Customer_Name, "inside localStorage");
     });
 
     document.getElementById('CusCon').addEventListener('blur', function() {
-        console.log('You left the Customer Contact field.');
-        // Additional logic goes here
+        var Customer_Con = document.getElementById('CusCon').value;
+        console.log('Saved', Customer_Con, "inside localStorage");
+        
     });
 
     document.getElementById('sel_gender').addEventListener('change', function() {
-        console.log('You selected a new input.');
-        // Additional logic goes here
+        var Customer_P_Gender = document.getElementById('sel_gender').value;
+        console.log('Saved', Customer_P_Gender, "inside localStorage");
+        
     });
 
 </script>
