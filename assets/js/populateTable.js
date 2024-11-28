@@ -202,10 +202,11 @@ $(document).ready(function() {
         
             // Save customer information to localStorage
             localStorage.setItem('customer_information', JSON.stringify(customer));
+            saveDataToLocalStorage();
         
             // Redirect to the next page
             let redirectUrl = $('#continue-button').data('base-url');
-            window.location.href = redirectUrl;
+            //window.location.href = redirectUrl;
         
         } else {
 
