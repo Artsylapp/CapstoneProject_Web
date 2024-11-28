@@ -1,3 +1,16 @@
+<?php 
+    $workplace_type = ''; 
+?>
+
+<script>
+    
+    var workplaceType = localStorage.getItem('assigned_locations');
+
+    <?php $workplaceType = "<script>document.write(workplaceType);</script>"; ?>
+
+</script>
+
+
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
 
@@ -30,21 +43,22 @@
                 </thead>
                 <tbody>
                     <?php foreach($services as $service): ?>
+                        <?php if($service->services_tbl_designation == ): ?>
                         <tr data-service-type="<?php echo $service->services_tbl_designation; ?>">
-                        <td><?php echo $service->services_tbl_name; ?></td>
-                        <td><?php echo $service->services_tbl_description; ?></td>
-                        <td>₱ <?php echo $service->services_tbl_price; ?></td>
-                        <td class="text-center">
-                            <button class="btn lg-bg menu-btn-sm ttsh add-service" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>" name="Add <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>">
-                                <h4>ADD</h4>
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <button class="btn lr-bg menu-btn-sm ttsh remove-service" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" name="Remove <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>">
-                                <h4>REMOVE</h4>
-                            </button>
-                        </td>
-                    </tr>
+                            <td><?php echo $service->services_tbl_name; ?></td>
+                            <td><?php echo $service->services_tbl_description; ?></td>
+                            <td>₱ <?php echo $service->services_tbl_price; ?></td>
+                            <td class="text-center">
+                                <button class="btn lg-bg menu-btn-sm ttsh add-service" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>" name="Add <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>">
+                                    <h4>ADD</h4>
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn lr-bg menu-btn-sm ttsh remove-service" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" name="Remove <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>">
+                                    <h4>REMOVE</h4>
+                                </button>
+                            </td>
+                        </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -52,3 +66,11 @@
         
     </div>
 </div>
+
+<script>
+
+    //SERVICES FILTERING SCRIPT
+    
+
+
+</script>

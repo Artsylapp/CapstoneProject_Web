@@ -92,49 +92,6 @@ $(document).ready(function() {
         });
     }   
 
-    function getCurrentStationType() {
-        for (let workstationName in lotions) {
-            if (workstationName.hasOwnProperty(workstationName)) {
-                return locations[workstationName].type;
-            }
-        }
-        return null;
-    }
-
-    function filterServicesByType() {
-        let currentType = getCurrentStationType();
-        if (currentType) {
-            $('#acc_table tbody tr').each(function() {
-                let serviceType = $(this).data('service-type');
-                if (serviceType !== currentType) {
-                    $(this).hide();
-                } else {
-                    $(this).show();
-                }
-            });
-            console.log("Type:" + currentType);
-        } else {
-            $('#acc_table tbody tr').show();
-        }
-    }
-
-    function filterLocationByType() {
-        let currentType = getCurrentServiceType();
-        if (currentType) {
-            $('#acc_table tbody tr').each(function() {
-                let locationType = $(this).data('location-type');
-                if (locationType !== currentType) {
-                    $(this).hide();
-                } else {
-                    $(this).show();
-                }
-            });
-            console.log("Type:" + currentType);
-        } else {
-            $('#acc_table tbody tr').show();
-        }
-    }
-
     $('.add-service').click(function() {
         let serviceName = $(this).data('service-name');
         let servicePrice = parseFloat($(this).data('service-price'));
@@ -178,8 +135,10 @@ $(document).ready(function() {
 
     $('.assign-location').click(function() {
         let locationName = $(this).data('location-name');
+        let locationType = $(this).data('location-type');
         locations = {}; // Clear current locations
         locations[locationName] = true;
+        locations[locationType] = true;
         updateTable();
     });
 
@@ -201,18 +160,4 @@ $(document).ready(function() {
 
     updateTable();
 
-    if (window.location.pathname === '/booking/create') {
-        filterServicesByType();
-
-        for (let workstationName in locations) {
-        if (workstationName.hasOwnProperty(workstationName)) {
-            log.console(locations[workstationName].type);
-        }
-        else
-        {
-            log.console("Nope");
-        }
-        
-        }
-    }
 });
