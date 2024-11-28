@@ -35,7 +35,7 @@
     console.log(sessionData);
     sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
     console.log(sessionData);
-    sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('customer_information')) : {};
+    sessionData = localStorage.getItem('customer_information') ? JSON.parse(localStorage.getItem('customer_information')) : {};
     console.log(sessionData);
 
 </script>
