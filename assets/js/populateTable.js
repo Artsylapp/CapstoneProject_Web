@@ -94,17 +94,17 @@ $(document).ready(function() {
     
         
 
-    function getCurrentServiceType() {
-        for (let serviceName in services) {
-            if (services.hasOwnProperty(serviceName)) {
-                return services[serviceName].type;
+    function getCurrentStationType() {
+        for (let workstationName in loactions) {
+            if (workstationName.hasOwnProperty(workstationName)) {
+                return locations[workstationName].type;
             }
         }
         return null;
     }
 
     function filterServicesByType() {
-        let currentType = getCurrentServiceType();
+        let currentType = getCurrentStationType();
         if (currentType) {
             $('#acc_table tbody tr').each(function() {
                 let serviceType = $(this).data('service-type');
