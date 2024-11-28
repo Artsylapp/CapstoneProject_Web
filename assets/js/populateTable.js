@@ -148,7 +148,6 @@ $(document).ready(function() {
             services[serviceName] = { price: servicePrice, amount: 1, type: serviceType };
         }
 
-        filterServicesByType();
         updateTable();
     });
 
