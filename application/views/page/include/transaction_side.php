@@ -2,8 +2,6 @@
 <script src="<?php echo base_url('assets/js/populateTable.js'); ?>"></script> 
 
 <script>
-    filterServicesByType();
-
     let baseUrl = "<?php echo base_url('orders/save_services'); ?>";
     var mode = "<?php echo($mode)?>";
     var redirectUrl = "";
@@ -27,6 +25,10 @@
             
         default:
             break;
+    }
+
+    if (window.location.pathname() === 'create') {
+        filterServicesByType();
     }
 
     console.log(redirectUrl);
