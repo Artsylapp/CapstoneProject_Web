@@ -43,7 +43,7 @@
                 </thead>
                 <tbody>
                     <?php foreach($services as $service): ?>
-                        <?php if($service->services_tbl_designation == ): ?>
+                        
                         <tr data-service-type="<?php echo $service->services_tbl_designation; ?>">
                             <td><?php echo $service->services_tbl_name; ?></td>
                             <td><?php echo $service->services_tbl_description; ?></td>
