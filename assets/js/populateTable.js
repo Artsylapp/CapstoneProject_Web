@@ -192,28 +192,8 @@ $(document).ready(function() {
     });
 
     $('#continue-button').click(function() {
-        if (window.location.pathname === '/orders_info') {
-
-            let customer = {
-                name: $('#CusName').val(),
-                contact: $('#CusCon').val(),
-                gender: $('#sel_gender').val()
-            };
-        
-            // Save customer information to localStorage
-            localStorage.setItem('customer_information', JSON.stringify(customer));
-            saveDataToLocalStorage();
-        
-            // Redirect to the next page
-            let redirectUrl = $('#continue-button').data('base-url');
-            //window.location.href = redirectUrl;
-        
-        } else {
-
-            let redirectUrl = $('#continue-button').data('base-url');
-            saveDataToLocalStorage();
-
-        };
+        let redirectUrl = $('#continue-button').data('base-url');
+        saveDataToLocalStorage();
     });
 
     $('#finalize-button').click(function() {
