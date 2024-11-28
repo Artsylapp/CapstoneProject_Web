@@ -67,9 +67,7 @@
 <script>
     $(document).ready(function() {
         $('#new-order-button').on('click', function() {
-            localStorage.removeItem('selected_services');
-            localStorage.removeItem('assigned_masseurs');
-            localStorage.removeItem('assigned_locations');
+            localStorage.clear();
         });
     });
 </script>
