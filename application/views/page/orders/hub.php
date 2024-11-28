@@ -28,7 +28,7 @@
                         </thead>
                         <tbody>
                             <?php foreach ($orders as $order): ?>
-                                <?php if ($order->orders_tbl_status == ""): ?>
+                                <?php if ($order->orders_tbl_status == NULL): ?>
                                     <tr>
                                         <td><?php echo $order->orders_tbl_id; ?></td>
                                         <td><?php echo $order->orders_tbl_status; ?></td>
