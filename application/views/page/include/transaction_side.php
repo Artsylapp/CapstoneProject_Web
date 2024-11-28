@@ -27,7 +27,7 @@
             break;
     }
 
-    if (window.location.pathname === 'create') {
+    if (window.location.pathname === '/create') {
         filterServicesByType();
 
         for (let workstationName in locations) {
