@@ -18,27 +18,7 @@
 
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
-
-            <script>
-
-                document.getElementById('CusName').addEventListener('blur', function() {
-                    console.log('You left the Customer Name field.');
-                    // Additional logic goes here
-                });
-
-                document.getElementById('CusCon').addEventListener('blur', function() {
-                    console.log('You left the Customer Contact field.');
-                    // Additional logic goes here
-                });
-
-                document.getElementById('sel_gender').addEventListener('change', function() {
-                    console.log('You selected a new input.');
-                    // Additional logic goes here
-                });
-
-            </script>
-
-                <form>
+                <form class="form-horizontal">
                     
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="CusName">Customer Name:</label>
@@ -59,7 +39,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="sel_gender">Gender Preferred:</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="sel_gender" name="optradio" value="SELECT">
+                            <select class="form-control" id="sel_gender" name="optradio">
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
