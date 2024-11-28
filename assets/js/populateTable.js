@@ -63,6 +63,7 @@ $(document).ready(function() {
         localStorage.setItem('selected_services', JSON.stringify(services));
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
+        localStorage.setItem('customer_information', JSON.stringify(customer));
         window.location.href = redirectUrl;
     }
 
@@ -191,8 +192,27 @@ $(document).ready(function() {
     });
 
     $('#continue-button').click(function() {
-        let redirectUrl = $('#continue-button').data('base-url');
-        saveDataToLocalStorage();
+        if (window.location.pathname.includes('orders_info')) {
+
+            let customer = {
+                name: $('#CusName').val(),
+                contact: $('#CusCon').val(),
+                gender: $('#sel_gender').val()
+            };
+        
+            // Save customer information to localStorage
+            localStorage.setItem('customer', JSON.stringify(customer));
+        
+            // Redirect to the next page
+            let redirectUrl = $('#continue-button').data('base-url');
+            window.location.href = redirectUrl;
+        
+        } else {
+
+            let redirectUrl = $('#continue-button').data('base-url');
+            saveDataToLocalStorage();
+
+        };
     });
 
     $('#finalize-button').click(function() {

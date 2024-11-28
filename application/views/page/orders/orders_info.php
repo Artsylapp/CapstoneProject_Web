@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="sel_gender">Gender Preffered:</label>
+                        <label class="control-label col-sm-2" for="sel_gender">Gender Preferred:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="sel_gender" name="optradio">
                                 <option>Male</option>
