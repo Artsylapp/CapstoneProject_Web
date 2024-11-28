@@ -55,6 +55,8 @@
 
 <script>
 
+    saveCustomerData(null, null, 'Male');
+
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
         saveCustomerData(Customer_Name, null, null);
