@@ -65,7 +65,8 @@ $(document).ready(function() {
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
         localStorage.setItem('customer_information', JSON.stringify(Customer_Name, Customer_Contact, Customer_P_Gender));
-        window.location.href = redirectUrl;
+        log.console(Customer_Name, Customer_Contact, Customer_P_Gender)
+        //window.location.href = redirectUrl;
     }
 
     function saveDataToServer() {
