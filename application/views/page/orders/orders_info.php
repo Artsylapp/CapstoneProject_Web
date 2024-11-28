@@ -18,6 +18,26 @@
 
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
+
+            <script>
+
+                document.getElementById('CusName').addEventListener('blur', function() {
+                    console.log('You left the Customer Name field.');
+                    // Additional logic goes here
+                });
+
+                document.getElementById('CusCon').addEventListener('blur', function() {
+                    console.log('You left the Customer Contact field.');
+                    // Additional logic goes here
+                });
+
+                document.getElementById('sel_gender').addEventListener('change', function() {
+                    console.log('You selected a new input.');
+                    // Additional logic goes here
+                });
+
+            </script>
+
                 <form>
                     
                     <div class="form-group">
