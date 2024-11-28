@@ -18,13 +18,13 @@
 
         <div class="row mt-s center-item">
             <div class="col-sm-12 col-xs-12 box-white">
-                <form class="form-horizontal" action="<?php echo $this->config->base_url("acc_add") ?>" method="POST">
+                <form class="form-horizontal" action="<?php echo $this->config->base_url("orders_placement") ?>" method="POST">
                     
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="CusName">Customer Name:</label>
 
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="CusName" placeholder="Customer Name" name="set_name" required>
+                            <input type="text" class="form-control" id="CusName" placeholder="Customer Name" name="CusName" required>
                         </div>
                     </div>
 
@@ -32,7 +32,7 @@
                         <label class="control-label col-sm-2" for="CusCon">Contact Number:</label>
 
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="CusCon" placeholder="Customer Mobile Number" name="set_contact" required>
+                            <input type="text" class="form-control" id="CusCon" placeholder="Customer Mobile Number" name="CusCon" required>
                         </div>
                     </div>
 
