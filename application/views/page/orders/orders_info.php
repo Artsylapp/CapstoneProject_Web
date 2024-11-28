@@ -57,17 +57,29 @@
 
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
-        localStorage.setItem('Customer_Name', Customer_Name);
+        saveCustomerData(Customer_Name, null, null);
     });
 
     document.getElementById('CusCon').addEventListener('blur', function() {
         var Customer_Contact = document.getElementById('CusCon').value;
-        localStorage.setItem('Customer_Contact', Customer_Contact);
+        saveCustomerData(null, Customer_Contact, null);
     });
 
     document.getElementById('sel_gender').addEventListener('change', function() {
         var Customer_P_Gender = document.getElementById('sel_gender').value;
-        localStorage.setItem('Customer_P_Gender', Customer_P_Gender);
+        saveCustomerData(null, null, Customer_P_Gender);
     });
+
+    function saveCustomerData(Customer_Name, Customer_Con, Customer_P_Gender) {
+    var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
+
+    if (Customer_Name) customerData.name = Customer_Name;
+    if (Customer_Con) customerData.contact = Customer_Con;
+    if (Customer_P_Gender) customerData.gender = Customer_P_Gender;
+
+    localStorage.setItem('customer_information', JSON.stringify(customerData));
+
+    console.log('Saved customer data:', customerData);
+}
 
 </script>

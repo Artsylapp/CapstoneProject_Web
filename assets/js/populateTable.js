@@ -64,7 +64,7 @@ $(document).ready(function() {
         localStorage.setItem('selected_services', JSON.stringify(services));
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
-        localStorage.setItem('customer_information', JSON.stringify(Customer_Name, Customer_Contact, Customer_P_Gender));
+        localStorage.setItem('customer_information', JSON.stringify(customer_data));
         window.location.href = redirectUrl;
     }
 
