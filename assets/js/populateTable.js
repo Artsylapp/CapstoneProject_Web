@@ -192,7 +192,7 @@ $(document).ready(function() {
     });
 
     $('#continue-button').click(function() {
-        if (window.location.pathname.includes('orders_info')) {
+        if (window.location.pathname === '/orders_info') {
 
             let customer = {
                 name: $('#CusName').val(),
