@@ -6,7 +6,7 @@
                 <h3 class="black-txt" style="margin-top: 0px;">Manage Bookings - <?php echo $this->session->userdata('comp_Name') ?></h3>
             </div>
             <div class="col-xs-4 col-sm-4 center-item">
-                <a href="<?php echo $this->config->base_url("booking/create") ?>" id="new-order-button">
+                <a href="<?php echo $this->config->base_url("orders_info") ?>" id="new-order-button">
                     <button class="btn lg-bg menu-btn-m center-item ttsh" name="CREATE NEW BOOKING">
                         <h3 class="black-txt">NEW BOOKING</h3>
                     </button>

@@ -35,6 +35,19 @@ class Orders extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
+    public function orders_info()
+    {
+        $data['services'] = $this->Service_model->getServices();
+        $info = array(
+            'title' => 'Select Services',
+            'mode' => 'information',
+            'services' => $data['services'],
+        );
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/include/transaction_side', $info);
+        $this->load->view('page/orders/orders_info');
+    }
+
     // Orders - create order
     public function orders_create()
     {
@@ -86,7 +99,7 @@ class Orders extends CI_Controller {
 
         if ($booking) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_details, true);
+            $booking_details = json_decode($booking->orders_tbl_services, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];
@@ -161,7 +174,7 @@ class Orders extends CI_Controller {
 
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+            $booking_details = json_decode($booking[0]->orders_tbl_services, true);
     
             $data = array(
                 'id' => $id,
@@ -187,7 +200,7 @@ class Orders extends CI_Controller {
     {
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+            $booking_details = json_decode($booking[0]->orders_tbl_services, true);
     
             $data = array(
                 'id' => $id,
@@ -234,7 +247,7 @@ class Orders extends CI_Controller {
         // checking if the booking is not empty
         if ($booking) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_details, true);
+            $booking_details = json_decode($booking->orders_tbl_services, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];

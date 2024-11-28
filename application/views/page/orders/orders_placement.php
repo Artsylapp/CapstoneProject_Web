@@ -10,7 +10,7 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" 
                     name="Proceed to finalizing booking" 
-                    data-base-url="<?php echo $this->config->base_url('booking/finalize');?>">
+                    data-base-url="<?php echo $this->config->base_url('orders_assign');?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>

@@ -8,19 +8,19 @@
 
     switch (mode) {
         case "create":
-            redirectUrl = "<?php echo base_url('orders_assign'); ?>";
-            break;
-
-        case "assign":
-            redirectUrl = "<?php echo base_url('orders_placement'); ?>";
-            break;
-
-        case "place":
             redirectUrl = "<?php echo base_url('orders_finalize'); ?>";
             break;
 
-        case "finalize":
-            redirectUrl = "<?php echo base_url('save_booking'); ?>";
+        case "assign":
+            redirectUrl = "<?php echo base_url('booking/create'); ?>";
+            break;
+
+        case "place":
+            redirectUrl = "<?php echo base_url('orders_assign'); ?>";
+            break;
+
+        case "information":
+            redirectUrl = "<?php echo base_url('orders_placement'); ?>";
             break;
             
         default:
