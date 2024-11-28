@@ -27,10 +27,11 @@
             break;
     }
 
-    if (window.location.pathname === '/booking/create') {
-        filterServicesByType();
+    $(document).ready(function() {
+        if (window.location.pathname === '/booking/create') {
+            filterServicesByType();
 
-        for (let workstationName in locations) {
+            for (let workstationName in locations) {
             if (workstationName.hasOwnProperty(workstationName)) {
                 log.console(locations[workstationName].type);
             }
@@ -39,9 +40,9 @@
                 log.console("Nope");
             }
             
+            }
         }
-
-    }
+    });
 
     console.log(redirectUrl);
 
