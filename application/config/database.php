@@ -77,31 +77,31 @@ $db['default'] = array(
 	'dsn'	=> '',
 
 	// if using local hosting
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'viammdb',
-	'dbdriver' => 'mysqli',
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'viammdb',
+	// 'dbdriver' => 'mysqli',
 
 	// if using live hosting
-	// 'hostname' => 'localhost',
-	// 'username' => 'u265772247_viammDB',
-	// 'password' => 'n7JS8r88P?',
-	// 'database' => 'u265772247_viammdb',
+	'hostname' => 'localhost',
+	'username' => 'u265772247_viammDB',
+	'password' => 'n7JS8r88P?',
+	'database' => 'u265772247_viammdb',
 
-	// 'dbdriver' => 'mysqli', // Using MySQL Improved driver
-	// 'dbprefix' => '',
-	// 'pconnect' => FALSE,
-	// 'db_debug' => (ENVIRONMENT !== 'production'), // Debugging enabled for non-production environments
-	// 'cache_on' => FALSE,
-	// 'cachedir' => '',
-	// 'char_set' => 'utf8',
-	// 'dbcollat' => 'utf8_general_ci',
-	// 'swap_pre' => '',
-	// 'encrypt' => FALSE,
-	// 'compress' => FALSE,
-	// 'stricton' => FALSE,
-	// 'failover' => array(),
-	// 'save_queries' => TRUE // Saves queries for debugging purposes
+	'dbdriver' => 'mysqli', // Using MySQL Improved driver
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'), // Debugging enabled for non-production environments
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE // Saves queries for debugging purposes
 );
 
