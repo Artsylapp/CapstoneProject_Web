@@ -73,15 +73,16 @@
     });
 
     function saveCustomerData(Customer_Name, Customer_Con, Customer_P_Gender) {
-    var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
+        var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
 
-    if (Customer_Name) customerData.name = Customer_Name;
-    if (Customer_Con) customerData.contact = Customer_Con;
-    if (Customer_P_Gender) customerData.gender = Customer_P_Gender;
+        if (Customer_Name) customerData.name = Customer_Name;
+        if (Customer_Con) customerData.contact = Customer_Con;
+        if (Customer_P_Gender) customerData.gender = Customer_P_Gender;
 
-    localStorage.setItem('customer_information', JSON.stringify(customerData));
+        localStorage.setItem('customer_information', JSON.stringify(customerData));
 
-    console.log('Saved customer data:', customerData);
-}
+        console.log('Saved customer data:', customerData);
+    }
 
+    
 </script>
