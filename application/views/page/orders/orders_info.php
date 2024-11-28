@@ -57,19 +57,17 @@
 
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
-        console.log('Saved', Customer_Name, "inside localStorage");
+        localStorage.setItem('Customer_Name', Customer_Name);
     });
 
     document.getElementById('CusCon').addEventListener('blur', function() {
-        var Customer_Con = document.getElementById('CusCon').value;
-        console.log('Saved', Customer_Con, "inside localStorage");
-        
+        var Customer_Contact = document.getElementById('CusCon').value;
+        localStorage.setItem('Customer_Contact', Customer_Contact);
     });
 
     document.getElementById('sel_gender').addEventListener('change', function() {
         var Customer_P_Gender = document.getElementById('sel_gender').value;
-        console.log('Saved', Customer_P_Gender, "inside localStorage");
-        
+        localStorage.setItem('Customer_P_Gender', Customer_P_Gender);
     });
 
 </script>

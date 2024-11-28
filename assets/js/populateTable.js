@@ -2,6 +2,7 @@ $(document).ready(function() {
     let services = JSON.parse(localStorage.getItem('selected_services')) || {};
     let masseurs = JSON.parse(localStorage.getItem('assigned_masseurs')) || {};
     let locations = JSON.parse(localStorage.getItem('assigned_locations')) || {};
+    let customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
 
     if (window.location.pathname.includes('orders_create')) {
         filterServicesByType();
@@ -63,7 +64,7 @@ $(document).ready(function() {
         localStorage.setItem('selected_services', JSON.stringify(services));
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
-        localStorage.setItem('customer_information', JSON.stringify(customer));
+        localStorage.setItem('customer_information', JSON.stringify(Customer_Name, Customer_Contact, Customer_P_Gender));
         window.location.href = redirectUrl;
     }
 
