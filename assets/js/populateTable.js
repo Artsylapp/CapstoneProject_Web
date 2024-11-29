@@ -5,9 +5,9 @@ $(document).ready(function() {
     let customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
 
     if (window.location.pathname.includes('orders_create')) {
-        //USED TO BE FILTERING, PLEASE WAIT
+        console.log("Current page: " + window.location.pathname.toString());
     }else if (window.location.pathname.includes('orders_placement')){
-        //USED TO BE FILTERING, PLEASE WAIT
+        console.log("Current page: " + window.location.pathname.toString());
     }else{
         console.log("Current page: " + window.location.pathname.toString());
     }
