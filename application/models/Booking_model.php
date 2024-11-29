@@ -17,7 +17,7 @@ class Booking_model extends CI_Model {
                 'orders_tbl_cost' => $data['totalCost'],
             ]),
             'orders_tbl_masseur' => $data['masseurs'],
-            //  'orders_tbl_customer', => json_encode([$data['customer']]),
+            'orders_tbl_customer', => json_encode([$data['customer']]),
             'orders_tbl_status' => "ON-GOING",
         ];
         
