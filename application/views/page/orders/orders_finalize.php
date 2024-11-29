@@ -27,14 +27,17 @@
             break;
     }
 
-    console.log("Redirected URL: " + redirectUrl);
+    console.log(redirectUrl);
 
-    let sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
-    console.log("Session Data: " + sessionData);
+    sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
+    console.log(sessionData);
     sessionData = localStorage.getItem('assigned_masseurs') ? JSON.parse(localStorage.getItem('assigned_masseurs')) : {};
-    console.log("Session Data: " + sessionData);
+    console.log(sessionData);
     sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
-    console.log("Session Data: " + sessionData);
+    console.log(sessionData);
+    sessionData = localStorage.getItem('customer_information') ? JSON.parse(localStorage.getItem('customer_information')) : {};
+    console.log(sessionData);
+    
 </script>
 
 
