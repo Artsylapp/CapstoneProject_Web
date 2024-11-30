@@ -30,11 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- JsPDF library -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script>
-
-    <!-- JsPDF AutoTable -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script> -->
 
     <!-- Title header -->
     <title>VIAMM | <?php echo $title; ?></title>

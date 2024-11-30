@@ -86,7 +86,7 @@ class Orders extends CI_Controller {
 
         if ($booking) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_details, true);
+            $booking_details = json_decode($booking->orders_tbl_service, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];
@@ -161,7 +161,7 @@ class Orders extends CI_Controller {
 
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+            $booking_details = json_decode($booking[0]->orders_tbl_service, true);
     
             $data = array(
                 'id' => $id,
@@ -187,7 +187,7 @@ class Orders extends CI_Controller {
     {
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+            $booking_details = json_decode($booking[0]->orders_tbl_service, true);
     
             $data = array(
                 'id' => $id,
@@ -222,38 +222,51 @@ class Orders extends CI_Controller {
     public function orders_view() // Orders - delete order
     {
 
-        $data['orders'] = $this->Order_model->getOrders();
-        $orders = $data['orders'];
+        // Get all orders
+        // $data['orders'] = $this->Order_model->getOrders();
+        // $orders = $data['orders'];
 
         // Get the order details based on the ID
-        $data = $this->Order_model->getOrder($this->uri->segment(3));
+        $results = $this->Order_model->getOrder($this->uri->segment(3));
 
         // Ensure $data is not empty and get the first element
-        $booking = !empty($data) ? $data[0] : null;
+        $bookingdata = !empty($results) ? $results[0] : null;
+
+
 
         // checking if the booking is not empty
-        if ($booking) {
+        if ($bookingdata) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_details, true);
+            $booking_details = json_decode($bookingdata->orders_tbl_service, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];
             $masseurs = isset($booking_details['masseurs']) ? $booking_details['masseurs'] : [];
             $locations = isset($booking_details['locations']) ? $booking_details['locations'] : [];
-            $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : 'N/A';
+            $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : '0';
+            // $price = isset($order_details['price']) ? $order_details['price'] : 'N/A';
+            // $amount = isset($order_details['amount']) ? $order_details['amount'] : 'N/A';
+            // $type = isset($order_details['type']) ? $order_details['type'] : 'N/A';
+            
         } else {
             $services = $masseurs = $locations = [];
-            $totalCost = 'N/A';
+            $totalCost = '0';
         }
 
         $info = array(
             'title' => 'Booking Info',
-            'booking' => $booking, // Pass the single object
+            // 'bookinginfo' => $bookingdata, // Pass the single object
+            'bookingdetails' => $booking_details,
+            'id' => $bookingdata->orders_tbl_id,
+            'status' => $bookingdata->orders_tbl_status,
+            'paid_amount' => $bookingdata->orders_tbl_paid_amount,
             'services' => $services,
             'masseurs' => $masseurs,
             'locations' => $locations,
             'totalCost' => $totalCost,
-            'orders' => $orders,
+            // 'price' => $price,
+            // 'amount' => $amount,
+            // 'type' => $type,
         );
 
         $this->load->view('page/include/header', $info);
