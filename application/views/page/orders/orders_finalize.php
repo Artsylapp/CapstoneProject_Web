@@ -54,8 +54,9 @@
         <div class="col-xs-4 col-sm-4"></div>
 
             <div class="col-xs-4 col-sm-4 center-item">
+                <!-- populatetable.js -->
                 <button id="finalize-button" class="btn lg-bg menu-btn-m center-item ttsh" 
-                    name="Proceed complete booking" 
+                    name="Proceed to complete booking" 
                     data-base-url="<?php echo base_url('orders/save_booking'); ?>" 
                     data-redirect-url="<?php echo base_url('orders'); ?>">
                     <h3 class="black-txt">COMPLETE BOOK</h3>

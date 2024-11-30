@@ -11,7 +11,7 @@ class Booking_model extends CI_Model {
     
         // Prepare data for passing to database
         $bookingData = [
-            'orders_tbl_services' => json_encode([
+            'orders_tbl_service' => json_encode([
                 'services' => $data['services'],
                 'locations' => $data['locations'],
                 'orders_tbl_cost' => $data['totalCost'],

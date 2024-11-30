@@ -77,14 +77,17 @@ class ApiOrder extends RestController
             
         }
 
-        // Prepare OrderResponse object
-        $orderResponse = [
-            'error' => false,
-            'message' => 'Orders retrieved successfully',
-            'orders' => $parsedOrders
-        ];
+        echo '<pre>';
+        print_r($parsedOrders);
 
-        $this->response($orderResponse, 200); // Send success response with HTTP status code 200
+        // Prepare OrderResponse object
+        // $orderResponse = [
+        //     'error' => false,
+        //     'message' => 'Orders retrieved successfully',
+        //     'orders' => $parsedOrders
+        // ];
+
+        // $this->response($orderResponse, 200); // Send success response with HTTP status code 200
     }
 
 
