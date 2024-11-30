@@ -35,6 +35,19 @@ class Orders extends CI_Controller {
         $this->load->view('page/include/footer');
     }
 
+    public function orders_info()
+    {
+        $data['services'] = $this->Service_model->getServices();
+        $info = array(
+            'title' => 'Select Services',
+            'mode' => 'information',
+            'services' => $data['services'],
+        );
+        $this->load->view('page/include/header', $info);
+        $this->load->view('page/include/transaction_side', $info);
+        $this->load->view('page/orders/orders_info');
+    }
+
     // Orders - create order
     public function orders_create()
     {
@@ -139,7 +152,7 @@ class Orders extends CI_Controller {
                 // All required fields are valid, proceed to save
                 if ($this->Booking_model->saveBooking($data)) {
                     echo json_encode(['status' => 'success']);
-                    // log_message('info', 'Booking saved successfully: ' . json_encode($data)); // Uncomment for logging
+                    log_message('info', 'Booking saved successfully: ' . json_encode($data)); // Uncomment for logging
                 } else {
                     // Handle model save failure
                     echo json_encode(['status' => 'error', 'message' => 'Failed to save booking']);

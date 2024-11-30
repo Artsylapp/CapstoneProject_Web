@@ -56,6 +56,7 @@ $route['orders_placement'] = 'Orders/orders_placement';  //redirects to page/ord
 
 // $route['booking/finalize'] = 'Orders/orders_finalize';
 $route['orders_finalize'] = 'Orders/orders_finalize';  //redirects to page/orders/orders_finalize
+$route['orders_info'] = 'Orders/orders_info';  //redirects to page/orders/orders_info
 
 
 $route['booking/save'] = 'Orders/save_booking';

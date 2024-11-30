@@ -2,11 +2,12 @@ $(document).ready(function() {
     let services = JSON.parse(localStorage.getItem('selected_services')) || {};
     let masseurs = JSON.parse(localStorage.getItem('assigned_masseurs')) || {};
     let locations = JSON.parse(localStorage.getItem('assigned_locations')) || {};
+    let customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
 
     if (window.location.pathname.includes('orders_create')) {
-        filterServicesByType();
+        console.log("Current page: " + window.location.pathname.toString());
     }else if (window.location.pathname.includes('orders_placement')){
-        filterLocationByType();
+        console.log("Current page: " + window.location.pathname.toString());
     }else{
         console.log("Current page: " + window.location.pathname.toString());
     }
@@ -63,6 +64,7 @@ $(document).ready(function() {
         localStorage.setItem('selected_services', JSON.stringify(services));
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
+        localStorage.setItem('customer_information', JSON.stringify(customer_information));
         window.location.href = redirectUrl;
     }
 
@@ -88,52 +90,7 @@ $(document).ready(function() {
                 console.error('Response:', xhr.responseText);
             }
         });
-    }
-    
-        
-
-    function getCurrentServiceType() {
-        for (let serviceName in services) {
-            if (services.hasOwnProperty(serviceName)) {
-                return services[serviceName].type;
-            }
-        }
-        return null;
-    }
-
-    function filterServicesByType() {
-        let currentType = getCurrentServiceType();
-        if (currentType) {
-            $('#acc_table tbody tr').each(function() {
-                let serviceType = $(this).data('service-type');
-                if (serviceType !== currentType) {
-                    $(this).hide();
-                } else {
-                    $(this).show();
-                }
-            });
-            console.log("Type:" + currentType);
-        } else {
-            $('#acc_table tbody tr').show();
-        }
-    }
-
-    function filterLocationByType() {
-        let currentType = getCurrentServiceType();
-        if (currentType) {
-            $('#acc_table tbody tr').each(function() {
-                let locationType = $(this).data('location-type');
-                if (locationType !== currentType) {
-                    $(this).hide();
-                } else {
-                    $(this).show();
-                }
-            });
-            console.log("Type:" + currentType);
-        } else {
-            $('#acc_table tbody tr').show();
-        }
-    }
+    }   
 
     $('.add-service').click(function() {
         let serviceName = $(this).data('service-name');
@@ -146,7 +103,6 @@ $(document).ready(function() {
             services[serviceName] = { price: servicePrice, amount: 1, type: serviceType };
         }
 
-        filterServicesByType();
         updateTable();
     });
 
@@ -179,14 +135,17 @@ $(document).ready(function() {
 
     $('.assign-location').click(function() {
         let locationName = $(this).data('location-name');
+        let locationType = $(this).data('location-type');
         locations = {}; // Clear current locations
         locations[locationName] = true;
+        locations[locationType] = true;
         updateTable();
     });
 
     $('.remove-location').click(function() {
         let locationName = $(this).data('location-name');
         delete locations[locationName];
+        delete locations[locationType];
         updateTable();
     });
 
@@ -201,4 +160,5 @@ $(document).ready(function() {
     });
 
     updateTable();
+
 });

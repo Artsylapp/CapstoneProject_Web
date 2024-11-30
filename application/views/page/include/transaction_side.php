@@ -8,19 +8,19 @@
 
     switch (mode) {
         case "create":
-            redirectUrl = "<?php echo base_url('orders_assign'); ?>";
-            break;
-
-        case "assign":
-            redirectUrl = "<?php echo base_url('orders_placement'); ?>";
-            break;
-
-        case "place":
             redirectUrl = "<?php echo base_url('orders_finalize'); ?>";
             break;
 
+        case "assign":
+            redirectUrl = "<?php echo base_url('booking/create'); ?>";
+            break;
+
         case "place":
-            redirectUrl = "<?php echo base_url('save_booking'); ?>";
+            redirectUrl = "<?php echo base_url('orders_assign'); ?>";
+            break;
+
+        case "information":
+            redirectUrl = "<?php echo base_url('orders_placement'); ?>";
             break;
             
         default:
@@ -29,12 +29,15 @@
 
     console.log(redirectUrl);
 
-    let sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
+    sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
     console.log(sessionData);
     sessionData = localStorage.getItem('assigned_masseurs') ? JSON.parse(localStorage.getItem('assigned_masseurs')) : {};
     console.log(sessionData);
     sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
     console.log(sessionData);
+    sessionData = localStorage.getItem('customer_information') ? JSON.parse(localStorage.getItem('customer_information')) : {};
+    console.log(sessionData);
+
 </script>
 
 <div class="col-xs-3 col-sm-3" style="background-color:hsl(218, 53%, 65%, 0.4); margin: 0px; height:100vh;">

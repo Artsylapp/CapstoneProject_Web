@@ -72,5 +72,5 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid bg-image" style="margin: 0; background-image: url('<?php echo $this->config->base_url("assets/images/VIAMM.png");?>');">
+    <div class="container-fluid bg-image" style="margin: 0;">
         <!-- Content goes here -->

@@ -15,7 +15,6 @@ class Order_model extends CI_Model
         foreach ($orders as &$order) {
             // Decode JSON only if it's not empty or null
             $order_details = json_decode($order->orders_tbl_service, true);
-
             if ($order_details !== null) {
                 // Assign attributes only if json_decode was successful
                 $order->services = isset($order_details['services']) ? $order_details['services'] : null;
@@ -96,7 +95,6 @@ class Order_model extends CI_Model
         foreach ($orders as $order) {
             // Decode JSON only if it's not empty or null
             $order_details = json_decode($order->orders_tbl_service, true);
-
             if ($order_details !== null) {
                 // Assign attributes only if json_decode was successful
                 $order->services = isset($order_details['services']) ? $order_details['services'] : null;
