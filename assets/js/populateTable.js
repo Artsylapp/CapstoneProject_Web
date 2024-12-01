@@ -38,15 +38,11 @@ $(document).ready(function() {
             }
         }
 
-        for (let masseurName in masseurs) {
-            if (masseurs.hasOwnProperty(masseurName)) {
-                masseurList.append(
-                    `<tr>
-                        <td colspan="3">${masseurName}</td>
-                    </tr>`
-                );
-            }
-        }
+        masseurList.append(
+            `<tr>
+                <td colspan="3">${masseurs.name}</td>
+            </tr>`
+        );
 
         locationList.append(
             `<tr>
