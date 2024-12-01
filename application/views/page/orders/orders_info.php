@@ -55,16 +55,6 @@
 
 <script>
 
-    //RUN THIS FUNCTION ONLY ONCE
-    document.addEventListener('DOMContentLoaded', function () {
-        const customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
-
-        if (!customerData.gender) {
-            saveCustomerData(null, null, 'Male');
-        }
-    });
-
-
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
         saveCustomerData(Customer_Name, null, null);
