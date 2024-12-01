@@ -1,8 +1,21 @@
 <?php
-    $data = json_decode(file_get_contents('php://input'), true);
-    $gender = $data['gender'] ?? 'ERROR';  // Default to empty string if gender is not set
-    echo "Received Gender: " . $gender;
+    // Get the raw POST data
+    $rawData = file_get_contents('php://input');
+
+    // Decode the JSON data into a PHP array
+    $sortingData = json_decode($rawData, true);
+
+    // Extract customer and workstation data
+    $customer = $sortingData['customer'];
+    $workstation = $sortingData['workstation'];
+
+    print_r($customer);   // Log customer info
+    print_r($workstation); // Log workstation info
+
+    // Send a JSON response back to the client
+    echo json_encode(['message' => 'Data received successfully']);
 ?>
+
 
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
