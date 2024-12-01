@@ -38,6 +38,29 @@
     sessionData = JSON.parse(localStorage.getItem('customer_information')) ? JSON.parse(localStorage.getItem('customer_information')) : {};
     console.log(sessionData);
 
+    if (window.location.pathname.includes('orders_info')){
+
+    } else {
+
+        saveCustomerData()
+
+        function saveCustomerData() {
+            var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
+
+            if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
+            if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
+            if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
+
+            localStorage.setItem('customer_information', JSON.stringify(customerData));
+
+            console.log('Saved customer data:', customerData);
+            console.log('localStorage customer data:', localStorage.getItem('customer_information'));
+        }
+
+    }
+
+    
+
 </script>
 
 <div class="col-xs-3 col-sm-3" style="background-color:hsl(218, 53%, 65%, 0.4); margin: 0px; height:100vh;">
