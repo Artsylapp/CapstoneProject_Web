@@ -63,7 +63,7 @@ $(document).ready(function() {
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
         localStorage.setItem('customer_information', JSON.stringify(customer_information));
 
-        let sortingData = {
+        const sortingData = {
             customer: JSON.parse(localStorage.getItem('customer_information')) || {},
             workstation: JSON.parse(localStorage.getItem('assigned_locations')) || {},
         };

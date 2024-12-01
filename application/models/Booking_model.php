@@ -29,7 +29,7 @@ class Booking_model extends CI_Model {
         $this->db->insert('orders_tbl', $bookingData);
     
          // Update the status of the masseur to 'BOOKED'
-        $masseurName = $data['masseur_detail']['name'];
+        $masseurName = $data['masseurs']['name'];
         $this->db->where('accounts_tbl_name', $masseurName);
         $this->db->update('accounts_tbl', ['accounts_tbl_status' => 'BOOKED']);
 
