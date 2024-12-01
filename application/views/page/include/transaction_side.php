@@ -37,6 +37,7 @@
     console.log(sessionData);
     sessionData = localStorage.getItem('customer_information') ? JSON.parse(localStorage.getItem('customer_information')) : {};
     console.log(sessionData);
+    console.log('localStorage customer data:', localStorage.getItem('customer_information'));
 
 </script>
 
