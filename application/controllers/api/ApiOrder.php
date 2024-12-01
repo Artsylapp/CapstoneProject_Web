@@ -25,9 +25,33 @@ class ApiOrder extends RestController
         $parsedOrders = [];
         foreach ($results as $order) {
             // Decode JSON string into associative array
-            $order_details = json_decode($order->orders_tbl_service, true); // Use -> for object access
+            $order_service = json_decode($order->orders_tbl_service, true); // Use -> for object access
+            $order_masseur = json_decode($order->orders_tbl_masseur, true); // Use -> for object access
+            $order_customer = json_decode($order->orders_tbl_customer, true); // Use -> for object access
 
-            if ($order_details === null && json_last_error() !== JSON_ERROR_NONE) {
+
+            // error if the json is empty or invalid
+            if ($order_service === null && json_last_error() !== JSON_ERROR_NONE) {
+                // Prepare OrderResponse object
+                $orderResponse = [
+                    'error' => true,
+                    'message' => 'Orders failed to be retrieved'
+                ];
+            
+                $this->response($orderResponse, 500); // Send error response with HTTP status code 500
+                return; // Exit the condition
+
+            } else if ($order_masseur === null && json_last_error() !== JSON_ERROR_NONE) {
+                // Prepare OrderResponse object
+                $orderResponse = [
+                    'error' => true,
+                    'message' => 'Orders failed to be retrieved'
+                ];
+            
+                $this->response($orderResponse, 500); // Send error response with HTTP status code 500
+                return; // Exit the condition
+
+            } else if ($order_customer === null && json_last_error() !== JSON_ERROR_NONE) {
                 // Prepare OrderResponse object
                 $orderResponse = [
                     'error' => true,
@@ -38,14 +62,16 @@ class ApiOrder extends RestController
                 return; // Exit the condition
             }
             
-            // Prepare individual variables from the JSON
-            $services = isset($order_details['services']) ? $order_details['services'] : [];
+            // Prepare individual serice variables from the JSON
+            $services = isset($order_service['services']) ? $order_service['services'] : [];
+            $masseurs = isset($order_masseur['masseur_detail']) ? $order_masseur['masseur_detail'] : [];
+            $customers = isset($order_customer['customer_detail']) ? $order_customer['customer_detail'] : [];
+            
             // $price = isset($order_details['price']) ? $order_details['price'] : 'N/A';
             // $amount = isset($order_details['amount']) ? $order_details['amount'] : 'N/A';
             // $type = isset($order_details['type']) ? $order_details['type'] : 'N/A';
-            // $masseurs = isset($order_details['masseurs']) ? $order_details['masseurs'] : [];
-            $locations = isset($order_details['locations']) ? $order_details['locations'] : [];
-            $totalCost = isset($order_details['orders_tbl_cost']) ? $order_details['orders_tbl_cost'] : 'N/A';
+            $locations = isset($order_service['locations']) ? $order_service['locations'] : [];
+            $totalCost = isset($order_service['orders_tbl_cost']) ? $order_service['orders_tbl_cost'] : 'N/A';
             
             // Simplify locations for single-item case or format for multiple entries
             if (count($locations) === 1) {
@@ -66,8 +92,8 @@ class ApiOrder extends RestController
                 'id' => $order->orders_tbl_id,
                 'status' => $order->orders_tbl_status,
                 'services' => $services,
-                'masseurs' => $order->orders_tbl_masseur,
-                'customer' => $order->orders_tbl_customer,
+                'masseurs' => $masseurs,
+                'customer' => $customers,
                 'workstation' => $workstation,
                 'totalCost' => $totalCost,
                 'paid_amount' => $order->orders_tbl_paid_amount,
@@ -77,17 +103,18 @@ class ApiOrder extends RestController
             
         }
 
-        echo '<pre>';
-        print_r($parsedOrders);
+        // echo '<pre>';
+        // print_r($parsedOrders);
+        // print_r($results);
 
         // Prepare OrderResponse object
-        // $orderResponse = [
-        //     'error' => false,
-        //     'message' => 'Orders retrieved successfully',
-        //     'orders' => $parsedOrders
-        // ];
+        $orderResponse = [
+            'error' => false,
+            'message' => 'Booking Retrieved Successfully!',
+            'orders' => $parsedOrders
+        ];
 
-        // $this->response($orderResponse, 200); // Send success response with HTTP status code 200
+        $this->response($orderResponse, 200); // Send success response with HTTP status code 200
     }
 
 
