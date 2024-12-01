@@ -60,7 +60,7 @@
 
 					<?php foreach($locations as $location): ?>
 						<div class="col-s-2 homenavbtn margin-all">
-							<button class="btn menu-btn-location <?php $location->locations_tbl_status = ('Open') ? 'lg-bg' : 'lr-bg' ;?> ttsh">
+							<button class="btn menu-btn-location lg-bg ttsh">
 								<h3 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 								<h3 class="btn-label"><?php echo($location->location_tbl_status)?></h1>
 								<h3 class="btn-label">Insert Time Available</h1>
