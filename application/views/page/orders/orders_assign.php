@@ -10,8 +10,10 @@
 
         if (customerGender == "Male") {
             <?php $customerGender = "Male"; ?>
+            console.log("M");
         } else {
             <?php $customerGender = "Female"; ?>
+            console.log("FEM");
         }
 
     } else {
