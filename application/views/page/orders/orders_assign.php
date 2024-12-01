@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     $rawData = file_get_contents('php://input');
 
     $sortingData = json_decode($rawData, true);
@@ -18,6 +18,40 @@
     // Send a JSON response back to the client
     echo json_encode(['message' => 'Data received successfully']);
     echo json_encode(['data' => $sortingData]);
+?> -->
+
+<?php
+$rawData = file_get_contents('php://input');
+
+// Log the raw data to check if the JSON is being received correctly
+error_log("Raw Data: " . $rawData);
+
+// Decode the JSON data
+$sortingData = json_decode($rawData, true);
+
+// Check if JSON decoding was successful
+if ($sortingData === null) {
+    error_log("JSON decode error: " . json_last_error_msg());
+} else {
+    // Log the decoded data
+    error_log("Decoded Data: " . print_r($sortingData, true));
+}
+
+if (isset($sortingData['customer']['name'])) {
+    $customerName = $sortingData['customer']['name'];
+} else {
+    $customerName = 'Unknown'; // Default value or handle the error
+}
+
+if (isset($sortingData['workstation']['name'])) {
+    $workstationName = $sortingData['workstation']['name'];
+} else {
+    $workstationName = 'Unknown'; // Default value or handle the error
+}
+
+// Send a JSON response back to the client
+echo json_encode(['message' => 'Data received successfully']);
+echo json_encode(['data' => $sortingData]);
 ?>
 
 
