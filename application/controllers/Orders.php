@@ -132,12 +132,13 @@ class Orders extends CI_Controller {
         
         // Retrieve the JSON input
         $data = json_decode(file_get_contents('php://input'), true);
+        console.log($data)
         print_r($data);
 
         // Check if the data is valid and required fields are not empty
         if (!empty($data)) {
             // Validate required fields
-            if (empty($data['services']) || empty($data['masseurs']) || empty($data['locations']) || empty($data['totalCost'])) {
+            if (empty($data['services']) || empty($data['masseurs']) || empty($data['locations']) || empty($data['totalCost'] || empty($data['customer_information'])) {
                 echo json_encode([
                     'status' => 'error',
                     'message' => 'One or more required fields are empty',
@@ -146,6 +147,7 @@ class Orders extends CI_Controller {
                         'masseurs' => empty($data['masseurs']),
                         'locations' => empty($data['locations']),
                         'totalCost' => empty($data['totalCost']),
+                        'customer_information' => empty($data['customer_information']),
                     ]
                 ]);
             } else {

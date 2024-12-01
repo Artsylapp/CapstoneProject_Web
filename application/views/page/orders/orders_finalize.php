@@ -56,8 +56,8 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="finalize-button" class="btn lg-bg menu-btn-m center-item ttsh" 
                     name="Proceed complete booking" 
-                    data-base-url="<?php echo base_url(''); ?>" 
-                    data-redirect-url="<?php echo base_url(''); ?>">
+                    data-base-url="<?php echo base_url('orders/save_booking'); ?>" 
+                    data-redirect-url="<?php echo base_url('orders'); ?>">
                     <h3 class="black-txt">COMPLETE BOOK</h3>
                 </button>
             </div>
@@ -103,22 +103,3 @@
 
     </div>
 </div>
-
-<script>
-
-    function saveDataToServerTESTER() {
-        const bookingData = {
-            services: services,
-            masseurs: masseurs,
-            locations: locations,
-            totalCost: parseFloat($('#total-cost').text().replace('₱', '')),
-            customer_information: customer_information
-        };
-
-        console.log(bookingData)
-
-    }
-
-    saveDataToServerTESTER()
-
-</script>
