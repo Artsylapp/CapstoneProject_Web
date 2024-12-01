@@ -55,7 +55,7 @@
 
 <script>
 
-    
+
 
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
@@ -78,9 +78,9 @@
     function saveCustomerData() {
         var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
 
-        if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
-        if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
-        if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
+        if (localStorage.getItem('customer_name') !== null) customerData.name = JSON.stringify(localStorage.getItem('customer_name'));
+        if (localStorage.getItem('customer_contact') !== null) customerData.contact = JSON.stringify(localStorage.getItem('customer_contact'));
+        if (localStorage.getItem('P_Gender') !== null) customerData.gender = JSON.stringify(localStorage.getItem('P_Gender'));
 
         localStorage.setItem('customer_information', JSON.stringify(customerData));
 
