@@ -51,8 +51,7 @@ class Booking_model extends CI_Model {
         $locationName = $data['locations']['name'];
         $this->db->where('location_tbl_name', $locationName);
         $this->db->update('location_tbl', ['location_tbl_status' => 'BOOKED']);
-
-        $this->db->insert('location_tbl', ['location_tbl_freetime'=> $startTime->format('H:i:s')]);
+        $this->db->update('location_tbl', ['location_tbl_freetime'=> $startTime->format('H:i:s')]);
     
         // Complete the transaction
         $this->db->trans_complete();
