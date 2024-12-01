@@ -40,7 +40,7 @@ class Order_model extends CI_Model
             }
 
             if ($customer_details !== null) {
-                $order->customer_name = isset($customer_details['name']) ? $customer_details[] : null;
+                $order->customer_name = isset($customer_details['name']) ? $customer_details['name'] : null;
                 $order->customer_gender = isset($customer_details['gender']) ? $customer_details['gender'] : null;
             }else {
                 $order->customer_name = null;
