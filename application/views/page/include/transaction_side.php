@@ -27,17 +27,6 @@
             break;
     }
 
-    console.log(redirectUrl);
-
-    sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
-    console.log(sessionData);
-    sessionData = localStorage.getItem('assigned_masseurs') ? JSON.parse(localStorage.getItem('assigned_masseurs')) : {};
-    console.log(sessionData);
-    sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
-    console.log(sessionData);
-    sessionData = JSON.parse(localStorage.getItem('customer_information')) ? JSON.parse(localStorage.getItem('customer_information')) : {};
-    console.log(sessionData);
-
     if (window.location.pathname.includes('orders_info')){
 
     } else {
@@ -56,7 +45,16 @@
 
     }
 
-    
+    console.log(redirectUrl);
+
+    sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
+    console.log(sessionData);
+    sessionData = localStorage.getItem('assigned_masseurs') ? JSON.parse(localStorage.getItem('assigned_masseurs')) : {};
+    console.log(sessionData);
+    sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
+    console.log(sessionData);
+    sessionData = JSON.parse(localStorage.getItem('customer_information')) ? JSON.parse(localStorage.getItem('customer_information')) : {};
+    console.log(sessionData);
 
 </script>
 
