@@ -72,7 +72,7 @@ $(document).ready(function() {
             url: $('#continue-button').data('base-url'),
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify(bookingData),
+            data: JSON.stringify(sortingData),
             success: function(response) {
                 console.log("Server Response:", response);
                 window.location.href = $('#continue-button').data('redirect-url');
