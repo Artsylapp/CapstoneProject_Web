@@ -38,17 +38,21 @@ $(document).ready(function() {
             }
         }
 
-        masseurList.append(
-            `<tr>
-                <td colspan="3">${masseurs.name}</td>
-            </tr>`
-        );
+        if (masseurs) {
+            masseurList.append(
+                `<tr>
+                    <td colspan="3">${masseurs.name}</td>
+                </tr>`
+            );
+        }
 
-        locationList.append(
-            `<tr>
-                <td colspan="3">${locations.name}</td>
-            </tr>`
-        );
+        if (locations) {
+            locationList.append(
+                `<tr>
+                    <td colspan="3">${locations.name}</td>
+                </tr>`
+            );
+        }
 
         $('#total-cost').text(`₱${totalCost.toFixed(2)}`);
     }
