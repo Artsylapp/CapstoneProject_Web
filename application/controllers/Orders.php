@@ -194,7 +194,9 @@ class Orders extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Booking not found.');
         }
-        redirect(base_url("orders"));
+
+        echo json_encode($data);
+        // redirect(base_url("orders"));
     }
 
     // Orders - Complete booking
