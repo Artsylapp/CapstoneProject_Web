@@ -15,19 +15,38 @@ class Order_model extends CI_Model
         foreach ($orders as &$order) {
             // Decode JSON only if it's not empty or null
             $order_details = json_decode($order->orders_tbl_service, true);
+            $masseur_details = json_decode($order->orders_tbl_masseur, true);
+            $customer_details = json_decode($order->orders_tbl_customer, true);
             if ($order_details !== null) {
                 // Assign attributes only if json_decode was successful
                 $order->services = isset($order_details['services']) ? $order_details['services'] : null;
-                $order->masseurs = isset($order_details['masseurs']) ? $order_details['masseurs'] : null;
+                $order->masseurs = isset($order_details['masseurs']) ? $order_details['masseurs'] : null; //NOT REMOVED IN-CASE ITS NEEDED ON MOBILE
                 $order->locations = isset($order_details['locations']) ? $order_details['locations'] : null;
                 $order->totalCost = isset($order_details['orders_tbl_cost']) ? $order_details['orders_tbl_cost'] : null;
             } else {
                 // Handle case where orders_tbl_service is null or invalid
                 $order->services = null;
-                $order->masseurs = null;
+                $order->masseurs = null; //NOT REMOVED IN-CASE ITS NEEDED ON MOBILE
                 $order->locations = null;
                 $order->totalCost = null;
             }
+
+            if ($masseur_details !== null) {
+                $order->masseur = isset($masseur_detail['name']) ? $masseur_details['name'] : null;
+                $order->masseur_gender = isset($masseur_detail['gender']) ? $masseur_details['gender'] : null;
+            }else {
+                $order->masseur = null;
+                $order->masseur_gender = null;
+            }
+
+            if ($customer_details !== null) {
+                $order->customer_name = isset($customer_details['name']) ? $customer_details[] : null;
+                $order->customer_gender = isset($customer_details['gender']) ? $customer_details['gender'] : null;
+            }else {
+                $order->customer_name = null;
+                $order->customer_gender = null;
+            }
+
         }
 
         return $orders;

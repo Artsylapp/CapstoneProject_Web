@@ -63,7 +63,11 @@
 							<button class="btn menu-btn-location lg-bg ttsh">
 								<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 								<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-								<h2 class="btn-label">Insert Time Available</h2>
+								
+								<?php if($location->location->location_tbl_status == "BOOKED")?>
+									<h2 class="btn-label">INSERT ORDERS_TBL_END_TIME HERE</h2>
+								<?php endif;?>
+
 							</button>
 						</div>
 					<?php endforeach; ?>
