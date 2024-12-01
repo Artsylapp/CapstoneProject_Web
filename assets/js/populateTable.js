@@ -4,6 +4,7 @@ $(document).ready(function() {
     let locations = JSON.parse(localStorage.getItem('assigned_locations')) || {};
     let customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
 
+    //THIS IS FOR SORTING, DONT MIND THIS
     if (window.location.pathname.includes('orders_create')) {
         console.log("Current page: " + window.location.pathname.toString());
     }else if (window.location.pathname.includes('orders_placement')){
@@ -66,19 +67,6 @@ $(document).ready(function() {
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
         localStorage.setItem('customer_information', JSON.stringify(customer_information));
         window.location.href = redirectUrl;
-    }
-
-    function saveDataToServerTESTER() {
-        const bookingData = {
-            services: services,
-            masseurs: masseurs,
-            locations: locations,
-            totalCost: parseFloat($('#total-cost').text().replace('₱', '')),
-            customer_information: customer_information
-        };
-
-        console.log(bookingData)
-
     }
 
     function saveDataToServer() {

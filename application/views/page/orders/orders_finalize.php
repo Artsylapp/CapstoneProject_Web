@@ -103,3 +103,22 @@
 
     </div>
 </div>
+
+<script>
+
+    function saveDataToServerTESTER() {
+        const bookingData = {
+            services: services,
+            masseurs: masseurs,
+            locations: locations,
+            totalCost: parseFloat($('#total-cost').text().replace('₱', '')),
+            customer_information: customer_information
+        };
+
+        console.log(bookingData)
+
+    }
+
+    saveDataToServerTESTER()
+
+</script>
