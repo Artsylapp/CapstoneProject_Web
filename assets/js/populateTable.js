@@ -75,8 +75,7 @@ $(document).ready(function() {
             data: JSON.stringify(sortingData),
             success: function(response) {
                 console.log("Server Response:", response);
-                //window.location.href = $('#continue-button').data('redirect-url');
-                console.log($('#continue-button').data('redirect-url'))
+                window.location.href = $('#continue-button').data('base-url');
             },
             error: function(xhr, status, error) {
                 console.error('Error saving booking:', error);
