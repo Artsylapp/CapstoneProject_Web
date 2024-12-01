@@ -170,10 +170,10 @@ $(document).ready(function() {
         saveDataToServerTESTER();
     });
 
-    $('#finalize-button').click(function() {
-        let redirectUrl = $('#finalize-button').data('base-url');
-        saveDataToServer();
-    });
+    // $('#finalize-button').click(function() {
+    //     let redirectUrl = $('#finalize-button').data('base-url');
+    //     saveDataToServer();
+    // });
 
     updateTable();
 
