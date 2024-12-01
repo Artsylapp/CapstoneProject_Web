@@ -18,13 +18,12 @@ class Main extends CI_Controller {
 	public function index()
 	{
 
-		$data['locations'] = $this->Locations_model->getLocations();
-
 		$info = array(
 			'title' => 'Home',
+			'locations'=> $this->Locations_model->getLocations(),
 		);
 
-		$this->load->view('page/include/header', $info, $data);
+		$this->load->view('page/include/header', $info);
 		$this->load->view('page/homepage');
 		$this->load->view('page/include/footer');
 	}
