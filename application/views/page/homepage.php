@@ -64,7 +64,7 @@
 								<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 								<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
 								
-								<?php if($location->location_tbl_status == "BOOKED")?>
+								<?php if($location->location_tbl_status == "BOOKED"):?>
 									<h2 class="btn-label">INSERT ORDERS_TBL_END_TIME HERE</h2>
 								<?endif;?>
 
