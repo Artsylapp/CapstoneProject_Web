@@ -7,7 +7,7 @@
 
     if (customerDetailsString) {
         let customerDetails = JSON.parse(customerDetailsString);
-        let customerGender = customerDetails.customer_information.gender;
+        let customerGender = customerDetails.gender;
         console.log(customerGender);
     } else {
         console.log('No customer details found');
