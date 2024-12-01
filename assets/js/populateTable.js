@@ -132,8 +132,6 @@ $(document).ready(function() {
                 delete services[serviceName];
             }
         }
-
-        filterServicesByType();
         updateTable();
     });
 
