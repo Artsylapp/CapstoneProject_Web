@@ -48,16 +48,11 @@ $(document).ready(function() {
             }
         }
 
-        for (let location in locations) {
-            if (locations.hasOwnProperty(location)) {
-                locationList.append(
-                    `<tr>
-                        <td colspan="3">${location['name']}</td>
-                    </tr>`
-                );
-                break;
-            }
-        }
+        locationList.append(
+            `<tr>
+                <td colspan="3">${locations.name}</td>
+            </tr>`
+        );
 
         $('#total-cost').text(`₱${totalCost.toFixed(2)}`);
     }
