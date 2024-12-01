@@ -6,8 +6,18 @@
     $sortingData = json_decode($rawData, true);
 
     // Extract customer and workstation data
-    $customer = $sortingData['customer'];
-    $workstation = $sortingData['workstation'];
+    if (isset($sortingData['customer'])) {
+        $customer = $sortingData['customer'];
+    } else {
+        // Handle the error, for example, by setting $customer to an empty array or displaying a message
+        $customer = [];
+    }
+    
+    if (isset($sortingData['workstation'])) {
+        $workstation = $sortingData['workstation'];
+    } else {
+        $workstation = [];
+    }
 
     print_r($customer);   // Log customer info
     print_r($workstation); // Log workstation info
