@@ -139,8 +139,8 @@ $(document).ready(function() {
         let locationName = $(this).data('location-name');
         let locationType = $(this).data('location-type');
         locations = {}; // Clear current locations
-        locations[locationName] = true;
-        locations[locationType] = true;
+        locations[Name] = locationName;
+        locations[Type] = locationType;
         updateTable();
     });
 
