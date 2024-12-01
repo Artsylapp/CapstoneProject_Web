@@ -1,11 +1,3 @@
-<script>
-    
-    var workplaceType = localStorage.getItem('assigned_locations');
-
-    <?php $workplaceType = "<script>document.write(workplaceType);</script>"; ?>
-
-</script>
-
 
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
@@ -19,7 +11,7 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" 
                     name="Proceed to masseur assignment" 
-                    data-base-url="<?php echo $this->config->base_url('booking/assign'); ?>">
+                    data-base-url="<?php echo $this->config->base_url('orders_finalize'); ?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
