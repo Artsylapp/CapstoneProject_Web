@@ -74,7 +74,7 @@
     });
 
     function saveCustomerData() {
-        var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
+        var customerData = localStorage.getItem('customer_information') || {};
 
         if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
         if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
