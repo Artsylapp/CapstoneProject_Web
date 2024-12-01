@@ -1,3 +1,10 @@
+<?php
+    if (isset($_POST['gender'])) {
+    } else {
+        echo "No gender received.";
+    }
+?>
+
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
 
@@ -5,7 +12,7 @@
 
             <div class="col-xs-12 col-sm-12">
                 <h1 class="black-txt overflow-wrap">ASSIGN MASSEURS</h1>
-                <h3 class="black-txt" style="margin-top: 0px;"><span>Booking</span> > <span>Create</span> - <?php echo $this->session->userdata('comp_Name') ?></h3>
+                <h3 class="black-txt" style="margin-top: 0px;"><span>Booking</span> > <span>Create</span> - <?php $_POST['gender'] ?></h3>
             </div>
             
             <div class="col-xs-4 col-sm-4 center-item">
@@ -22,13 +29,13 @@
                     <thead>
                         <tr>
                             <th>Employee Name</th>
-                            <th>Type</th>
+                            <th>Gender</th>
                             <th>Assign</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($accounts as $account): ?>
-                            <?php if ($account->accounts_tbl_empType == "Masseur" AND $account->accounts_tbl_status == "AVAILABLE"): ?>
+                            <?php if ($account->accounts_tbl_empType == $_POST['gender'] AND $account->accounts_tbl_status == "AVAILABLE"): ?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
@@ -38,7 +45,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                            <?php elseif ($account->accounts_tbl_empType == "Masseur" AND $account->accounts_tbl_status == "BOOKED"):?>
+                            <?php elseif ($account->accounts_tbl_empType == $_POST['gender'] AND $account->accounts_tbl_status == "BOOKED"):?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>

@@ -55,33 +55,41 @@
 
 <script>
 
-    saveCustomerData(null, null, 'Male');
-
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
-        saveCustomerData(Customer_Name, null, null);
+        var Customer_P_Gender = document.getElementById('sel_gender').value;
+        localStorage.setItem('customer_name', Customer_Name);
+        localStorage.setItem('P_Gender', Customer_P_Gender);
+        saveCustomerData();
     });
 
     document.getElementById('CusCon').addEventListener('blur', function() {
         var Customer_Contact = document.getElementById('CusCon').value;
-        saveCustomerData(null, Customer_Contact, null);
+        var Customer_P_Gender = document.getElementById('sel_gender').value;
+        localStorage.setItem('customer_contact', Customer_Contact);
+        localStorage.setItem('P_Gender', Customer_P_Gender);
+        saveCustomerData();
     });
 
     document.getElementById('sel_gender').addEventListener('change', function() {
         var Customer_P_Gender = document.getElementById('sel_gender').value;
-        saveCustomerData(null, null, Customer_P_Gender);
+        localStorage.setItem('P_Gender', Customer_P_Gender);
+        saveCustomerData();
     });
 
-    function saveCustomerData(Customer_Name, Customer_Con, Customer_P_Gender) {
+    saveCustomerData()
+
+    function saveCustomerData() {
         var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
 
-        if (Customer_Name) customerData.name = Customer_Name;
-        if (Customer_Con) customerData.contact = Customer_Con;
-        if (Customer_P_Gender) customerData.gender = Customer_P_Gender;
+        if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
+        if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
+        if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
 
         localStorage.setItem('customer_information', JSON.stringify(customerData));
 
         console.log('Saved customer data:', customerData);
+        console.log('localStorage customer data:', localStorage.getItem('customer_information'));
     }
 
     

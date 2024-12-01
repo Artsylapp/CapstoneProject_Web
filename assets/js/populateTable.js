@@ -4,6 +4,7 @@ $(document).ready(function() {
     let locations = JSON.parse(localStorage.getItem('assigned_locations')) || {};
     let customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
 
+    //THIS IS FOR SORTING, DONT MIND THIS
     if (window.location.pathname.includes('orders_create')) {
         console.log("Current page: " + window.location.pathname.toString());
     }else if (window.location.pathname.includes('orders_placement')){
@@ -73,7 +74,8 @@ $(document).ready(function() {
             services: services,
             masseurs: masseurs,
             locations: locations,
-            totalCost: parseFloat($('#total-cost').text().replace('₱', ''))
+            totalCost: parseFloat($('#total-cost').text().replace('₱', '')),
+            customer_information: customer_information
         };
     
         $.ajax({
@@ -145,13 +147,34 @@ $(document).ready(function() {
     $('.remove-location').click(function() {
         let locationName = $(this).data('location-name');
         delete locations[locationName];
-        delete locations[locationType];
         updateTable();
     });
 
     $('#continue-button').click(function() {
         let redirectUrl = $('#continue-button').data('base-url');
         saveDataToLocalStorage();
+
+        let customerDetailsString = localStorage.getItem('customer_information');
+
+        if (customerDetailsString) {
+            let customerDetails = JSON.parse(customerDetailsString);
+            let customerGender = customerDetails.gender;
+
+            $.ajax({
+                url: $('#continue-button').data('base-url'),
+                type: 'POST',
+                data: { gender: customerGender },
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+
+        } else {
+            console.log('No customer details found');
+        }
     });
 
     $('#finalize-button').click(function() {

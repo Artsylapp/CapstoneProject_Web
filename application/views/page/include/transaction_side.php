@@ -27,6 +27,24 @@
             break;
     }
 
+    if (window.location.pathname.includes('orders_info')){
+
+    } else {
+
+        saveCustomerData()
+
+        function saveCustomerData() {
+            var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
+
+            if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
+            if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
+            if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
+
+            localStorage.setItem('customer_information', JSON.stringify(customerData));
+        }
+
+    }
+
     console.log(redirectUrl);
 
     sessionData = localStorage.getItem('selected_services') ? JSON.parse(localStorage.getItem('selected_services')) : {};
@@ -35,7 +53,7 @@
     console.log(sessionData);
     sessionData = localStorage.getItem('assigned_locations') ? JSON.parse(localStorage.getItem('assigned_locations')) : {};
     console.log(sessionData);
-    sessionData = localStorage.getItem('customer_information') ? JSON.parse(localStorage.getItem('customer_information')) : {};
+    sessionData = JSON.parse(localStorage.getItem('customer_information')) ? JSON.parse(localStorage.getItem('customer_information')) : {};
     console.log(sessionData);
 
 </script>
