@@ -40,7 +40,7 @@
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
                                     <td class="text-center">
-                                        <button class="btn lg-bg menu-btn-sm ttsh assign-masseur" data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "ASSIGN: $account->accounts_tbl_name"; ?>">
+                                        <button class="btn lg-bg menu-btn-sm ttsh assign-masseur" data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" data-masseur-gender="<?php echo $account->accounts_tbl_empType; ?>" name="<?php echo "ASSIGN: $account->accounts_tbl_name"; ?>">
                                             <h4>ASSIGN</h4>
                                         </button>
                                     </td>
@@ -50,7 +50,7 @@
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
                                     <td class="text-center">
-                                        <button class="btn lr-bg menu-btn-sm ttsh assign-masseur" disabled data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "UNAVAILABLE: $account->accounts_tbl_name"; ?>">
+                                        <button class="btn lr-bg menu-btn-sm ttsh assign-masseur" disabled data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" data-masseur-gender="<?php echo $account->accounts_tbl_empType; ?>" name="<?php echo "UNAVAILABLE: $account->accounts_tbl_name"; ?>">
                                             <h4>BOOKED</h4>
                                         </button>
                                     </td>

@@ -48,13 +48,14 @@ $(document).ready(function() {
             }
         }
 
-        for (let locationName in locations) {
-            if (locations.hasOwnProperty(locationName)) {
+        for (let location in locations) {
+            if (locations.hasOwnProperty(location)) {
                 locationList.append(
                     `<tr>
-                        <td colspan="3">${locationName}</td>
+                        <td colspan="3">${location}</td>
                     </tr>`
                 );
+                break;
             }
         }
 
@@ -124,8 +125,10 @@ $(document).ready(function() {
 
     $('.assign-masseur').click(function() {
         let masseurName = $(this).data('masseur-name');
+        let masseurGender = $(this).data('masseur-gender');
         masseurs = {}; // Clear current masseurs
-        masseurs[masseurName] = true;
+        masseurs['name'] = masseurName;
+        masseurs['gender'] = masseurGender;
         updateTable();
     });
 
