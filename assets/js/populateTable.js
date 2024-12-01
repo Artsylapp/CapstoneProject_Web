@@ -73,7 +73,8 @@ $(document).ready(function() {
             services: services,
             masseurs: masseurs,
             locations: locations,
-            totalCost: parseFloat($('#total-cost').text().replace('₱', ''))
+            totalCost: parseFloat($('#total-cost').text().replace('₱', '')),
+            customer_information: customer_information
         };
     
         $.ajax({
