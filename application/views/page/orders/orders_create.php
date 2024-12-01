@@ -37,12 +37,12 @@
                             <td><?php echo $service->services_tbl_description; ?></td>
                             <td>₱ <?php echo $service->services_tbl_price; ?></td>
                             <td class="text-center">
-                                <button class="btn lg-bg menu-btn-sm ttsh add-service" data-service-duration="<?php echo $service->services_tbl_duration;?>" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>" name="Add <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>">
+                                <button class="btn lg-bg menu-btn-sm ttsh add-service" data-service-duration="<?php echo $service->service_tbl_duration;?>" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>" name="Add <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" data-service-type="<?php echo $service->services_tbl_designation; ?>">
                                     <h4>ADD</h4>
                                 </button>
                             </td>
                             <td class="text-center">
-                                <button class="btn lr-bg menu-btn-sm ttsh remove-service" data-service-duration="<?php echo $service->services_tbl_duration;?>" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" name="Remove <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>">
+                                <button class="btn lr-bg menu-btn-sm ttsh remove-service" data-service-duration="<?php echo $service->service_tbl_duration;?>" data-service-name="<?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>" name="Remove <?php echo $service->services_tbl_name; ?>" data-service-price="<?php echo $service->services_tbl_price; ?>">
                                     <h4>REMOVE</h4>
                                 </button>
                             </td>
