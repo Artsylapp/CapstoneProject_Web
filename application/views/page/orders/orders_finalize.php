@@ -56,8 +56,8 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="finalize-button" class="btn lg-bg menu-btn-m center-item ttsh" 
                     name="Proceed complete booking" 
-                    data-base-url="<?php echo base_url('orders/save_booking'); ?>" 
-                    data-redirect-url="<?php echo base_url('orders'); ?>">
+                    data-base-url="<?php echo base_url(''); ?>" 
+                    data-redirect-url="<?php echo base_url(''); ?>">
                     <h3 class="black-txt">COMPLETE BOOK</h3>
                 </button>
             </div>

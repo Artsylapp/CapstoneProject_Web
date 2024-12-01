@@ -68,6 +68,19 @@ $(document).ready(function() {
         window.location.href = redirectUrl;
     }
 
+    function saveDataToServerTESTER() {
+        const bookingData = {
+            services: services,
+            masseurs: masseurs,
+            locations: locations,
+            totalCost: parseFloat($('#total-cost').text().replace('₱', '')),
+            customer_information: customer_information
+        };
+
+        console.log(bookingData)
+
+    }
+
     function saveDataToServer() {
         const bookingData = {
             services: services,
@@ -150,6 +163,11 @@ $(document).ready(function() {
     $('#continue-button').click(function() {
         let redirectUrl = $('#continue-button').data('base-url');
         saveDataToLocalStorage();
+    });
+
+    $('#finalize-button').click(function() {
+        let redirectUrl = $('#finalize-button').data('base-url');
+        saveDataToServerTESTER();
     });
 
     $('#finalize-button').click(function() {
