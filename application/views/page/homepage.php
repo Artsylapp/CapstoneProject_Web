@@ -62,7 +62,7 @@
 
 						<?php if($location->location_tbl_status == "BOOKED"):?>
 							<div class="col-s-2 homenavbtn margin-all">
-								<button class="btn menu-btn-location lr-bg ttsh" name="<?php echo("WORKSTATION: " $location->location_tbl_name  ". STATUS: " $location->location_tbl_status)?>">
+								<button class="btn menu-btn-location lr-bg ttsh">
 									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
 									<h2 class="btn-label">INSERT ORDERS_TBL_END_TIME HERE</h2>
@@ -70,7 +70,7 @@
 							</div>
 						<?php else:?>
 							<div class="col-s-2 homenavbtn margin-all">
-								<button class="btn menu-btn-location lg-bg ttsh" name="<?php echo("WORKSTATION: " $location->location_tbl_name  ". STATUS: " $location->location_tbl_status)?>">
+								<button class="btn menu-btn-location lg-bg ttsh">
 									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
 								</button>
