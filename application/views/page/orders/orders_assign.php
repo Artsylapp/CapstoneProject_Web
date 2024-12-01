@@ -20,6 +20,7 @@
 
     // Send a JSON response back to the client
     echo json_encode(['message' => 'Data received successfully']);
+    echo json_encode(['data' => $sortingData]);
 ?>
 
 
