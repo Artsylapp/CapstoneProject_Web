@@ -80,6 +80,7 @@ $route['api/login'] = 'api/ApiAuth/index';
 $route['api/order/ongoing'] = 'api/ApiOrder/index';
 $route['api/order/update'] = 'api/ApiOrder/orderUpdate';
 $route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
+
 $route['api/analytics'] = 'api/ApiAnalytics/index';
 
 

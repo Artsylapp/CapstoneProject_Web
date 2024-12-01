@@ -66,9 +66,6 @@ class Order_model extends CI_Model
             }
         }
 
-        // echo '<pre>';
-        // print_r($orders);
-
         return $query->result();
     }
 
@@ -146,4 +143,22 @@ class Order_model extends CI_Model
         $query = $this->db->get('orders_tbl');
         return $query->result();
     }
+
+    public function updatePaidAmount($data)
+    {
+        // Prepare the data to update multiple columns in a single query
+        $updateData = [
+            'orders_tbl_status' => $data['status'],
+            'orders_tbl_paid_amount' => $data['paidAmount']
+        ];
+
+        // print_r($updateData);
+
+        // Perform a single update query
+        $this->db->where('orders_tbl_id', $data['id']);
+        $success = $this->db->update('orders_tbl', $updateData);
+
+        return $success; // Return true if the update is successful, false otherwise
+    }
+
 }
