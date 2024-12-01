@@ -1,3 +1,19 @@
+
+<script>
+
+    let customerDetailsString = localStorage.getItem('customer_details');
+
+    if (customerDetailsString) {
+        let customerDetails = JSON.parse(customerDetailsString);
+        let customerGender = customerDetails.customer_details.gender;
+        console.log(customerGender);
+    } else {
+        console.log('No customer details found');
+    }
+
+
+</script>
+
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
 
@@ -22,13 +38,13 @@
                     <thead>
                         <tr>
                             <th>Employee Name</th>
-                            <th>Type</th>
+                            <th>Gender</th>
                             <th>Assign</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($accounts as $account): ?>
-                            <?php if ($account->accounts_tbl_empType == "Masseur" AND $account->accounts_tbl_status == "AVAILABLE"): ?>
+                            <?php if ($account->accounts_tbl_empType ==  "<script>document.write(customerGender);</script>" AND $account->accounts_tbl_status == "AVAILABLE"): ?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
@@ -38,7 +54,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                            <?php elseif ($account->accounts_tbl_empType == "Masseur" AND $account->accounts_tbl_status == "BOOKED"):?>
+                            <?php elseif ($account->accounts_tbl_empType == "<script>document.write(customerGender);</script>" AND $account->accounts_tbl_status == "BOOKED"):?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>

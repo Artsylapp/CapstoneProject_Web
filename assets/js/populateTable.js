@@ -124,8 +124,10 @@ $(document).ready(function() {
 
     $('.assign-masseur').click(function() {
         let masseurName = $(this).data('masseur-name');
+        let masseurType = $(this).data('masseur-type');
         masseurs = {}; // Clear current masseurs
         masseurs[masseurName] = true;
+        masseurs[masseurType] = true;
         updateTable();
     });
 
