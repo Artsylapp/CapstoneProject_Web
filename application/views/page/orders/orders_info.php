@@ -9,7 +9,7 @@
             
             <div class="col-xs-4 col-sm-4 center-item">
                 <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" 
-                    name="Proceed to finalizing booking" 
+                    name="Proceed to workstation placement" 
                     data-base-url="<?php echo $this->config->base_url('orders_placement');?>">
                     <h3>CONTINUE</h3>
                 </button>
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="sel_gender">Gender Preferred:</label>
+                            <label class="control-label col-sm-2" for="sel_gender">Preferred Gender:</label>
                             <div class="col-sm-10">
                                 <select class="form-control" id="sel_gender" name="optradio">
                                     <option>Male</option>
