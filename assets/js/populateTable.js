@@ -137,8 +137,10 @@ $(document).ready(function() {
 
     $('.assign-location').click(function() {
         let locationName = $(this).data('location-name');
+        let locationType = $(this).data('location-type');
         locations = {}; // Clear current locations
         locations[locationName] = true;
+        locations[locationType] = true;
         updateTable();
     });
 
