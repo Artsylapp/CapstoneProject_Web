@@ -71,7 +71,8 @@ class ApiOrder extends RestController
             // $amount = isset($order_details['amount']) ? $order_details['amount'] : 'N/A';
             // $type = isset($order_details['type']) ? $order_details['type'] : 'N/A';
             $locations = isset($order_service['locations']) ? $order_service['locations'] : [];
-            $totalCost = isset($order_service['orders_tbl_cost']) ? $order_service['orders_tbl_cost'] : 'N/A';
+            $totalCost = isset($order_service['total_cost']['cost']) ? $order_service['total_cost']['cost'] : 'N/A';
+
             
             // Simplify locations for single-item case or format for multiple entries
             if (count($locations) === 1) {
@@ -92,7 +93,7 @@ class ApiOrder extends RestController
                 'id' => $order->orders_tbl_id,
                 'status' => $order->orders_tbl_status,
                 'services' => $services,
-                'masseurs' => $masseurs,
+                'masseur' => $masseurs,
                 'customer' => $customers,
                 'workstation' => $workstation,
                 'totalCost' => $totalCost,
@@ -103,10 +104,6 @@ class ApiOrder extends RestController
             
         }
 
-        // echo '<pre>';
-        // print_r($parsedOrders);
-        // print_r($results);
-
         // Prepare OrderResponse object
         $orderResponse = [
             'error' => false,
@@ -114,6 +111,9 @@ class ApiOrder extends RestController
             'orders' => $parsedOrders
         ];
 
+        // Convert the array to JSON and send it as an object
+        header('Content-Type: application/json');
+        // No need to cast to object if $orderResponse is an array
         $this->response($orderResponse, 200); // Send success response with HTTP status code 200
     }
 
@@ -174,7 +174,7 @@ class ApiOrder extends RestController
             // $amount = isset($order_details['amount']) ? $order_details['amount'] : 'N/A';
             // $type = isset($order_details['type']) ? $order_details['type'] : 'N/A';
             $locations = isset($order_service['locations']) ? $order_service['locations'] : [];
-            $totalCost = isset($order_service['orders_tbl_cost']) ? $order_service['orders_tbl_cost'] : 'N/A';
+            $totalCost = isset($order_service['total_cost']['cost']) ? $order_service['total_cost']['cost'] : 'N/A';
             
             // Simplify locations for single-item case or format for multiple entries
             if (count($locations) === 1) {
@@ -195,7 +195,7 @@ class ApiOrder extends RestController
                 'id' => $order->orders_tbl_id,
                 'status' => $order->orders_tbl_status,
                 'services' => $services,
-                'masseurs' => $masseurs,
+                'masseur' => $masseurs,
                 'customer' => $customers,
                 'workstation' => $workstation,
                 'totalCost' => $totalCost,
@@ -213,46 +213,61 @@ class ApiOrder extends RestController
             'orders' => $parsedOrders
         ];
 
+        // Convert the array to JSON and send it as an object
+        header('Content-Type: application/json');
+        // No need to cast to object if $orderResponse is an array
         $this->response($orderResponse, 200); // Send success response with HTTP status code 200
     }
 
-    // Orders - Cancel booking
+    // Orders - Update Booking Payment
     public function orderUpdate_post()
     {
-        // Get order ID and status from POST request
+        // Get order ID and payment amount from POST request
         $id = $this->post('orderId');
-        $status = $this->post('orderStatus');
+        $amount = $this->post('orderPayment');
 
-        // Retrieve order based on $id
+        if (empty($id) || empty($amount)) {
+            // Respond with validation error
+            $this->response(['error' => true, 'message' => 'Invalid order ID or payment amount.'], 400);
+            return;
+        }
+
+        // Retrieve the order details based on $id
         $booking = $this->Order_model->getOrder($id);
 
         if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_details, true);
+            // Get the current paid amount
+            $currentPaidAmount = $booking[0]->orders_tbl_paid_amount;
 
-            $data = array(
+            // Calculate the new amount
+            $newPaidAmount = $currentPaidAmount + $amount;
+
+            // Prepare the data for update
+            $data = [
                 'id' => $id,
-                'status' => $status,
-                'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
-                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : []
-            );
+                'paidAmount' => $newPaidAmount,
+                'status' => 'COMPLETED'
+            ];
 
-            // Update booking status in the model
-            $success = $this->Booking_model->updateBooking($data);
+            // Update the paid amount in the database
+            $success = $this->Order_model->updatePaidAmount($data);
 
             if ($success) {
                 // Respond with success message
                 $orderResponse = [
                     'error' => false,
-                    'message' => 'Booking cancelled successfully.'
+                    'message' => 'Payment updated successfully.',
+                    'newPaidAmount' => $newPaidAmount
                 ];
                 $this->response($orderResponse, 200);
             } else {
                 // Respond with error message
-                $this->response(['error' => true, 'message' => 'Failed to cancel booking.'], 500);
+                $this->response(['error' => true, 'message' => 'Failed to update payment.'], 500);
             }
         } else {
             // Respond with booking not found message
-            $this->response(['error' => true, 'message' => 'Booking not found.'], 500);
+            $this->response(['error' => true, 'message' => 'Booking not found.'], 404);
         }
     }
+
 }
