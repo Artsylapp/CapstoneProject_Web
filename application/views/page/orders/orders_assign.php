@@ -1,9 +1,59 @@
-<?php
-    if (isset($_POST['gender'])) {
+<!-- <?php
+    $rawData = file_get_contents('php://input');
+
+    $sortingData = json_decode($rawData, true);
+
+    if (isset($sortingData['customer']['name'])) {
+        $customerName = $sortingData['customer']['name'];
     } else {
-        echo "No gender received.";
+        $customerName = 'Unknown'; // Default value or handle the error
     }
+    
+    if (isset($sortingData['workstation']['name'])) {
+        $workstationName = $sortingData['workstation']['name'];
+    } else {
+        $workstationName = 'Unknown'; // Default value or handle the error
+    }
+
+    // Send a JSON response back to the client
+    echo json_encode(['message' => 'Data received successfully']);
+    echo json_encode(['data' => $sortingData]);
+?> -->
+
+<?php
+$rawData = file_get_contents('php://input');
+
+// Log the raw data to check if the JSON is being received correctly
+error_log("Raw Data: " . $rawData);
+
+// Decode the JSON data
+$sortingData = json_decode($rawData, true);
+
+// Check if JSON decoding was successful
+if ($sortingData === null) {
+    error_log("JSON decode error: " . json_last_error_msg());
+} else {
+    // Log the decoded data
+    error_log("Decoded Data: " . print_r($sortingData, true));
+}
+
+if (isset($sortingData['customer']['name'])) {
+    $customerName = $sortingData['customer']['name'];
+} else {
+    $customerName = 'Unknown'; // Default value or handle the error
+}
+
+if (isset($sortingData['workstation']['name'])) {
+    $workstationName = $sortingData['workstation']['name'];
+} else {
+    $workstationName = 'Unknown'; // Default value or handle the error
+}
+
+// Send a JSON response back to the client
+echo json_encode(['message' => 'Data received successfully']);
+echo json_encode(['data' => $sortingData]);
 ?>
+
 
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
@@ -12,11 +62,11 @@
 
             <div class="col-xs-12 col-sm-12">
                 <h1 class="black-txt overflow-wrap">ASSIGN MASSEURS</h1>
-                <h3 class="black-txt" style="margin-top: 0px;"><span>Booking</span> > <span>Create</span> - ?></h3>
+                <h3 class="black-txt" style="margin-top: 0px;"><span>Booking</span> > <span>Create</span></h3>
             </div>
             
             <div class="col-xs-4 col-sm-4 center-item">
-                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" name="Proceed to workstation placement" data-base-url="<?php echo $this->config->base_url('booking/placement'); ?>">
+                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" name="Proceed to workstation placement" data-base-url="<?php echo $this->config->base_url('booking/create'); ?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
@@ -40,7 +90,7 @@
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
                                     <td class="text-center">
-                                        <button class="btn lg-bg menu-btn-sm ttsh assign-masseur" data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "ASSIGN: $account->accounts_tbl_name"; ?>">
+                                        <button class="btn lg-bg menu-btn-sm ttsh assign-masseur" data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" data-masseur-gender="<?php echo $account->accounts_tbl_empType; ?>" name="<?php echo "ASSIGN: $account->accounts_tbl_name"; ?>">
                                             <h4>ASSIGN</h4>
                                         </button>
                                     </td>
@@ -50,7 +100,7 @@
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
                                     <td class="text-center">
-                                        <button class="btn lr-bg menu-btn-sm ttsh assign-masseur" disabled data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" name="<?php echo "UNAVAILABLE: $account->accounts_tbl_name"; ?>">
+                                        <button class="btn lr-bg menu-btn-sm ttsh assign-masseur" disabled data-masseur-name="<?php echo $account->accounts_tbl_name; ?>" data-masseur-gender="<?php echo $account->accounts_tbl_empType; ?>" name="<?php echo "UNAVAILABLE: $account->accounts_tbl_name"; ?>">
                                             <h4>BOOKED</h4>
                                         </button>
                                     </td>

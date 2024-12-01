@@ -38,24 +38,20 @@ $(document).ready(function() {
             }
         }
 
-        for (let masseurName in masseurs) {
-            if (masseurs.hasOwnProperty(masseurName)) {
-                masseurList.append(
-                    `<tr>
-                        <td colspan="3">${masseurName}</td>
-                    </tr>`
-                );
-            }
+        if (masseurs?.name) {
+            masseurList.append(
+                `<tr>
+                    <td colspan="3">${masseurs.name}</td>
+                </tr>`
+            );
         }
 
-        for (let locationName in locations) {
-            if (locations.hasOwnProperty(locationName)) {
-                locationList.append(
-                    `<tr>
-                        <td colspan="3">${locationName}</td>
-                    </tr>`
-                );
-            }
+        if (locations?.name) {
+            locationList.append(
+                `<tr>
+                    <td colspan="3">${locations.name}</td>
+                </tr>`
+            );
         }
 
         $('#total-cost').text(`₱${totalCost.toFixed(2)}`);
@@ -66,7 +62,26 @@ $(document).ready(function() {
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
         localStorage.setItem('customer_information', JSON.stringify(customer_information));
-        window.location.href = redirectUrl;
+
+        const sortingData = {
+            customer: JSON.parse(localStorage.getItem('customer_information')) || {},
+            workstation: JSON.parse(localStorage.getItem('assigned_locations')) || {},
+        };
+
+        $.ajax({
+            url: $('#continue-button').data('base-url'),
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(sortingData),
+            success: function(response) {
+                console.log("Server Response:", response);
+                window.location.href = $('#continue-button').data('base-url');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error saving booking:', error);
+                console.error('Response:', xhr.responseText);
+            }
+        });
     }
 
     function saveDataToServer() {
@@ -98,11 +113,12 @@ $(document).ready(function() {
         let serviceName = $(this).data('service-name');
         let servicePrice = parseFloat($(this).data('service-price'));
         let serviceType = $(this).data('service-type');
+        let serviceDuration = $(this).data('service-duration');
 
         if (services[serviceName]) {
             services[serviceName].amount++;
         } else {
-            services[serviceName] = { price: servicePrice, amount: 1, type: serviceType };
+            services[serviceName] = {name: serviceName,  price: servicePrice, amount: 1, type: serviceType, duration: serviceDuration};
         }
 
         updateTable();
@@ -117,15 +133,15 @@ $(document).ready(function() {
                 delete services[serviceName];
             }
         }
-
-        filterServicesByType();
         updateTable();
     });
 
     $('.assign-masseur').click(function() {
         let masseurName = $(this).data('masseur-name');
+        let masseurGender = $(this).data('masseur-gender');
         masseurs = {}; // Clear current masseurs
-        masseurs[masseurName] = true;
+        masseurs['name'] = masseurName;
+        masseurs['gender'] = masseurGender;
         updateTable();
     });
 
@@ -139,8 +155,8 @@ $(document).ready(function() {
         let locationName = $(this).data('location-name');
         let locationType = $(this).data('location-type');
         locations = {}; // Clear current locations
-        locations[locationName] = true;
-        locations[locationType] = true;
+        locations['name'] = locationName;
+        locations['type'] = locationType;
         updateTable();
     });
 
@@ -153,28 +169,6 @@ $(document).ready(function() {
     $('#continue-button').click(function() {
         let redirectUrl = $('#continue-button').data('base-url');
         saveDataToLocalStorage();
-
-        let customerDetailsString = localStorage.getItem('customer_information');
-
-        if (customerDetailsString) {
-            let customerDetails = JSON.parse(customerDetailsString);
-            let customerGender = customerDetails.gender;
-
-            $.ajax({
-                url: $('#continue-button').data('base-url'),
-                type: 'POST',
-                data: { gender: customerGender },
-                success: function(response) {
-                    console.log(response);
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', error);
-                }
-            });
-
-        } else {
-            console.log('No customer details found');
-        }
     });
 
     $('#finalize-button').click(function() {

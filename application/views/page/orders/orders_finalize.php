@@ -74,7 +74,7 @@
                     </tr>
                 </thead>
                     <tbody id="item-list">
-                        <!-- Items will be populated by JavaScript -->
+                        <!-- Items will be populated by JavaScript (populateTable.js)-->
                     </tbody>
                     <thead>
                         <tr>
@@ -82,7 +82,7 @@
                         </tr>
                     </thead>
                         <tbody id="assign-list">
-                        <!-- Masseurs will be populated by JavaScript -->
+                        <!-- Masseurs will be populated by JavaScript (populateTable.js)-->
                         </tbody>
 
                     <thead>
@@ -91,7 +91,7 @@
                         </tr>
                     </thead>
                         <tbody id="placement-list">
-                        <!-- Area will be populated by JavaScript -->
+                        <!-- Area will be populated by JavaScript (populateTable.js)-->
                         </tbody>
                         <tfoot>
                             <tr>

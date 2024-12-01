@@ -91,6 +91,5 @@
         console.log('Saved customer data:', customerData);
         console.log('localStorage customer data:', localStorage.getItem('customer_information'));
     }
-
     
 </script>

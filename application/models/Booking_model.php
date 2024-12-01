@@ -8,6 +8,15 @@ class Booking_model extends CI_Model {
     {
         // Start transaction
         $this->db->trans_start();
+
+        $duration = 0;
+        if (isset($data['services'])) {
+            foreach ($data['services'] as $service) {
+                if (isset($service['duration']) && isset($service['amount'])) {
+                    $duration += $service['duration'] * $service['amount'];
+                }
+            }
+        }
     
         // Prepare data for passing to database
         $bookingData = [
@@ -24,20 +33,24 @@ class Booking_model extends CI_Model {
             ]) ,
             'orders_tbl_status' => "ON-GOING",
         ];
+
+        $startTime = new DateTime($bookingData['orders_tbl_date']);
+        $startTime->add(new DateInterval('PT' . $duration . 'M'));
+        $bookingData['orders_tbl_time_end'] = $startTime->format('Y-m-d H:i:s');
+
         
         // Insert the booking data into the orders_tbl
         $this->db->insert('orders_tbl', $bookingData);
     
-        // Update the status of the masseur to 'BOOKED'
-        foreach ($data['masseurs'] as $masseur_name => $masseur_data) {
-            $this->db->where('accounts_tbl_name', $masseur_name);
-            $this->db->update('accounts_tbl', ['accounts_tbl_status' => 'BOOKED']);
-        }
+         // Update the status of the masseur to 'BOOKED'
+        $masseurName = $data['masseurs']['name'];
+        $this->db->where('accounts_tbl_name', $masseurName);
+        $this->db->update('accounts_tbl', ['accounts_tbl_status' => 'BOOKED']);
+
         // Update the status of the location to 'BOOKED'
-        foreach ($data['locations'] as $location_name => $location_data) {
-            $this->db->where('location_tbl_name', $location_name);
-            $this->db->update('location_tbl', ['location_tbl_status' => 'BOOKED']);
-        }
+        $locationName = $data['locations']['name'];
+        $this->db->where('location_tbl_name', $locationName);
+        $this->db->update('location_tbl', ['location_tbl_status' => 'BOOKED']);
     
         // Complete the transaction
         $this->db->trans_complete();

@@ -169,33 +169,32 @@ class Orders extends CI_Controller {
     
     // Orders - Cancel booking
     public function cancel_booking()
-    {
+{
+    $id = $this->uri->segment(3);
 
-        $id = $this->uri->segment(3);
+    $booking = $this->Order_model->getOrder($id);
+    if (!empty($booking)) {
+        $booking_details = json_decode($booking[0]->orders_tbl_service, true);
+        $booking_masseur = json_decode($booking[0]->orders_tbl_masseur, true);
 
-        $booking = $this->Order_model->getOrder($id);
-        if (!empty($booking)) {
-            $booking_details = json_decode($booking[0]->orders_tbl_service, true);
-            $booking_masseur = json_decode($booking[0]->orders_tbl_masseur, true);
-    
-            $data = array(
-                'id' => $id,
-                'masseurs' => isset($booking_masseur['masseurs']) ? array_keys($booking_masseur['masseurs']) : [],
-                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : [],
-                'status' => "CANCELLED"
-            );
-    
-            $success = $this->Booking_model->updateBooking($data);
-            if ($success) {
-                $this->session->set_flashdata('message', 'Booking cancelled successfully.');
-            } else {
-                $this->session->set_flashdata('error', 'Failed to cancel booking.');
-            }
+        $data = array(
+            'id' => $id,
+            'masseurs' => isset($booking_masseur['masseur_detail']['name']) ? [$booking_masseur['masseur_detail']['name']] : [],
+            'locations' => isset($booking_details['locations']['name']) ? [$booking_details['locations']['name']] : [],
+            'status' => "CANCELLED"
+        );
+
+        $success = $this->Booking_model->updateBooking($data);
+        if ($success) {
+            $this->session->set_flashdata('message', 'Booking cancelled successfully.');
         } else {
-            $this->session->set_flashdata('error', 'Booking not found.');
+            $this->session->set_flashdata('error', 'Failed to cancel booking.');
         }
-        redirect(base_url("orders"));
+    } else {
+        $this->session->set_flashdata('error', 'Booking not found.');
     }
+    redirect(base_url("orders"));
+}
 
     // Orders - Complete booking
     public function complete_booking($id)

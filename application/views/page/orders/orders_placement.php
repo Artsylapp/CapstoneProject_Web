@@ -57,3 +57,29 @@
 
     </div>
 </div>
+
+<script>
+
+    document.getElementById('continue-button').addEventListener('click', function() {
+
+        var customer_information = JSON.parse(localStorage.getItem('customer_information')) || {};
+
+        var gender = customer_information.gender || "Male";
+
+        fetch('https://viamm.xyz/orders_assign', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ gender: gender })
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Server Response:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+</script>
