@@ -52,9 +52,6 @@
             if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
 
             localStorage.setItem('customer_information', JSON.stringify(customerData));
-
-            console.log('Saved customer data:', customerData);
-            console.log('localStorage customer data:', localStorage.getItem('customer_information'));
         }
 
     }
