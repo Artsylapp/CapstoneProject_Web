@@ -30,7 +30,7 @@
 							<th>Delete</th>
 						</tr>
 					</thead>
-
+ 
 					<tbody>
 						<?php foreach($locations as $location): ?>
 							<tr data-location-type="<?php echo $location->location_tbl_type; ?>">

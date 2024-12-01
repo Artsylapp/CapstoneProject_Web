@@ -58,14 +58,15 @@
 			<div class="container-fluid">
 				<div class="row">
 
-					<div class="col-s-2 homenavbtn margin-all">
-						<button class="btn menu-btn-location lg-bg ttsh">
-							<h3 class="btn-label">INSERT WS NAME HERE</h1>
-							<h3 class="btn-label">Insert Availability</h1>
-							<h3 class="btn-label">Insert Time Available</h1>
-						</button>
-					</div>
-					
+					<?php foreach($locations as $location): ?>
+						<div class="col-s-2 homenavbtn margin-all">
+							<button class="btn menu-btn-location lg-bg ttsh">
+								<h3 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
+								<h3 class="btn-label"><?php echo($location->location_tbl_status)?></h1>
+								<h3 class="btn-label">Insert Time Available</h1>
+							</button>
+						</div>
+					<?php endforeach; ?>
 
 				</div>
 			</div>
