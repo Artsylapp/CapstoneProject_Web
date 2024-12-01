@@ -3,6 +3,8 @@
 
     let customerDetailsString = localStorage.getItem('customer_information');
 
+    console.log(customerDetailsString);
+
     if (customerDetailsString) {
         let customerDetails = JSON.parse(customerDetailsString);
         let customerGender = customerDetails.customer_information.gender;
