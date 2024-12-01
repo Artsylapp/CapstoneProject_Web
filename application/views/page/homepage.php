@@ -58,7 +58,47 @@
 			<div class="container-fluid">
 				<div class="row">
 
-					<div class="col-s-3 homenavbtn">
+					<div class="col-s-2 homenavbtn">
+						<button class="btn menu-btn lg-bg ttsh">
+							<h3 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
+							<h3 class="btn-text-mune btn-label">Insert Availability</h1>
+							<h3 class="btn-text-mune btn-label">Insert Time Available</h1>
+						</button>
+					</div>
+
+					<div class="col-s-2 homenavbtn">
+						<button class="btn menu-btn lg-bg ttsh">
+							<h3 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
+							<h3 class="btn-text-mune btn-label">Insert Availability</h1>
+							<h3 class="btn-text-mune btn-label">Insert Time Available</h1>
+						</button>
+					</div>
+
+					<div class="col-s-2 homenavbtn">
+						<button class="btn menu-btn lg-bg ttsh">
+							<h3 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
+							<h3 class="btn-text-mune btn-label">Insert Availability</h1>
+							<h3 class="btn-text-mune btn-label">Insert Time Available</h1>
+						</button>
+					</div>
+
+					<div class="col-s-2 homenavbtn">
+						<button class="btn menu-btn lg-bg ttsh">
+							<h3 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
+							<h3 class="btn-text-mune btn-label">Insert Availability</h1>
+							<h3 class="btn-text-mune btn-label">Insert Time Available</h1>
+						</button>
+					</div>
+
+					<div class="col-s-2 homenavbtn">
+						<button class="btn menu-btn lg-bg ttsh">
+							<h3 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
+							<h3 class="btn-text-mune btn-label">Insert Availability</h1>
+							<h3 class="btn-text-mune btn-label">Insert Time Available</h1>
+						</button>
+					</div>
+
+					<div class="col-s-2 homenavbtn">
 						<button class="btn menu-btn lg-bg ttsh">
 							<h3 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
 							<h3 class="btn-text-mune btn-label">Insert Availability</h1>
