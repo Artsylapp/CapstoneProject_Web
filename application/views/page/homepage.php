@@ -59,17 +59,24 @@
 				<div class="row">
 
 					<?php foreach($locations as $location): ?>
-						<div class="col-s-2 homenavbtn margin-all">
-							<button class="btn menu-btn-location lg-bg ttsh">
-								<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
-								<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-								
-								<?php if($location->location_tbl_status == "BOOKED"):?>
-									<h2 class="btn-label">INSERT ORDERS_TBL_END_TIME HERE</h2>
-								<?php endif;?>
 
-							</button>
-						</div>
+						<?php if($location->location_tbl_status == "BOOKED"):?>
+							<div class="col-s-2 homenavbtn margin-all">
+								<button class="btn menu-btn-location lg-lr ttsh">
+									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
+									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
+									<h2 class="btn-label">INSERT ORDERS_TBL_END_TIME HERE</h2>
+								</button>
+							</div>
+						<?php else:?>
+							<div class="col-s-2 homenavbtn margin-all">
+								<button class="btn menu-btn-location lg-bg ttsh">
+									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
+									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
+								</button>
+							</div>
+						<?php endif;?>
+						
 					<?php endforeach; ?>
 
 				</div>
