@@ -59,7 +59,7 @@
 				<div class="row">
 
 					<div class="col-s-2 homenavbtn margin-all">
-						<button class="btn menu-btn-m lg-bg ttsh">
+						<button class="btn menu-btn-location lg-bg ttsh">
 							<h3 class="btn-label">INSERT WS NAME HERE</h1>
 							<h3 class="btn-label">Insert Availability</h1>
 							<h3 class="btn-label">Insert Time Available</h1>

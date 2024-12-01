@@ -306,6 +306,14 @@ table {
         align-items: center;
     }
 
+    .menu-btn-location {
+        color: #272626;
+        width: 18vw;
+        height: 25vh;
+        justify-content: center;
+        align-items: center;
+    }
+
     .top-spacer {
         margin-top: 75px;
     }
