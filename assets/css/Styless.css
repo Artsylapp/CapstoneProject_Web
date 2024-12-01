@@ -310,6 +310,10 @@ table {
         margin-top: 75px;
     }
 
+    .margin-all {
+        margin: 15px;
+    }
+
     .login-btn{
         color: #272626;
         width: 13vw;
