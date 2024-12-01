@@ -60,9 +60,9 @@
 
 					<div class="col-s-2 homenavbtn">
 						<button class="btn menu-btn-m lg-bg ttsh">
-							<h3 class="btn-text-menu btn-label">INSERT WS NAME HERE</h1>
-							<h3 class="btn-text-menu btn-label">Insert Availability</h1>
-							<h3 class="btn-text-menu btn-label">Insert Time Available</h1>
+							<h3 class="btn-label">INSERT WS NAME HERE</h1>
+							<h3 class="btn-label">Insert Availability</h1>
+							<h3 class="btn-label">Insert Time Available</h1>
 						</button>
 					</div>
 					
