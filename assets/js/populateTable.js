@@ -167,13 +167,8 @@ $(document).ready(function() {
 
     $('#finalize-button').click(function() {
         let redirectUrl = $('#finalize-button').data('base-url');
-        saveDataToServerTESTER();
+        saveDataToServer();
     });
-
-    // $('#finalize-button').click(function() {
-    //     let redirectUrl = $('#finalize-button').data('base-url');
-    //     saveDataToServer();
-    // });
 
     updateTable();
 
