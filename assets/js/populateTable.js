@@ -114,10 +114,10 @@ $(document).ready(function() {
         let servicePrice = parseFloat($(this).data('service-price'));
         let serviceType = $(this).data('service-type');
 
-        if (services['services']) {
-            services['services'].amount++;
+        if (services[serviceName]) {
+            services[serviceName].amount++;
         } else {
-            services['services'] = {name: serviceName,  price: servicePrice, amount: 1, type: serviceType };
+            services[serviceName] = {name: serviceName,  price: servicePrice, amount: 1, type: serviceType };
         }
 
         updateTable();
