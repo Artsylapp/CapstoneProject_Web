@@ -65,7 +65,7 @@
 								<button class="btn menu-btn-location lr-bg ttsh">
 									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-									<h2 class="btn-label">INSERT ORDERS_TBL_END_TIME HERE</h2>
+									<h2 class="btn-label"><?php echo($location->location_tbl_freetime)?></h2>
 								</button>
 							</div>
 						<?php else:?>
