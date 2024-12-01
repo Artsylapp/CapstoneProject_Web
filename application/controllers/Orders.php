@@ -175,10 +175,11 @@ class Orders extends CI_Controller {
         $booking = $this->Order_model->getOrder($id);
         if (!empty($booking)) {
             $booking_details = json_decode($booking[0]->orders_tbl_service, true);
+            $booking_masseur = json_decode($booking[0]->orders_tbl_masseur, true);
     
             $data = array(
                 'id' => $id,
-                'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
+                'masseurs' => isset($booking_masseur['masseurs']) ? array_keys($booking_masseur['masseurs']) : [],
                 'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : [],
                 'status' => "CANCELLED"
             );
