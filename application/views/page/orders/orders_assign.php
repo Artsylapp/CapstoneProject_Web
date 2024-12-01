@@ -3,16 +3,16 @@
 
     $sortingData = json_decode($rawData, true);
 
-    if (isset($sortingData['customer'])) {
-        $customer = $sortingData['customer'];
+    if (isset($sortingData['customer']['name'])) {
+        $customerName = $sortingData['customer']['name'];
     } else {
-        $customer = [];
+        $customerName = 'Unknown'; // Default value or handle the error
     }
     
-    if (isset($sortingData['workstation'])) {
-        $workstation = $sortingData['workstation'];
+    if (isset($sortingData['workstation']['name'])) {
+        $workstationName = $sortingData['workstation']['name'];
     } else {
-        $workstation = [];
+        $workstationName = 'Unknown'; // Default value or handle the error
     }
 
     print_r($customer);   // Log customer info
@@ -34,7 +34,7 @@
             </div>
             
             <div class="col-xs-4 col-sm-4 center-item">
-                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" name="Proceed to workstation placement" data-base-url="<?php echo $this->config->base_url('booking/placement'); ?>">
+                <button id="continue-button" class="btn lg-bg menu-btn-m center-item ttsh" name="Proceed to workstation placement" data-base-url="<?php echo $this->config->base_url('create_booking'); ?>">
                     <h3>CONTINUE</h3>
                 </button>
             </div>
