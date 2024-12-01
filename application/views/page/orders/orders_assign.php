@@ -53,7 +53,7 @@
                     </thead>
                     <tbody>
                         <?php foreach($accounts as $account): ?>
-                            <?php if ($account->accounts_tbl_empType ==  $customerGender AND $account->accounts_tbl_status == "AVAILABLE"): ?>
+                            <?php if ($account->accounts_tbl_empType == $customerGender AND $account->accounts_tbl_status == "AVAILABLE"): ?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
