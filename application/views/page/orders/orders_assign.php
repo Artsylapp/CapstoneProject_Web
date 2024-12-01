@@ -6,6 +6,7 @@
     if (customerDetailsString) {
         let customerDetails = JSON.parse(customerDetailsString);
         let customerGender = customerDetails.gender;
+        console.log(customerGender);
 
         if (customerGender == "Male") {
             <?php $customerGender = "Male"; ?>
