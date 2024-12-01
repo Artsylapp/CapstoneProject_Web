@@ -74,13 +74,13 @@
     });
 
     function saveCustomerData() {
-        var customerData = localStorage.getItem('customer_information') || {};
+        var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
 
         if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
         if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
         if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
 
-        localStorage.setItem('customer_information', customerData);
+        localStorage.setItem('customer_information', JSON.stringify(customerData));
 
         console.log('Saved customer data:', customerData);
         console.log('localStorage customer data:', localStorage.getItem('customer_information'));
