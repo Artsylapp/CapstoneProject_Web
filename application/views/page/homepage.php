@@ -58,7 +58,11 @@
 			<div class="container-fluid">
 				<div class="row">
 
-					
+					<div class="col-s-3 homenavbtn">
+						<h1 class="btn-text-mune btn-label">INSERT WS NAME HERE</h1>
+						<h1 class="btn-text-mune btn-label">Insert Availability</h1>
+						<h1 class="btn-text-mune btn-label">Insert Time Available</h1>
+					</div>
 
 				</div>
 			</div>

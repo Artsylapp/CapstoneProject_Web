@@ -7,6 +7,10 @@ class Main extends CI_Controller {
 	{
         parent::__construct();
 		$this->load->model('Company_model');
+		$this->load->model('Locations_model');
+		$this->load->model('Orders_model');
+		$this->load->model('Booking_model');
+		$this->load->model('Account_model');
 		$this->load->library('session');
     }
 
