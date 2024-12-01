@@ -118,7 +118,7 @@ $(document).ready(function() {
         if (services[serviceName]) {
             services[serviceName].amount++;
         } else {
-            services[serviceName] = {name: serviceName,  price: servicePrice, amount: 1, type: serviceType, duration: serviceDuration, };
+            services[serviceName] = {name: serviceName,  price: servicePrice, amount: 1, type: serviceType, duration: serviceDuration};
         }
 
         updateTable();
