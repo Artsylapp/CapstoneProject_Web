@@ -8,6 +8,15 @@ class Booking_model extends CI_Model {
     {
         // Start transaction
         $this->db->trans_start();
+
+        $duration = 0;
+        if (isset($data['services'])) {
+            foreach ($data['services'] as $service) {
+                if (isset($service['duration']) && isset($service['amount'])) {
+                    $duration += $service['duration'] * $service['amount'];
+                }
+            }
+        }
     
         // Prepare data for passing to database
         $bookingData = [
@@ -24,6 +33,11 @@ class Booking_model extends CI_Model {
             ]) ,
             'orders_tbl_status' => "ON-GOING",
         ];
+
+        $startTime = new DateTime($bookingData['orders_tbl_date']);
+        $startTime->add(new DateInterval('PT' . $duration . 'M'));
+        $bookingData['orders_tbl_time_end'] = $startTime->format('Y-m-d H:i:s');
+
         
         // Insert the booking data into the orders_tbl
         $this->db->insert('orders_tbl', $bookingData);
