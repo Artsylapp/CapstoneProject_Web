@@ -1,27 +1,9 @@
-
-<script>
-
-    let customerDetailsString = localStorage.getItem('customer_information');
-
-    if (customerDetailsString) {
-        let customerDetails = JSON.parse(customerDetailsString);
-        let customerGender = customerDetails.gender;
-        console.log(customerGender);
-
-        if (customerGender == "Male") {
-            <?php $customerGender = "Male"; ?>
-            console.log("M");
-        } else {
-            <?php $customerGender = "Female"; ?>
-            console.log("FEM");
-        }
-
+<?php
+    if (isset($_POST['gender'])) {
     } else {
-        console.log('No customer details found');
+        echo "No gender received.";
     }
-
-
-</script>
+?>
 
 <div class="col-xs-9 col-sm-9">
     <div class="container-fluid">
@@ -53,7 +35,7 @@
                     </thead>
                     <tbody>
                         <?php foreach($accounts as $account): ?>
-                            <?php if ($account->accounts_tbl_empType == $customerGender AND $account->accounts_tbl_status == "AVAILABLE"): ?>
+                            <?php if ($account->accounts_tbl_empType == $_POST['gender'] AND $account->accounts_tbl_status == "AVAILABLE"): ?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
@@ -63,7 +45,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                            <?php elseif ($account->accounts_tbl_empType == $customerGender AND $account->accounts_tbl_status == "BOOKED"):?>
+                            <?php elseif ($account->accounts_tbl_empType == $_POST['gender'] AND $account->accounts_tbl_status == "BOOKED"):?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
