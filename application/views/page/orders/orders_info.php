@@ -55,6 +55,8 @@
 
 <script>
 
+    saveCustomerData()
+
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
         localStorage.setItem('customer_name', Customer_Name);
