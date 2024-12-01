@@ -38,7 +38,7 @@ $(document).ready(function() {
             }
         }
 
-        if (masseurs) {
+        if (masseurs?.name) {
             masseurList.append(
                 `<tr>
                     <td colspan="3">${masseurs.name}</td>
@@ -46,7 +46,7 @@ $(document).ready(function() {
             );
         }
 
-        if (locations) {
+        if (locations?.name) {
             locationList.append(
                 `<tr>
                     <td colspan="3">${locations.name}</td>
