@@ -1,7 +1,3 @@
-<?php 
-    $workplace_type = ''; 
-?>
-
 <script>
     
     var workplaceType = localStorage.getItem('assigned_locations');

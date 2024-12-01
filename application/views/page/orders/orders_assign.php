@@ -3,11 +3,15 @@
 
     let customerDetailsString = localStorage.getItem('customer_information');
 
-    console.log(customerDetailsString);
-
     if (customerDetailsString) {
         let customerDetails = JSON.parse(customerDetailsString);
         let customerGender = customerDetails.gender;
+
+        if (customerGender == "Male") {
+            <?php $customerGender = "Male"; ?>
+        } else {
+            <?php $customerGender = "Female"; ?>
+        }
 
     } else {
         console.log('No customer details found');
@@ -46,7 +50,7 @@
                     </thead>
                     <tbody>
                         <?php foreach($accounts as $account): ?>
-                            <?php if ($account->accounts_tbl_empType ==  "<script>document.write(customerGender); console.log(customerGender);</script>" AND $account->accounts_tbl_status == "AVAILABLE"): ?>
+                            <?php if ($account->accounts_tbl_empType ==  $customerGender AND $account->accounts_tbl_status == "AVAILABLE"): ?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
@@ -56,7 +60,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                            <?php elseif ($account->accounts_tbl_empType == "<script>document.write(customerGender);</script>" AND $account->accounts_tbl_status == "BOOKED"):?>
+                            <?php elseif ($account->accounts_tbl_empType == $customerGender AND $account->accounts_tbl_status == "BOOKED"):?>
                                 <tr>
                                     <td><?php echo $account->accounts_tbl_name; ?></td>
                                     <td><?php echo $account->accounts_tbl_empType; ?></td>
