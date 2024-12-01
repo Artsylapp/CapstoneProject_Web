@@ -1,15 +1,11 @@
 <?php
-    // Get the raw POST data
     $rawData = file_get_contents('php://input');
 
-    // Decode the JSON data into a PHP array
     $sortingData = json_decode($rawData, true);
 
-    // Extract customer and workstation data
     if (isset($sortingData['customer'])) {
         $customer = $sortingData['customer'];
     } else {
-        // Handle the error, for example, by setting $customer to an empty array or displaying a message
         $customer = [];
     }
     
