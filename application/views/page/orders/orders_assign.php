@@ -1,8 +1,12 @@
 <?php
-    if (isset($_POST['gender'])) {
-    } else {
-        echo "No gender received.";
-    }
+    // Decode the incoming JSON data
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    // Access the gender value
+    $gender = $data['gender'] ?? 'Unknown'; // Default to 'Unknown' if not set
+
+    // Use the gender value as needed
+    echo "Received Gender: " . $gender;
 ?>
 
 <div class="col-xs-9 col-sm-9">

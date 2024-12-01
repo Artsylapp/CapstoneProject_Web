@@ -151,28 +151,6 @@ $(document).ready(function() {
     $('#continue-button').click(function() {
         let redirectUrl = $('#continue-button').data('base-url');
         saveDataToLocalStorage();
-
-        let customerDetailsString = localStorage.getItem('customer_information');
-
-        if (customerDetailsString) {
-            let customerDetails = JSON.parse(customerDetailsString);
-            let customerGender = customerDetails.gender;
-
-            $.ajax({
-                url: $('#continue-button').data('base-url'),
-                type: 'POST',
-                data: { gender: customerGender },
-                success: function(response) {
-                    console.log(response);
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', error);
-                }
-            });
-
-        } else {
-            console.log('No customer details found');
-        }
     });
 
     $('#finalize-button').click(function() {
