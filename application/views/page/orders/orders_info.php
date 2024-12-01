@@ -55,27 +55,32 @@
 
 <script>
 
+    
+
     document.getElementById('CusName').addEventListener('blur', function() {
         var Customer_Name = document.getElementById('CusName').value;
-        saveCustomerData(Customer_Name, null, null);
+        localStorage.setItem('customer_name', JSON.stringify(Customer_Name));
+        saveCustomerData();
     });
 
     document.getElementById('CusCon').addEventListener('blur', function() {
         var Customer_Contact = document.getElementById('CusCon').value;
-        saveCustomerData(null, Customer_Contact, null);
+        localStorage.setItem('customer_contact', JSON.stringify(Customer_Contact));
+        saveCustomerData();
     });
 
     document.getElementById('sel_gender').addEventListener('change', function() {
         var Customer_P_Gender = document.getElementById('sel_gender').value;
-        saveCustomerData(null, null, Customer_P_Gender);
+        localStorage.setItem('P_Gender', JSON.stringify(Customer_P_Gender));
+        saveCustomerData();
     });
 
-    function saveCustomerData(Customer_Name, Customer_Con, Customer_P_Gender) {
+    function saveCustomerData() {
         var customerData = JSON.parse(localStorage.getItem('customer_information')) || {};
 
-        if (Customer_Name !== null) customerData.name = Customer_Name;
-        if (Customer_Con !== null) customerData.contact = Customer_Con;
-        if (Customer_P_Gender !== null) customerData.gender = Customer_P_Gender;
+        if (localStorage.getItem('customer_name') !== null) customerData.name = localStorage.getItem('customer_name');
+        if (localStorage.getItem('customer_contact') !== null) customerData.contact = localStorage.getItem('customer_contact');
+        if (localStorage.getItem('P_Gender') !== null) customerData.gender = localStorage.getItem('P_Gender');
 
         localStorage.setItem('customer_information', JSON.stringify(customerData));
 
