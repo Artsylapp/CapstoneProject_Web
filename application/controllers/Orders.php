@@ -132,7 +132,6 @@ class Orders extends CI_Controller {
         
         // Retrieve the JSON input
         $data = json_decode(file_get_contents('php://input'), true);
-        console.log($data)
         print_r($data);
 
         // Check if the data is valid and required fields are not empty
