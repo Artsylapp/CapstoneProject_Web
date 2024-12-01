@@ -62,7 +62,26 @@ $(document).ready(function() {
         localStorage.setItem('assigned_masseurs', JSON.stringify(masseurs));
         localStorage.setItem('assigned_locations', JSON.stringify(locations));
         localStorage.setItem('customer_information', JSON.stringify(customer_information));
-        window.location.href = redirectUrl;
+
+        let sortingData = {
+            customer: JSON.parse(localStorage.getItem('customer_information')) || {},
+            workstation: JSON.parse(localStorage.getItem('assigned_locations')) || {},
+        };
+
+        $.ajax({
+            url: $('#continue-button').data('base-url'),
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(bookingData),
+            success: function(response) {
+                console.log("Server Response:", response);
+                window.location.href = $('#continue-button').data('redirect-url');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error saving booking:', error);
+                console.error('Response:', xhr.responseText);
+            }
+        });
     }
 
     function saveDataToServer() {
