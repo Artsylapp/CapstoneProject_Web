@@ -6,35 +6,23 @@ class Analytics_model extends CI_Model{
     public function getYearsOrders(){
         $currentYear = date('Y');
         $previousYear = date('Y', strtotime('-1 year'));
-
-        // sql code
-        // SELECT 
-        //     MONTH(orders_date) AS month, 
-        //     COUNT(*) AS count
-        // FROM 
-        //     orders_tbl
-        // WHERE 
-        //     YEAR(orders_date) = 2024
-        //     AND orders_tbl_status IN ('completed', 'cancelled')
-        // GROUP BY 
-        //     MONTH(orders_date);
     
         // Query to count orders by month for the current year
         $currentYearOrders = $this->db->query("
-            SELECT MONTH(orders_date) as month, COUNT(*) as count
+            SELECT MONTH(orders_tbl_date) as month, COUNT(*) as count
             FROM orders_tbl
-            WHERE YEAR(orders_date) = $currentYear
+            WHERE YEAR(orders_tbl_date) = $currentYear
               AND orders_tbl_status IN ('completed')
-            GROUP BY MONTH(orders_date)
+            GROUP BY MONTH(orders_tbl_date)
         ")->result();
     
         // Query to count orders by month for the previous year
         $previousYearOrders = $this->db->query("
-            SELECT MONTH(orders_date) as month, COUNT(*) as count
+            SELECT MONTH(orders_tbl_date) as month, COUNT(*) as count
             FROM orders_tbl
-            WHERE YEAR(orders_date) = $previousYear
+            WHERE YEAR(orders_tbl_date) = $previousYear
               AND orders_tbl_status IN ('completed')
-            GROUP BY MONTH(orders_date)
+            GROUP BY MONTH(orders_tbl_date)
         ")->result();
     
         // Return both years' data
@@ -55,7 +43,7 @@ class Analytics_model extends CI_Model{
         // Process each order to decode JSON and calculate the revenue
         foreach ($orders as $order) {
             // Decode JSON details
-            $order_details = json_decode($order->orders_tbl_details, true);
+            $order_details = json_decode($order->orders_tbl_service, true);
     
             // Validate JSON data
             if (is_null($order_details)) {
@@ -67,8 +55,8 @@ class Analytics_model extends CI_Model{
             $totalCost = isset($order_details['orders_tbl_cost']) && is_numeric($order_details['orders_tbl_cost']) ? $order_details['orders_tbl_cost'] : 0;
     
             // Determine the year and month of the order
-            $orderYear = date('Y', strtotime($order->orders_date));
-            $orderMonth = date('m', strtotime($order->orders_date));
+            $orderYear = date('Y', strtotime($order->orders_tbl_date));
+            $orderMonth = date('m', strtotime($order->orders_tbl_date));
     
             // Add totalCost to the respective year's monthly revenue
             if ($order->orders_tbl_status == 'COMPLETED') {
@@ -113,12 +101,22 @@ class Analytics_model extends CI_Model{
         $query = $this->db->get('orders_tbl');
         $orders = $query->result();
     
+        // TODO: Implement the analytics logic here
         // Initialize variables
         $totalOrder = 0;
         $mostService = '';
+        $leastService = '';
+        $mostServiceCount = 0;
+        $leastServiceCount = 0;
+        $mostActiveEmployee = '';
+        $mostActiveEmployeeCount = 0;
+        $leastActiveEmployee = '';
+        $leastActiveEmployeeCount = 0;
+        $mostProfitableMonth = '';
+        $mostMonthProfit = 0;
         $totalRevenue = 0;
-        $AOV = 0;
-        $MOD = 0;
+        
+        
         
         // initializing Arrays to store monthly revenue (option)
         $monthlyRevenue = array_fill(1, 12, 0); // Indexes 1 to 12 for months January to December
@@ -132,11 +130,11 @@ class Analytics_model extends CI_Model{
     
         // Process each order to calculate the revenue and other analytics
         foreach ($orders as $order) {
-            $order_details = json_decode($order->orders_tbl_details, true);
+            $order_details = json_decode($order->orders_tbl_service, true);
     
             if ($order_details !== null) {
                 $totalCost = isset($order_details['orders_tbl_cost']) ? (float)$order_details['orders_tbl_cost'] : 0;
-                $orderDate = strtotime($order->orders_date);
+                $orderDate = strtotime($order->orders_tbl_date);
                 $orderYear = date('Y', $orderDate);
                 $orderMonth = date('m', $orderDate); // Month as '01' to '12'
     
@@ -166,7 +164,7 @@ class Analytics_model extends CI_Model{
         // Calculate for most active employee
         $employeeCounts = array();
         foreach ($orders as $order) {
-            $order_details = json_decode($order->orders_tbl_details, true);
+            $order_details = json_decode($order->orders_tbl_service, true);
 
             // Check if the 'masseurs' key exists and is an array
             if (isset($order_details['masseurs']) && is_array($order_details['masseurs'])) {
@@ -208,7 +206,6 @@ class Analytics_model extends CI_Model{
             'mostService' => $mostService,
             'mostServiceCount' => $serviceCounts[$mostService] ?? 0,
             'totalRevenue' => number_format($totalRevenue, 2),
-            'AOV' => number_format($AOV, 2),
             'mostActiveEmployee' => $mostActiveEmployee,
             'mostActiveEmployeeCount' => $mostActiveEmployeeCount,// Return the most active employee's name and count
             'mostRevenueMonth' => number_format($mostMonthProfit, 2), // Optional: return monthly revenue data
