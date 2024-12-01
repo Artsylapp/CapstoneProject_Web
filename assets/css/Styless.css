@@ -306,6 +306,10 @@ table {
         align-items: center;
     }
 
+    .top-spacer {
+        margin-top: 25px;
+    }
+
     .login-btn{
         color: #272626;
         width: 13vw;

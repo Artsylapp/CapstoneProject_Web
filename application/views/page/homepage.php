@@ -54,7 +54,7 @@
 			</div>
 		</div>
 
-		<div class="button-container">
+		<div class="button-container top-spacer">
 			<div class="container-fluid">
 				<div class="row">
 
