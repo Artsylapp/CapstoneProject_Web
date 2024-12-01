@@ -52,7 +52,7 @@ $(document).ready(function() {
             if (locations.hasOwnProperty(location)) {
                 locationList.append(
                     `<tr>
-                        <td colspan="3">${location}</td>
+                        <td colspan="3">${location[0]}</td>
                     </tr>`
                 );
                 break;
