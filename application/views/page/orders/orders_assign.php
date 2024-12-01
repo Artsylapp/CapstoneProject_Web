@@ -3,7 +3,7 @@
     $data = json_decode(file_get_contents('php://input'), true);
 
     // Access the gender value
-    $gender = $data['gender'] ?? 'Male'; // Default to 'Unknown' if not set
+    $gender = $data['gender'] ?? ''; // Default to 'Unknown' if not set
 
     // Use the gender value as needed
     echo "Received Gender: " . $gender;
