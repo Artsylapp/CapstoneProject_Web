@@ -12,7 +12,7 @@
 
             <div class="col-xs-12 col-sm-12">
                 <h1 class="black-txt overflow-wrap">ASSIGN MASSEURS</h1>
-                <h3 class="black-txt" style="margin-top: 0px;"><span>Booking</span> > <span>Create</span> - <?php $customerGender ?></h3>
+                <h3 class="black-txt" style="margin-top: 0px;"><span>Booking</span> > <span>Create</span> - <?php $_POST['gender'] ?></h3>
             </div>
             
             <div class="col-xs-4 col-sm-4 center-item">
