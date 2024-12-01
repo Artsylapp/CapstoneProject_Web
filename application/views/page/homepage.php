@@ -65,7 +65,7 @@
 								<button class="btn menu-btn-location lr-bg ttsh">
 									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-									$date = new DateTime($location->location_tbl_freetime);
+									<?php $date = new DateTime($location->location_tbl_freetime);?>
 									<h2 class="btn-label"><?php echo $date->format('h:i:s A');?></h2>
 								</button>
 							</div>
