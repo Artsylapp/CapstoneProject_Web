@@ -1,11 +1,6 @@
 <?php
-    // Decode the incoming JSON data
     $data = json_decode(file_get_contents('php://input'), true);
-
-    // Access the gender value
-    $gender = $data['gender'] ?? ''; // Default to 'Unknown' if not set
-
-    // Use the gender value as needed
+    $gender = $data['gender'] ?? 'ERROR';  // Default to empty string if gender is not set
     echo "Received Gender: " . $gender;
 ?>
 
