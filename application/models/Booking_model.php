@@ -50,8 +50,10 @@ class Booking_model extends CI_Model {
         // Update the status of the location to 'BOOKED'
         $locationName = $data['locations']['name'];
         $this->db->where('location_tbl_name', $locationName);
-        $this->db->update('location_tbl', ['location_tbl_status' => 'BOOKED']);
-        $this->db->update('location_tbl', ['location_tbl_freetime'=> $startTime->format('Y-m-d H:i:s')]);
+        $this->db->update('location_tbl', [
+            'location_tbl_status' => 'BOOKED',
+            'location_tbl_freetime' => $startTime->format('Y-m-d H:i:s')
+        ]);
     
         // Complete the transaction
         $this->db->trans_complete();
@@ -94,7 +96,10 @@ class Booking_model extends CI_Model {
         if (isset($data['locations'])) {
             foreach ($data['locations'] as $location) {
                 $this->db->where('location_tbl_name', $location);
-                $this->db->update('location_tbl', array('location_tbl_status' => 'Open'));
+                $this->db->update('location_tbl', [
+                    'location_tbl_status' => 'Open',
+                    'location_tbl_freetime' => NULL
+                ]);
             }
         }
     
