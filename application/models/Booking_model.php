@@ -20,7 +20,7 @@ class Booking_model extends CI_Model {
                 'masseur_detail' =>  $data['masseurs'],
             ]),
             'orders_tbl_customer' => json_encode([
-                'customer_details'=> JSON.parse(localStorage.getItem('customer_information')),
+                'customer_details'=> localStorage.getItem('customer_information'),
             ]) ,
             'orders_tbl_status' => "ON-GOING",
         ];
