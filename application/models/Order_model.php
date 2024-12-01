@@ -142,7 +142,7 @@ class Order_model extends CI_Model
     // getting all completed orders
     public function getCompletedOrders()
     {
-        $this->db->where_in('orders_tbl_status', ['Finished', 'Cancelled', 'Completed', 'Complete']);
+        $this->db->where_in('orders_tbl_status', ['Cancelled', 'Completed', 'Complete']);
         $query = $this->db->get('orders_tbl');
         return $query->result();
     }

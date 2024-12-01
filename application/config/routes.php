@@ -77,15 +77,9 @@ $route['getAnalyticsData'] = 'Analytics/getAnalyticsData';
 
 /* Mobile REST API */
 $route['api/login'] = 'api/ApiAuth/index';
-// $route['api/order'] = 'api/ApiOrder/index';
-$route['api/order/edit/(:num)'] = 'api/ApiOrder/orderEdit/$1';
+$route['api/order/ongoing'] = 'api/ApiOrder/index';
 $route['api/order/update'] = 'api/ApiOrder/orderUpdate';
-$route['api/order/delete'] = 'api/ApiOrder/orderDelete';
-$route['api/order/updatestatus'] = 'api/ApiOrder/orderUpdateStatus';
-$route['api/order/ongoing'] = 'api/ApiOrder/index';//
 $route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
-$route['api/order/finished'] = 'api/ApiOrder/orderFinished';
-$route['api/order/update'] = 'api/ApiOrder/orderUpdate';
 
 
 /* Mobile webview */
