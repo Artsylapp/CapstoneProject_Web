@@ -66,7 +66,7 @@
 						// Check if location_tbl_freetime is valid and calculate the time
 						if (!empty($location->location_tbl_freetime)) {
 							try {
-								$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('h:i:s A'); // Add 8 hours and format
+								$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('Y-m-d H:i:s'); // Add 8 hours and format
 							} catch (Exception $e) {
 								$freetime = 'Invalid Time'; // Fallback if DateTime fails
 							}
@@ -141,8 +141,6 @@
             const freeTime = new Date(button.getAttribute('data-freetime'));
             const currentTime = new Date();
             const diffInMinutes = Math.abs((currentTime - freeTime) / (1000 * 60)); // Calculate time difference in minutes
-
-			console.log(`Button ID: ${button.id}, Time Difference: ${diffInMinutes} minutes`);
 
             if (diffInMinutes <= 5) {
                 // Flash the button
