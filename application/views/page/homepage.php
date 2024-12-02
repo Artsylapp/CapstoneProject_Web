@@ -66,7 +66,7 @@
 						// Check if location_tbl_freetime is valid and calculate the time
 						if (!empty($location->location_tbl_freetime)) {
 							try {
-								$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('H:i:s'); // Add 8 hours and format
+								$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('h:i:s A'); // Add 8 hours and format
 							} catch (Exception $e) {
 								$freetime = 'Invalid Time'; // Fallback if DateTime fails
 							}
