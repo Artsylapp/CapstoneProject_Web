@@ -28,6 +28,9 @@
                             <h2>Booking Number: <?php echo $id; ?></h2>
                         </div>
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
+                            <h2>Therapist Assigned: <?php echo $id; ?></h2>
+                        </div>
+                        <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
                                 if ($status == 'ON-GOING'){
                                     echo '<h2>Status: <span style="color: orange">' . $status . '</span></h2>';
@@ -60,11 +63,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="text-left">
-                                        <?php foreach($masseurs as $masseurName => $isSelected):?>
-                                            <h1>Masseur: <?php echo htmlspecialchars($masseurName); ?></h1>
-                                        <?php endforeach;?>
-                                    </tr>
                                     <?php foreach ($services as $serviceName => $serviceDetails): ?>
                                         <tr class="text-center">
                                             <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
@@ -92,7 +90,7 @@
 
                     <div class="col-sm-offset-8 col-sm-3" style="margin-top:25px;">
                         <div class="col-sm-12">
-                            <?php if ($paid_amount == $totalCost) :?>
+                            <?php if ($paid_amount >= $totalCost) :?>
                                 <a href="<?php echo $this->config->base_url("orders/complete_booking/" . $this->uri->segment(3))?>">
                                 <button class="btn lg-bg menu-btn-m ttsh" name="COMPLETE BOOKING" formaction="<?php echo $this->config->base_url("orders/complete_booking/" . $this->uri->segment(3))?>">
                                     <h4>COMPLETE BOOKING</h4>
