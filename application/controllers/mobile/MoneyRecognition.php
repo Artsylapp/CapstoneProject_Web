@@ -5,11 +5,11 @@ class MoneyRecognition extends CI_Controller {
 
     public function upload_money_image() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            echo json_encode(['success' => false, 'error' => 'Invalid request method.']);
+            $this->output_json(['success' => false, 'error' => 'Invalid request method.']);
             return;
         }
 
-        // Load necessary helpers and libraries
+        // Load helpers and libraries
         $this->load->helper(['form', 'url']);
         $this->load->library('upload');
 
@@ -23,7 +23,7 @@ class MoneyRecognition extends CI_Controller {
 
         if (!$this->upload->do_upload('image')) {
             // File upload failed
-            echo json_encode(['success' => false, 'error' => $this->upload->display_errors()]);
+            $this->output_json(['success' => false, 'error' => 'File upload failed.']);
             return;
         }
 
@@ -33,30 +33,31 @@ class MoneyRecognition extends CI_Controller {
         $classes = [];
 
         // Roboflow API endpoints
-        $roboflowApiUrl1 = "https://detect.roboflow.com/final-yolov8-annotation/1?api_key=ZkHJirV5OTz4cA9P0RPG";
-        $roboflowApiUrl2 = "https://detect.roboflow.com/peso-coins/1?api_key=ZkHJirV5OTz4cA9P0RPG";
+        $apiEndpoints = [
+            "https://detect.roboflow.com/final-yolov8-annotation/1?api_key=ZkHJirV5OTz4cA9P0RPG",
+            "https://detect.roboflow.com/peso-coins/1?api_key=ZkHJirV5OTz4cA9P0RPG"
+        ];
 
-        // Send the image to the Roboflow API (two endpoints)
-        $responses = [];
-        foreach ([$roboflowApiUrl1, $roboflowApiUrl2] as $url) {
+        // Send the image to the Roboflow API
+        foreach ($apiEndpoints as $url) {
             $response = $this->send_image_to_roboflow($url, $filePath);
             if ($response['success']) {
-                $responses[] = $response['data'];
-                if (isset($response['data']['predictions']) && is_array($response['data']['predictions'])) {
-                    foreach ($response['data']['predictions'] as $prediction) {
-                        if (isset($prediction['class']) && $prediction['confidence'] >= 0.7) {
-                            $classes[] = $prediction['class'];
-                        }
+                foreach ($response['data']['predictions'] ?? [] as $prediction) {
+                    if (!empty($prediction['class']) && $prediction['confidence'] >= 0.7) {
+                        $classes[] = $prediction['class'];
                     }
                 }
             }
         }
 
+        // Clean up the uploaded file
+        unlink($filePath);
+
         // Return the detected classes
         if (!empty($classes)) {
-            echo json_encode(['success' => true, 'classes' => $classes]);
+            $this->output_json(['success' => true, 'classes' => $classes]);
         } else {
-            echo json_encode(['success' => false, 'error' => 'No valid classes detected.']);
+            $this->output_json(['success' => false, 'error' => 'No valid classes detected.']);
         }
     }
 
@@ -79,9 +80,15 @@ class MoneyRecognition extends CI_Controller {
 
         $decodedResponse = json_decode($response, true);
         if (json_last_error() !== JSON_ERROR_NONE) {
-            return ['success' => false, 'error' => 'Invalid JSON response: ' . json_last_error_msg()];
+            return ['success' => false, 'error' => 'Invalid JSON response.'];
         }
 
         return ['success' => true, 'data' => $decodedResponse];
+    }
+
+    private function output_json($data) {
+        header('Content-Type: application/json');
+        echo json_encode($data);
+        exit;
     }
 }
