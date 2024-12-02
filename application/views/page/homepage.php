@@ -142,6 +142,8 @@
             const currentTime = new Date();
             const diffInMinutes = Math.abs((currentTime - freeTime) / (1000 * 60)); // Calculate time difference in minutes
 
+			console.log(`Button ID: ${button.id}, Time Difference: ${diffInMinutes} minutes`);
+
             if (diffInMinutes <= 5) {
                 // Flash the button
                 flashButton(button);
