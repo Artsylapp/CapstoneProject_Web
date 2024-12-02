@@ -58,28 +58,40 @@
 			<div class="container-fluid">
 				<div class="row">
 
-					<?php foreach($locations as $location): ?>
-						<?php 
-							$locationId = preg_replace('/\s+/', '_', $location->location_tbl_name); // Replace spaces with underscores for IDs
-							$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('Y-m-d H:i:s'); // Add 8 hours and format
-						?>
-						<?php if($location->location_tbl_status == "BOOKED"):?>
-							<div class="col-s-2 homenavbtn margin-all">
-								<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
-									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
-									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-									<h2 class="btn-label"><?php echo $freetime; ?></h2>
-								</button>
-							</div>
-						<?php else:?>
-							<div class="col-s-2 homenavbtn margin-all">
-								<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
-									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
-									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-								</button>
-							</div>
-						<?php endif; ?>
-					<?php endforeach; ?>
+				<?php foreach($locations as $location): ?>
+					<?php 
+						// Generate unique ID for the location button
+						$locationId = preg_replace('/\s+/', '_', $location->location_tbl_name); // Replace spaces with underscores for IDs
+
+						// Check if location_tbl_freetime is valid and calculate the time
+						if (!empty($location->location_tbl_freetime)) {
+							try {
+								$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('Y-m-d H:i:s'); // Add 8 hours and format
+							} catch (Exception $e) {
+								$freetime = 'Invalid Time'; // Fallback if DateTime fails
+							}
+						} else {
+							$freetime = 'N/A'; // Fallback for missing time
+						}
+					?>
+					<?php if ($location->location_tbl_status == "BOOKED"): ?>
+						<div class="col-s-2 homenavbtn margin-all">
+							<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
+								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
+								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
+								<h2 class="btn-label"><?php echo htmlspecialchars($freetime); ?></h2>
+							</button>
+						</div>
+					<?php else: ?>
+						<div class="col-s-2 homenavbtn margin-all">
+							<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
+								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
+								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
+							</button>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+
 
 				</div>
 			</div>
