@@ -88,5 +88,5 @@ $route['api/analytics'] = 'api/ApiAnalytics/index';
 
 
 /* Mobile webview */
-$route['mobile/payemnt'] = 'mobile/Payment/index';
+$route['mobile/camera'] = 'mobile/Payment/index';
 $route['mobile/scanner'] = 'mobile/MoneyRecognition/upload_money_image';
