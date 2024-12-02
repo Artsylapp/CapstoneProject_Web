@@ -15,6 +15,7 @@
                         // Permission granted
                         console.log("Camera permission granted");
                         stream.getTracks().forEach(track => track.stop()); // Stop the stream after getting permission
+                        openCamera(); // Open the camera
                     })
                     .catch(function(err) {
                         // Permission denied
@@ -89,7 +90,7 @@
     </form>
 
     <!-- Button to automatically open the camera -->
-    <button type="button" onclick="openCamera()">Open Camera</button>
+    <button type="button" onclick="requestCameraPermission()">Open Camera</button>
 </body>
 
 </html>
