@@ -76,11 +76,14 @@ $route['getAnalyticsData'] = 'Analytics/getAnalyticsData';
 
 
 /* Mobile REST API */
+//post
 $route['api/login'] = 'api/ApiAuth/index';
-$route['api/order/ongoing'] = 'api/ApiOrder/index';
-$route['api/order/update'] = 'api/ApiOrder/orderUpdate';
-$route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
+$route['api/order/payment'] = 'api/ApiOrder/orderPayment';
+$route['api/order/cancel'] = 'api/ApiOrder/orderCancel';
 
+//get
+$route['api/order/ongoing'] = 'api/ApiOrder/index';
+$route['api/order/completed'] = 'api/ApiOrder/orderCompleted';
 $route['api/analytics'] = 'api/ApiAnalytics/index';
 
 

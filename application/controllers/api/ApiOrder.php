@@ -17,8 +17,7 @@ class ApiOrder extends RestController
     }
 
     // To get all ongoing orders from the database to Android
-    public function index_get()
-    {
+    public function index_get() {
         $results = $this->Order_model->getOngoingOrders('ON-GOING'); // Fetch only "ON-GOING" orders
 
         // Prepare parsed orders data with detailed breakdown
@@ -65,13 +64,13 @@ class ApiOrder extends RestController
             // Prepare individual serice variables from the JSON
             $services = isset($order_service['services']) ? $order_service['services'] : [];
             $masseurs = isset($order_masseur['masseur_detail']) ? $order_masseur['masseur_detail'] : [];
-            $customers = isset($order_customer['customer_detail']) ? $order_customer['customer_detail'] : [];
+            $customers = isset($order_customer['customer_details']) ? $order_customer['customer_details'] : [];
             
             // $price = isset($order_details['price']) ? $order_details['price'] : 'N/A';
             // $amount = isset($order_details['amount']) ? $order_details['amount'] : 'N/A';
             // $type = isset($order_details['type']) ? $order_details['type'] : 'N/A';
             $locations = isset($order_service['locations']) ? $order_service['locations'] : [];
-            $totalCost = isset($order_service['total_cost']['cost']) ? $order_service['total_cost']['cost'] : 'N/A';
+            $totalCost = isset($order_service['orders_tbl_cost']) ? $order_service['orders_tbl_cost'] : 'N/A';
 
             
             // Simplify locations for single-item case or format for multiple entries
@@ -111,16 +110,14 @@ class ApiOrder extends RestController
             'orders' => $parsedOrders
         ];
 
-        // Convert the array to JSON and send it as an object
+        // // Convert the array to JSON and send it as an object
         header('Content-Type: application/json');
         // No need to cast to object if $orderResponse is an array
         $this->response($orderResponse, 200); // Send success response with HTTP status code 200
     }
 
-
     // To get all finished orders from the database to Android App
-    public function orderCompleted_get()
-    {
+    public function orderCompleted_get() {
         $orders = new Order_model; // Assuming Order_model is your model class
         $results = $orders->getCompletedOrders(); // Fetch completed orders
 
@@ -168,13 +165,13 @@ class ApiOrder extends RestController
             // Prepare individual serice variables from the JSON
             $services = isset($order_service['services']) ? $order_service['services'] : [];
             $masseurs = isset($order_masseur['masseur_detail']) ? $order_masseur['masseur_detail'] : [];
-            $customers = isset($order_customer['customer_detail']) ? $order_customer['customer_detail'] : [];
+            $customers = isset($order_customer['customer_details']) ? $order_customer['customer_details'] : [];
             
             // $price = isset($order_details['price']) ? $order_details['price'] : 'N/A';
             // $amount = isset($order_details['amount']) ? $order_details['amount'] : 'N/A';
             // $type = isset($order_details['type']) ? $order_details['type'] : 'N/A';
             $locations = isset($order_service['locations']) ? $order_service['locations'] : [];
-            $totalCost = isset($order_service['total_cost']['cost']) ? $order_service['total_cost']['cost'] : 'N/A';
+            $totalCost = isset($order_service['orders_tbl_cost']) ? $order_service['orders_tbl_cost'] : 0;
             
             // Simplify locations for single-item case or format for multiple entries
             if (count($locations) === 1) {
@@ -220,11 +217,12 @@ class ApiOrder extends RestController
     }
 
     // Orders - Update Booking Payment
-    public function orderUpdate_post()
-    {
+    public function orderPayment_post() {
         // Get order ID and payment amount from POST request
         $id = $this->post('orderId');
         $amount = $this->post('orderPayment');
+        $workstation = $this->post('workstation');
+        $masseur = $this->post('masseur');
 
         if (empty($id) || empty($amount)) {
             // Respond with validation error
@@ -232,6 +230,22 @@ class ApiOrder extends RestController
             return;
         }
 
+        // Make masseur available again
+        $masseurData = [
+            'name' => $masseur,
+            'status' => 'AVAILABLE'
+        ];
+        $this->Order_model->updateMasseurStatus($masseurData);
+
+        // Make Workstation available again
+        $workstationData = [
+            'name' => $workstation,
+            'status' => 'Open'
+        ];
+        $this->Order_model->updateWorkstationStatus($workstationData);
+
+
+        // complete booking
         // Retrieve the order details based on $id
         $booking = $this->Order_model->getOrder($id);
 
@@ -268,6 +282,65 @@ class ApiOrder extends RestController
             // Respond with booking not found message
             $this->response(['error' => true, 'message' => 'Booking not found.'], 404);
         }
+    }
+
+    public function orderCancel_post() {
+        //get data from post request
+        $id = $this->post('orderId');
+        $workstation = $this->post('workstation');
+        $masseur = $this->post('masseur');
+
+        // get booking id from post request
+        $BookingID = $this->Order_model->getOrder($id);
+
+        // Validate the order ID
+        if (empty($id)) {
+            // Respond with validation error
+            $this->response(['error' => true, 'message' => 'Invalid order ID.'], 400);
+            return;
+        // check if booking is ongoing and not cancelled or completed
+        } else if ($BookingID[0]->orders_tbl_status === 'ON-GOING') {
+
+            // Make masseur available again
+            $masseurData = [
+                'name' => $masseur,
+                'status' => 'AVAILABLE'
+            ];
+            $this->Order_model->updateMasseurStatus($masseurData);
+
+            // Make Workstation available again
+            $workstationData = [
+                'name' => $workstation,
+                'status' => 'Open'
+            ];
+            $this->Order_model->updateWorkstationStatus($workstationData);
+
+            // Prepare the data for update
+            $data = [
+                'id' => $id,
+                'status' => 'CANCELLED'
+            ];
+            // Update the status in the database
+            $success = $this->Order_model->updateCancelOrder($data);
+
+            if ($success) {
+                // Respond with success message
+                $orderResponse = [
+                    'error' => false,
+                    'message' => 'Booking cancelled successfully.'
+                ];
+                $this->response($orderResponse, 200);
+
+            } else {
+                // Respond with error message
+                $this->response(['error' => true, 'message' => 'Failed to cancel booking.'], 500);
+            }
+
+        } else {
+            // Respond with booking not found message
+            $this->response(['error' => true, 'message' => 'Booking not found.'], 404);
+        }
+
     }
 
 }

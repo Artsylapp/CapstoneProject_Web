@@ -3,10 +3,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Order_model extends CI_Model
 {
-
+// WEB SECTION
     // Get all orders
-    public function getOrders()
-    {
+    public function getOrders() {
         // Get all orders from database
         $query = $this->db->get('orders_tbl');
         $orders = $query->result();
@@ -52,16 +51,14 @@ class Order_model extends CI_Model
         return $orders;
     }
 
-
     // getting order by id
-    public function getOrder($id)
-    {
+    public function getOrder($id) {
         $query = $this->db->get_where('orders_tbl', array('orders_tbl_id' => $id));
         return $query->result();
     }
 
-    public function getOngoing()
-    {
+    // get ongoing orders
+    public function getOngoing() {
         // Get orders with status 'ON-GOING'
         $this->db->where('orders_tbl_status', 'ON-GOING');
         $query = $this->db->get('orders_tbl');
@@ -88,16 +85,14 @@ class Order_model extends CI_Model
         return $query->result();
     }
 
-
-    // complete order
-    public function completeOrder($id)
-    {
+    // set the booking to complete
+    public function completeOrder($id) {
         $this->db->where('orders_tbl_id', $id);
         $this->db->update('orders_tbl', array('orders_tbl_status' => 'COMPLETED'));
     }
 
-    public function getCompletes()
-    {
+    // get completed orders
+    public function getCompletes() {
         // Query the database to fetch orders where the status is either 'COMPLETED' or 'CANCELLED'
         $this->db->where_in('orders_tbl_status', ['COMPLETED', 'CANCELLED']);
 
@@ -131,40 +126,26 @@ class Order_model extends CI_Model
     }
 
 
-    // API SECTION
-    // updating order data
-    public function updateOrder($data)
-    {
-        $this->db->where('orders_tbl_id', $data['orders_tbl_id']);
-        $this->db->update('orders_tbl', $data);
-        return $data;
-    }
-
-    // deleting order data by id
-    public function deleteOrder($id)
-    {
-        $this->db->where('orders_tbl_id', $id);
-        $this->db->delete('orders_tbl');
-    }
-
+// API SECTION
+ 
+// GET REQUESTS (fetch data, read)
     // get booking with ongoing status
-    public function getOngoingOrders($status)
-    {
+    public function getOngoingOrders($status) {
         $this->db->where('orders_tbl_status', $status);
         $query = $this->db->get('orders_tbl');
         return $query->result();
     }
 
     // getting all completed orders
-    public function getCompletedOrders()
-    {
+    public function getCompletedOrders() {
         $this->db->where_in('orders_tbl_status', ['Cancelled', 'Completed', 'Complete']);
         $query = $this->db->get('orders_tbl');
         return $query->result();
     }
 
-    public function updatePaidAmount($data)
-    {
+// POST REQUESTS (insert, update, delete)
+    // update the status of the order to completed if paid
+    public function updatePaidAmount($data) {
         // Prepare the data to update multiple columns in a single query
         $updateData = [
             'orders_tbl_status' => $data['status'],
@@ -176,6 +157,30 @@ class Order_model extends CI_Model
         // Perform a single update query
         $this->db->where('orders_tbl_id', $data['id']);
         $success = $this->db->update('orders_tbl', $updateData);
+
+        return $success; // Return true if the update is successful, false otherwise
+    }
+
+    // update the status of the order to cancelled
+    public function updateCancelOrder($data) {
+        $this->db->where('orders_tbl_id', $data['id']);
+        $success = $this->db->update('orders_tbl', ['orders_tbl_status' => $data['status']]);
+
+        return $success; // Return true if the update is successful, false otherwise
+    }
+
+    // update the status of the masseur to available
+    public function updateMasseurStatus($data) {
+        $this->db->where('accounts_tbl_name', $data['name']);
+        $success = $this->db->update('accounts_tbl', ['accounts_tbl_status' => $data['status']]);
+
+        return $success; // Return true if the update is successful, false otherwise
+    }
+
+    // update the status of the workstation to available
+    public function updateWorkstationStatus($data) {
+        $this->db->where('location_tbl_name', $data['name']);
+        $success = $this->db->update('location_tbl', ['location_tbl_status' => $data['status']]);
 
         return $success; // Return true if the update is successful, false otherwise
     }
