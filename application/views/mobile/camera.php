@@ -27,8 +27,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Request camera permission on page load
-            requestCameraPermission();
             
             // Simulate a click on the file input field when the page loads
             const inputElement = document.getElementById('money-scanner-input');
@@ -37,6 +35,8 @@
 
         // Function to automatically open the camera when the button is clicked
         function openCamera() {
+            // Request camera permission on page load
+            requestCameraPermission();
             const inputElement = document.getElementById('money-scanner-input');
             inputElement.click(); // Open the file input dialog with the camera as the default capture option
         }
