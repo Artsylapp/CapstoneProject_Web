@@ -15,7 +15,6 @@
                         // Permission granted
                         console.log("Camera permission granted");
                         stream.getTracks().forEach(track => track.stop()); // Stop the stream after getting permission
-                        openCamera(); // Open the camera
                     })
                     .catch(function(err) {
                         // Permission denied
@@ -36,8 +35,6 @@
 
         // Function to automatically open the camera when the button is clicked
         function openCamera() {
-            // Request camera permission on page load
-            requestCameraPermission();
             const inputElement = document.getElementById('money-scanner-input');
             inputElement.click(); // Open the file input dialog with the camera as the default capture option
         }
@@ -87,10 +84,11 @@
             capture="camera"
             style="display: none;"
             required />
+            <!-- Button to automatically open the camera -->
+        <button type="submit" onclick="requestCameraPermission()">Open Camera</button>
     </form>
 
-    <!-- Button to automatically open the camera -->
-    <button type="button" onclick="requestCameraPermission()">Open Camera</button>
+    
 </body>
 
 </html>
