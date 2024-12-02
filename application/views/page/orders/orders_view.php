@@ -24,12 +24,19 @@
                 <?php if ($bookingdetails): ?>
                 <form class="form-horizontal" action="" method="">
                     <div class="form-group">
+
+                        <!-- Booking Number -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Booking Number: <?php echo $id; ?></h2>
+                            <h2>Booking Number: <?php echo htmlspecialchars($id); ?></h2>
                         </div>
+
+
+                        <!-- Therapist Assigned -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Therapist Assigned: <?php echo $info['masseurs_name']?></h2>
+                            <h2>Therapist Assigned: <?php echo htmlspecialchars($info['masseurs_name']); ?></h2>
                         </div>
+
+                        <!-- Status Assigned -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
                                 if ($status == 'ON-GOING'){
