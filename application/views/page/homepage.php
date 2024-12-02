@@ -67,6 +67,7 @@
 						if (!empty($location->location_tbl_freetime)) {
 							try {
 								$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('Y-m-d H:i:s'); // Add 8 hours and format
+								$freetime_formatted = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('H:i:s A'); // Add 8 hours and format
 							} catch (Exception $e) {
 								$freetime = 'Invalid Time'; // Fallback if DateTime fails
 							}
@@ -79,7 +80,7 @@
 							<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
 								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
 								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
-								<h2 class="btn-label"><?php echo htmlspecialchars($freetime); ?></h2>
+								<h2 class="btn-label"><?php echo htmlspecialchars($freetime_formatted); ?></h2>
 							</button>
 						</div>
 					<?php else: ?>
