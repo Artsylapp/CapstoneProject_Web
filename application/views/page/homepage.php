@@ -77,7 +77,7 @@
 					?>
 					<?php if ($location->location_tbl_status == "BOOKED"): ?>
 						<div class="col-s-2 homenavbtn margin-all">
-							<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
+							<button name="<?php echo($location->location_tbl_name . '. BOOKED TILL: ' . $freetime_formatted) ?>" id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
 								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
 								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
 								<h2 class="btn-label"><?php echo htmlspecialchars($freetime_formatted); ?></h2>
@@ -85,7 +85,7 @@
 						</div>
 					<?php else: ?>
 						<div class="col-s-2 homenavbtn margin-all">
-							<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
+							<button name="<?php echo($location->location_tbl_name . '. CURRENTLY FREE ') ?>" id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
 								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
 								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
 							</button>
@@ -125,13 +125,20 @@
 </footer>
 
 <script>
+
+	function textToSpeech(button) {
+		button.
+	}
+	
     // Function to flash the button
     function flashButton(button) {
+
         if (button.style.backgroundColor === 'rgb(255, 66, 66)') {
 			button.style.backgroundColor = '#ffef42'; // Yellow color
 		} else {
 			button.style.backgroundColor = '#ff4242'; // Red color
 		}
+
     }
 
     // Function to check times and flash buttons
@@ -148,6 +155,14 @@
             if (diffInMinutes <= 5) {
                 // Flash the button
                 flashButton(button);
+            } else {
+                // Reset to default background if condition is not met
+                button.style.backgroundColor = '';
+            }
+
+			if (diffInMinutes <= 1) {
+                // Flash the button
+                textToSpeech(button);
             } else {
                 // Reset to default background if condition is not met
                 button.style.backgroundColor = '';
