@@ -127,11 +127,11 @@
 <script>
     // Function to flash the button
     function flashButton(button) {
-        if (button.style.backgroundColor === 'red') {
-            button.style.backgroundColor = 'yellow';
-        } else {
-            button.style.backgroundColor = 'red';
-        }
+        if (button.style.backgroundColor === 'rgb(255, 66, 66)') {
+			button.style.backgroundColor = '#ffef42'; // Yellow color
+		} else {
+			button.style.backgroundColor = '#ff4242'; // Red color
+		}
     }
 
     // Function to check times and flash buttons
