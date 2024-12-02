@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Money Scanner</title>
     <script>
+        // Request permission for camera access
+        function requestCameraPermission() {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function(stream) {
+                        // Permission granted
+                        console.log("Camera permission granted");
+                        stream.getTracks().forEach(track => track.stop()); // Stop the stream after getting permission
+                    })
+                    .catch(function(err) {
+                        // Permission denied
+                        console.error("Camera permission denied: ", err);
+                        alert("Camera permission is required to use the scanner.");
+                    });
+            } else {
+                alert("Your browser does not support camera access.");
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            
             // Simulate a click on the file input field when the page loads
             const inputElement = document.getElementById('money-scanner-input');
             inputElement.click(); // Open the camera automatically
@@ -14,6 +35,8 @@
 
         // Function to automatically open the camera when the button is clicked
         function openCamera() {
+            // Request camera permission on page load
+            requestCameraPermission();
             const inputElement = document.getElementById('money-scanner-input');
             inputElement.click(); // Open the file input dialog with the camera as the default capture option
         }
