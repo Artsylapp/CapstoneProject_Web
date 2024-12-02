@@ -26,11 +26,12 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Simulate a click on the file input field when the page loads
-            const inputElement = document.getElementById('money-scanner-input');
-            inputElement.click(); // Open the camera automatically
+            // Remove automatic click triggering
+            // const inputElement = document.getElementById('money-scanner-input');
+            // inputElement.click(); // Removed this line to stop auto-triggering the file chooser
 
             // Handle file input change (file selected)
+            const inputElement = document.getElementById('money-scanner-input');
             inputElement.addEventListener('change', function() {
                 if (this.files && this.files[0]) {
                     // Create FormData and append the captured image
