@@ -40,13 +40,13 @@
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
                                 if ($status == 'ON-GOING'){
-                                    echo '<h2>Status: <span style="color: orange">' . $status . '</span></h2>';
+                                    echo '<h1>Status: <span style="color: orange">' . $status . '</span></h1>';
                                 } else if ($status == 'COMPLETED') {
-                                    echo '<h2>Status: <span style="color: green">' . $status . '</span></h2>';
+                                    echo '<h1>Status: <span style="color: green">' . $status . '</span></h1>';
                                 } elseif ($status == 'CANCELLED') {
-                                    echo '<h2>Status: <span style="color: red">' . $status . '</span></h2>';
+                                    echo '<h1>Status: <span style="color: red">' . $status . '</span></h1>';
                                 } else {
-                                    echo '<h2>Status: <span>' . $status . '</span></h2>';
+                                    echo '<h1>Status: <span>' . $status . '</span></h1>';
                                 }
                             ?>
                         </div>
