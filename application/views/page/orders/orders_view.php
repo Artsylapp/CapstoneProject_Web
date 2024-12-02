@@ -27,13 +27,13 @@
 
                         <!-- Booking Number -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Booking Number: <?php echo $id?></h2>
+                            <h1>Booking Number: <?php echo $id?></h1>
                         </div>
 
 
                         <!-- Therapist Assigned -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Therapist Assigned: <?php echo $masseurs_name?></h2>
+                            <h1>Therapist Assigned: <?php echo $masseurs_name?></h1>
                         </div>
 
                         <!-- Status Assigned -->
@@ -88,9 +88,9 @@
                                 <tbody>
                                     <?php foreach ($services as $serviceName => $serviceDetails): ?>
                                         <tr class="text-center">
-                                            <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
-                                            <td><h3><?php echo htmlspecialchars($serviceName); ?></h3></td>
-                                            <td><h3>₱<?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
+                                            <td><h2><?php echo htmlspecialchars($serviceDetails['amount']); ?></h2></td>
+                                            <td><h2><?php echo htmlspecialchars($serviceName); ?></h2></td>
+                                            <td><h2>₱<?php echo htmlspecialchars($serviceDetails['price']); ?></h2></td>
                                         </tr class="text-right">
                                     <?php endforeach; ?>
                                     <tr>
