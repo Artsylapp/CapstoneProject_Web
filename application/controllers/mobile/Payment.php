@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Payment extends CI_Controller {
+class Camera extends CI_Controller {
 
     /* CONSTRUCTOR */
     public function __construct() {
@@ -16,7 +16,7 @@ class Payment extends CI_Controller {
         $data['masseur'] = $this->input->get('masseur');
         $data['workstation'] = $this->input->get('workstation');
         
-        $this->load->view('mobile/payment', $data);
+        $this->load->view('mobile/camera', $data);
     }
 
     public function upload_money_image() {
