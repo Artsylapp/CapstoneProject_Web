@@ -72,20 +72,23 @@ class ApiOrder extends RestController
             $locations = isset($order_service['locations']) ? $order_service['locations'] : [];
             $totalCost = isset($order_service['orders_tbl_cost']) ? $order_service['orders_tbl_cost'] : 'N/A';
 
-            
-            // Simplify locations for single-item case or format for multiple entries
-            if (count($locations) === 1) {
-                // If there is only one location, show it as a single simplified entry
-                $locationKey = key($locations);
-                $workstation = "$locationKey"; // Show only the key (e.g., Table 1)
-            } else {
-                // If there are multiple locations, format them as key-value pairs
-                $formattedLocations = [];
-                foreach ($locations as $key => $value) {
-                    $formattedLocations[] = "$key => $value";
-                }
-                $workstation = implode(', ', $formattedLocations); // Join as a single string
-            }
+            // // IF YOU WANT TO REVERT, SIMPLY UNCOMMENT HERE TO 
+            // // Simplify locations for single-item case or format for multiple entries
+            // if (count($locations) === 1) {
+            //     // If there is only one location, show it as a single simplified entry
+            //     $locationKey = key($locations);
+            //     $workstation = "$locationKey"; // Show only the key (e.g., Table 1)
+            // } else {
+            //     // If there are multiple locations, format them as key-value pairs
+            //     $formattedLocations = [];
+            //     foreach ($locations as $key => $value) {
+            //         $formattedLocations[] = "$key => $value";
+            //     }
+            //     $workstation = implode(', ', $formattedLocations); // Join as a single string
+            // }
+            // // HERE
+
+            $workstation = $locations;
             
             // Append parsed details to the response array
             $parsedOrders[] = [
