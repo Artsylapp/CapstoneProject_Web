@@ -85,7 +85,7 @@
 						</div>
 					<?php else: ?>
 						<div class="col-s-2 homenavbtn margin-all">
-							<button name="<?php echo htmlspecialchars($location->location_tbl_name); ?>" id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
+							<button name="<?php echo($location->location_tbl_name . '. CURRENTLY FREE ') ?>" id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
 								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
 								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
 							</button>
