@@ -28,7 +28,7 @@
                             <h2>Booking Number: <?php echo $id; ?></h2>
                         </div>
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Therapist Assigned: <?php echo $id; ?></h2>
+                            <h2>Therapist Assigned: <?php echo $masseur_name; ?></h2>
                         </div>
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
@@ -42,6 +42,22 @@
                                     echo '<h2>Status: <span>' . $status . '</span></h2>';
                                 }
                             ?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

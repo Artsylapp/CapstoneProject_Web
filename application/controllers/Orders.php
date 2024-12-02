@@ -280,10 +280,20 @@ class Orders extends CI_Controller {
             'status' => $bookingdata->orders_tbl_status,
             'paid_amount' => $bookingdata->orders_tbl_paid_amount,
             'services' => $services,
-            'masseurs' => $masseurs,
-            'locations' => $locations,
+            'time_start'=> $booking_details->orders_tbl_date,
+            'time_end'=> $booking_details->orders_tbl_time_end,
+            
+            // Extracting individual masseur details from the JSON
+            'masseurs_name' => isset($masseurs['name']) ? $masseurs['name'] : 'N/A', 
+            'masseurs_gender' => isset($masseurs['gender']) ? $masseurs['gender'] : 'N/A', 
+        
+            // Extracting location name from the booking details
+            'workstation_name' => isset($locations['name']) ? $locations['name'] : 'N/A',
+        
             'totalCost' => $totalCost,
-            'customer' => $customer // Add customer data
+            
+            // Extracting customer details from the JSON
+            'customer_name' => isset($customer['name']) ? $customer['name'] : 'N/A',
         );
         
         $this->load->view('page/include/header', $info);
