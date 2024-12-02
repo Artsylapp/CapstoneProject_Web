@@ -59,28 +59,26 @@
 				<div class="row">
 
 					<?php foreach($locations as $location): ?>
-
+						<?php 
+							$locationId = preg_replace('/\s+/', '_', $location->location_tbl_name); // Replace spaces with underscores for IDs
+							$freetime = (new DateTime($location->location_tbl_freetime))->add(new DateInterval('PT8H'))->format('Y-m-d H:i:s'); // Add 8 hours and format
+						?>
 						<?php if($location->location_tbl_status == "BOOKED"):?>
 							<div class="col-s-2 homenavbtn margin-all">
-								<button class="btn menu-btn-location lr-bg ttsh">
+								<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
 									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
-									<?php 
-										$date = new DateTime($location->location_tbl_freetime);
-										$date->add(new DateInterval('PT8H')); // Add 8 hours
-									?>
-									<h2 class="btn-label"><?php echo $date->format('h:i:s A');?></h2>
+									<h2 class="btn-label"><?php echo $freetime; ?></h2>
 								</button>
 							</div>
 						<?php else:?>
 							<div class="col-s-2 homenavbtn margin-all">
-								<button class="btn menu-btn-location lg-bg ttsh">
+								<button id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lg-bg ttsh">
 									<h1 class="btn-label"><?php echo($location->location_tbl_name)?></h1>
 									<h2 class="btn-label"><?php echo($location->location_tbl_status)?></h2>
 								</button>
 							</div>
-						<?php endif;?>
-						
+						<?php endif; ?>
 					<?php endforeach; ?>
 
 				</div>
@@ -112,3 +110,37 @@
 			</div>
 	</div>
 </footer>
+
+<script>
+    // Function to flash the button
+    function flashButton(button) {
+        if (button.style.backgroundColor === 'red') {
+            button.style.backgroundColor = 'yellow';
+        } else {
+            button.style.backgroundColor = 'red';
+        }
+    }
+
+    // Function to check times and flash buttons
+    function checkButtons() {
+        const buttons = document.querySelectorAll('button[data-freetime]'); // Select buttons with the `data-freetime` attribute
+
+        buttons.forEach(button => {
+            const freeTime = new Date(button.getAttribute('data-freetime'));
+            const currentTime = new Date();
+            const diffInMinutes = Math.abs((currentTime - freeTime) / (1000 * 60)); // Calculate time difference in minutes
+
+            if (diffInMinutes <= 5) {
+                // Flash the button
+                flashButton(button);
+            } else {
+                // Reset to default background if condition is not met
+                button.style.backgroundColor = '';
+            }
+        });
+    }
+
+    // Check every second
+    setInterval(checkButtons, 1000);
+</script>
+
