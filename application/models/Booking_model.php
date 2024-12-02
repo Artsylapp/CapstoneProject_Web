@@ -117,7 +117,7 @@ class Booking_model extends CI_Model {
     
         // Update the payment amount
         $this->db->where('orders_tbl_id', $id);
-        $this->db->update('orders_tbl', array('orders_paid_amount' => $data['paid_amount']));
+        $this->db->update('orders_tbl', array('orders_tbl_paid_amount' => $data['paid_amount']));
     
         // Complete transaction
         $this->db->trans_complete();
