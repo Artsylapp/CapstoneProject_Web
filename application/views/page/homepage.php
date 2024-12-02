@@ -77,7 +77,7 @@
 					?>
 					<?php if ($location->location_tbl_status == "BOOKED"): ?>
 						<div class="col-s-2 homenavbtn margin-all">
-							<button name="<?php echo( htmlspecialchars($location->location_tbl_name), htmlspecialchars($freetime_formatted)) ?>" id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
+							<button name="<?php echo( htmlspecialchars($location->location_tbl_name) htmlspecialchars($freetime_formatted)) ?>" id="btn-<?php echo $locationId; ?>" class="btn menu-btn-location lr-bg ttsh" data-freetime="<?php echo $freetime; ?>">
 								<h1 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_name); ?></h1>
 								<h2 class="btn-label"><?php echo htmlspecialchars($location->location_tbl_status); ?></h2>
 								<h2 class="btn-label"><?php echo htmlspecialchars($freetime_formatted); ?></h2>
