@@ -28,7 +28,7 @@
                             <h2>Booking Number: <?php echo $id; ?></h2>
                         </div>
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Therapist Assigned: <?php echo $masseur_name; ?></h2>
+                            <h2>Therapist Assigned: <?php echo $info['masseurs_name']?></h2>
                         </div>
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
