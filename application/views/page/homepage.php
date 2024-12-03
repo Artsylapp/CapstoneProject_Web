@@ -160,7 +160,7 @@
             flashButton(button, true);
         } else {
             // Reset to default background if condition is not met
-            resetButton(button);
+            button.style.backgroundColor = '';
         }
     });
 }
