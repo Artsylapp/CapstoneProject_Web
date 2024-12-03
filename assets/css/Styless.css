@@ -441,6 +441,14 @@ table {
             height: 100vh;
         }
 
+        th{
+            font-size: 18px;
+        }
+    
+        td{
+            font-size: 18px;
+        }
+
         .bg-image{
             background-size: 100em; 
             background-repeat: no-repeat; 
@@ -569,6 +577,14 @@ table {
             overflow: auto; 
             width: 100vw;
             height: 100vh;
+        }
+
+        th{
+            font-size: 20px;
+        }
+    
+        td{
+            font-size: 20px;
         }
 
         .bg-image{
@@ -706,11 +722,11 @@ table {
         }
 
         th{
-            font-size: 35px;
+            font-size: 23px;
         }
     
         td{
-            font-size: 35px;
+            font-size: 23px;
         }
 
         .bg-image{
