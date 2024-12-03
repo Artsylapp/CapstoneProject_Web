@@ -36,33 +36,57 @@ class Records extends CI_Controller
     // Orders - delete order
     public function records_view()
     {
-        $data = $this->Order_model->getOrder($this->uri->segment(3));
+        $results = $this->Order_model->getOrder($this->uri->segment(3));
 
         // Ensure $data is not empty and get the first element
-        $booking = !empty($data) ? $data[0] : null;
+        $bookingdata = !empty($results) ? $results[0] : null;
 
-        if ($booking) {
+        // checking if the booking is not empty
+        if ($bookingdata) {
             // Parse the JSON string
-            $booking_details = json_decode($booking->orders_tbl_details, true);
+            $booking_details = json_decode($bookingdata->orders_tbl_service, true);
+            $masseur_details = json_decode($bookingdata->orders_tbl_masseur, true);
+            $customer_details = json_decode($bookingdata->orders_tbl_customer, true);
 
             // Prepare individual variables from the JSON
             $services = isset($booking_details['services']) ? $booking_details['services'] : [];
-            $masseurs = isset($booking_details['masseurs']) ? $booking_details['masseurs'] : [];
             $locations = isset($booking_details['locations']) ? $booking_details['locations'] : [];
-            $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : 'N/A';
+            $totalCost = isset($booking_details['orders_tbl_cost']) ? $booking_details['orders_tbl_cost'] : '0';
+
+            // Masseur Details: Assuming it's inside 'masseur_detail' key
+            $masseurs = isset($masseur_details['masseur_detail']) ? $masseur_details['masseur_detail'] : [];
+
+            // Customer Details: Assuming it's inside 'customer_details' key
+            $customer = isset($customer_details['customer_details']) ? $customer_details['customer_details'] : [];
         } else {
+            // Default empty values if no booking data found
             $services = $masseurs = $locations = [];
-            $totalCost = 'N/A';
+            $totalCost = '0';
+            $customer = [];
         }
 
-        // Pass the single object
+        // Prepare the array for view
         $info = array(
-            'title' => 'Record Info',
-            'booking' => $booking,
+            'title' => 'Booking Info',
+            'bookingdetails' => $booking_details,
+            'id' => $bookingdata->orders_tbl_id,
+            'status' => $bookingdata->orders_tbl_status,
+            'paid_amount' => $bookingdata->orders_tbl_paid_amount,
             'services' => $services,
-            'masseurs' => $masseurs,
-            'locations' => $locations,
+            'time_start'=> isset($booking_details['orders_tbl_date']) ? $booking_details['orders_tbl_date'] : 'N/A',
+            'time_end'=> isset($booking_details['orders_tbl_time_end']) ? $booking_details['orders_tbl_time_end'] : 'N/A',
+            
+            // Extracting individual masseur details from the JSON
+            'masseurs_name' => isset($masseurs['name']) ? $masseurs['name'] : 'N/A', 
+            'masseurs_gender' => isset($masseurs['gender']) ? $masseurs['gender'] : 'N/A', 
+            
+            // Extracting location name from the booking details
+            'workstation_name' => isset($locations['name']) ? $locations['name'] : 'N/A',
+
             'totalCost' => $totalCost,
+
+            // Extracting customer details from the JSON
+            'customer_name' => isset($customer['name']) ? $customer['name'] : 'N/A',
         );
 
         // echo '<pre>';
