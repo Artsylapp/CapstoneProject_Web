@@ -11,7 +11,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("loc_create")?>">
 					<button class="btn lg-bg menu-btn-m center-item ttsh" name="CREATE WORKSTATION">
-						<h1 class="">CREATE WORKSTATION</h1>
+						<h2 class="">CREATE WORKSTATION</h2>
 					</button>
 				</a>
 			</div>
