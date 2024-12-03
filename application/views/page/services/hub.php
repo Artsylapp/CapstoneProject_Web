@@ -11,7 +11,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("ser_create")?>">
 					<button class="btn lg-bg menu-btn-m center-item ttsh" name="Create New Service">
-						<h3 class="">CREATE SERVICE</h3>
+						<h1 class="">CREATE SERVICE</h1>
 					</button>
 				</a>
 			</div>
@@ -19,7 +19,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("ser_archived")?>">
 					<button class="btn yellow-bg menu-btn-m center-item ttsh" name="Check Archived Services">
-						<h4 class="">CHECK ARCHIVED SERVICE</h4>
+						<h1 class="">CHECK ARCHIVED SERVICE</h1>
 					</button>
 				</a>
 			</div>

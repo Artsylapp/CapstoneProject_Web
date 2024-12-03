@@ -11,7 +11,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("services")?>">
 					<button class="btn lg-bg menu-btn-m center-item ttsh" name="Return To Services">
-						<h4 class="">BACK TO SERVICES</h4>
+						<h1 class="">BACK TO SERVICES</h1>
 					</button>
 				</a>
 			</div>
