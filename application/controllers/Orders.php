@@ -205,9 +205,9 @@ class Orders extends CI_Controller {
     
             $data = array(
                 'id' => $id,
-                'masseurs' => isset($booking_details['masseurs']) ? array_keys($booking_details['masseurs']) : [],
-                'locations' => isset($booking_details['locations']) ? array_keys($booking_details['locations']) : [],
-                'status' => 'COMPLETED'
+                'masseurs' => isset($booking_masseur['masseur_detail']['name']) ? [$booking_masseur['masseur_detail']['name']] : [],
+                'locations' => isset($booking_details['locations']['name']) ? [$booking_details['locations']['name']] : [],
+                'status' => "COMPLETED"
             );
     
             $success = $this->Booking_model->updateBooking($data);
