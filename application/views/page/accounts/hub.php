@@ -11,7 +11,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("acc_create")?>">
 					<button class="btn lg-bg menu-btn-m center-item ttsh" name="CREATE NEW ACCOUNT">
-						<h4>CREATE ACCOUNT</h4>
+						<h1>CREATE ACCOUNT</h1>
 					</button>
 				</a>
 			</div>
