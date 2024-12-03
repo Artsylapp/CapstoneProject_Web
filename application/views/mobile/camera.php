@@ -17,6 +17,8 @@
     <script>
         // Function to trigger camera
         function openCamera() {
+            alert("openCamera() function triggered!");
+
             const cameraInput = document.getElementById('money-scanner-input');
             cameraInput.click();
         }
@@ -27,6 +29,7 @@
         // Optional: Keep button functionality if needed
         document.getElementById('money-scanner-button').addEventListener('click', openCamera);
     </script>
+
 </body>
 
 </html>
