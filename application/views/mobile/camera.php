@@ -25,8 +25,9 @@
             cameraInput.click();
         }
 
-        // Optional: Keep button functionality if needed
-        document.getElementById('money-scanner-button').addEventListener('click', openCamera);
+        document.getElementById('money-scanner-button').addEventListener('click', function() {
+        document.getElementById('money-scanner-input').click();
+        });
 
         document.getElementById('money-scanner-input').addEventListener('change', function() { // Show the preloader
         document.getElementById('loading-indicator').style.display = 'flex';
