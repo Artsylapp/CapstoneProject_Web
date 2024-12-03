@@ -19,7 +19,7 @@
 			<div class="col-xs-4 col-sm-4 center-item">
 				<a href="<?php echo $this->config->base_url("ser_archived")?>">
 					<button class="btn yellow-bg menu-btn-m center-item ttsh" name="Check Archived Services">
-						<h1 class="">CHECK ARCHIVED SERVICE</h1>
+						<h2 class="">CHECK ARCHIVED SERVICE</h2>
 					</button>
 				</a>
 			</div>
