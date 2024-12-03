@@ -705,6 +705,14 @@ table {
             height: 100vh;
         }
 
+        th{
+            font-size: 35px;
+        }
+    
+        td{
+            font-size: 35px;
+        }
+
         .bg-image{
             background-size: 550px; 
             background-repeat: no-repeat; 
@@ -838,11 +846,11 @@ table {
         }
 
         th{
-            font-size: 35px;
+            font-size: 23px;
         }
     
         td{
-            font-size: 35px;
+            font-size: 25px;
         }
 
         .bg-image{
