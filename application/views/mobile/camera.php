@@ -13,7 +13,7 @@
     Open Camera
     <!-- <form id="money-scan-form" enctype="multipart/form-data"> -->
         <input type="file" accept="image/*" id="money-scanner-input" capture="camera" style="display: none;" />
-        <button style="width: 50px; height:25px;" type="button" class="buttonscan" id="money-scanner-button">Scan Money</button>
+        <button style="width: 250px; height:100px;" type="button" class="buttonscan" id="money-scanner-button">Scan Money</button>
     <!-- </form> -->
 
 
