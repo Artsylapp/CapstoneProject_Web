@@ -280,6 +280,14 @@ table {
         font-size: 300%;
     }
 
+    th{
+        font-size: 48px;
+    }
+
+    td{
+        font-size: 24px;
+    }
+
     .menu-btn {
         color: #272626;
         border-radius: 15px;
