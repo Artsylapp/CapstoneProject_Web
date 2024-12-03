@@ -23,10 +23,7 @@
             cameraInput.click();
         }
 
-        // Automatically open the camera when the page loads
-        window.onload = openCamera;
-
-        // Optional: Keep button functionality if needed
+        // Trigger camera when the button is clicked
         document.getElementById('money-scanner-button').addEventListener('click', openCamera);
     </script>
 
