@@ -969,6 +969,14 @@ table {
             height: 100vh;
         }
 
+        th{
+            font-size: 35px;
+        }
+    
+        td{
+            font-size: 35px;
+        }
+
         .bg-image{
             background-size: 100em; 
             background-repeat: repeat-x; 
