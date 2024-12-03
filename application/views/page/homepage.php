@@ -127,8 +127,8 @@
 <script>
 
 	function textToSpeech(button) {
-		button.
-	}
+		
+	};
 	
     // Function to flash the button
     function flashButton(button) {
