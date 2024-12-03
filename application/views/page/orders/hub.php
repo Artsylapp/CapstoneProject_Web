@@ -54,8 +54,7 @@
                     </table>
                 <?php else: ?>
                     <div class="text-center" style="margin: 20px;">
-                        <h2>No bookings Found🙁</h2>
-                        <p>Looks like things are quiet for now. Start by creating a new booking!😁</p>
+                        <h1>NO CURRENT ON-GOING BOOKINGS</h1>
                     </div>
                 <?php endif; ?>
             </div>
