@@ -49,12 +49,12 @@
 						<label class="control-label col-sm-2" for="sel1">Employee Type:</label>
 						<div class="col-sm-10">
 							<select class="form-control" id="sel1" name="optradio_update">
-								<option <?php if ($accounts->accounts_tbl_empType == "Admin") {
+								<option <?php if ($accounts->accounts_tbl_empType == "Male") {
 													echo "selected";
-												} ?>>Admin</option>
-								<option <?php if ($accounts->accounts_tbl_empType == "Masseur") {
+												} ?>>Male</option>
+								<option <?php if ($accounts->accounts_tbl_empType == "Female") {
 													echo "selected";
-												} ?>>Masseur</option>
+												} ?>>Female</option>
 							</select>
 						</div>
 					</div>

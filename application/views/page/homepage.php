@@ -127,8 +127,8 @@
 <script>
 
 	function textToSpeech(button) {
-		button.
-	}
+		
+	};
 	
     // Function to flash the button
     function flashButton(button) {
@@ -143,32 +143,28 @@
 
     // Function to check times and flash buttons
     function checkButtons() {
-        const buttons = document.querySelectorAll('button[data-freetime]'); // Select buttons with the `data-freetime` attribute
+    const buttons = document.querySelectorAll('button[data-freetime]'); // Select buttons with the `data-freetime` attribute
 
-        buttons.forEach(button => {
-            const freeTime = new Date(button.getAttribute('data-freetime'));
-            const currentTime = new Date();
-            const diffInMinutes = Math.abs((currentTime - freeTime) / (1000 * 60)); // Calculate time difference in minutes
+    buttons.forEach(button => {
+        const freeTime = new Date(button.getAttribute('data-freetime'));
+        const currentTime = new Date();
+        const diffInMinutes = (freeTime - currentTime) / (1000 * 60); // Time difference in minutes
+        
+        console.log(`Button ID: ${button.id}, Time Difference: ${diffInMinutes.toFixed(2)} minutes`);
 
-			console.log(`Button ID: ${button.id}, Time Difference: ${diffInMinutes} minutes`);
+        if (diffInMinutes <= 5 && diffInMinutes >= 0) {
+            // Flash the button for 5 minutes before freeTime
+            flashButton(button);
+        } else if (diffInMinutes < 0) {
+            // Keep the button permanently flashing after freeTime
+            flashButton(button, true);
+        } else {
+            // Reset to default background if condition is not met
+            button.style.backgroundColor = '';
+        }
+    });
+}
 
-            if (diffInMinutes <= 5) {
-                // Flash the button
-                flashButton(button);
-            } else {
-                // Reset to default background if condition is not met
-                button.style.backgroundColor = '';
-            }
-
-			if (diffInMinutes <= 1) {
-                // Flash the button
-                textToSpeech(button);
-            } else {
-                // Reset to default background if condition is not met
-                button.style.backgroundColor = '';
-            }
-        });
-    }
 
     // Check every second
     setInterval(checkButtons, 1000);

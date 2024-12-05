@@ -8,15 +8,23 @@
 </head>
 
 <body>
-
     <h1>Open Camera Example</h1>
-    Open Camera
-    <!-- <form id="money-scan-form" enctype="multipart/form-data"> -->
-        <input type="file" accept="image/*" id="money-scanner-input" capture="camera" style="display: none;" />
-        <button type="button" class="buttonscan" id="money-scanner-button">Scan Money</button>
-    <!-- </form> -->
+    <!-- File input for capturing an image -->
+    <input type="file" accept="image/*" id="money-scanner-input" capture="camera" style="display: none;" />
+    <!-- Button (optional, can be removed if not needed) -->
+    <button style="width: 250px; height:100px;" type="button" class="buttonscan" id="money-scanner-button">Scan Money</button>
 
+    <script>
+        // Function to trigger camera
+        function openCamera() {
+            alert("openCamera() function triggered!");
 
+            const cameraInput = document.getElementById('money-scanner-input');
+            cameraInput.click();
+        }
+
+        // Trigger camera when the button is clicked
+        document.getElementById('money-scanner-button').addEventListener('click', openCamera);
     </script>
 
 </body>

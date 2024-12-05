@@ -11,53 +11,51 @@
         <div class="row mt-s">
             <div class="col-sm-12 col-xs-12 box-white">
 
-            <?php if ($booking):
-                $id = $booking->orders_tbl_id;
-                $status = $booking->orders_tbl_status;
-                $services = $services;
-
-                $masseurname = array_keys($masseurs);
-                $masseur = implode(', ', $masseurname);
-                
-                // echo $masseur;
-                // echo'<pre>';
-                // print_r($masseurs);
-                // print_r($masseurname);
-                
-            ?>
-                
-                <form class="form-horizontal" action="<?php echo $this->config->base_url("order/loc_remove/" . $this->uri->segment(3))?>" method="POST">
+            <?php if ($bookingdetails): ?>
+                <form class="form-horizontal" action="" method="">
                     <div class="form-group">
 
-                        <!-- booking ID -->
+                        <!-- Booking Number -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <h2>Booking Number: <?php echo $id; ?></h2>
+                            <h1>Booking Number: <?php echo $id?></h1>
                         </div>
 
-                        <!-- Status -->
+
+                        <!-- Therapist Assigned -->
+                        <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
+                            <h1>Therapist Assigned: <?php echo $masseurs_name?></h1>
+                        </div>
+
+                        <!-- Status Assigned -->
                         <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
                             <?php 
-                                if ($status == 'COMPLETED') {
-                                    echo '<h2>Status: <span style="color: #5ce65c">' . $status . '</span></h2>';
+                                if ($status == 'ON-GOING'){
+                                    echo '<h1>Status: <span style="color: orange">' . $status . '</span></h1>';
+                                } else if ($status == 'COMPLETED') {
+                                    echo '<h1>Status: <span style="color: green">' . $status . '</span></h1>';
                                 } elseif ($status == 'CANCELLED') {
-                                    echo '<h2>Status: <span style="color: red">' . $status . '</span></h2>';
-                                } elseif ($status == 'ON-GOING') {
-                                    echo '<h2>Status: <span style="color: orange">' . $status . '</span></h2>';
+                                    echo '<h1>Status: <span style="color: red">' . $status . '</span></h1>';
                                 } else {
-                                    echo '<h2>Status: <span>' . $status . '</span></h2>';
+                                    echo '<h1>Status: <span>' . $status . '</span></h1>';
                                 }
                             ?>
                         </div>
+                    </div>
 
-                        <!-- Masseur's name -->
-                        <div class="col-sm-offset-1 col-sm-6" style="display: flex; justify-content: left;">
-                            <?php if (!empty($masseur)): ?>
-                                <h2>Masseur: <?php echo $masseur; ?></h2>
-                            <?php else: ?>
-                                <h2>Masseur: No masseur found 🙁</h2>
-                            <?php endif; ?>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        
+                                </tbody>
+                            </table>
                         </div>
-
                     </div>
 
                     <!-- Services Table -->
@@ -66,47 +64,53 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="text-left">
+                                        <th class="text-center">
                                             <h3>Amount</h3>
                                         </th>
-                                        <th class="text-left">
+                                        <th class="text-center">
                                             <h3>Service</h3>
                                         </th>
-                                        <th class="text-left">
+                                        <th class="text-center">
                                             <h3>Price</h3>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Loop through the services array -->
                                     <?php foreach ($services as $serviceName => $serviceDetails): ?>
-                                        <tr>
-                                            <td><h3><?php echo htmlspecialchars($serviceDetails['amount']); ?></h3></td>
-                                            <td><h3><?php echo htmlspecialchars($serviceName); ?></h3></td>
-                                            <td><h3><?php echo htmlspecialchars($serviceDetails['price']); ?></h3></td>
-                                        </tr>
+                                        <tr class="text-center">
+                                            <td><h2><?php echo htmlspecialchars($serviceDetails['amount']); ?></h2></td>
+                                            <td><h2><?php echo htmlspecialchars($serviceName); ?></h2></td>
+                                            <td><h2>₱<?php echo htmlspecialchars($serviceDetails['price']); ?></h2></td>
+                                        </tr class="text-right">
                                     <?php endforeach; ?>
                                     <tr>
                                         <td style="font-weight: bold;"><h2>TOTAL</h2></td>
                                         <td style="font-weight: bold;"><h2></h2></td>
-                                        <td style="font-weight: bold;"><h2><?php echo $totalCost ?></h2></td>
+                                        <td style="font-weight: bold;"><h2>₱<?php echo $totalCost?></h2></td>
                                     </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;"><h2>CURRENT PAID AMOUNT</h2></td>
+                                        <td style="font-weight: bold;"><h2></h2></td>
+                                        <td style="font-weight: bold;"><h2>₱<?php echo $paid_amount; ?></h2></td>
+                                    </tr>
+                                        
                                 </tbody>
                             </table>
                         </div>
                     </div>
+
                 </form>
 
                 <div class="col-sm-offset-8 col-sm-3" style="margin-bottom:25px; margin-top:25px;">
                     <a href="<?php echo $this->config->base_url("records")?>">
-                        <button class="btn lr-bg menu-btn-m ttsh" name="Back to Records hub">
+                        <button class="btn yellow-bg menu-btn-m ttsh" name="Back to records hub">
                             <h4>BACK</h4>
                         </button>
                     </a>
-                </div>
+                </div>          
 
                 <?php else: ?>
-                    <p>No Record found. It looks like there’s nothing here yet.. Try searching for another one.</p>
+                    <p>Booking not found.</p>
                 <?php endif; ?>
 
             </div>

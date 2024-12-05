@@ -141,9 +141,10 @@ class Accounts extends CI_Controller {
 			// Get the contact number from the form input
 			$contact = $this->input->post('update_Contact');
 			$accountName = $this->input->post('update_Account'); // Get the account name from the form
+			$currentAccount = $this->Account_model->getAccount($this->uri->segment(3));
 
 			// Check if the account name already exists
-			if ($this->Account_model->getAccountbyName($accountName)) {
+			if ($this->Account_model->getAccountbyName($accountName) && $accountName != $currentAccount->accounts_tbl_name) {
 					// If the account name already exists, set error message
 					$info['error'] = 'Account with this name already exists. Please choose a different name.';
 

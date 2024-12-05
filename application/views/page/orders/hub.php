@@ -8,7 +8,7 @@
             <div class="col-xs-4 col-sm-4 center-item">
                 <a href="<?php echo $this->config->base_url("orders_info") ?>" id="new-order-button">
                     <button class="btn lg-bg menu-btn-m center-item ttsh" name="CREATE NEW BOOKING">
-                        <h3 class="black-txt">NEW BOOKING</h3>
+                        <h1 class="black-txt">NEW BOOKING</h1>
                     </button>
                 </a>
             </div>
@@ -54,8 +54,7 @@
                     </table>
                 <?php else: ?>
                     <div class="text-center" style="margin: 20px;">
-                        <h2>No bookings Found🙁</h2>
-                        <p>Looks like things are quiet for now. Start by creating a new booking!😁</p>
+                        <h1>NO CURRENT ON-GOING BOOKINGS</h1>
                     </div>
                 <?php endif; ?>
             </div>
