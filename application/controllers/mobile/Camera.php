@@ -19,6 +19,7 @@ class Camera extends CI_Controller {
         $data['workstation'] = $this->input->get('workstation');
 
         // Load the camera view
+        $this->load->view('mobile/initialize-scripts');
         $this->load->view('mobile/camera', $data);
     }
 
