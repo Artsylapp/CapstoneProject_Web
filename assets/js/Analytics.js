@@ -1,29 +1,134 @@
-// // Define an array of colors
-const colors = ['#ff6b6b', '#4ecdc4', '#ffcc5c', '#3498db', '#f39c12', '#2ecc71', '#9b59b6', '#e74c3c'];
+// Chart.js Example Data
+const ctx1 = document.getElementById('topServicesChart').getContext('2d');
+const ctx2 = document.getElementById('revenueChart').getContext('2d');
+const ctx3 = document.getElementById('profitServiceChart').getContext('2d');
+const ctx4 = document.getElementById('employeeActivityChart').getContext('2d');
 
-// // Select all the card elements
-const cards = document.querySelectorAll('.cardData');
-
-// unshuffled colored cards
-// Apply a specific color to each card based on its index
-cards.forEach((card, index) => {
-    card.style.backgroundColor = colors[index % colors.length]; // Loop through colors if there are more cards than colors
+// Top Services Chart
+new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['Service A', 'Service B', 'Service C'],
+        datasets: [{
+            label: 'Orders',
+            data: [100, 80, 60],
+            backgroundColor: ['#4CAF50', '#FFC107', '#F44336']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true
+            },
+            title: {
+                display: true,
+                text: 'Top 3 Most Ordered Services'
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.dataset.label + ': ' + context.raw;
+                    }
+                }
+            }
+        }
+    }
 });
 
-// shuffled colored cards
-// // Function to shuffle the colors array
-// function shuffleArray(array) {
-//     for (let i = array.length - 1; i > 0; i--) {
-//         const j = Math.floor(Math.random() * (i + 1));
-//         [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-//     }
-//     return array;
-// }
+// Revenue Chart
+new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April'],
+        datasets: [{
+            label: 'Revenue ($)',
+            data: [2000, 8500, 3000, 4000],
+            borderColor: '#007BFF',
+            fill: false
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true
+            },
+            title: {
+                display: true,
+                text: 'Monthly Revenue'
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.dataset.label + ': $' + context.raw;
+                    }
+                }
+            }
+        }
+    }
+});
 
-// // Shuffle the colors to ensure uniqueness
-// const shuffledColors = shuffleArray(colors.slice(0, cards.length)); // Limit to number of cards
+// Profit Chart
+new Chart(ctx3, {
+    type: 'pie',
+    data: {
+        labels: ['Service A', 'Service B', 'Service C'],
+        datasets: [{
+            label: 'Profit ($)',
+            data: [1500, 1200, 900],
+            backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            },
+            title: {
+                display: true,
+                text: 'Most Profitable Services'
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.label + ': $' + context.raw;
+                    }
+                }
+            }
+        }
+    }
+});
 
-// // Apply a unique color to each card
-// cards.forEach((card, index) => {
-//     card.style.backgroundColor = shuffledColors[index];
-// });
+// Employee Activity Chart
+new Chart(ctx4, {
+    type: 'bar',
+    data: {
+        labels: ['Employee 1', 'Employee 2', 'Employee 3'],
+        datasets: [{
+            label: 'Orders Handled',
+            data: [50, 70, 40],
+            backgroundColor: ['#6A1B9A', '#C2185B', '#E64A19']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true
+            },
+            title: {
+                display: true,
+                text: 'Employee Activity'
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.dataset.label + ': ' + context.raw;
+                    }
+                }
+            }
+        }
+    }
+});

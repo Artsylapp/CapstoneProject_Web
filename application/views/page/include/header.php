@@ -16,11 +16,19 @@
     <!-- Bootstraps and JQuery -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
+    <?php 
+        if($this->uri->segment(1) == 'analytics'){
+            echo '<!-- Only loads when in analytics page, cuz bootstrap 5 causes error in other pages -->';
+            echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">';
+            echo '<link type="text/css" href="' . base_url('assets/css/analytics.css') . '" rel="stylesheet">';
+        }
+    ?>
 
     <!-- Custom CSS files-->
     <link rel="stylesheet" href="<?php echo $this->config->base_url("assets/css/bootstrap.css")?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/Styless.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->config->base_url('assets/css/analytics.css'); ?>">
 
     <!-- Custom JS files -->
     <script src="<?php echo $this->config->base_url('assets/js/textToSpeech.js'); ?>"></script>

@@ -15,7 +15,7 @@
 
 		<?php if (isset($info['error'])): ?>
 			<div class="alert alert-danger">
-					<?php echo $info['error']; ?>
+				<?php echo $info['error']; ?>
 			</div>
 		<?php endif; ?>
 
@@ -48,7 +48,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="sel1">Employee Type:</label>
 						<div class="col-sm-10">
-							<select class="form-control" id="sel1" name="optradio_update">
+							<select class="form-control" id="sel1" name="update_gender">
 								<option <?php if ($accounts->accounts_tbl_empType == "Male") {
 													echo "selected";
 												} ?>>Male</option>

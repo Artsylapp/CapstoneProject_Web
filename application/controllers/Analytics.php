@@ -21,21 +21,14 @@ class Analytics extends CI_Controller{
 		$this->load->view('page/include/footer');
     }
 
-	public function getYearAnalytics(){
-		$data = $this->Analytics_model->getYearsOrders();
+	public function getAnalytics(){
+		$data = $this->Analytics_model->getAnalytics();
 		echo json_encode($data);
-	}
 
-	public function getRevenueAnalytics(){
-		$data = $this->Analytics_model->getRevenueData();
-		echo json_encode($data);
-	}
-
-	public function getAnalyticsData(){
-		$data = $this->Analytics_model->getAnalyticsData();
-		echo json_encode($data);
+		// debug
 		// echo"<pre>";
 		// print_r($data);
 		// echo"<pre>";
 	}
+
 }

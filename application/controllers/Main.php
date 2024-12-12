@@ -50,7 +50,7 @@ class Main extends CI_Controller {
 		$user = $this->input->post('com_u');
 		$pass = $this->input->post('com_p');
 		$info = array(
-			'title' => 'LoginAuth',
+			'title' => 'Login',
 		);
 	
 		// Adjust validation rules
