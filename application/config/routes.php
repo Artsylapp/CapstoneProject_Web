@@ -70,9 +70,7 @@ $route['records/pdf'] = 'Records/recordsToPDF';
 
 /* Analytics Page */
 $route['analytics'] = 'Analytics/index';
-$route['getYearData'] = 'Analytics/getYearAnalytics';
-$route['getRevenueData'] = 'Analytics/getRevenueAnalytics';
-$route['getAnalyticsData'] = 'Analytics/getAnalyticsData';
+$route['getAnalytics'] = 'Analytics/getAnalytics';
 
 
 /* Mobile REST API */
